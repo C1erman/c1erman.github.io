@@ -1998,7 +1998,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fcbbfa;
+  background: #d4ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2780,22 +2780,7 @@ embed {
   transform: rotate(3deg) translate(0px, -4px);
 }
 .pace .pace-activity {
-  display: block;
-  position: fixed;
-  z-index: 2000;
-  top: 15px;
-  right: 15px;
-  width: 14px;
-  height: 14px;
-  border: solid 2px transparent;
-  border-top-color: #000;
-  border-left-color: #000;
-  border-radius: 10px;
-  -webkit-animation: pace-spinner 400ms linear infinite;
-  -moz-animation: pace-spinner 400ms linear infinite;
-  -ms-animation: pace-spinner 400ms linear infinite;
-  -o-animation: pace-spinner 400ms linear infinite;
-  animation: pace-spinner 400ms linear infinite;
+  display: none;
 }
 @-webkit-keyframes pace-spinner {
   0% {
@@ -2868,6 +2853,9 @@ embed {
     -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+img {
+  border-radius: 10px;
 }
 @-moz-keyframes pace-spinner {
   0% {
