@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+  <url>
+    <loc>http://seefun.club/2019/03/13/first-face-linux/</loc>
+    <lastmod>2019-03-13T04:57:20.149Z</lastmod>
+    <data>
+        <display>
+        <title>初识Linux</title>
+        <pubTime>2019-03-13T01:45:46.000Z</pubTime>
+        
+        <tag>-Linux </tag>
+         
+         
+           
+             
+              <breadCrumb title="-Linux" url="http://seefun.club/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://seefun.club/2019/03/12/Longest-Substring-Without-Repeating-Characters/</loc>
@@ -122,7 +142,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://seefun.club/2018/09/11/first-blog/</loc>
