@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="だれかあなた">
 <meta property="og:description" content="作为一名程序员，不懂点Linux知识怎么说的过去？ 本文将会随着学习的升入不断更新，介绍常用的指令及相关的知识。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-14T14:39:41.943Z">
+<meta property="og:updated_time" content="2019-03-18T13:46:41.616Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Linux">
 <meta name="twitter:description" content="作为一名程序员，不懂点Linux知识怎么说的过去？ 本文将会随着学习的升入不断更新，介绍常用的指令及相关的知识。">
@@ -374,7 +374,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-14 22:39:41" itemprop="dateModified" datetime="2019-03-14T22:39:41+08:00">2019-03-14</time>
+                <time title="修改时间：2019-03-18 21:46:41" itemprop="dateModified" datetime="2019-03-18T21:46:41+08:00">2019-03-18</time>
               
             
           </span>
@@ -544,9 +544,9 @@
 </table>
 <blockquote>
 <p>Example</p>
-</blockquote>
-<p>注意：当想输出空格时必须将参数写在<strong>字符串</strong>中。按照”年-月-日  小时:分钟:秒”的格式查看当前系统时间的date命令如下所示：</p>
+<p>注意：当想输出空格时必须将参数写在<strong>字符串</strong>中。按照<strong>”年-月-日  小时:分钟:秒”</strong>的格式查看当前系统时间的date命令如下所示：</p>
 <p><code>date &quot;+%Y-%m-%d %H:%M:%S&quot;</code></p>
+</blockquote>
 <h4 id="reboot命令"><a href="#reboot命令" class="headerlink" title="reboot命令"></a>reboot命令</h4><p>reboot命令用于重启系统，其格式为：<code>reboot</code>。</p>
 <p><del>由于重启计算机这种操作会涉及硬件资源的管理权限，因此默认只能使用root管理员来重启。</del></p>
 <p>普通用户也可以使用<code>reboot</code>。</p>
@@ -637,13 +637,158 @@
 <h4 id="last命令"><a href="#last命令" class="headerlink" title="last命令"></a>last命令</h4><p>last命令用于产看所有系统的登陆记录，格式为：<code>last[参数]</code>。</p>
 <p>注意：这些信息都是以日志文件的形式保存在系统中，因此黑客可以很容易地对内容进行<strong>篡改</strong>。</p>
 <h4 id="history命令"><a href="#history命令" class="headerlink" title="history命令"></a>history命令</h4><p>history命令用于显示历史执行过的命令，格式为：<code>history [-c]</code>。</p>
-<p>这条指令默认输出执行过的最近1000条命令记录，可自定义/etc/profile文件中的<code>HISTSIZE</code>变量值。如果使用<code>-c</code></p>
+<p>这条指令默认输出执行过的最近1000条命令记录，可自定义<code>/etc/profile</code>文件中的<code>HISTSIZE</code>变量值。如果使用<code>-c</code></p>
 <p>参数则会清空所有的命令历史记录。</p>
 <h4 id="sosreport命令"><a href="#sosreport命令" class="headerlink" title="sosreport命令"></a>sosreport命令</h4><p>sosreport命令用于收集系统配置及架构信息并输出诊断文档，格式为：<code>sosreport</code>。</p>
 <p>当Linux系统出现故障需要练习技术支持人员时，大多数时候都要先使用这个命令来简单收集系统的运行状态服务配置信息，以便让维修人员进行修理。</p>
 <h3 id="工作目录切换命令"><a href="#工作目录切换命令" class="headerlink" title="工作目录切换命令"></a>工作目录切换命令</h3><p>工作目录指的是用户当前在系统中所处的位置。</p>
 <h4 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h4><p>pwd命令用于显示用户当前在系统中所处的工作目录，格式为：<code>pwd [选项]</code>。</p>
 <h4 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h4><p>cd命令用于切换工作路径，格式为：<code>cd [目录名称]</code>。</p>
+<p>可以通过<code>cd -</code>命令返回到上一次所处的目录，使用<code>cd ~</code>命令切换到当前用户的家目录。</p>
+<h4 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h4><p>ls命令用于显示目录中的文件信息，格式为：<code>ls [选项] [文件]</code>。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a</td>
+<td>看到全部文件（包括隐藏文件）</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>查看文件的属性、大小等详细信息</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>查看目录属性信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文本文件编辑命令"><a href="#文本文件编辑命令" class="headerlink" title="文本文件编辑命令"></a>文本文件编辑命令</h3><p>在Linux系统中，<strong>一切都是文件</strong>。</p>
+<p>所以对服务长须进行配置自然也就是编辑程序的配置文件。</p>
+<h4 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h4><p>cat命令用于查看纯文本文件（内容较少的），格式为<code>cat [选项] [文件]</code>。</p>
+<p>真羡慕有猫的人。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-n</td>
+<td>显示行号</td>
+</tr>
+</tbody>
+</table>
+<h4 id="more命令"><a href="#more命令" class="headerlink" title="more命令"></a>more命令</h4><p>more命令用于查看纯文本文件（内容较多的），格式为：<code>more [选项] [文件]</code>。</p>
+<p>more命令会在最下面使用百分比的形式来提示您已经阅读了多少内容，同时还可使用空格键或回车键向下翻页。</p>
+<h4 id="head命令"><a href="#head命令" class="headerlink" title="head命令"></a>head命令</h4><p>head命令用于查看纯文本文档的前N行，格式为：<code>head [选项] [文件]</code>。</p>
+<h4 id="tail命令"><a href="#tail命令" class="headerlink" title="tail命令"></a>tail命令</h4><p>tail命令用于查看纯文本文档的后N行或者持续刷新内容，格式为：<code>tail [选项] [文件]</code>。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-n</td>
+<td>指定查看的行数</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>持续刷新</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tr命令"><a href="#tr命令" class="headerlink" title="tr命令"></a>tr命令</h4><p>tr命令用于替换文本文件中的字符，格式为：<code>tr [选项] [原始字符] [目标字符]</code>。</p>
+<p>常用的字符范围如下表：</p>
+<table>
+<thead>
+<tr>
+<th>简易正则</th>
+<th>字符范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[a-z]</td>
+<td>小写字符组成的字符串</td>
+</tr>
+<tr>
+<td>[A-Z]</td>
+<td>大写字符组成的字符串</td>
+</tr>
+<tr>
+<td>[0-9]</td>
+<td>数字串</td>
+</tr>
+<tr>
+<td>[x*n]</td>
+<td>字符x重复出现n次</td>
+</tr>
+</tbody>
+</table>
+<p>了解一下参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>用原始字符的补集替换此字符集（一头雾水.png）</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>删除原始字符中的所有输入字符</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>删除所有重复出现字符序列，只保留第一个（一头雾水.png）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h4><p>wc命令用于统计文本指定文本的行数、字数、字节数，格式为：<code>wc [参数] 文本（文件）</code>。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-l</td>
+<td>只显示行数</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>只显示单词数</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>只显示字节数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="stat命令"><a href="#stat命令" class="headerlink" title="stat命令"></a>stat命令</h4><p>stat命令用于查看文件的具体存储信息和时间信息，格式为：<code>stat 文件名称</code>。</p>
+<p>文件的三种时间状态为：<strong>Access</strong>、<strong>Modify</strong>、<strong>Change</strong>，分别对应着<strong>访问时间</strong>、<strong>修改时间</strong>、<strong>状态变动时间</strong>。</p>
+<blockquote>
+<p><strong>访问时间</strong>：读一次这个文件的内容，这个时间就会更新。但是需要注意的是，<code>ls</code>、<code>stat</code>命令不会修改文件的访问时间。</p>
+<p><strong>修改时间</strong>：修改时间是文件内容最后一次被修改的时间。比如：<code>vi</code>后保存文件，<code>ls -l</code>列出的时间就是这个时间。</p>
+<p><strong>状态改动时间</strong>：是该文件的节点最后一次被修改的时间，通过<code>chmod</code>、<code>chown</code>命令修改一次文件属性，这个时间就会更新。</p>
+</blockquote>
 
       
     </div>
@@ -877,7 +1022,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要学习Linux"><span class="nav-number">1.</span> <span class="nav-text">为什么要学习Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新手必须掌握的Linux命令"><span class="nav-number">2.</span> <span class="nav-text">新手必须掌握的Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看帮助命令"><span class="nav-number">2.1.</span> <span class="nav-text">查看帮助命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的系统工作命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用的系统工作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo命令"><span class="nav-number">2.2.1.</span> <span class="nav-text">echo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date命令"><span class="nav-number">2.2.2.</span> <span class="nav-text">date命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reboot命令"><span class="nav-number">2.2.3.</span> <span class="nav-text">reboot命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#poweroff命令"><span class="nav-number">2.2.4.</span> <span class="nav-text">poweroff命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wget命令"><span class="nav-number">2.2.5.</span> <span class="nav-text">wget命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ps命令"><span class="nav-number">2.2.6.</span> <span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top命令"><span class="nav-number">2.2.7.</span> <span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pidof命令"><span class="nav-number">2.2.8.</span> <span class="nav-text">pidof命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kill命令"><span class="nav-number">2.2.9.</span> <span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#killall命令"><span class="nav-number">2.2.10.</span> <span class="nav-text">killall命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统状态检测命令"><span class="nav-number">2.3.</span> <span class="nav-text">系统状态检测命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ifconfig命令"><span class="nav-number">2.3.1.</span> <span class="nav-text">ifconfig命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uname命令"><span class="nav-number">2.3.2.</span> <span class="nav-text">uname命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">2.3.3.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free命令"><span class="nav-number">2.3.4.</span> <span class="nav-text">free命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#who命令"><span class="nav-number">2.3.5.</span> <span class="nav-text">who命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#last命令"><span class="nav-number">2.3.6.</span> <span class="nav-text">last命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#history命令"><span class="nav-number">2.3.7.</span> <span class="nav-text">history命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sosreport命令"><span class="nav-number">2.3.8.</span> <span class="nav-text">sosreport命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作目录切换命令"><span class="nav-number">2.4.</span> <span class="nav-text">工作目录切换命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd命令"><span class="nav-number">2.4.1.</span> <span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd命令"><span class="nav-number">2.4.2.</span> <span class="nav-text">cd命令</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要学习Linux"><span class="nav-number">1.</span> <span class="nav-text">为什么要学习Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新手必须掌握的Linux命令"><span class="nav-number">2.</span> <span class="nav-text">新手必须掌握的Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看帮助命令"><span class="nav-number">2.1.</span> <span class="nav-text">查看帮助命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的系统工作命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用的系统工作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo命令"><span class="nav-number">2.2.1.</span> <span class="nav-text">echo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date命令"><span class="nav-number">2.2.2.</span> <span class="nav-text">date命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reboot命令"><span class="nav-number">2.2.3.</span> <span class="nav-text">reboot命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#poweroff命令"><span class="nav-number">2.2.4.</span> <span class="nav-text">poweroff命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wget命令"><span class="nav-number">2.2.5.</span> <span class="nav-text">wget命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ps命令"><span class="nav-number">2.2.6.</span> <span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top命令"><span class="nav-number">2.2.7.</span> <span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pidof命令"><span class="nav-number">2.2.8.</span> <span class="nav-text">pidof命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kill命令"><span class="nav-number">2.2.9.</span> <span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#killall命令"><span class="nav-number">2.2.10.</span> <span class="nav-text">killall命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统状态检测命令"><span class="nav-number">2.3.</span> <span class="nav-text">系统状态检测命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ifconfig命令"><span class="nav-number">2.3.1.</span> <span class="nav-text">ifconfig命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uname命令"><span class="nav-number">2.3.2.</span> <span class="nav-text">uname命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">2.3.3.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free命令"><span class="nav-number">2.3.4.</span> <span class="nav-text">free命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#who命令"><span class="nav-number">2.3.5.</span> <span class="nav-text">who命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#last命令"><span class="nav-number">2.3.6.</span> <span class="nav-text">last命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#history命令"><span class="nav-number">2.3.7.</span> <span class="nav-text">history命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sosreport命令"><span class="nav-number">2.3.8.</span> <span class="nav-text">sosreport命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作目录切换命令"><span class="nav-number">2.4.</span> <span class="nav-text">工作目录切换命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd命令"><span class="nav-number">2.4.1.</span> <span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd命令"><span class="nav-number">2.4.2.</span> <span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ls命令"><span class="nav-number">2.4.3.</span> <span class="nav-text">ls命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本文件编辑命令"><span class="nav-number">2.5.</span> <span class="nav-text">文本文件编辑命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令"><span class="nav-number">2.5.1.</span> <span class="nav-text">cat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">2.5.2.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head命令"><span class="nav-number">2.5.3.</span> <span class="nav-text">head命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tail命令"><span class="nav-number">2.5.4.</span> <span class="nav-text">tail命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tr命令"><span class="nav-number">2.5.5.</span> <span class="nav-text">tr命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc命令"><span class="nav-number">2.5.6.</span> <span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stat命令"><span class="nav-number">2.5.7.</span> <span class="nav-text">stat命令</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
