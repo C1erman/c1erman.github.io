@@ -104,25 +104,29 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="两数相加のAdd Two Numbers题目给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。 You are given two non-empty linked lists represe">
+  <meta name="description" content="最长回文子串のLongest Palindromic Substring题目给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。 Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
 <meta name="keywords" content="-JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode之“两数相加”的链表表示">
-<meta property="og:url" content="http://seefun.club/2019/03/02/Add-Two-Numbers-Js/index.html">
+<meta property="og:title" content="LeetCode之找出“最长回文子串”">
+<meta property="og:url" content="http://seefun.club/2019/03/20/Longest-Palindromic-Substring/index.html">
 <meta property="og:site_name" content="だれかあなた">
-<meta property="og:description" content="两数相加のAdd Two Numbers题目给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。 You are given two non-empty linked lists represe">
+<meta property="og:description" content="最长回文子串のLongest Palindromic Substring题目给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。 Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-09T13:54:34.059Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p5-arrow.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p5-another-arrow.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p5-last-arrow.png">
+<meta property="og:updated_time" content="2019-03-20T13:15:40.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode之“两数相加”的链表表示">
-<meta name="twitter:description" content="两数相加のAdd Two Numbers题目给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。 You are given two non-empty linked lists represe">
+<meta name="twitter:title" content="LeetCode之找出“最长回文子串”">
+<meta name="twitter:description" content="最长回文子串のLongest Palindromic Substring题目给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。 Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p5-arrow.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/03/02/Add-Two-Numbers-Js/">
+  <link rel="canonical" href="http://seefun.club/2019/03/20/Longest-Palindromic-Substring/">
 
 
 
@@ -132,7 +136,7 @@
   };
 </script>
 
-  <title>LeetCode之“两数相加”的链表表示 | だれかあなた</title>
+  <title>LeetCode之找出“最长回文子串” | だれかあなた</title>
   
 
 
@@ -314,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/03/02/Add-Two-Numbers-Js/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/03/20/Longest-Palindromic-Substring/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -331,7 +335,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">LeetCode之“两数相加”的链表表示
+          <h2 class="post-title" itemprop="name headline">LeetCode之找出“最长回文子串”
 
               
             
@@ -357,24 +361,12 @@
                 
               
 
-              <time title="创建时间：2019-03-02 22:38:26" itemprop="dateCreated datePublished" datetime="2019-03-02T22:38:26+08:00">2019-03-02</time>
+              <time title="创建时间：2019-03-20 21:12:33 / 修改时间：21:15:40" itemprop="dateCreated datePublished" datetime="2019-03-20T21:12:33+08:00">2019-03-20</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-09 21:54:34" itemprop="dateModified" datetime="2019-03-09T21:54:34+08:00">2019-03-09</time>
               
             
           </span>
@@ -426,41 +418,66 @@
       
 
       
-        <h1 id="两数相加のAdd-Two-Numbers"><a href="#两数相加のAdd-Two-Numbers" class="headerlink" title="两数相加のAdd Two Numbers"></a>两数相加のAdd Two Numbers</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给出两个<strong>非空</strong>的链表用来表示两个非负的整数。其中，它们各自的位数是按照 <strong>逆序</strong> 的方式存储的，并且它们的每个节点只能存储 <strong>一位</strong> 数字。</p>
-<p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
-<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
-<p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong> and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+        <h1 id="最长回文子串のLongest-Palindromic-Substring"><a href="#最长回文子串のLongest-Palindromic-Substring" class="headerlink" title="最长回文子串のLongest Palindromic Substring"></a>最长回文子串のLongest Palindromic Substring</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个字符串 <code>s</code>，找到 <code>s</code> 中最长的回文子串。你可以假设 <code>s</code> 的最大长度为 1000。</p>
+<p>Given a string <strong>s</strong>, find the longest palindromic substring in <strong>s</strong>. You may assume that the maximum length of <strong>s</strong> is 1000.</p>
 <blockquote>
 <p>Example</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; Input: &quot;babad&quot;</span><br><span class="line">&gt; Output: &quot;bab&quot;</span><br><span class="line">&gt; Note: &quot;aba&quot; is also a valid answer.</span><br><span class="line">&gt; </span><br><span class="line">&gt; Input: &quot;cbbd&quot;</span><br><span class="line">&gt; Output: &quot;bb&quot;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</span><br><span class="line">Output: 7 -&gt; 0 -&gt; 8</span><br><span class="line">Explanation: 342 + 465 = 807.</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>给出定义：<strong>结果链表</strong>の<code>result</code>、<strong>链表节点</strong>の<code>listNode</code>、<strong>输入链表</strong>の<code>l1</code>与<code>l2</code>。</p>
-<p>注意链表的结构性，自然想到将两个链表的对应的每一位数字相加，判断是否有进位，并因此<code>new</code>一个<code>listNode</code>，用于存放每次相加的<strong>个位</strong>运算结果，并链接到<u>结果链表</u>。</p>
-<p>那么两两相加到什么时候呢？显然是<u>输入链表</u><strong>一个或双方</strong>的<code>next</code>为<code>null</code>的时候，相加结束后，可不要忘了进位的存在。但是，为了方便进行<code>next</code>的赋值操作，我们应该首先判断是哪一个<u>输入链表</u>走到了尽头。</p>
-<p>判断之后，依据进位是否存在，进行如下操作：</p>
-<ul>
-<li>有进位，则与<strong>未到尽头的链表</strong>的每一位进行相加，同样<code>new</code>一个链表节点，与<u>结果链表</u>进行链接。但是需要注意的是，相加过程中会出现：<strong>有进位，但是链表已走到尽头</strong>这种情况。对于这种情况，在<u>结果链表</u>的最后添加一个值为1的<u>链表节点</u>即可。</li>
-<li>无进位，直接进行链表的链接。</li>
-</ul>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * function ListNode(val) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = val;</span></span><br><span class="line"><span class="comment"> *     this.next = null;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;ListNode&#125; l1</span></span><br><span class="line"><span class="comment"> * @param &#123;ListNode&#125; l2</span></span><br><span class="line"><span class="comment"> * @return &#123;ListNode&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> addTwoNumbers = <span class="function"><span class="keyword">function</span>(<span class="params">l1, l2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> carry=<span class="number">0</span>,result=<span class="number">0</span>,list=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> that=list;</span><br><span class="line">    <span class="keyword">while</span>(l1&amp;&amp;l2)&#123;</span><br><span class="line">        result+=(l1.val+l2.val+carry);</span><br><span class="line">        result&lt;<span class="number">10</span>?carry=<span class="number">0</span>:carry=<span class="number">1</span>;</span><br><span class="line">        list.val=(result%<span class="number">10</span>);</span><br><span class="line">        l1.next&amp;&amp;l2.next?(list.next=<span class="keyword">new</span> ListNode(),list=list.next):list.next=<span class="literal">null</span>;</span><br><span class="line">        l1=l1.next;</span><br><span class="line">        l2=l2.next;</span><br><span class="line">        result=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(l1||l2)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l1)&#123;</span><br><span class="line">            <span class="keyword">if</span>(carry)&#123;</span><br><span class="line">                <span class="keyword">while</span>(carry&amp;&amp;l1)&#123;</span><br><span class="line">                    result+=(l1.val+carry);</span><br><span class="line">                    result&lt;<span class="number">10</span>?carry=<span class="number">0</span>:carry=<span class="number">1</span>;</span><br><span class="line">                    list.next=<span class="keyword">new</span> ListNode(result%<span class="number">10</span>);</span><br><span class="line">                    list=list.next;</span><br><span class="line">                    l1=l1.next;</span><br><span class="line">                    result=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(carry)&#123;</span><br><span class="line">                    list.next=<span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">return</span> that;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        list.next=l1;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(carry)&#123;</span><br><span class="line">                <span class="keyword">while</span>(carry&amp;&amp;l2)&#123;</span><br><span class="line">                    result+=(l2.val+carry);</span><br><span class="line">                    result&lt;<span class="number">10</span>?carry=<span class="number">0</span>:carry=<span class="number">1</span>;</span><br><span class="line">                    list.next=<span class="keyword">new</span> ListNode(result%<span class="number">10</span>);</span><br><span class="line">                    list=list.next;</span><br><span class="line">                    l2=l2.next;</span><br><span class="line">                    result=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(carry)&#123;</span><br><span class="line">                    list.next=<span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">return</span> that;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            list.next=l2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        carry?list.next=<span class="keyword">new</span> ListNode(<span class="number">1</span>):list.next=<span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> that;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>Runtime:  <strong>128 ms</strong></p>
-<p>Memory Usage:  <strong>38.4 MB</strong></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>子串，又是子串，吸取上次教训的我决定使用<strong>滑动窗口</strong>。</p>
+<p>首先实现判断字符串是否为回文字符串的函数：将输入字符串<strong>留下中间字母后</strong>取对半，得到<code>subStr1</code>与<code>subStr2</code>，使用<code>String.split(&#39;&#39;).revers().join(&#39;&#39;)</code>将<code>subStr2</code>颠倒。并通过<code>Object.is(subStr1,subStr2)</code>决定结果。</p>
+<p>将给定字符串整体做一次回文判断后<del>有些人就是这么恶趣味</del>，使用两个指针：<code>i</code>和<code>j</code>，来指向给定字符串的首与尾。</p>
+<p>注意：<code>String.substring(start,end)</code>获得的子串实际取值区间为<code>[start,end)</code>。</p>
+<p>我们现在得到一个长度减一的子串了，那么如何实现<strong>滑动窗口</strong>呢？</p>
+<p>用<code>Set</code>，当<code>Set</code>中不含有指针<code>i</code>时，将窗口想后滑动一个单位，可以通过一个变量<code>len</code>记录指针<code>i</code>与<code>j</code>之间的长度。</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p5-arrow.png" alt="图示"></p>
+<p>注意到<strong>滑动窗口</strong>滑到给定字符串的最后时，也就是一轮次的查询结束、指针<code>j==n</code>时，需要缩短滑动窗口的长度，并将滑动窗口置于给定字符串的最前端。但这个时候，你需要先做一次额外的判断——否则你会少判断一次，就是在<strong>滑动窗口</strong>滑到最后时，先做一次回文判断，在改变滑动窗口的<strong>长度</strong>和<strong>位置</strong>。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; s</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(is_p(s)) <span class="keyword">return</span> s;</span><br><span class="line">    <span class="keyword">let</span> n=s.length,i=<span class="number">0</span>,j=n<span class="number">-1</span>,len=j-i;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">set</span>=new Set();</span><br><span class="line">    while(i&lt;=j)&#123;</span><br><span class="line">        <span class="keyword">let</span> subStr=s.substring(i,j);</span><br><span class="line">        <span class="keyword">if</span>(is_p(subStr))&#123;<span class="keyword">return</span> subStr;&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">set</span>.has(i)?null:(<span class="keyword">set</span>.add(i),i++,j=i+len);</span><br><span class="line">            if(j==n)&#123;</span><br><span class="line">                subStr=s.substring(i,j);</span><br><span class="line">                <span class="keyword">if</span>(is_p(subStr))&#123;<span class="keyword">return</span> subStr;&#125;</span><br><span class="line">                <span class="keyword">set</span>.clear();</span><br><span class="line">                i=0;</span><br><span class="line">                len--;</span><br><span class="line">                j=i+len;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">/*the func is right for any cases except ' ' because NaN!=NaN in js*/</span><br><span class="line">var is_p=(s)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> n=s.length/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">let</span> lower=<span class="built_in">Math</span>.floor(n),higher=<span class="built_in">Math</span>.ceil(n);</span><br><span class="line">    <span class="keyword">let</span> sub1=s.substring(<span class="number">0</span>,lower),sub2=s.substring(higher).split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.is(sub1,sub2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>你知道么，由于我的由于我的算法太低级，得到的结果是<a href="https://leetcode.com/submissions/detail/213750986/" target="_blank" rel="noopener">Time Limit Exceeded</a> = =</p>
+<p>哭出声，哇。</p>
+<p>这也是没办法的事，毕竟从算法的设计思想上来说，它就是一个<strong>贪心算法</strong>，总是从最长的子串开始判定，因此，当给定字符串的长度过长而存在与其中的回文子串又过短时，花费的时间就太长了。</p>
+<h2 id="改良"><a href="#改良" class="headerlink" title="改良"></a>改良</h2><h3 id="中心扩展算法"><a href="#中心扩展算法" class="headerlink" title="中心扩展算法"></a>中心扩展算法</h3><p>观察一个回文字符串，可以发现它总是由一个中心扩展开来的。</p>
+<p>如果这个字符串的长度是奇数，中心就为中间的字母；如果为偶数，中心就为中间字母的中间。</p>
+<p>那么对于一个给定的字符串来说，在它的长度为<code>n</code>的前提下，<strong>潜在</strong>的中心有几个呢？</p>
+<p><strong>2n-1</strong>，因为我们暂时还不知道这个字符串的长度，因此每一个字符（n）、每两个字符中间（2n-1）都有可能是回文字符串的中心。</p>
+<p>因此，我们可以在一个循环里，每次判断两次，分别对应奇数长度、偶数长度。</p>
+<p>我们如何判断呢？</p>
+<p>可以通过一个函数，它接收传过来的参数<code>left</code>、<code>right</code>，以<code>left</code>、<code>right</code>为中心（当<code>left=right</code>时做奇数长度判断）向两侧扩展，做最长回文字符串判断，并返回回文字符串的<strong>长度</strong>。</p>
+<p>如何从返回的长度来计算出来最长的回文子串呢？</p>
+<p>通过两个标识符<code>start</code>、<code>end</code>，每次循环时我们总是假设当前的<code>i</code>为中心，每次做完两次判断（奇、偶）后取最大的返回值，因为我们不知道取得的回文字符串长度的奇偶性，因此取<code>start=Math.round(i-(len-1)/2),end=i+len/2</code>。</p>
+<p>注意这个<code>Math.round()</code>!因为在<code>JavaScript</code>中<code>String.substring(1.5)--&gt;String.substring(1)</code>。但是由于我们已经将<code>len-1</code>：如果回文子串的长度为偶数，那么中心左边的长度会比右边少一位。因此为了避免出现<code>0.5=1</code>，即多取一位的情况，我们使用了<code>Math.round()</code>这个四舍五入的函数。</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p5-another-arrow.png" alt="Math.round()"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; s</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">null</span>||s.length&lt;<span class="number">1</span>) <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">let</span> start=<span class="number">0</span>,end=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;s.length;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> len_odd= aroundStr(s,i,i);</span><br><span class="line">        <span class="keyword">let</span> len_even= aroundStr(s,i,i+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">let</span> len=<span class="built_in">Math</span>.max(len_odd,len_even);</span><br><span class="line">        (len&gt;end-start)?(start=<span class="built_in">Math</span>.round(i-(len<span class="number">-1</span>)/<span class="number">2</span>),end=i+len/<span class="number">2</span>):<span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(start,end+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> aroundStr=<span class="function">(<span class="params">s,start,end</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> l=start,r=end;</span><br><span class="line">    <span class="keyword">while</span>(l&gt;=<span class="number">0</span>&amp;&amp;r&lt;s.length&amp;&amp;s.charAt(l)==s.charAt(r))&#123;</span><br><span class="line">        l--;</span><br><span class="line">        r++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r-l<span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Runtime:  <strong>92 ms</strong></p>
+<p>Memory Usage:  <strong>36.2 MB</strong></p>
 <p>Status:  <strong>Accepted</strong></p>
-<h2 id="改良"><a href="#改良" class="headerlink" title="改良"></a>改良</h2><p>在思想一致的情况下，需要尽可能的减少逻辑判断分支。</p>
-<p>可以看到我的代码实在是太丑陋了。</p>
-<p>我们完全可以通过引用“指针”来控制返回。</p>
-<p>你需要知道的是：</p>
-<ol>
-<li>在JavaScript中，原始对象<code>Number</code>通过值传递，而对象<code>Object</code>通过引用传递。</li>
-<li>你可以尝试将<code>function</code>看作一个对象工厂，于是，你就拥有了对象，也就拥有了“指针”。</li>
-<li>三元表达式<code>a?(b,c):d</code>比<code>if else</code><a href="http://www.cnblogs.com/GavinYoung/archive/2010/05/19/1739062.html" target="_blank" rel="noopener">花费更少的时间</a>。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * function ListNode(val) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = val;</span></span><br><span class="line"><span class="comment"> *     this.next = null;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;ListNode&#125; l1</span></span><br><span class="line"><span class="comment"> * @param &#123;ListNode&#125; l2</span></span><br><span class="line"><span class="comment"> * @return &#123;ListNode&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> addTwoNumbers = <span class="function"><span class="keyword">function</span>(<span class="params">l1, l2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> p=l1,q=l2,current=result,carry=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(p!=<span class="literal">null</span>||q!=<span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> a=(p==<span class="literal">null</span>)?<span class="number">0</span>:p.val;</span><br><span class="line">        <span class="keyword">let</span> b=(q==<span class="literal">null</span>)?<span class="number">0</span>:q.val;</span><br><span class="line">        <span class="keyword">let</span> sum=a+b+carry;</span><br><span class="line">        (sum&lt;<span class="number">10</span>)?carry=<span class="number">0</span>:carry=<span class="number">1</span>;</span><br><span class="line">        current.next=<span class="keyword">new</span> ListNode(sum%<span class="number">10</span>);</span><br><span class="line">        current=current.next;</span><br><span class="line">        (p==<span class="literal">null</span>)?<span class="literal">null</span>:p=p.next;</span><br><span class="line">        (q==<span class="literal">null</span>)?<span class="literal">null</span>:q=q.next;</span><br><span class="line">    &#125;</span><br><span class="line">    carry?current.next=<span class="keyword">new</span> ListNode(<span class="number">1</span>):<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> result.next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>Runtime:  <strong>120 ms</strong></p>
-<p>Memory Usage:  <strong>38.3 MB</strong></p>
+<p>faster than <strong>87.69%</strong> of JavaScript online submissions</p>
+<p>less than <strong>74.14%</strong> of JavaScript online submissions</p>
+<h3 id="Manacher算法"><a href="#Manacher算法" class="headerlink" title="Manacher算法"></a>Manacher算法</h3><p>又叫马拉车 = =</p>
+<p>是查找最长回文子串的<strong>线性方法</strong>，好厉害！</p>
+<h4 id="变身"><a href="#变身" class="headerlink" title="变身"></a>变身</h4><p>考虑输入字符串长度的奇偶性干嘛呀，想一想计算偶数回文字符串时的下标计算是多么的让人难受，于是，为何不在每个字符的周围添上一个罕见的字符，使它变成奇数长度呢？</p>
+<p>比如这样：<code>#a#b#b#</code></p>
+<p>这样，长度就变成<code>(n-1+2)+n=2n+1</code>的奇数长度了。</p>
+<h4 id="一个特性"><a href="#一个特性" class="headerlink" title="一个特性"></a>一个特性</h4><p>现在我们来考虑一个重要的<strong>数组</strong>——与处理后的字符串长度相同、每一位存放着对应字符的<strong>扩展半径</strong>。</p>
+<p>对于上述字符串<code>#a#b#b#</code>，对应的数组为<code>0101210</code>。</p>
+<p>为什么这个数组比较重要呢？</p>
+<p>以<code>a</code>举例，它在原字符串中的位置是<code>0</code>，在新字符串中的位置是<code>1</code>，它的扩展半径为<code>1</code>。</p>
+<p>好了，我们现在掌握的信息是一个字符<code>x</code>在新字符串的下标<code>index_new</code>，以它为中心所扩展的回文串长度<code>len</code>，我们怎么求出<code>x</code>在原字符串的<strong>起始下标</strong>（回文子串的起始位置）<code>index_old</code>呢？</p>
+<p>这就是马拉车中的一个特性了：<code>index_old=(index_new-len)/2</code>。</p>
+<p>其实，呃。</p>
+<p>因为<code>#</code>存在的缘故，因此我们要除以2。</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p5-last-arrow.png" alt="特性"></p>
+<h4 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h4><p>马拉车算法的精髓在于以<strong>线性时间</strong>计算出这个数组。</p>
+<p>就像<a href="https://blog.csdn.net/Clerman/article/details/72373335" target="_blank" rel="noopener">KMP算法</a>一样，它充分利用了我们之前计算出的结果，并且由于回文子串的<strong>镜像特性</strong>，我们可以将计算数组的方式简化。</p>
+<p>暂时无法透彻的理解这个算法，属于半懂不懂的程度，等下一轮再看看。</p>
+<p><a href="http://www.cnblogs.com/grandyang/p/4475985.html" target="_blank" rel="noopener">他山之石</a>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; s</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 首先插入一个#</span></span><br><span class="line">    <span class="keyword">let</span> newstr = fillWithSharp(s);</span><br><span class="line">    <span class="comment">// 以newStr每个字符串为中心的回文串的长度数组，最小为1</span></span><br><span class="line">    <span class="keyword">let</span> len = [];</span><br><span class="line">    <span class="comment">// 最长的回文串的右端点</span></span><br><span class="line">    <span class="keyword">let</span> longestPalindromeRight = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 最长的回文串的中心点</span></span><br><span class="line">    <span class="keyword">let</span> longestPalindromeCenter = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 记录最长回文长度</span></span><br><span class="line">    <span class="keyword">let</span> longestPalindrome = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//计算数组</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;newstr.length;i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> needExpand = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">let</span> spandStart = i+<span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 在右边界内的时候寻找对称点</span></span><br><span class="line">        <span class="keyword">if</span>(i&lt;longestPalindromeRight) &#123;</span><br><span class="line">            <span class="comment">// 找关于中心的对称点j</span></span><br><span class="line">            <span class="keyword">const</span> j = <span class="number">2</span>*longestPalindromeCenter - i;</span><br><span class="line">            <span class="comment">// 如果这时候还在右边界内，则不需要扩展</span></span><br><span class="line">            <span class="keyword">if</span>(longestPalindromeRight &gt;= i + len[j] ) &#123;</span><br><span class="line">                len[i] = len[j];</span><br><span class="line">                needExpand = <span class="literal">false</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                spandStart = longestPalindromeRight + <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 这里是拓展的代码</span></span><br><span class="line">        <span class="keyword">if</span>(needExpand) &#123;</span><br><span class="line">            <span class="comment">// 这里雷同上面的single拓展</span></span><br><span class="line">            <span class="keyword">while</span>(spandStart&lt;newstr.length &amp;&amp; <span class="number">2</span>*i-spandStart&gt;=<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span>(newstr[spandStart] === newstr[<span class="number">2</span>*i-spandStart]) &#123;</span><br><span class="line">                    spandStart++</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        len[i] = spandStart - i;</span><br><span class="line">        <span class="keyword">if</span>(len[i]&gt;longestPalindrome) &#123;</span><br><span class="line">            longestPalindromeRight = spandStart - <span class="number">1</span>;</span><br><span class="line">            longestPalindrome = len[i];</span><br><span class="line">            longestPalindromeCenter = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 找到len中的最大值索引</span></span><br><span class="line">    <span class="keyword">const</span> originRight = longestPalindromeRight / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">const</span> originLongestPalindrome = longestPalindrome - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> s.substr(originRight-originLongestPalindrome,originLongestPalindrome)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fillWithSharp=<span class="function">(<span class="params">s</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">String</span>.prototype.concat(<span class="string">'#'</span>,s.split(<span class="string">''</span>).join(<span class="string">'#'</span>),<span class="string">'#'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Runtime:  <strong>68 ms</strong></p>
+<p>Memory Usage:  <strong>37.3 MB</strong></p>
 <p>Status:  <strong>Accepted</strong></p>
+<p>faster than <strong>99.16%</strong> of JavaScript online submissions</p>
+<p>less than <strong>57.76%</strong> of JavaScript online submissions</p>
 
       
     </div>
@@ -497,8 +514,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/01/Two-Sum-Js/" rel="next" title="LeetCode之找出“两数之和”的数组下标">
-                <i class="fa fa-chevron-left"></i> LeetCode之找出“两数之和”的数组下标
+              <a href="/2019/03/17/escape-character-of-markdown/" rel="next" title="Markdown转义符">
+                <i class="fa fa-chevron-left"></i> Markdown转义符
               </a>
             
           </div>
@@ -506,10 +523,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/10/Median-of-Two-Sorted-Array/" rel="prev" title="LeetCode之计算“两个有序数组的中位数”">
-                LeetCode之计算“两个有序数组的中位数” <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -694,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#两数相加のAdd-Two-Numbers"><span class="nav-number">1.</span> <span class="nav-text">两数相加のAdd Two Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">1.3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩"><span class="nav-number">1.4.</span> <span class="nav-text">成绩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改良"><span class="nav-number">1.5.</span> <span class="nav-text">改良</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最长回文子串のLongest-Palindromic-Substring"><span class="nav-number">1.</span> <span class="nav-text">最长回文子串のLongest Palindromic Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">1.3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩"><span class="nav-number">1.4.</span> <span class="nav-text">成绩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改良"><span class="nav-number">1.5.</span> <span class="nav-text">改良</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中心扩展算法"><span class="nav-number">1.5.1.</span> <span class="nav-text">中心扩展算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manacher算法"><span class="nav-number">1.5.2.</span> <span class="nav-text">Manacher算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变身"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">变身</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一个特性"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">一个特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现-1"><span class="nav-number">1.5.2.3.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -848,7 +861,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/03/02/Add-Two-Numbers-Js/'
+    refer: '2019/03/20/Longest-Palindromic-Substring/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
