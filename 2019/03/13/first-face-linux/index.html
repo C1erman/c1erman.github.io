@@ -112,10 +112,12 @@
 <meta property="og:site_name" content="だれかあなた">
 <meta property="og:description" content="作为一名程序员，不懂点Linux知识怎么说的过去？ 本文将会随着学习的升入不断更新，介绍常用的指令及相关的知识。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-25T14:53:52.496Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-1.png">
+<meta property="og:updated_time" content="2019-03-28T14:31:37.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Linux">
 <meta name="twitter:description" content="作为一名程序员，不懂点Linux知识怎么说的过去？ 本文将会随着学习的升入不断更新，介绍常用的指令及相关的知识。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-1.png">
 
 
 
@@ -374,7 +376,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-25 22:53:52" itemprop="dateModified" datetime="2019-03-25T22:53:52+08:00">2019-03-25</time>
+                <time title="修改时间：2019-03-28 22:31:37" itemprop="dateModified" datetime="2019-03-28T22:31:37+08:00">2019-03-28</time>
               
             
           </span>
@@ -429,10 +431,83 @@
         <p>作为一名程序员，不懂点Linux知识怎么说的过去？</p>
 <p>本文将会随着学习的升入不断更新，介绍常用的指令及相关的知识。</p>
 <a id="more"></a>
-<h2 id="1-为什么要学习Linux"><a href="#1-为什么要学习Linux" class="headerlink" title="1.为什么要学习Linux"></a>1.为什么要学习Linux</h2><p>对于我这名梦想成为全栈工程师的人来说，学习Linux是很有必要的。从建站到深入理解Node，无一不需要站我常用的指令、初步理解其系统架构及运行原理。</p>
+<h2 id="1-为什么要学习Linux"><a href="#1-为什么要学习Linux" class="headerlink" title="1.为什么要学习Linux"></a>1.为什么要学习Linux</h2><p>对于我这名梦想成为全栈工程师的人来说，学习Linux是很有必要的。从建站到深入理解Node，无一不需要我了解它常用的指令、系统架构及基本的运行原理。</p>
 <p>安装Linux系统大致分为两种方式：安装<code>win+linux</code><strong>双系统</strong>或者<strong>安装虚拟机</strong>。</p>
 <p>由于我比较图方便，因此使用的是第二种方式。我的配置为<code>VirtualBox+Ubuntu</code>，安装过程就不再赘述，选择这套组合的原因是——方便，<code>ubuntu</code>自带的图形化界面对刚从<code>win</code>平台转来的我们来说十分友好。</p>
 <p><del>（正在施工中）为了适应移动端不显示目录的问题，而本文又太长，特列目录如下：</del></p>
+<p><div id="_menu" style="width:80%;height:200px;overflow:auto;margin: 0 auto;"></div></p>
+<script>
+    window.onload=function(){
+        header_in_block({Class:'post-body',box_id:'_menu'})
+    }
+var header_in_block = ({
+    Id,
+    /*提取容器id*/
+    Class,
+    /*提取容器class*/
+    Type = 'div',
+    /*提取容器类型*/
+    box_id /*填充容器id*/
+}) => {
+    /*初始容器*/
+    let container, box;
+    Id ? container = document.getElementById(Id) :
+        container = document.querySelector(`${Type}.${Class}`);
+    box = document.getElementById(box_id);
+    /*获取所有标题节点*/
+    let allHeader = new Array();
+    (Array.from(container.childNodes)).map((value, index) => {
+        if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(value.nodeName)) {
+            /*如果存在id则获取id，如果不存在则分配id*/
+            value.id = value.id || value.setAttribute('test', value.innerText);
+            allHeader.push({
+                'name': value.nodeName,
+                'id': value.id,
+                'text': value.innerText
+            });
+        }
+    });
+    console.log(allHeader)
+    /*将结果直接插入到网页中*/
+    let ans = new Array();
+    /*依据offset进行排列*/
+    for (let i = 0; i < allHeader.length; i++) {
+        /*初始赋值*/
+        let a = document.createElement('a');
+        a.setAttribute('href', `#${allHeader[i].id}`);
+        a.innerText = allHeader[i].text;
+        if (i == 0) {
+            box.appendChild(a);
+            /*添加新属性——便于判断节点位置*/
+            allHeader[i].node = a;
+            continue;
+        }
+        /*判断父子关系*/
+        if (allHeader[i].name > allHeader[i - 1]) {
+            /*作为子节点插入*/
+            allHeader[i - 1].node.appendChild(a);
+            allHeader[i].node = a;
+        } else if (allHeader[i].name == allHeader[i - 1]) {
+            /*作为兄弟节点插入*/
+            allHeader[i - 1].node.insertBefore(a, allHeader[i - 1].nextSibling);
+            allHeader[i].node = a;
+        } else if (allHeader[i].name < allHeader[i - 1]) {
+            /*从前往后寻找最近的兄弟节点插入*/
+            let t_node;
+            for (let j = i - 1; j >= 0; j--) {
+                if (allHeader[j].name == allHeader[i].name && allHeader[j].node) {
+                    t_node = allHeader[j].node;
+                }
+            }
+            t_node.insertBefore(a, t_node.nextSibling);
+            allHeader[i].node = a;
+        }
+    }
+}
+</script>
+
+
+
 <h2 id="2-新手必须掌握的Linux命令"><a href="#2-新手必须掌握的Linux命令" class="headerlink" title="2.新手必须掌握的Linux命令"></a>2.新手必须掌握的Linux命令</h2><h3 id="2-1查看帮助命令"><a href="#2-1查看帮助命令" class="headerlink" title="2.1查看帮助命令"></a>2.1查看帮助命令</h3><p>首先需要知道的是：命令的<strong>长格式</strong>与<strong>短格式</strong>。</p>
 <table>
 <thead>
@@ -638,8 +713,7 @@
 <h4 id="last命令"><a href="#last命令" class="headerlink" title="last命令"></a>last命令</h4><p>last命令用于产看所有系统的登陆记录，格式为：<code>last[参数]</code>。</p>
 <p>注意：这些信息都是以日志文件的形式保存在系统中，因此黑客可以很容易地对内容进行<strong>篡改</strong>。</p>
 <h4 id="history命令"><a href="#history命令" class="headerlink" title="history命令"></a>history命令</h4><p>history命令用于显示历史执行过的命令，格式为：<code>history [-c]</code>。</p>
-<p>这条指令默认输出执行过的最近1000条命令记录，可自定义<code>/etc/profile</code>文件中的<code>HISTSIZE</code>变量值。如果使用<code>-c</code></p>
-<p>参数则会清空所有的命令历史记录。</p>
+<p>这条指令默认输出执行过的最近1000条命令记录，可自定义<code>/etc/profile</code>文件中的<code>HISTSIZE</code>变量值。如果使用<code>-c</code>参数则会清空所有的命令历史记录。</p>
 <h4 id="sosreport命令"><a href="#sosreport命令" class="headerlink" title="sosreport命令"></a>sosreport命令</h4><p>sosreport命令用于收集系统配置及架构信息并输出诊断文档，格式为：<code>sosreport</code>。</p>
 <p>当Linux系统出现故障需要练习技术支持人员时，大多数时候都要先使用这个命令来简单收集系统的运行状态服务配置信息，以便让维修人员进行修理。</p>
 <h3 id="2-4工作目录切换命令"><a href="#2-4工作目录切换命令" class="headerlink" title="2.4工作目录切换命令"></a>2.4工作目录切换命令</h3><p>工作目录指的是用户当前在系统中所处的位置。</p>
@@ -1181,6 +1255,122 @@
 </tr>
 </tbody>
 </table>
+<h2 id="4-Vim编辑器与Shell命令脚本"><a href="#4-Vim编辑器与Shell命令脚本" class="headerlink" title="4.Vim编辑器与Shell命令脚本"></a>4.Vim编辑器与Shell命令脚本</h2><p>Vim编辑器就相当于Windows下面的notepad，只不过Vim提供的众多命令使得文本的编辑更加便捷；Shell命令脚本就相当于Windows下面的bash脚本，它提供了集成Linux命令的能力，使得自动化工作的实现成为可能。</p>
+<h3 id="4-1Vim编辑器"><a href="#4-1Vim编辑器" class="headerlink" title="4.1Vim编辑器"></a>4.1Vim编辑器</h3><p>Vim编辑器中设置了三种模式——命令模式、末行模式和编辑模式，每种模式分别又支持多种不同的命令快捷键，这大大提高了工作效率。</p>
+<ul>
+<li><strong>命令模式</strong>：控制光标移动，可对文本进行复制、粘贴、删除和查找等工作</li>
+<li><strong>输入模式</strong>：正常的文本输入</li>
+<li><strong>末行模式</strong>：保存或退出文档，以及设置编辑环境</li>
+</ul>
+<p>这三种模式之间的转换如下所示：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-1.png" alt="vim模式转换"></p>
+<p><strong>命令模式</strong>中常用的命令如下表：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dd</td>
+<td>删除（剪切）光标所在整行</td>
+</tr>
+<tr>
+<td>5dd</td>
+<td>删除（剪切）从光标处开始的5行</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制光标所在整行</td>
+</tr>
+<tr>
+<td>5yy</td>
+<td>复制从光标处开始的5行</td>
+</tr>
+<tr>
+<td>n</td>
+<td>显示搜索命令定位到的下一个字符串</td>
+</tr>
+<tr>
+<td>N</td>
+<td>显示搜索命令定位到的上一个字符串</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销上一步的操作</td>
+</tr>
+<tr>
+<td>p</td>
+<td>将之前删除（dd）或复制（yy）过的数据粘贴到光标后面</td>
+</tr>
+</tbody>
+</table>
+<p>末行模式用于保存或退出文件，以及设置Vim编辑器的工作环境。</p>
+<p><strong>末行模式</strong>中可用的命令如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:w</code></td>
+<td>保存</td>
+</tr>
+<tr>
+<td><code>:q</code></td>
+<td>退出</td>
+</tr>
+<tr>
+<td><code>:q!</code></td>
+<td>强制退出</td>
+</tr>
+<tr>
+<td><code>:wq!</code></td>
+<td>强制保存退出</td>
+</tr>
+<tr>
+<td><code>:set nu</code></td>
+<td>显示行号</td>
+</tr>
+<tr>
+<td><code>:set nonu</code></td>
+<td>不显示行号</td>
+</tr>
+<tr>
+<td><code>:命令</code></td>
+<td>执行该命令</td>
+</tr>
+<tr>
+<td><code>:整数</code></td>
+<td>跳转到该行</td>
+</tr>
+<tr>
+<td><code>:s/one/two</code></td>
+<td>将当前光标所在行的<strong>第一个</strong>one替换成two</td>
+</tr>
+<tr>
+<td><code>:s/one/two/g</code></td>
+<td>将当前光标所在行的所有one替换成two</td>
+</tr>
+<tr>
+<td><code>:%s/one/two/g</code></td>
+<td>将全文中的所有one替换成two</td>
+</tr>
+<tr>
+<td><code>?字符串</code></td>
+<td>在文本中从下至上搜索该字符串</td>
+</tr>
+<tr>
+<td><code>/字符串</code></td>
+<td>在文本中从上至下搜索该字符串</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -1414,7 +1604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么要学习Linux"><span class="nav-number">1.</span> <span class="nav-text">1.为什么要学习Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-新手必须掌握的Linux命令"><span class="nav-number">2.</span> <span class="nav-text">2.新手必须掌握的Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1查看帮助命令"><span class="nav-number">2.1.</span> <span class="nav-text">2.1查看帮助命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2常用的系统工作命令"><span class="nav-number">2.2.</span> <span class="nav-text">2.2常用的系统工作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo命令"><span class="nav-number">2.2.1.</span> <span class="nav-text">echo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date命令"><span class="nav-number">2.2.2.</span> <span class="nav-text">date命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reboot命令"><span class="nav-number">2.2.3.</span> <span class="nav-text">reboot命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#poweroff命令"><span class="nav-number">2.2.4.</span> <span class="nav-text">poweroff命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wget命令"><span class="nav-number">2.2.5.</span> <span class="nav-text">wget命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ps命令"><span class="nav-number">2.2.6.</span> <span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top命令"><span class="nav-number">2.2.7.</span> <span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pidof命令"><span class="nav-number">2.2.8.</span> <span class="nav-text">pidof命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kill命令"><span class="nav-number">2.2.9.</span> <span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#killall命令"><span class="nav-number">2.2.10.</span> <span class="nav-text">killall命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3系统状态检测命令"><span class="nav-number">2.3.</span> <span class="nav-text">2.3系统状态检测命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ifconfig命令"><span class="nav-number">2.3.1.</span> <span class="nav-text">ifconfig命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uname命令"><span class="nav-number">2.3.2.</span> <span class="nav-text">uname命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">2.3.3.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free命令"><span class="nav-number">2.3.4.</span> <span class="nav-text">free命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#who命令"><span class="nav-number">2.3.5.</span> <span class="nav-text">who命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#last命令"><span class="nav-number">2.3.6.</span> <span class="nav-text">last命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#history命令"><span class="nav-number">2.3.7.</span> <span class="nav-text">history命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sosreport命令"><span class="nav-number">2.3.8.</span> <span class="nav-text">sosreport命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4工作目录切换命令"><span class="nav-number">2.4.</span> <span class="nav-text">2.4工作目录切换命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd命令"><span class="nav-number">2.4.1.</span> <span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd命令"><span class="nav-number">2.4.2.</span> <span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ls命令"><span class="nav-number">2.4.3.</span> <span class="nav-text">ls命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5文本文件编辑命令"><span class="nav-number">2.5.</span> <span class="nav-text">2.5文本文件编辑命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令"><span class="nav-number">2.5.1.</span> <span class="nav-text">cat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">2.5.2.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head命令"><span class="nav-number">2.5.3.</span> <span class="nav-text">head命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tail命令"><span class="nav-number">2.5.4.</span> <span class="nav-text">tail命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tr命令"><span class="nav-number">2.5.5.</span> <span class="nav-text">tr命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc命令"><span class="nav-number">2.5.6.</span> <span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stat命令"><span class="nav-number">2.5.7.</span> <span class="nav-text">stat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cut命令"><span class="nav-number">2.5.8.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#diff命令"><span class="nav-number">2.5.9.</span> <span class="nav-text">diff命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6文件目录管理命令"><span class="nav-number">2.6.</span> <span class="nav-text">2.6文件目录管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#touch命令"><span class="nav-number">2.6.1.</span> <span class="nav-text">touch命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir命令"><span class="nav-number">2.6.2.</span> <span class="nav-text">mkdir命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp命令"><span class="nav-number">2.6.3.</span> <span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv命令"><span class="nav-number">2.6.4.</span> <span class="nav-text">mv命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm命令"><span class="nav-number">2.6.5.</span> <span class="nav-text">rm命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dd命令"><span class="nav-number">2.6.6.</span> <span class="nav-text">dd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file命令"><span class="nav-number">2.6.7.</span> <span class="nav-text">file命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7打包压缩与搜索命令"><span class="nav-number">2.7.</span> <span class="nav-text">2.7打包压缩与搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tar命令"><span class="nav-number">2.7.1.</span> <span class="nav-text">tar命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep命令"><span class="nav-number">2.7.2.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find命令"><span class="nav-number">2.7.3.</span> <span class="nav-text">find命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-管道符、重定向与环境变量"><span class="nav-number">3.</span> <span class="nav-text">3.管道符、重定向与环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1输入输出重定向"><span class="nav-number">3.1.</span> <span class="nav-text">3.1输入输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入重定向"><span class="nav-number">3.1.1.</span> <span class="nav-text">输入重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出重定向"><span class="nav-number">3.1.2.</span> <span class="nav-text">输出重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2管道命令符"><span class="nav-number">3.2.</span> <span class="nav-text">3.2管道命令符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3命令行的通配符"><span class="nav-number">3.3.</span> <span class="nav-text">3.3命令行的通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4常见且有用的转义字符"><span class="nav-number">3.4.</span> <span class="nav-text">3.4常见且有用的转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5重要的环境变量"><span class="nav-number">3.5.</span> <span class="nav-text">3.5重要的环境变量</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么要学习Linux"><span class="nav-number">1.</span> <span class="nav-text">1.为什么要学习Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-新手必须掌握的Linux命令"><span class="nav-number">2.</span> <span class="nav-text">2.新手必须掌握的Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1查看帮助命令"><span class="nav-number">2.1.</span> <span class="nav-text">2.1查看帮助命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2常用的系统工作命令"><span class="nav-number">2.2.</span> <span class="nav-text">2.2常用的系统工作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo命令"><span class="nav-number">2.2.1.</span> <span class="nav-text">echo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date命令"><span class="nav-number">2.2.2.</span> <span class="nav-text">date命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reboot命令"><span class="nav-number">2.2.3.</span> <span class="nav-text">reboot命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#poweroff命令"><span class="nav-number">2.2.4.</span> <span class="nav-text">poweroff命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wget命令"><span class="nav-number">2.2.5.</span> <span class="nav-text">wget命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ps命令"><span class="nav-number">2.2.6.</span> <span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top命令"><span class="nav-number">2.2.7.</span> <span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pidof命令"><span class="nav-number">2.2.8.</span> <span class="nav-text">pidof命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kill命令"><span class="nav-number">2.2.9.</span> <span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#killall命令"><span class="nav-number">2.2.10.</span> <span class="nav-text">killall命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3系统状态检测命令"><span class="nav-number">2.3.</span> <span class="nav-text">2.3系统状态检测命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ifconfig命令"><span class="nav-number">2.3.1.</span> <span class="nav-text">ifconfig命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uname命令"><span class="nav-number">2.3.2.</span> <span class="nav-text">uname命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">2.3.3.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free命令"><span class="nav-number">2.3.4.</span> <span class="nav-text">free命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#who命令"><span class="nav-number">2.3.5.</span> <span class="nav-text">who命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#last命令"><span class="nav-number">2.3.6.</span> <span class="nav-text">last命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#history命令"><span class="nav-number">2.3.7.</span> <span class="nav-text">history命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sosreport命令"><span class="nav-number">2.3.8.</span> <span class="nav-text">sosreport命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4工作目录切换命令"><span class="nav-number">2.4.</span> <span class="nav-text">2.4工作目录切换命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd命令"><span class="nav-number">2.4.1.</span> <span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd命令"><span class="nav-number">2.4.2.</span> <span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ls命令"><span class="nav-number">2.4.3.</span> <span class="nav-text">ls命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5文本文件编辑命令"><span class="nav-number">2.5.</span> <span class="nav-text">2.5文本文件编辑命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令"><span class="nav-number">2.5.1.</span> <span class="nav-text">cat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">2.5.2.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head命令"><span class="nav-number">2.5.3.</span> <span class="nav-text">head命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tail命令"><span class="nav-number">2.5.4.</span> <span class="nav-text">tail命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tr命令"><span class="nav-number">2.5.5.</span> <span class="nav-text">tr命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc命令"><span class="nav-number">2.5.6.</span> <span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stat命令"><span class="nav-number">2.5.7.</span> <span class="nav-text">stat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cut命令"><span class="nav-number">2.5.8.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#diff命令"><span class="nav-number">2.5.9.</span> <span class="nav-text">diff命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6文件目录管理命令"><span class="nav-number">2.6.</span> <span class="nav-text">2.6文件目录管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#touch命令"><span class="nav-number">2.6.1.</span> <span class="nav-text">touch命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir命令"><span class="nav-number">2.6.2.</span> <span class="nav-text">mkdir命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp命令"><span class="nav-number">2.6.3.</span> <span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv命令"><span class="nav-number">2.6.4.</span> <span class="nav-text">mv命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm命令"><span class="nav-number">2.6.5.</span> <span class="nav-text">rm命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dd命令"><span class="nav-number">2.6.6.</span> <span class="nav-text">dd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file命令"><span class="nav-number">2.6.7.</span> <span class="nav-text">file命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7打包压缩与搜索命令"><span class="nav-number">2.7.</span> <span class="nav-text">2.7打包压缩与搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tar命令"><span class="nav-number">2.7.1.</span> <span class="nav-text">tar命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep命令"><span class="nav-number">2.7.2.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find命令"><span class="nav-number">2.7.3.</span> <span class="nav-text">find命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-管道符、重定向与环境变量"><span class="nav-number">3.</span> <span class="nav-text">3.管道符、重定向与环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1输入输出重定向"><span class="nav-number">3.1.</span> <span class="nav-text">3.1输入输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入重定向"><span class="nav-number">3.1.1.</span> <span class="nav-text">输入重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出重定向"><span class="nav-number">3.1.2.</span> <span class="nav-text">输出重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2管道命令符"><span class="nav-number">3.2.</span> <span class="nav-text">3.2管道命令符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3命令行的通配符"><span class="nav-number">3.3.</span> <span class="nav-text">3.3命令行的通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4常见且有用的转义字符"><span class="nav-number">3.4.</span> <span class="nav-text">3.4常见且有用的转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5重要的环境变量"><span class="nav-number">3.5.</span> <span class="nav-text">3.5重要的环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Vim编辑器与Shell命令脚本"><span class="nav-number">4.</span> <span class="nav-text">4.Vim编辑器与Shell命令脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1Vim编辑器"><span class="nav-number">4.1.</span> <span class="nav-text">4.1Vim编辑器</span></a></li></ol></li></ol></div>
             
 
           </div>
