@@ -1,1 +1,79 @@
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseint(c a)))+((c="c%a)">35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('\'Y X\';V.U=u(){A({q:\'15-Z\',r:\'12\'})};u A(b){8 p=b.p,q=b.q,b$h=b.h,h=b$h===14?\'11\':b$h,r=b.r;8 s=w 0,o=w 0;p?s=t.E(p):s=t.13(h+\'.\'+q);o=t.E(r);8 K={\'C\':[\'g:T-e\',\'n:m\'],\'I\':[\'g:e\',\'f-k:1%\',\'n:m\'],\'H\':[\'g:e\',\'f-k:3%\',\'n:m\'],\'y\':[\'g:e\',\'f-k:5%\',\'n:m\'],\'B\':[\'g:e\',\'f-k:7%\',\'n:m\'],\'z\':[\'g:e\',\'f-k:9%\']};o.L=\'1n:1o%;1l:1k;1m:G;f: 0 G;\';8 2=1j D();D.1b(s.1a).19(u(6,18){d([\'C\',\'I\',\'H\',\'y\',\'B\',\'z\'].1f(6.F)){6.l=6.l||6.S(\'1e\',6.v);2.10({\'4\':6.F,\'l\':6.l,\'M\':6.v})}});1g.1h(2);N(8 i=0;i<2.1d;i++){8 a="t.1c(\'a\');a.S(\'17\',\'#\'+2[i].l);a.L=K[2[i].4].1i(\';\');a.v=2[i].M;d(i==0){o.O(a);2[i].c=a;16}d(2[i].4">2[i-1].4){2[i-1].c.O(a);2[i].c=a}P d(2[i].4==2[i-1].4){2[i-1].c.J.Q(a,R);2[i].c=a}P d(2[i].4<2[i-1].4){8 x="w" 0;n(8 j="i-1;j">=0;j--){d(2[j].4===2[i].4){x=2[j].c;W}}x.J.Q(a,R);2[i].c=a}}}',62,87,'||allHeader||name||value||var|||_ref|node|if|block|margin|display|Type|||left|id|none|border|box|Id|Class|box_id|container|document|function|innerText|void|t_node|H4|H6|header_in_block|H5|H1|Array|getElementById|nodeName|auto|H3|H2|parentNode|styles|style|text|for|appendChild|else|insertBefore|null|setAttribute|inline|onload|window|break|strict|use|body|push|div|_menu|querySelector|undefined|post|continue|href|index|map|childNodes|from|createElement|length|test|includes|console|log|join|new|200px|height|overflow|width|80'.split('|'),0,{}))</2[i-1].4){8></2.1d;i++){8></a?'':e(parseint(c>
+ window.onload=function(){
+        header_in_block({Class:'post-body',box_id:'_menu'});
+    };
+/*选择区域内的标题列表*/
+function header_in_block({
+	Id,
+	/*提取容器id*/
+	Class,
+	/*提取容器class*/
+	Type = 'div',
+	/*提取容器类型*/
+	box_id /*填充容器id*/
+}) {
+	/*初始容器*/
+	let container, box;
+	Id ? container = document.getElementById(Id) :
+		container = document.querySelector(`${Type}.${Class}`);
+	box = document.getElementById(box_id);
+	/*初始样式*/
+	let styles = {
+		'H1': ['display:inline-block', 'border:none'],
+		'H2': ['display:block', 'margin-left:1%', 'border:none'],
+		'H3': ['display:block', 'margin-left:3%', 'border:none'],
+		'H4': ['display:block', 'margin-left:5%', 'border:none'],
+		'H5': ['display:block', 'margin-left:7%', 'border:none'],
+		'H6': ['display:block', 'margin-left:9%']
+	}
+    box.style = 'width:80%;height:200px;overflow:auto;margin: 0 auto;';
+	/*获取所有标题节点*/
+	let allHeader = new Array();
+	(Array.from(container.childNodes)).map((value, index) => {
+		if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(value.nodeName)) {
+			/*如果存在id则获取id，如果不存在则分配id*/
+			value.id = value.id || value.setAttribute('test', value.innerText);
+			allHeader.push({
+				'name': value.nodeName,
+				'id': value.id,
+				'text': value.innerText
+			});
+		}
+	});
+	console.log(allHeader)
+	/*将结果直接插入到网页中*/
+	/*依据offset进行排列*/
+	for (let i = 0; i < allHeader.length; i++) {
+		/*初始赋值*/
+		let a = document.createElement('a');
+		a.setAttribute('href', `#${allHeader[i].id}`);
+		a.style = styles[allHeader[i].name].join(';');
+		a.innerText = allHeader[i].text;
+		if (i == 0) {
+			box.appendChild(a);
+			/*添加新属性——便于判断节点位置*/
+			allHeader[i].node = a;
+			continue;
+		}
+		/*判断父子关系*/
+		if (allHeader[i].name > allHeader[i - 1].name) {
+			/*作为子节点插入*/
+			allHeader[i - 1].node.appendChild(a);
+			allHeader[i].node = a;
+		} else if (allHeader[i].name == allHeader[i - 1].name) {
+			/*作为兄弟节点插入*/
+			allHeader[i - 1].node.parentNode.insertBefore(a, null);
+			allHeader[i].node = a;
+		} else if (allHeader[i].name < allHeader[i - 1].name) {
+			/*从前往后寻找最近的兄弟节点插入*/
+			let t_node;
+			for (let j = i - 1; j >= 0; j--) {
+				if (allHeader[j].name === allHeader[i].name) {
+					t_node = allHeader[j].node;
+					break;
+				}
+			}
+			t_node.parentNode.insertBefore(a, null);
+			allHeader[i].node = a;
+		}
+	}
+}
