@@ -104,22 +104,25 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="keywords" content="Blog,博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飘">
-<meta property="og:url" content="http://seefun.club/special/first.html">
+  <meta name="description" content="题目请你来实现一个 atoi 函数，使其能将字符串转换成整数。 在任何情况下，若函数不能进行有效的转换时，请返回 0。">
+<meta name="keywords" content="-JavaScript,-LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode之“字符串转为整数”">
+<meta property="og:url" content="http://seefun.club/2019/04/01/String-to-Integer/index.html">
 <meta property="og:site_name" content="飘">
+<meta property="og:description" content="题目请你来实现一个 atoi 函数，使其能将字符串转换成整数。 在任何情况下，若函数不能进行有效的转换时，请返回 0。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T13:54:06.081Z">
+<meta property="og:updated_time" content="2019-04-01T14:06:51.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飘">
+<meta name="twitter:title" content="LeetCode之“字符串转为整数”">
+<meta name="twitter:description" content="题目请你来实现一个 atoi 函数，使其能将字符串转换成整数。 在任何情况下，若函数不能进行有效的转换时，请返回 0。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/special/first.html">
+  <link rel="canonical" href="http://seefun.club/2019/04/01/String-to-Integer/">
 
 
 
@@ -129,7 +132,7 @@
   };
 </script>
 
-  <title> | 飘</title>
+  <title>LeetCode之“字符串转为整数” | 飘</title>
   
 
 
@@ -271,22 +274,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -313,53 +300,227 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/01/String-to-Integer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张可携">
+      <meta itemprop="description" content="前端学习中">
+      <meta itemprop="image" content="/images/profilePhoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飘">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">
-
-</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h2 class="post-title" itemprop="name headline">LeetCode之“字符串转为整数”
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-01 21:15:15 / 修改时间：22:06:51" itemprop="dateCreated datePublished" datetime="2019-04-01T21:15:15+08:00">2019-04-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">-算法</span></a></span>
+
+                
+                
+              
+            </span>
           
 
-	<div class="row">
-    <embed src="./pdfs/中国式财政分权与区域创新能力_基_省略_创新产出及要素市场扭曲的解释框架_薛婧.pdf" width="100%" height="550" type="application/pdf">
-	</div>
+          
+            
+            
+          
 
+          
+          
 
+          
 
+          
 
-        
-      </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>请你来实现一个 <code>atoi</code> 函数，使其能将字符串转换成整数。</p>
+<p>在任何情况下，若函数不能进行有效的转换时，请返回 0。</p>
+<a id="more"></a>
+<p><strong>说明：</strong></p>
+<p>假设我们的环境只能存储32位大小的有符号整数，那么其数值范围为[−2^31 , 2^31−1]。如果数值超过这个范围，请返回INT_MAX或INT_MIN。</p>
+<p>Implement <code>atoi</code> which converts a string to an integer.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Only the space character <code>&#39; &#39;</code> is considered as whitespace character.</li>
+<li>Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.</li>
+</ul>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;   -42&quot;</span><br><span class="line">Output: -42</span><br><span class="line">Explanation: The first non-whitespace character is &apos;-&apos;, which is the minus sign.</span><br><span class="line">             Then take as many numerical digits as possible, which gets 42.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;words and 987&quot;</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: The first non-whitespace character is &apos;w&apos;, which is not a numerical </span><br><span class="line">             digit or a +/- sign. Therefore no valid conversion could be performed.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;-91283472332&quot;</span><br><span class="line">Output: -2147483648</span><br><span class="line">Explanation: The number &quot;-91283472332&quot; is out of the range of a 32-bit signed integer.</span><br><span class="line">             Thefore INT_MIN (−231) is returned.</span><br></pre></td></tr></table></figure>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>说曹操，曹操到。</p>
+<p>我刚一头雾水地写了<a href="http://www.seefun.club/2019/03/30/Number-in-JavaScript/" target="_blank" rel="noopener">我不知道的Number</a>，就又遇到了关于数字转换的问题。</p>
+<p>但是，总感觉这道题毫无意义，在生产环境下，我们尽可能的使用着官方提供的可爱<code>API</code>们。</p>
+<p>就像这道题一样，<code>parseInt()</code>函数完全可以胜任题目功能。</p>
+<p>当然，如果是其它语言，实现这个功能也很简单。</p>
+<p>总的来说，以算法角度来讲，是失败的。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>你需要注意的是：</p>
+<ul>
+<li>在<code>JavaScript</code>中，<code>NaN</code>是唯一一个与自己不相等的人，更不要说严格相等了，判断一个数是不是<code>NaN</code>的方法是全局函数<code>isNaN()</code></li>
+<li><code>NaN</code>的类型居然是<code>Number</code></li>
+</ul>
+<p>利用<code>parseInt()</code>，并对计算值进行范围、<code>NaN</code>判断，并做相应处理即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; str</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> myAtoi = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ans;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        ans=<span class="built_in">parseInt</span>(str);</span><br><span class="line">    &#125;<span class="keyword">catch</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">isNaN</span>(ans)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(ans)&gt;<span class="number">0x7FFFFFFF</span>) <span class="keyword">return</span> ans&lt;<span class="number">0</span> ? -<span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">31</span>) : <span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">31</span>)<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>异常捕获不是必须的。</p>
+<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>Runtime:  <strong>84 ms</strong></p>
+<p>Memory Usage: <strong>35.6 MB</strong></p>
+<p>Status:  <strong>Accepted</strong></p>
+<p>faster than <strong>93.83%</strong> of JavaScript online submissions</p>
+<p>less than <strong>86.90%</strong> of JavaScript online submissions</p>
+<h2 id="改良"><a href="#改良" class="headerlink" title="改良"></a>改良</h2><p>又遇到大佬了 = =</p>
+<p>巧妙的构思让我甘拜下风。</p>
+<p>强！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; str</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> myAtoi = <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(<span class="built_in">Math</span>.min(<span class="built_in">parseInt</span>(str) || <span class="number">0</span>, <span class="number">2147483647</span>), <span class="number">-2147483648</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Runtime:  <strong>80 ms</strong></p>
+<p>Memory Usage: <strong>35.8 MB</strong></p>
+<p>Status:  <strong>Accepted</strong></p>
+<p>faster than <strong>96.84%</strong> of JavaScript online submissions</p>
+<p>less than <strong>66.21%</strong> of JavaScript online submissions</p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
+          
+            <a href="/tags/LeetCode/" rel="tag"># -LeetCode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/30/Number-in-JavaScript/" rel="next" title="我不知道的Number">
+                <i class="fa fa-chevron-left"></i> 我不知道的Number
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -393,8 +554,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -515,6 +685,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩"><span class="nav-number">4.</span> <span class="nav-text">成绩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改良"><span class="nav-number">5.</span> <span class="nav-text">改良</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -665,7 +852,7 @@
   
     <script>
   window.livereOptions = {
-    refer: 'special/first.html'
+    refer: '2019/04/01/String-to-Integer/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
