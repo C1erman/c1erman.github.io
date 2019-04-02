@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.club/2019/04/02/Palindrome-Number/</loc>
+    <lastmod>2019-04-02</lastmod>
+  </url>  <url>
+    <loc>http://seefun.club/2019/03/30/Number-in-JavaScript/</loc>
+    <lastmod>2019-04-02</lastmod>
+  </url>  <url>
+    <loc>http://seefun.club/2019/04/01/String-to-Integer/</loc>
+    <lastmod>2019-04-02</lastmod>
+  </url>  <url>
     <loc>http://seefun.club/2019/03/17/about-DOCTYPE/</loc>
     <lastmod>2019-04-01</lastmod>
   </url>  <url>
@@ -25,14 +34,8 @@
     <loc>http://seefun.club/2019/03/01/Two-Sum-Js/</loc>
     <lastmod>2019-04-01</lastmod>
   </url>  <url>
-    <loc>http://seefun.club/2019/04/01/String-to-Integer/</loc>
-    <lastmod>2019-04-01</lastmod>
-  </url>  <url>
     <loc>http://seefun.club/2019/03/13/first-face-linux/</loc>
     <lastmod>2019-04-01</lastmod>
-  </url>  <url>
-    <loc>http://seefun.club/2019/03/30/Number-in-JavaScript/</loc>
-    <lastmod>2019-03-31</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2018/09/11/first-blog/</loc>
     <lastmod>2019-03-31</lastmod>
