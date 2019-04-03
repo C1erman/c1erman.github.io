@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.club/2019/03/13/first-face-linux/</loc>
+    <lastmod>2019-04-03</lastmod>
+  </url>  <url>
     <loc>http://seefun.club/2019/04/02/Palindrome-Number/</loc>
     <lastmod>2019-04-02</lastmod>
   </url>  <url>
@@ -32,9 +35,6 @@
     <lastmod>2019-04-01</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/03/01/Two-Sum-Js/</loc>
-    <lastmod>2019-04-01</lastmod>
-  </url>  <url>
-    <loc>http://seefun.club/2019/03/13/first-face-linux/</loc>
     <lastmod>2019-04-01</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2018/09/11/first-blog/</loc>
