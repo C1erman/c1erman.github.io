@@ -1,3 +1,15 @@
+//添加事件监听器
+window.addEventListener('load', toUse, false);
+window.addEventListener('resize', toUse, false);
+//判断何时调用函数
+function toUse() {
+	let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	w <= 450 || h <="800" ? (document.getelementbyid('_menu').innerhtml header_in_block({ class: 'post-body' })) : clearspace('_menu'); } *清除占据空间* var clearspace="(id)" => {
+	let box = document.getElementById(id);
+	box.innerHTML = '';
+	box.style = '';
+}
 /*选择区域内的标题列表*/
 var header_in_block = ({
 	Id,
@@ -6,7 +18,7 @@ var header_in_block = ({
 	/*提取容器class*/
 	Type = 'div',
 	/*提取容器类型*/
-	box_id /*填充容器id*/
+	box_id = '_menu' /*填充容器id*/
 }) => {
 	/*初始容器*/
 	let container, box;
@@ -22,15 +34,16 @@ var header_in_block = ({
 		'H5': ['display:block', 'margin-left:7%', 'border:none'],
 		'H6': ['display:block', 'margin-left:9%']
 	}
+	box.style = "width:82%;height:300px;overflow:auto;margin:0px auto;";
 	/*获取所有标题节点*/
 	let allHeader = new Array();
 	(Array.from(container.childNodes)).map((value, index) => {
 		if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(value.nodeName)) {
 			/*如果存在id则获取id，如果不存在则分配id*/
-			value.id = value.id || value.setAttribute('test', value.innerText);
+			value.id = value.id || value.setAttribute('given_id', value.innerText);
 			allHeader.push({
 				'name': value.nodeName,
-				'id': value.id,
+				'id': value.id || given_id,
 				'text': value.innerText
 			});
 		}
@@ -85,4 +98,4 @@ var _TREE = function(data) {
 }
 _TREE.prototype. = function(argument) {
 
-};
+};</=>
