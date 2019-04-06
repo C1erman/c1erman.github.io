@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://seefun.club/2019/04/06/Loose-equality-in-JavaScript/</loc>
+    
+    <lastmod>2019-04-06T13:27:04.498Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seefun.club/2019/03/30/Number-in-JavaScript/</loc>
+    
+    <lastmod>2019-04-06T13:04:05.941Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seefun.club/2019/03/13/first-face-linux/</loc>
     
     <lastmod>2019-04-06T02:45:52.841Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://seefun.club/2019/04/02/Palindrome-Number/</loc>
     
     <lastmod>2019-04-02T08:37:49.604Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seefun.club/2019/03/30/Number-in-JavaScript/</loc>
-    
-    <lastmod>2019-04-02T08:19:19.453Z</lastmod>
     
   </url>
   

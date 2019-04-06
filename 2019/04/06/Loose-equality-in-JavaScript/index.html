@@ -104,25 +104,25 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="我认为最愚蠢的事情莫过于——低效率的重复作业。这些东西就应该从根本上被消灭。">
-<meta name="keywords" content="-JavaScript">
+  <meta name="description" content="从数据类型开始原始数据类型とは原始数据类型（primitive data type）多数人习惯叫做基本数据类型。 按照MDN的解释：  In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are 6 prim">
+<meta name="keywords" content="-JavaScript,-运算符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用JavaScript实现刷课">
-<meta property="og:url" content="http://seefun.club/2019/01/28/script-repeat-learning/index.html">
+<meta property="og:title" content="我不知道的==运算符">
+<meta property="og:url" content="http://seefun.club/2019/04/06/Loose-equality-in-JavaScript/index.html">
 <meta property="og:site_name" content="飘">
-<meta property="og:description" content="我认为最愚蠢的事情莫过于——低效率的重复作业。这些东西就应该从根本上被消灭。">
+<meta property="og:description" content="从数据类型开始原始数据类型とは原始数据类型（primitive data type）多数人习惯叫做基本数据类型。 按照MDN的解释：  In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are 6 prim">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-09T13:39:43.154Z">
+<meta property="og:updated_time" content="2019-04-06T13:27:04.498Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用JavaScript实现刷课">
-<meta name="twitter:description" content="我认为最愚蠢的事情莫过于——低效率的重复作业。这些东西就应该从根本上被消灭。">
+<meta name="twitter:title" content="我不知道的==运算符">
+<meta name="twitter:description" content="从数据类型开始原始数据类型とは原始数据类型（primitive data type）多数人习惯叫做基本数据类型。 按照MDN的解释：  In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are 6 prim">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/01/28/script-repeat-learning/">
+  <link rel="canonical" href="http://seefun.club/2019/04/06/Loose-equality-in-JavaScript/">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>利用JavaScript实现刷课 | 飘</title>
+  <title>我不知道的==运算符 | 飘</title>
   
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/01/28/script-repeat-learning/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/06/Loose-equality-in-JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -331,7 +331,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">利用JavaScript实现刷课
+          <h2 class="post-title" itemprop="name headline">我不知道的==运算符
 
               
             
@@ -357,24 +357,12 @@
                 
               
 
-              <time title="创建时间：2019-01-28 19:22:34" itemprop="dateCreated datePublished" datetime="2019-01-28T19:22:34+08:00">2019-01-28</time>
+              <time title="创建时间：2019-04-06 11:23:14 / 修改时间：21:27:04" itemprop="dateCreated datePublished" datetime="2019-04-06T11:23:14+08:00">2019-04-06</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-09 21:39:43" itemprop="dateModified" datetime="2019-03-09T21:39:43+08:00">2019-03-09</time>
               
             
           </span>
@@ -391,7 +379,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">-JavaScript</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/我不知道的JavaScript/" itemprop="url" rel="index"><span itemprop="name">-我不知道的JavaScript</span></a></span>
 
                 
                 
@@ -426,31 +414,173 @@
       
 
       
-        <p>我认为最愚蠢的事情莫过于——低效率的重复作业。这些东西就应该从根本上被消灭。</p>
-<a id="more"></a>
-<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>前段时间，在应付考试复习闲暇，忽然想起了学院颁给我们的任务：在微信平台上参与一个新生安全教育、国防教育的学习。</p>
-<p>当时碍于时间有限，便没有将其放在心上，姑且大致看了一两课的内容便去准备其它科目的考试了。之后决定完成这项任务的，便是听闻其他同学花了些钱请人帮忙代刷。当时我并没有动这种心思，反而有些轻视那些走捷径的同学，虽然人家只不过是合理消费罢了。</p>
-<p>或许是这个刷新——扫一眼——划到底——刷新的重复劳动实在让人厌烦，周围不少同学都乖乖掏了钱。</p>
-<p>嗯，有点兴趣。</p>
-<p>想起了<a href="https://blog.codinghorror.com/the-principle-of-least-power/" target="_blank" rel="noopener">Atwood定律</a>的我决定自己试一试。</p>
-<h2 id="摸索"><a href="#摸索" class="headerlink" title="摸索"></a>摸索</h2><p>动了这种念头之后，我便开始着手建立思路。在我漫无目的地进行思考时，有幸看到了<a href="https://www.zhihu.com/question/22297236" target="_blank" rel="noopener">一个回答</a>，好吧，只不过是向服务器中特定的后台脚本发送请求而已。</p>
-<p>所以我们需要做的就是，通过观察网址、查看网页源代码、以“持续日志”记录网络请求，得到我们想要的后台脚本地址、请求发送参数。</p>
-<h2 id="可行性研究"><a href="#可行性研究" class="headerlink" title="可行性研究"></a>可行性研究</h2><p>倘若你跟我说，让我写个脚本实现盈利性操作，我绝对会以看猴子的眼神去看你——是否违反法律暂且不表，网站的安全性、复杂度能超乎你的想象。随便让我这种外行人举一个例子：每次请求均生成一个带有时效性的<a href="http://www.cnblogs.com/bukudekong/p/3829875.html" target="_blank" rel="noopener">token</a>，就能除去绝大部分非法请求。</p>
-<p>得益于该学习平台以公众号形式而不是小程序形式（暂不支持网页打开）进行投放，以及平台欠缺安全性防卫措施，<del>就给了我这种投机分子一定的机会</del>。</p>
-<p>经过多次尝试之后，不怎么费力就找到了我感兴趣的东西。</p>
-<p>获取课程列表的请求：</p>
-<p><a href="http://example.com/pharos/usercourse/listCourse.do?timestamp=1545534138" target="_blank" rel="noopener">http://example.com/pharos/usercourse/listCourse.do?timestamp=1545534138</a></p>
-<p>获取课程完成的允许：</p>
-<p><a href="http://example.com/pharos/usercourse/study.do?timestamp=1545534138" target="_blank" rel="noopener">http://example.com/pharos/usercourse/study.do?timestamp=1545534138</a></p>
-<p>每一课完成之后的请求：</p>
-<p><a href="http://example.com/pharos/usercourse/getCourseUrl.do?timestamp=1545534138" target="_blank" rel="noopener">http://example.com/pharos/usercourse/getCourseUrl.do?timestamp=1545534138</a></p>
-<p><a href="http://example.com/pharos/usercourse/finish.do" target="_blank" rel="noopener">http://example.com/pharos/usercourse/finish.do</a></p>
-<p>接下来，只要按照顺序，提供所需要的参数，进行请求即可。</p>
-<p>其实，最关键的思路不外乎流程、请求、参数这三方面。</p>
-<h2 id="快速原型开发"><a href="#快速原型开发" class="headerlink" title="快速原型开发"></a>快速原型开发</h2><p>以下为大致流程，权作参考：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//java中有特定的函数，js没提供：一个字符串是否在数组中</span></span><br><span class="line">    <span class="built_in">Array</span>.prototype.contains=<span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> index=<span class="keyword">this</span>.length;</span><br><span class="line">        <span class="keyword">while</span>(index--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>[index] === obj)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">some</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">/*获取课程列表*/</span></span><br><span class="line">        <span class="keyword">let</span> course=<span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">        <span class="keyword">let</span> date=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">        <span class="keyword">let</span> timestamp=date.getTime().toString().substring(<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">        <span class="comment">/*一些随用户改变的参数*/</span></span><br><span class="line">        <span class="keyword">let</span> userProjectId=<span class="string">"xxxxxxx-xxxxxxx-xxxxxxx"</span>;</span><br><span class="line">        <span class="keyword">let</span> chooseType=<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">let</span> tenantCode=<span class="string">"xxxxxxxxx"</span>;</span><br><span class="line">        <span class="keyword">let</span> name=<span class="string">""</span>;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">            url: <span class="string">"http://example.com/pharos/usercourse/listCourse.do?timestamp="</span>+timestamp,</span><br><span class="line">            type: <span class="string">"POST"</span>,</span><br><span class="line">            dataType: <span class="string">"json"</span>,</span><br><span class="line">            data: &#123;<span class="string">"userProjectId"</span>:userProjectId,<span class="string">"chooseType"</span>:chooseType,<span class="string">"tenantCode"</span>:tenantCode,<span class="string">"name"</span>:name&#125;,</span><br><span class="line">            timeout: <span class="number">5000</span>,</span><br><span class="line">            success : <span class="function"><span class="keyword">function</span> (<span class="params">DATA</span>) </span>&#123;</span><br><span class="line">                <span class="comment">/*获取课程列表*/</span></span><br><span class="line">                <span class="keyword">let</span> &#123;code,data&#125;=DATA;</span><br><span class="line">                <span class="keyword">let</span> course_data=data;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;course_data.length;i++)&#123;</span><br><span class="line">                    <span class="keyword">let</span> &#123;categoryCode,courseList&#125;=course_data[i];</span><br><span class="line">                    <span class="keyword">let</span> to_push=<span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;courseList.length;j++)&#123;</span><br><span class="line">                        <span class="keyword">let</span> &#123;finished,resourceId&#125;=courseList[j];</span><br><span class="line">                        <span class="comment">/*通过观察，为1时则已经完成*/</span></span><br><span class="line">                        <span class="keyword">if</span>(finished!=<span class="number">1</span>)&#123;</span><br><span class="line">                            <span class="comment">/*压入数组*/</span></span><br><span class="line">                            to_push.push(resourceId);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">/*course是一个二维数组，存放所有未完成的课程的resourceId*/</span></span><br><span class="line">                    course.push(to_push);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            error: <span class="function"><span class="keyword">function</span> (<span class="params">XMLHttpRequest, textStatus, errorThrown</span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"错误"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*开始刷课*/</span></span><br><span class="line">        <span class="comment">/*将course转为一维数组，并得到course的总长度*/</span></span><br><span class="line">        <span class="keyword">var</span> all_course=[].concat.apply([],course);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;all_course.length;i++)&#123;</span><br><span class="line">            <span class="keyword">let</span> url;</span><br><span class="line">            <span class="comment">/*发送请求获得允许，这一步是必须的*/</span></span><br><span class="line">            <span class="comment">/*时间戳，由观察所得*/</span></span><br><span class="line">            <span class="keyword">let</span> date=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">            <span class="keyword">let</span> timestamp=date.getTime().toString().substring(<span class="number">0</span>,<span class="number">10</span>);</span><br><span class="line">            <span class="comment">/*需要发送的信息，注意会发生改变*/</span></span><br><span class="line">            <span class="keyword">let</span> data=&#123;<span class="attr">userProjectId</span>:userProjectId,<span class="attr">courseId</span>:all_course[i],</span><br><span class="line">                tenantCode:tenantCode&#125;;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">                url: <span class="string">"http://example.com/pharos/usercourse/study.do?timestamp="</span>+timestamp,</span><br><span class="line">                type: <span class="string">"POST"</span>,</span><br><span class="line">                dataType: <span class="string">"json"</span>,</span><br><span class="line">                data: data,</span><br><span class="line">                timeout: <span class="number">5000</span>,</span><br><span class="line"></span><br><span class="line">                success : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"以获取课程允许"</span>);</span><br><span class="line">                &#125;,</span><br><span class="line">                error: <span class="function"><span class="keyword">function</span> (<span class="params">XMLHttpRequest, textStatus, errorThrown</span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"错误"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">/*在获取允许后，同时再发送一个请求*/</span></span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">                url: <span class="string">"http://example.com/pharos/usercourse/getCourseUrl.do?timestamp="</span>+timestamp,</span><br><span class="line">                type: <span class="string">"POST"</span>,</span><br><span class="line">                dataType: <span class="string">"json"</span>,</span><br><span class="line">                data: data,</span><br><span class="line">                timeout: <span class="number">5000</span>,</span><br><span class="line">                success : <span class="function"><span class="keyword">function</span> (<span class="params">DATA</span>) </span>&#123;</span><br><span class="line">                    <span class="comment">/*获取到url*/</span></span><br><span class="line">                    <span class="keyword">let</span> &#123;code,data&#125;=DATA;</span><br><span class="line">                    url=data;</span><br><span class="line">                    <span class="comment">/*刷课*/</span></span><br><span class="line">                    <span class="keyword">var</span> userid = getQueryByName(url,<span class="string">"userCourseId"</span>);</span><br><span class="line">                    <span class="keyword">var</span> jiaoxuejihuaid = getQueryByName(url,<span class="string">"tenantCode"</span>,);</span><br><span class="line">                    <span class="keyword">var</span> finishData = &#123;<span class="string">"userCourseId"</span>: userid, <span class="string">"tenantCode"</span>: jiaoxuejihuaid&#125;;</span><br><span class="line">                    $.ajax(&#123;</span><br><span class="line">                        <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">                        url: <span class="string">"http://example.com/pharos/usercourse/finish.do"</span>,</span><br><span class="line">                        type: <span class="string">"GET"</span>,</span><br><span class="line">                        dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">                        data: finishData,</span><br><span class="line">                        timeout: <span class="number">5000</span>,</span><br><span class="line">                        success : <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;<span class="comment">//客户端jquery预先定义好的callback函数,成功获取跨域服务器上的json数据后,会动态执行这个callback函数</span></span><br><span class="line">                            <span class="keyword">if</span> (data.msg == <span class="string">"ok"</span>) &#123;</span><br><span class="line">                                <span class="comment">/*休眠一会，防止过快*/</span></span><br><span class="line">                                setTimeout(<span class="number">5000</span>);</span><br><span class="line">                            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                                alert(<span class="string">"发送完成失败"</span>);</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;,</span><br><span class="line">                        error: <span class="function"><span class="keyword">function</span> (<span class="params">XMLHttpRequest, textStatus, errorThrown</span>) </span>&#123;</span><br><span class="line">                            alert(<span class="string">"错误"</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                error: <span class="function"><span class="keyword">function</span> (<span class="params">XMLHttpRequest, textStatus, errorThrown</span>) </span>&#123;</span><br><span class="line">                    alert(<span class="string">"错误"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*根据参数名字取得url中的参数*/</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getQueryByName</span>(<span class="params">url,name</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> reg=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'[?&amp;]'</span>+name+<span class="string">'=([^&amp;#]+)'</span>,<span class="string">'i'</span>);</span><br><span class="line">        <span class="keyword">var</span> query=url.match(reg);</span><br><span class="line">        <span class="built_in">console</span>.log(query);</span><br><span class="line">        <span class="keyword">return</span> query?query[<span class="number">1</span>]:<span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>关于上述代码中JSON与JSONP的关系，请看<a href="http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html" target="_blank" rel="noopener">这里</a>。</p>
-
+        <h2 id="从数据类型开始"><a href="#从数据类型开始" class="headerlink" title="从数据类型开始"></a>从数据类型开始</h2><h3 id="原始数据类型とは"><a href="#原始数据类型とは" class="headerlink" title="原始数据类型とは"></a>原始数据类型とは</h3><p><strong>原始数据类型</strong>（primitive data type）多数人习惯叫做<strong>基本数据类型</strong>。</p>
+<p>按照<a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank" rel="noopener">MDN的解释</a>：</p>
+<blockquote>
+<p>In <a href="https://developer.mozilla.org/en-US/docs/Glossary/JavaScript" target="_blank" rel="noopener">JavaScript</a>, a <strong>primitive</strong> (primitive value, primitive data type) is data that is not an <a href="https://developer.mozilla.org/en-US/docs/Glossary/object" target="_blank" rel="noopener">object</a> and has no <a href="https://developer.mozilla.org/en-US/docs/Glossary/method" target="_blank" rel="noopener">methods</a>. There are 6 primitive data types: <a href="https://developer.mozilla.org/en-US/docs/Glossary/string" target="_blank" rel="noopener">string</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/number" target="_blank" rel="noopener">number</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/boolean" target="_blank" rel="noopener">boolean</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/null" target="_blank" rel="noopener">null</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/undefined" target="_blank" rel="noopener">undefined</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/symbol" target="_blank" rel="noopener">symbol</a> (new in <a href="https://developer.mozilla.org/en-US/docs/Glossary/ECMAScript" target="_blank" rel="noopener">ECMAScript</a> 2015).</p>
+</blockquote>
+<p>需要注意的是：原始数据类型<strong>不是对象</strong>，并且自身<strong>不提供方法</strong>。</p>
+<p>原始数据类型如下所示：</p>
+<ul>
+<li><code>Undefined</code>、<code>Null</code></li>
+<li><code>Boolean</code>、<code>String</code>、<code>Number</code>、<code>Symbol</code></li>
+</ul>
+<p>你可能会问：<code>Object</code>呢，它算不算。</p>
+<p>我的回答是：<code>Object</code>是一种<strong>数据类型</strong>，而不是<strong>原始数据类型</strong>。并且，除了原始数据类型以外的<strong>类型</strong>都是<code>Object</code>，就像<code>Array</code>、<code>Function</code>等。</p>
+<p>实际上，我通常把<code>Array</code>这些叫做是一种<strong>引用类型</strong>。</p>
+<h3 id="原始值和对象"><a href="#原始值和对象" class="headerlink" title="原始值和对象"></a>原始值和对象</h3><p>那么，原始值（这里指原始数据类型）与对象的区别是什么呢？</p>
+<p>两者最主要的区别是：<strong>每个对象都有唯一的标识且只（严格地）等于自己</strong>，而对<strong>原始值只要编码值相同，则被认为相同</strong>。</p>
+<p>就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=&#123;&#125;,b=&#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a==b)  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(a===b)  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="string">'😐'</span>,b=<span class="string">'😐'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a==b)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(a===b)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h4 id="原始值"><a href="#原始值" class="headerlink" title="原始值"></a>原始值</h4><p>原始值具有以下特点：</p>
+<ul>
+<li>按值进行比较</li>
+<li>不可改变：其属性不能被改变、添加、移除</li>
+</ul>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>对象具有以下特点：</p>
+<ul>
+<li>按引用进行比较</li>
+<li>默认可变：对象属性可以很自由的被改变、添加、移除</li>
+</ul>
+<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><p>有两种对值进行分类的操作符：<code>typeof</code>、<code>instanceof</code>。</p>
+<p>还有一个方法：<code>Object.prototype.toString.call(object)</code>。</p>
+<h4 id="typeof主要用于原始值"><a href="#typeof主要用于原始值" class="headerlink" title="typeof主要用于原始值"></a>typeof主要用于原始值</h4><p>注意<strong>主要</strong>这两个字，因为有<code>function</code>的存在。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">1</span>  <span class="comment">//"number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">""</span>  <span class="comment">//"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>  <span class="comment">//"boolean"</span></span><br><span class="line"><span class="keyword">typeof</span> undifined  <span class="comment">//"undifined"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>  <span class="comment">//"object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;  <span class="comment">//"function"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;  <span class="comment">//"object"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>typeof null的历史</p>
+<p>第一代JavaScript引擎的值表示为32位的字符，<strong>最低的3位作为值的类型标识</strong>，表示该值是对象、浮点数或其他。</p>
+<p>对象的标识是000，而使用机器语言NULL指针的null，它的所有位均为0，这样一来，<strong>typeof检测值的标识位</strong>时，null便表示为object了。</p>
+</blockquote>
+<h4 id="instanceof用于对象"><a href="#instanceof用于对象" class="headerlink" title="instanceof用于对象"></a>instanceof用于对象</h4><p>查询一个值是否通过某个构造器<code>constructor</code>被创建出来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=&#123;&#125;</span><br><span class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br><span class="line">a <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h4 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString()"></a>Object.prototype.toString()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>)  <span class="comment">//"[object Number]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">false</span>)  <span class="comment">//"[object Boolean]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(&#123;&#125;)  <span class="comment">//"[object Object]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">''</span>)  <span class="comment">//"[object String]"</span></span><br></pre></td></tr></table></figure>
+<h2 id="深入类型转换"><a href="#深入类型转换" class="headerlink" title="深入类型转换"></a>深入类型转换</h2><h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><p>其他值到布尔值的转换如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>布尔值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td>false</td>
+</tr>
+<tr>
+<td>null</td>
+<td>false</td>
+</tr>
+<tr>
+<td>数字</td>
+<td><code></code>0 NaN`为false、其他为true</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td><code>&#39;&#39;</code>为false、其他为true</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>总为true</td>
+</tr>
+</tbody>
+</table>
+<p>手动转换为<code>boolean</code>的方法如下：</p>
+<ul>
+<li><code>Boolean(Value)</code></li>
+<li><code>Value ? true : false</code></li>
+<li><code>!!Value</code></li>
+</ul>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>其他值到数字的转换如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>数字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undifined</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>null</td>
+<td>0</td>
+</tr>
+<tr>
+<td>布尔值</td>
+<td>true为1、false为0</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>空字符串为0、其它解析字符串中的数字，会忽略开头和结尾的空格、遇到非法字符就为NaN</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>转换为原始类型</td>
+</tr>
+</tbody>
+</table>
+<p>手动转换为<code>Number</code>的方法如下：</p>
+<ul>
+<li><code>Number()</code></li>
+<li><code>parseFloat()</code></li>
+</ul>
+<p><code>parseFloat()</code>会将参数强制转换为字符串，效率较低，并且会将空字符串转换为<code>NaN</code>。它会一直解析到最后一个合法的字符，而<code>Number()</code>遇到非法字符会直接转为<code>NaN</code>。</p>
+<ul>
+<li><code>parseInt(string,radix)</code></li>
+</ul>
+<p>基数的范围为：大于等于2，且小于等于36。基数默认是10，除非要被解析的字符串以<code>0x</code>或者<code>0X</code>开头，此时为16进制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;123#&apos;)  //NaN</span><br><span class="line">parseFloat(&apos;123#&apos;)  //123</span><br><span class="line">parseInt(&apos;123#&apos;)  //123</span><br></pre></td></tr></table></figure>
+<h2 id="使用-时发生了什么"><a href="#使用-时发生了什么" class="headerlink" title="使用==时发生了什么"></a>使用==时发生了什么</h2><h3 id="将值转换为原始值"><a href="#将值转换为原始值" class="headerlink" title="将值转换为原始值"></a>将值转换为原始值</h3><p>要将任意值转换为<strong>数字</strong>或<strong>字符串</strong>，首先会被转换为任意的原始值，然后再转换为最终的结果。</p>
+<p>ECMAScript规范中有一个内部函数，<code>ToPrimitive()</code>，不能被访问到，但是它能帮助你理解<strong>对象是如何转换为数字和字符串的</strong>。</p>
+<p>该函数形如：<code>ToPrimitive(input,PreferredType?)</code>。</p>
+<p>可选参数<code>PreferredType</code>表明转换后的类型：它可以是<code>Number</code>或<code>String</code>，具体取决于当时的情况。</p>
+<blockquote>
+<p>如果<code>PreferredType</code>为<code>Number</code>，会执行以下步骤：</p>
+<ol>
+<li>如果input是原始值，则返回input</li>
+<li>如果input是对象，调用<code>input.valueOf()</code>，如果其结果是原始值就返回</li>
+<li>如果结果不是原始值，调用<code>input.toString()</code>，如果其结果是原始值就返回</li>
+<li>如果结果不是原始值，抛出<code>TypeError</code></li>
+</ol>
+<p>而<code>PreferredType</code>为<code>String</code>时，只是更改第2、3步的执行顺序。</p>
+</blockquote>
+<p>因此，一个对象重写了<code>valueOf()</code>或者<code>toString()</code>，就分别会影响<code>Number()</code>或<code>String()</code>。</p>
+<h3 id="宽松比较"><a href="#宽松比较" class="headerlink" title="宽松比较"></a>宽松比较</h3><p>如果两个运算数的类型相同，是六种规范类型Undefined、Null、Boolean、Number、Object时，使用严格相等比较它们。</p>
+<p>如果两个运算数的类型不同，则会触发以下操作：</p>
+<ul>
+<li><code>undefined</code>和<code>null</code>被认为是宽松相等的，而不严格相等</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">undiundefined == <span class="literal">null</span>  <span class="comment">//true</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">null</span>  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>一个字符串和一个数字时，将字符串转换为一个数字，再使用严格相等比较两者</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span> == <span class="string">'123'</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>一个布尔值和非布尔值，将布尔值转化为0或1，再进行宽松比较</p>
+</li>
+<li><p>一个对象和一个数字或一个字符串，则将对象转为原始值，再进行宽松比较</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> == <span class="number">1</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>其它均为false</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[] == <span class="literal">false</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="补漏"><a href="#补漏" class="headerlink" title="补漏"></a>补漏</h3><ul>
+<li>特殊数字<code>NaN</code>和本身不相等：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NaN == NaN  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<h2 id="我不知道的"><a href="#我不知道的" class="headerlink" title="我不知道的"></a>我不知道的</h2><p><code>JavaScript</code>真神奇！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[] == <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">	[] === <span class="number">0</span>  <span class="comment">//false</span></span><br><span class="line">	+[] === <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">	-[] === <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">[] !== []  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p><code>+</code>操作符<strong>转数字为字符串</strong>，<code>-</code>操作符<code>转字符串为数字</code>，并同时注意它们是二操作数的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="string">'11'</span>+<span class="number">2</span>-<span class="string">'1'</span></span><br><span class="line"><span class="built_in">console</span>.log(foo)  <span class="comment">//111</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> foo)  <span class="comment">//"number"</span></span><br></pre></td></tr></table></figure>
+<p>十进制字面量可以以<code>0</code>作为开始，后面跟着其他十进制数，但是假如前导<code>0</code>之后的所有数字都小于<code>8</code>，那么这个数就会被解析为一个八进制的数，但<code>08</code>和<code>09</code>例外。</p>
+<p>详情请参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors/Bad_octal?utm_source=mozilla&amp;utm_medium=firefox-console-errors&amp;utm_campaign=default" target="_blank" rel="noopener">这个文档</a>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span>+<span class="number">010</span>  <span class="comment">//"8"</span></span><br><span class="line"><span class="string">''</span>+<span class="number">0101</span>  <span class="comment">//"72"</span></span><br><span class="line"><span class="string">''</span>+<span class="number">08</span>  <span class="comment">//'8'</span></span><br><span class="line"><span class="string">''</span>+<span class="number">09</span>  <span class="comment">//"9"</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -475,6 +605,8 @@
           
             <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
           
+            <a href="/tags/运算符/" rel="tag"># -运算符</a>
+          
         </div>
       
 
@@ -486,8 +618,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/11/bugs-json-myEclipse/" rel="next" title="在MyEclipse中使用JSON对象的依赖包问题">
-                <i class="fa fa-chevron-left"></i> 在MyEclipse中使用JSON对象的依赖包问题
+              <a href="/2019/04/02/Palindrome-Number/" rel="next" title="LeetCode之判断是否为“回文数”">
+                <i class="fa fa-chevron-left"></i> LeetCode之判断是否为“回文数”
               </a>
             
           </div>
@@ -495,10 +627,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/01/Two-Sum-Js/" rel="prev" title="LeetCode之找出“两数之和”的数组下标">
-                LeetCode之找出“两数之和”的数组下标 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -691,7 +819,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#摸索"><span class="nav-number">2.</span> <span class="nav-text">摸索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可行性研究"><span class="nav-number">3.</span> <span class="nav-text">可行性研究</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速原型开发"><span class="nav-number">4.</span> <span class="nav-text">快速原型开发</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从数据类型开始"><span class="nav-number">1.</span> <span class="nav-text">从数据类型开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始数据类型とは"><span class="nav-number">1.1.</span> <span class="nav-text">原始数据类型とは</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始值和对象"><span class="nav-number">1.2.</span> <span class="nav-text">原始值和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原始值"><span class="nav-number">1.2.1.</span> <span class="nav-text">原始值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">1.2.2.</span> <span class="nav-text">对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">1.3.</span> <span class="nav-text">类型检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof主要用于原始值"><span class="nav-number">1.3.1.</span> <span class="nav-text">typeof主要用于原始值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof用于对象"><span class="nav-number">1.3.2.</span> <span class="nav-text">instanceof用于对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">1.3.3.</span> <span class="nav-text">Object.prototype.toString()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入类型转换"><span class="nav-number">2.</span> <span class="nav-text">深入类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean"><span class="nav-number">2.1.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">2.2.</span> <span class="nav-text">Number</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-时发生了什么"><span class="nav-number">3.</span> <span class="nav-text">使用==时发生了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将值转换为原始值"><span class="nav-number">3.1.</span> <span class="nav-text">将值转换为原始值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宽松比较"><span class="nav-number">3.2.</span> <span class="nav-text">宽松比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补漏"><span class="nav-number">3.3.</span> <span class="nav-text">补漏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我不知道的"><span class="nav-number">4.</span> <span class="nav-text">我不知道的</span></a></li></ol></div>
             
 
           </div>
@@ -847,7 +975,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/01/28/script-repeat-learning/'
+    refer: '2019/04/06/Loose-equality-in-JavaScript/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
