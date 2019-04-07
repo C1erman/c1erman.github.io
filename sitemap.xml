@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://seefun.club/2019/04/07/Event-Loop-in-JavaScript/</loc>
+    
+    <lastmod>2019-04-07T12:47:17.042Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seefun.club/2019/04/06/Loose-equality-in-JavaScript/</loc>
     
     <lastmod>2019-04-07T08:23:12.787Z</lastmod>
