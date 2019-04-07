@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://seefun.club/2019/04/06/Loose-equality-in-JavaScript/</loc>
-    <lastmod>2019-04-06</lastmod>
+    <lastmod>2019-04-07</lastmod>
+  </url>  <url>
+    <loc>http://seefun.club/2018/09/11/first-blog/</loc>
+    <lastmod>2019-04-07</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/03/30/Number-in-JavaScript/</loc>
     <lastmod>2019-04-06</lastmod>
@@ -39,9 +42,6 @@
   </url>  <url>
     <loc>http://seefun.club/2019/03/01/Two-Sum-Js/</loc>
     <lastmod>2019-04-01</lastmod>
-  </url>  <url>
-    <loc>http://seefun.club/2018/09/11/first-blog/</loc>
-    <lastmod>2019-03-31</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/03/17/escape-character-of-markdown/</loc>
     <lastmod>2019-03-17</lastmod>
