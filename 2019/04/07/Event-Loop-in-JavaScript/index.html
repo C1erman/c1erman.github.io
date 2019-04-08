@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="飘">
 <meta property="og:description" content="来一个最简单的： 123456for(var i=0;i&amp;lt;10;i++)&amp;#123;    setTimeout(function()&amp;#123;       console.log(i)     &amp;#125;);&amp;#125;// 10 10 10 10 …… 10">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T12:47:17.042Z">
+<meta property="og:updated_time" content="2019-04-08T07:12:41.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的EventLoop">
 <meta name="twitter:description" content="来一个最简单的： 123456for(var i=0;i&amp;lt;10;i++)&amp;#123;    setTimeout(function()&amp;#123;       console.log(i)     &amp;#125;);&amp;#125;// 10 10 10 10 …… 10">
@@ -357,12 +357,24 @@
                 
               
 
-              <time title="创建时间：2019-04-07 16:45:07 / 修改时间：20:47:17" itemprop="dateCreated datePublished" datetime="2019-04-07T16:45:07+08:00">2019-04-07</time>
+              <time title="创建时间：2019-04-07 16:45:07" itemprop="dateCreated datePublished" datetime="2019-04-07T16:45:07+08:00">2019-04-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-08 15:12:41" itemprop="dateModified" datetime="2019-04-08T15:12:41+08:00">2019-04-08</time>
               
             
           </span>
@@ -444,10 +456,11 @@
 </blockquote>
 <p>一个<strong>JavaScript运行时</strong>包含了待处理的<strong>任务队列</strong>，它<strong>只负责生产消息，不负责取消息</strong>。</p>
 <p>而<strong>JavaScript引擎</strong>维护着任务队列与执行栈，它<strong>只负责处理消息，不负责生产消息</strong>。</p>
-<h2 id="消息与setTimeout"><a href="#消息与setTimeout" class="headerlink" title="消息与setTimeout"></a>消息与setTimeout</h2><p>什么消息呢？</p>
-<p>当一个事件发生且有一个事件监听器绑定在该事件上时，消息会被随时添加进队列。如果没有事件监听器，事件会丢失。所以点击一个附带点击事件处理函数的元素会添加一个消息，其它事件类似。</p>
+<h2 id="消息与setTimeout"><a href="#消息与setTimeout" class="headerlink" title="消息与setTimeout"></a>消息与setTimeout</h2><p>消息从哪里来？</p>
+<p>当一个事件发生且有一个事件监听器绑定在该事件上时，消息会被随时添加进队列。如果没有事件监听器，事件会丢失。所以<strong>点击一个附带点击事件处理函数的元素会添加一个消息</strong>，其它事件类似。</p>
 <p>而<code>setTimeout(callback,second)</code>中的<code>second</code>只是代表了消息被实际加入到执行队列的最小延迟时间，它是一个期待值。因为它不得不等待执行队列中位于它之前的事件执行。</p>
-
+<p>这就是为什么会发生如下情况：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(i) </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hey!'</span>)</span><br><span class="line"><span class="comment">// Hey!</span></span><br><span class="line"><span class="comment">// 10 10 10 10 …… 10</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -494,6 +507,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/08/About-HTTPS/" rel="prev" title="我不知道的HTTP与URL">
+                我不知道的HTTP与URL <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -569,7 +586,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -637,7 +654,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
