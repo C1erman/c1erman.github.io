@@ -115,9 +115,11 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-5.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-7.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-3.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-4.png">
-<meta property="og:updated_time" content="2019-04-08T14:13:13.858Z">
+<meta property="og:updated_time" content="2019-04-09T08:14:50.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的HTTP与URL">
 <meta name="twitter:description" content="自从我看到下面这个问题起，大约已经过去了一、两年时间，想想真是恐怖，时光飞逝不只是说说而已（借梗）。  在浏览器中输入URL之后到底发生了什么？">
@@ -363,12 +365,24 @@
                 
               
 
-              <time title="创建时间：2019-04-08 12:44:59 / 修改时间：22:13:13" itemprop="dateCreated datePublished" datetime="2019-04-08T12:44:59+08:00">2019-04-08</time>
+              <time title="创建时间：2019-04-08 12:44:59" itemprop="dateCreated datePublished" datetime="2019-04-08T12:44:59+08:00">2019-04-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-09 16:14:50" itemprop="dateModified" datetime="2019-04-09T16:14:50+08:00">2019-04-09</time>
               
             
           </span>
@@ -425,8 +439,8 @@
 <p>在浏览器中输入URL之后到底发生了什么？</p>
 </blockquote>
 <a id="more"></a>
-<p>计算机网络真是一门重要的课程，学校授课时用到的是电子工业出版社的《计算机网络（第7版）》，由<strong>谢希仁</strong>编著，当初学起来是很轻松的。但一段时间过后，就渐渐的忘却了其中的细节，为了避免基本的知识点也要忘掉，我又参阅了《图解HTTP》，由【日】上野宣编著。</p>
-<p>看着HTTP就像雾里看花。</p>
+<p>计算机网络真是一门重要的课程，学校授课时用到的是电子工业出版社的《计算机网络（第7版）》，由<strong>谢希仁</strong>编著，当初学起来是很轻松的。但一段时间过后，就渐渐的忘却了其中的细节，为了避免基本的知识点也要忘掉，我又参阅了《图解HTTP》，由【日】<strong>上野宣</strong>编著。</p>
+<p>でも、看着HTTP就像雾里看花。</p>
 <h2 id="题外话：URL与URI"><a href="#题外话：URL与URI" class="headerlink" title="题外话：URL与URI"></a>题外话：URL与URI</h2><p>与<strong>URI</strong>の统一资源标识符<code>Uniform Resourse Identifier</code>相比，我们显然更加熟悉<strong>URL</strong>の统一资源定位符<code>Uniform Resource Locator</code>。</p>
 <p>对URI来说：</p>
 <ul>
@@ -458,6 +472,32 @@
 <li><strong>数据链路层</strong>：将上层得到的<strong>IP数据报封装成帧</strong>，采用可靠的协议，通过不同的信道进行<strong>两台主机之间的数据传输</strong>，同时也<strong>提供了帧的差错检验机制</strong>防止帧与帧之间的碰撞</li>
 <li><strong>物理层</strong>：以<strong>比特</strong>为传输单位，采用某种复用方式，如码分复用<strong>进行单工或双工通信</strong></li>
 </ul>
+<h2 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h2><p>用于HTTP协议交互的信息就是HTTP报文。</p>
+<p><strong>HTTP报文</strong>由以下部分组成：</p>
+<ul>
+<li><strong>报文首部</strong>：服务器端或客户端需处理的请求或响应的内容及属性</li>
+<li><strong>空行</strong><code>CR+LF</code>：<code>CR</code>为<code>Carriage Return</code>回车符，<code>LF</code>为<code>Line Feed</code>换行符</li>
+<li><strong>报文主体</strong>：应该被发送的数据</li>
+</ul>
+<h3 id="请求报文与响应报文的结构"><a href="#请求报文与响应报文的结构" class="headerlink" title="请求报文与响应报文的结构"></a>请求报文与响应报文的结构</h3><p>满足HTTP报文结构的同时，请求报文和响应报文也有着差距。</p>
+<p>就像下面这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-6.png" alt="报文的结构"></p>
+<h3 id="请求报文首部"><a href="#请求报文首部" class="headerlink" title="请求报文首部"></a>请求报文首部</h3><h4 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h4><p>请求行由<strong>方法</strong>、<strong>URI</strong>、<strong>HTTP版本</strong>等信息构成。</p>
+<p>如果请求方法为<code>GET</code>，则请求报文不含报文主体。</p>
+<h4 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h4><p><strong>请求头</strong>即是<strong>请求首部字段</strong>、<strong>实体首部字段</strong>、<strong>通用首部字段</strong>、<strong>其他</strong>的总和。</p>
+<p>请求头是从客户端往服务器端发送请求报文中所使用的，用于<strong>补充请求的附加信息</strong>、<strong>客户端信息</strong>、对响应内容相关的优先级等内容。</p>
+<p>一个常见的请求头如下：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Host</span>: static.segmentfault.com</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0</span><br><span class="line"><span class="attribute">Accept</span>: text/css,*/*;q=0.1</span><br><span class="line"><span class="attribute">Accept-Language</span>: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate, br</span><br><span class="line"><span class="attribute">DNT</span>: 1</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">TE</span>: Trailers</span><br></pre></td></tr></table></figure>
+<p>查看更多<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">请求头的知识</a>。</p>
+<h3 id="响应报文首部"><a href="#响应报文首部" class="headerlink" title="响应报文首部"></a>响应报文首部</h3><h4 id="状态行"><a href="#状态行" class="headerlink" title="状态行"></a>状态行</h4><p>状态行由<strong>状态码</strong>、<strong>HTTP版本</strong>等信息构成。</p>
+<p>状态码分为很多种，它<strong>描述了返回的请求结果</strong>。</p>
+<p>状态码大致可以分为下面几种：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-7.png" alt="状态码的分类"></p>
+<h4 id="响应头"><a href="#响应头" class="headerlink" title="响应头"></a>响应头</h4><p><strong>响应头</strong>即是<strong>响应首部字段</strong>、<strong>实体首部字段</strong>、<strong>通用首部字段</strong>、<strong>其他</strong>的总和。</p>
+<p>响应头是由服务器端向客户端返回响应报文中所使用的字段，用于<strong>补充响应的附加信息</strong>、<strong>服务器信息</strong>，以及对客户端的<strong>附加要求</strong>等信息。</p>
+<p>一个常见的响应头如下：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Content-Type</span>: application/octet-stream</span><br><span class="line"><span class="attribute">Content-Length</span>: 5</span><br><span class="line"><span class="attribute">Access-Control-Allow-Credentials</span>: true</span><br><span class="line"><span class="attribute">Access-Control-Allow-Origin</span>: https://segmentfault.com</span><br><span class="line"><span class="attribute">Set-Cookie</span>: io=Hrx1mgf_yDnPLojthO2M; Path=/; HttpOnly</span><br><span class="line"><span class="attribute">Date</span>: Tue, 09 Apr 2019 06:27:33 GMT</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br></pre></td></tr></table></figure>
+<p>查看更多<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">响应头的知识</a>。</p>
 <h2 id="解"><a href="#解" class="headerlink" title="解"></a>解</h2><p>大致了解计算机网络的各层之后，我们来看看在浏览器中输入URL后到底发生了什么。</p>
 <h3 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h3><p>互联网的每一台主机都被分配了IP地址，可它并不方便记忆，而方便记忆的是网址，<strong>从域名到IP地址的转换</strong>就是DNS解析。</p>
 <p><strong>浏览器向本地DNS服务器发出请求</strong>，对一个<strong>新域名</strong>，本地DNS服务器没有缓存，不能直接将域名转为IP地址，需要<strong>采用递归、迭代的方式</strong>，依此向根域名服务器<code>.</code>、顶级域名服务器<code>.com</code>、权威域名服务器发起查询请求。</p>
@@ -480,13 +520,7 @@
 </ul>
 <p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/http-4.png" alt="TCP四报文挥手"></p>
 <p>通信的<strong>双方均可以中断连接</strong>。</p>
-<h3 id="发送HTTP请求"><a href="#发送HTTP请求" class="headerlink" title="发送HTTP请求"></a>发送HTTP请求</h3><p>HTTP请求由以下部分组成：</p>
-<ul>
-<li>请求行</li>
-<li>请求头</li>
-<li>请求体</li>
-</ul>
-<h3 id="返回HTTP响应"><a href="#返回HTTP响应" class="headerlink" title="返回HTTP响应"></a>返回HTTP响应</h3><h3 id="浏览器解析渲染页面"><a href="#浏览器解析渲染页面" class="headerlink" title="浏览器解析渲染页面"></a>浏览器解析渲染页面</h3><h3 id="终了"><a href="#终了" class="headerlink" title="终了"></a>终了</h3>
+<h3 id="发送HTTP请求"><a href="#发送HTTP请求" class="headerlink" title="发送HTTP请求"></a>发送HTTP请求</h3><h3 id="返回HTTP响应"><a href="#返回HTTP响应" class="headerlink" title="返回HTTP响应"></a>返回HTTP响应</h3><h3 id="浏览器解析渲染页面"><a href="#浏览器解析渲染页面" class="headerlink" title="浏览器解析渲染页面"></a>浏览器解析渲染页面</h3><h3 id="终了"><a href="#终了" class="headerlink" title="终了"></a>终了</h3>
       
     </div>
 
@@ -727,7 +761,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话：URL与URI"><span class="nav-number">1.</span> <span class="nav-text">题外话：URL与URI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是HTTP"><span class="nav-number">2.</span> <span class="nav-text">什么是HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP四层体系结构"><span class="nav-number">3.</span> <span class="nav-text">TCP/IP四层体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解"><span class="nav-number">4.</span> <span class="nav-text">解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS解析"><span class="nav-number">4.1.</span> <span class="nav-text">DNS解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS优化"><span class="nav-number">4.1.1.</span> <span class="nav-text">DNS优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS负载均衡"><span class="nav-number">4.1.2.</span> <span class="nav-text">DNS负载均衡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP连接：大好きなTCP三报文握手と四报文挥手"><span class="nav-number">4.2.</span> <span class="nav-text">TCP连接：大好きなTCP三报文握手と四报文挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送HTTP请求"><span class="nav-number">4.3.</span> <span class="nav-text">发送HTTP请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回HTTP响应"><span class="nav-number">4.4.</span> <span class="nav-text">返回HTTP响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析渲染页面"><span class="nav-number">4.5.</span> <span class="nav-text">浏览器解析渲染页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终了"><span class="nav-number">4.6.</span> <span class="nav-text">终了</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话：URL与URI"><span class="nav-number">1.</span> <span class="nav-text">题外话：URL与URI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是HTTP"><span class="nav-number">2.</span> <span class="nav-text">什么是HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP四层体系结构"><span class="nav-number">3.</span> <span class="nav-text">TCP/IP四层体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP报文"><span class="nav-number">4.</span> <span class="nav-text">HTTP报文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#请求报文与响应报文的结构"><span class="nav-number">4.1.</span> <span class="nav-text">请求报文与响应报文的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求报文首部"><span class="nav-number">4.2.</span> <span class="nav-text">请求报文首部</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#请求行"><span class="nav-number">4.2.1.</span> <span class="nav-text">请求行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求头"><span class="nav-number">4.2.2.</span> <span class="nav-text">请求头</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应报文首部"><span class="nav-number">4.3.</span> <span class="nav-text">响应报文首部</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#状态行"><span class="nav-number">4.3.1.</span> <span class="nav-text">状态行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应头"><span class="nav-number">4.3.2.</span> <span class="nav-text">响应头</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解"><span class="nav-number">5.</span> <span class="nav-text">解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS解析"><span class="nav-number">5.1.</span> <span class="nav-text">DNS解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS优化"><span class="nav-number">5.1.1.</span> <span class="nav-text">DNS优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS负载均衡"><span class="nav-number">5.1.2.</span> <span class="nav-text">DNS负载均衡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP连接：大好きなTCP三报文握手と四报文挥手"><span class="nav-number">5.2.</span> <span class="nav-text">TCP连接：大好きなTCP三报文握手と四报文挥手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送HTTP请求"><span class="nav-number">5.3.</span> <span class="nav-text">发送HTTP请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回HTTP响应"><span class="nav-number">5.4.</span> <span class="nav-text">返回HTTP响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析渲染页面"><span class="nav-number">5.5.</span> <span class="nav-text">浏览器解析渲染页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终了"><span class="nav-number">5.6.</span> <span class="nav-text">终了</span></a></li></ol></li></ol></div>
             
 
           </div>
