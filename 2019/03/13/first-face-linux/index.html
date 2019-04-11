@@ -114,7 +114,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-2.png">
-<meta property="og:updated_time" content="2019-04-10T02:55:19.415Z">
+<meta property="og:updated_time" content="2019-04-10T13:23:53.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Linux">
 <meta name="twitter:description" content="作为一名程序员，不懂点Linux知识怎么说的过去？ 本文将会随着学习的升入不断更新，介绍常用的指令及相关的知识。">
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-10 10:55:19" itemprop="dateModified" datetime="2019-04-10T10:55:19+08:00">2019-04-10</time>
+                <time title="修改时间：2019-04-10 21:23:53" itemprop="dateModified" datetime="2019-04-10T21:23:53+08:00">2019-04-10</time>
               
             
           </span>
@@ -436,10 +436,161 @@
 <p>安装Linux系统大致分为两种方式：安装<code>win+linux</code><strong>双系统</strong>或者<strong>安装虚拟机</strong>。</p>
 <p>由于我比较图方便，因此使用的是第二种方式。我的配置为<code>VirtualBox+Ubuntu</code>，安装过程就不再赘述，选择这套组合的原因是——方便，<code>ubuntu</code>自带的图形化界面对刚从<code>win</code>平台转来的我们来说十分友好。</p>
 <p><del>（施工完成）下面将在视口小于450*800的窗口显示整个页面的目录。</del></p>
-<p><div id="_menu"></div></p>
 <script>
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('\'1i 1h\';t.K(\'1g\',F,L);t.K(\'1j\',F,L);y F(){4 w=t.1n||8.Q.R||8.C.R;4 h=t.1o||8.Q.M||8.C.M;w<=1e||h<=1a?8.v(\'A\').P||H({x:\'19-C\'}):B(\'A\')}4 B=y B(d){4 f=8.v(d);f.P=\'\';f.z=\'\'};4 H=y H(6){4 s=6.s,x=6.x,6$g=6.g,g=6$g===O?\'1d\':6$g,6$o=6.o,o=6$o===O?\'A\':6$o;4 u=G 0,f=G 0;s?u=8.v(s):u=8.1z(g+\'.\'+x);f=8.v(o);4 U={\'I\':[\'n:1D-m\',\'p:r\'],\'N\':[\'n:m\',\'l-q:1%\',\'p:r\'],\'V\':[\'n:m\',\'l-q:3%\',\'p:r\'],\'16\':[\'n:m\',\'l-q:5%\',\'p:r\'],\'17\':[\'n:m\',\'l-q:7%\',\'p:r\'],\'15\':[\'n:m\',\'l-q:9%\']};f.z="1r:1x%;1E:1A;1c:J;l:1w J;";4 2=1q S();S.1b(u.18).1m(y(c,1k){k([\'I\',\'N\',\'V\',\'16\',\'17\',\'15\'].1t(c.13)){c.d=c.d||c.14(\'W\',c.D);2.1s({\'b\':c.13,\'d\':c.d||W,\'T\':c.D})}});1u.1v(2);12(4 i=0;i<2.1C;i++){4 a=8.1B(\'a\');a.14(\'1y\',\'#\'+2[i].d);a.z=U[2[i].b].1l(\';\');a.D=2[i].T;k(i==0){f.X(a);2[i].e=a;1p}k(2[i].b>2[i-1].b){2[i-1].e.X(a);2[i].e=a}Y k(2[i].b==2[i-1].b){2[i-1].e.11.10(a,Z);2[i].e=a}Y k(2[i].b<2[i-1].b){4 E=G 0;12(4 j=i-1;j>=0;j--){k(2[j].b===2[i].b){E=2[j].e;1f}}E.11.10(a,Z);2[i].e=a}}};',62,103,'||allHeader||var||_ref||document|||name|value|id|node|box|Type||||if|margin|block|display|box_id|border|left|none|Id|window|container|getElementById||Class|function|style|_menu|clearSpace|body|innerText|t_node|toUse|void|header_in_block|H1|auto|addEventListener|false|clientHeight|H2|undefined|innerHTML|documentElement|clientWidth|Array|text|styles|H3|given_id|appendChild|else|null|insertBefore|parentNode|for|nodeName|setAttribute|H6|H4|H5|childNodes|post|800|from|overflow|div|450|break|load|strict|use|resize|index|join|map|innerWidth|innerHeight|continue|new|width|push|includes|console|log|0px|82|href|querySelector|300px|createElement|length|inline|height'.split('|'),0,{}))
+//添加事件监听器
+window.addEventListener('load', toUse, false);
+window.addEventListener('resize', toUse, false);
+//判断何时调用函数
+function toUse() {
+    let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    block_catalog(w, h);
+    //    w <= 450 || h <= 800 ? (document.getElementById('_menu').innerHTML || header_in_block({
+    //        Class: 'post-body'
+    //    })) : clearSpace('_menu');
+    w <= 450 || h <= 800 ? (document.getElementById('_menu').innerHTML || (block_catalog(w, h), header_in_block({
+        Class: 'post-body'
+    }))) : clearSpace('_menu');
+}
+/*清除占据空间*/
+var clearSpace = (id) => {
+    let box = document.getElementById(id);
+    box.innerHTML = '';
+    box.style = '';
+}
+/*为有inline-style的指定的元素display取反*/
+function anti_display() {
+    let _item = document.getElementById('_menu');
+    let to_block_regexp = /display: none|display:none/;
+    let style = _item.getAttribute('style');
+    to_block_regexp.test(style) ?
+        _item.setAttribute('style', style.replace(/display: none|display:none/, 'display:block')) :
+        _item.setAttribute('style', style.replace(/display: block|display:block/, 'display:none'));
+}
+/*选择区域内的标题列表*/
+var header_in_block = ({
+    Id,
+    /*提取容器id*/
+    Class,
+    /*提取容器class*/
+    Type = 'div',
+    /*提取容器类型*/
+    box_id = '_menu' /*填充容器id*/
+}) => {
+    /*初始容器*/
+    let container, box;
+    Id ? container = document.getElementById(Id) :
+        container = document.querySelector(`${Type}.${Class}`);
+    box = document.getElementById(box_id);
+    /*初始样式*/
+    let styles = {
+        'H1': ['display:inline-block', 'margin-left:1%', 'border:none'],
+        'H2': ['display:block', 'margin-left:3%', 'border:none'],
+        'H3': ['display:block', 'margin-left:5%', 'border:none'],
+        'H4': ['display:block', 'margin-left:7%', 'border:none'],
+        'H5': ['display:block', 'margin-left:9%', 'border:none'],
+        'H6': ['display:block', 'margin-left:11%']
+    }
+    /*获取所有标题节点*/
+    let allHeader = new Array();
+    (Array.from(container.childNodes)).map((value, index) => {
+        if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(value.nodeName)) {
+            /*如果存在id则获取id，如果不存在则分配id*/
+            value.id = value.id || value.setAttribute('given_id', value.innerText);
+            allHeader.push({
+                'name': value.nodeName,
+                'id': value.id || given_id,
+                'text': value.innerText
+            });
+        }
+    });
+    console.log(allHeader)
+    /*将结果直接插入到网页中*/
+    /*依据offset进行排列*/
+    for (let i = 0; i < allHeader.length; i++) {
+        /*初始赋值*/
+        let a = document.createElement('a');
+        a.setAttribute('href', `#${allHeader[i].id}`);
+        a.style = styles[allHeader[i].name].join(';');
+        a.innerText = allHeader[i].text;
+        if (i == 0) {
+            box.appendChild(a);
+            /*添加新属性——便于判断节点位置*/
+            allHeader[i].node = a;
+            continue;
+        }
+        /*判断父子关系*/
+        if (allHeader[i].name > allHeader[i - 1].name) {
+            /*作为子节点插入*/
+            allHeader[i - 1].node.appendChild(a);
+            allHeader[i].node = a;
+        } else if (allHeader[i].name == allHeader[i - 1].name) {
+            /*作为兄弟节点插入*/
+            allHeader[i - 1].node.parentNode.insertBefore(a, null);
+            allHeader[i].node = a;
+        } else if (allHeader[i].name < allHeader[i - 1].name) {
+            /*从前往后寻找最近的兄弟节点插入*/
+            let t_node;
+            for (let j = i - 1; j >= 0; j--) {
+                if (allHeader[j].name === allHeader[i].name) {
+                    t_node = allHeader[j].node;
+                    break;
+                }
+            }
+            t_node.parentNode.insertBefore(a, null);
+            allHeader[i].node = a;
+        }
+    }
+}
+/*将在移动端侧边添加跟随目录*/
+var block_catalog = (width, height) => {
+    const w = Math.floor(width * 0.15),
+        h = w;
+    const body = document.getElementsByTagName('body')[0];
+    /*实例按钮*/
+    let botton = document.createElement('div');
+    let botton_style = {
+        'position': 'fixed',
+        'width': `${w}px`,
+        'height': `${h}px`,
+        'left': `${-w*0.5}px`,
+        'top': `${height*0.5-w*0.5}px`,
+        'borderRadius': '50%',
+        'background': 'rgba(246,246,246,0.7)',
+        'boxShadow': '1px 0px 5px grey',
+        'cursor': 'pointer'
+    };
+    for (let i in botton_style) {
+        botton.style[i] = botton_style[i];
+    }
+    /*实例内容*/
+    let content = document.createElement('div');
+    let content_style = {
+        'display': 'none',
+        'position': 'fixed',
+        'width': `${Math.floor(width*0.8)}px`,
+        'height': `${Math.floor(height*0.9)}px`,
+        'left': `${Math.floor(width*0.1)}px`,
+        'top': `${Math.floor(height*0.03)}px`,
+        'padding': '20px 10px',
+        'overflow': 'auto',
+        'borderRadius': '10px',
+        'background': 'rgb(246,246,246)'
+    }
+    for (let i in content_style) {
+        content.style[i] = content_style[i];
+    }
+    /*给予id*/
+    content.setAttribute('id', '_menu');
+    botton.setAttribute('id', '_menu_controller');
+    /*事件监听*/
+    botton.addEventListener('click', anti_display);
+    /*插入*/
+    body.appendChild(botton);
+    body.appendChild(content);
+}
 </script>
+
 
 <h2 id="2-新手必须掌握的Linux命令"><a href="#2-新手必须掌握的Linux命令" class="headerlink" title="2.新手必须掌握的Linux命令"></a>2.新手必须掌握的Linux命令</h2><h3 id="2-1查看帮助命令"><a href="#2-1查看帮助命令" class="headerlink" title="2.1查看帮助命令"></a>2.1查看帮助命令</h3><p>首先需要知道的是：命令的<strong>长格式</strong>与<strong>短格式</strong>。</p>
 <table>
