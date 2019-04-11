@@ -114,7 +114,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-2.png">
-<meta property="og:updated_time" content="2019-04-10T13:23:53.427Z">
+<meta property="og:updated_time" content="2019-04-11T06:30:10.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Linux">
 <meta name="twitter:description" content="作为一名程序员，不懂点Linux知识怎么说的过去？ 本文将会随着学习的升入不断更新，介绍常用的指令及相关的知识。">
@@ -377,7 +377,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-10 21:23:53" itemprop="dateModified" datetime="2019-04-10T21:23:53+08:00">2019-04-10</time>
+                <time title="修改时间：2019-04-11 14:30:10" itemprop="dateModified" datetime="2019-04-11T14:30:10+08:00">2019-04-11</time>
               
             
           </span>
@@ -437,160 +437,8 @@
 <p>由于我比较图方便，因此使用的是第二种方式。我的配置为<code>VirtualBox+Ubuntu</code>，安装过程就不再赘述，选择这套组合的原因是——方便，<code>ubuntu</code>自带的图形化界面对刚从<code>win</code>平台转来的我们来说十分友好。</p>
 <p><del>（施工完成）下面将在视口小于450*800的窗口显示整个页面的目录。</del></p>
 <script>
-//添加事件监听器
-window.addEventListener('load', toUse, false);
-window.addEventListener('resize', toUse, false);
-//判断何时调用函数
-function toUse() {
-    let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    block_catalog(w, h);
-    //    w <= 450 || h <= 800 ? (document.getElementById('_menu').innerHTML || header_in_block({
-    //        Class: 'post-body'
-    //    })) : clearSpace('_menu');
-    w <= 450 || h <= 800 ? (document.getElementById('_menu').innerHTML || (block_catalog(w, h), header_in_block({
-        Class: 'post-body'
-    }))) : clearSpace('_menu');
-}
-/*清除占据空间*/
-var clearSpace = (id) => {
-    let box = document.getElementById(id);
-    box.innerHTML = '';
-    box.style = '';
-}
-/*为有inline-style的指定的元素display取反*/
-function anti_display() {
-    let _item = document.getElementById('_menu');
-    let to_block_regexp = /display: none|display:none/;
-    let style = _item.getAttribute('style');
-    to_block_regexp.test(style) ?
-        _item.setAttribute('style', style.replace(/display: none|display:none/, 'display:block')) :
-        _item.setAttribute('style', style.replace(/display: block|display:block/, 'display:none'));
-}
-/*选择区域内的标题列表*/
-var header_in_block = ({
-    Id,
-    /*提取容器id*/
-    Class,
-    /*提取容器class*/
-    Type = 'div',
-    /*提取容器类型*/
-    box_id = '_menu' /*填充容器id*/
-}) => {
-    /*初始容器*/
-    let container, box;
-    Id ? container = document.getElementById(Id) :
-        container = document.querySelector(`${Type}.${Class}`);
-    box = document.getElementById(box_id);
-    /*初始样式*/
-    let styles = {
-        'H1': ['display:inline-block', 'margin-left:1%', 'border:none'],
-        'H2': ['display:block', 'margin-left:3%', 'border:none'],
-        'H3': ['display:block', 'margin-left:5%', 'border:none'],
-        'H4': ['display:block', 'margin-left:7%', 'border:none'],
-        'H5': ['display:block', 'margin-left:9%', 'border:none'],
-        'H6': ['display:block', 'margin-left:11%']
-    }
-    /*获取所有标题节点*/
-    let allHeader = new Array();
-    (Array.from(container.childNodes)).map((value, index) => {
-        if (['H1', 'H2', 'H3', 'H4', 'H5', 'H6'].includes(value.nodeName)) {
-            /*如果存在id则获取id，如果不存在则分配id*/
-            value.id = value.id || value.setAttribute('given_id', value.innerText);
-            allHeader.push({
-                'name': value.nodeName,
-                'id': value.id || given_id,
-                'text': value.innerText
-            });
-        }
-    });
-    console.log(allHeader)
-    /*将结果直接插入到网页中*/
-    /*依据offset进行排列*/
-    for (let i = 0; i < allHeader.length; i++) {
-        /*初始赋值*/
-        let a = document.createElement('a');
-        a.setAttribute('href', `#${allHeader[i].id}`);
-        a.style = styles[allHeader[i].name].join(';');
-        a.innerText = allHeader[i].text;
-        if (i == 0) {
-            box.appendChild(a);
-            /*添加新属性——便于判断节点位置*/
-            allHeader[i].node = a;
-            continue;
-        }
-        /*判断父子关系*/
-        if (allHeader[i].name > allHeader[i - 1].name) {
-            /*作为子节点插入*/
-            allHeader[i - 1].node.appendChild(a);
-            allHeader[i].node = a;
-        } else if (allHeader[i].name == allHeader[i - 1].name) {
-            /*作为兄弟节点插入*/
-            allHeader[i - 1].node.parentNode.insertBefore(a, null);
-            allHeader[i].node = a;
-        } else if (allHeader[i].name < allHeader[i - 1].name) {
-            /*从前往后寻找最近的兄弟节点插入*/
-            let t_node;
-            for (let j = i - 1; j >= 0; j--) {
-                if (allHeader[j].name === allHeader[i].name) {
-                    t_node = allHeader[j].node;
-                    break;
-                }
-            }
-            t_node.parentNode.insertBefore(a, null);
-            allHeader[i].node = a;
-        }
-    }
-}
-/*将在移动端侧边添加跟随目录*/
-var block_catalog = (width, height) => {
-    const w = Math.floor(width * 0.15),
-        h = w;
-    const body = document.getElementsByTagName('body')[0];
-    /*实例按钮*/
-    let botton = document.createElement('div');
-    let botton_style = {
-        'position': 'fixed',
-        'width': `${w}px`,
-        'height': `${h}px`,
-        'left': `${-w*0.5}px`,
-        'top': `${height*0.5-w*0.5}px`,
-        'borderRadius': '50%',
-        'background': 'rgba(246,246,246,0.7)',
-        'boxShadow': '1px 0px 5px grey',
-        'cursor': 'pointer'
-    };
-    for (let i in botton_style) {
-        botton.style[i] = botton_style[i];
-    }
-    /*实例内容*/
-    let content = document.createElement('div');
-    let content_style = {
-        'display': 'none',
-        'position': 'fixed',
-        'width': `${Math.floor(width*0.8)}px`,
-        'height': `${Math.floor(height*0.9)}px`,
-        'left': `${Math.floor(width*0.1)}px`,
-        'top': `${Math.floor(height*0.03)}px`,
-        'padding': '20px 10px',
-        'overflow': 'auto',
-        'borderRadius': '10px',
-        'background': 'rgb(246,246,246)'
-    }
-    for (let i in content_style) {
-        content.style[i] = content_style[i];
-    }
-    /*给予id*/
-    content.setAttribute('id', '_menu');
-    botton.setAttribute('id', '_menu_controller');
-    /*事件监听*/
-    botton.addEventListener('click', anti_display);
-    /*插入*/
-    body.appendChild(botton);
-    body.appendChild(content);
-}
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('"1E 1F";j T(){6 e=D.1G||4.Z.Y||4.F.Y,n=D.1D||4.Z.12||4.F.12;e<=1C||n<=1y?4.G("B")||(R(e,n),Q({1c:"1z-F"})):(L("B"),L("M"))}j E(e){6 n=4.G(e),t=/2: b|2:b/,o=n.1A("x");t.1B(o)?n.w("x",o.1l(/2: b|2:b/,"2:g")):n.w("x",o.1l(/2: g|2:g/,"2:b"))}D.X("1H",T,!1),D.X("1I",T,!1);6 L=j L(e){6 n=4.G(e);A(!n)1P!0;4.F.1x(n)},R=j R(e,n){6 t=I.H(.15*e),o=t,i=4.1Q("F")[0],d=4.U("P"),a={2:"g",1b:"17",18:t+"h",19:o+"h",k:.5*-t+"h",1p:.5*n-.5*t+"h",1o:"1R%",1a:"1q(C,C,C,0.7)",1O:"1N 1J 1K 1L",1M:"1S"};O(6 l 1d a){d.x[l]=a[l]}6 r=4.U("P"),c={2:"b",1b:"17",18:I.H(.8*e)+"h",19:I.H(.9*n)+"h",k:I.H(.1*e)+"h",1p:I.H(.1w*n)+"h",1s:"1t 10",1v:"1u",1o:"10",1a:"1q(C,C,C,0.8)"};O(6 s 1d c){r.x[s]=c[s]}r.w("q","B"),d.w("q","M"),d.X("2c",j(){E("B"),E("M")},!1),r.2d=j(e){e=e||D.2b,"a"==(e.2a||e.27).S.28()&&(E("B"),E("M"))},i.N(d),i.N(r)},Q=j Q(e){6 n=e.29,t=e.1c,o=e.2f,i=K 0===o?"P":o,d=e.2e,a=K 0===d?"B":d,l=K 0,r=K 0;l=n?4.G(n):4.1T(i+"."+t),r=4.G(a);6 c={1r:["2:25-g","z-k:3%","J:b"],1n:["2:g","z-k:5%","J:b"],1h:["2:g","z-k:7%","J:b"],1g:["2:g","z-k:9%","J:b"],1i:["2:g","z-k:11%","J:b"],1j:["2:g","z-k:13%"]},s=1Y 1f();1f.26(l.1X).1W(j(e,n){["1r","1n","1h","1g","1i","1j"].1U(e.S)&&(e.q=e.q||e.w("1k",e.W),s.1V({f:e.S,q:e.q||1k,1m:e.W}))}),1Z.20(s);O(6 m=0;m<s.24;m++){6 p=4.U("a");A(p.w("23","#"+s[m].q),p.x=c[s[m].f].22(";"),p.W=s[m].1m,0!=m){A(s[m].f>s[m-1].f)s[m-1].v.N(p),s[m].v=p;V A(s[m].f==s[m-1].f)s[m-1].v.14.1e(p,16),s[m].v=p;V A(s[m].f<s[m-1].f){O(6 u=K 0,y=m-1;y>=0;y--){A(s[y].f===s[m].f){u=s[y].v;21}}u.14.1e(p,16),s[m].v=p}}V r.N(p),s[m].v=p}};',62,140,'||display||document||var|||||none||||name|block|px||function|left||||||id|||||node|setAttribute|style||margin|if|_menu|246|window|anti_display|body|getElementById|floor|Math|border|void|clearSpace|_menu_controller|appendChild|for|div|header_in_block|block_catalog|nodeName|toUse|createElement|else|innerText|addEventListener|clientWidth|documentElement|10px||clientHeight||parentNode||null|fixed|width|height|background|position|Class|in|insertBefore|Array|H4|H3|H5|H6|given_id|replace|text|H2|borderRadius|top|rgba|H1|padding|20px|auto|overflow|03|removeChild|800|post|getAttribute|test|450|innerHeight|use|strict|innerWidth|load|resize|0px|5px|grey|cursor|1px|boxShadow|return|getElementsByTagName|50|pointer|querySelector|includes|push|map|childNodes|new|console|log|break|join|href|length|inline|from|srcElement|toLowerCase|Id|target|event|click|onclick|box_id|Type'.split('|'),0,{}))
 </script>
-
 
 <h2 id="2-新手必须掌握的Linux命令"><a href="#2-新手必须掌握的Linux命令" class="headerlink" title="2.新手必须掌握的Linux命令"></a>2.新手必须掌握的Linux命令</h2><h3 id="2-1查看帮助命令"><a href="#2-1查看帮助命令" class="headerlink" title="2.1查看帮助命令"></a>2.1查看帮助命令</h3><p>首先需要知道的是：命令的<strong>长格式</strong>与<strong>短格式</strong>。</p>
 <table>

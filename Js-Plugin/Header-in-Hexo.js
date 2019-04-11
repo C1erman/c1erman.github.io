@@ -1,24 +1,86 @@
-//添加事件监听器
+/*添加事件监听器*/
 window.addEventListener('load', toUse, false);
 window.addEventListener('resize', toUse, false);
-//判断何时调用函数
+/*页面大小判断*/
 function toUse() {
 	let w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	let h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-	block_catalog(w, h);
-	//	w <= 450 || h <="800" ? (document.getelementbyid('_menu').innerhtml header_in_block({ class: 'post-body' })) : clearspace('_menu'); w (block_catalog(w, h), }))) } *清除占据空间* var clearspace="(id)" => {
+	/*在450*800的视口下*/
+	if (w <= 450 || h <="800)" { if (!document.getelementbyid('_menu')) block_catalog(w, h); header_in_block({ class: 'post-body' }); } else(clearspace('_menu'), clearspace('_menu_controller')) *清除占据空间* var clearspace="(id)" => {
 	let box = document.getElementById(id);
-	box.innerHTML = '';
-	box.style = '';
+	if (!box) {
+		return true;
+	} else {
+		document.body.removeChild(box);
+	}
 }
-/*为有inline-style的指定的元素display取反*/
-function anti_display() {
-	let _item = document.getElementById('_menu');
-	let to_block_regexp = /display: none|display:none/;
-	let style = _item.getAttribute('style');
-	to_block_regexp.test(style) ?
-		_item.setAttribute('style', style.replace(/display: none|display:none/, 'display:block')) :
-		_item.setAttribute('style', style.replace(/display: block|display:block/, 'display:none'));
+/*将在移动端侧边添加跟随目录*/
+var block_catalog = (width, height) => {
+	const w = Math.floor(width * 0.15),
+		h = w;
+	const body = document.getElementsByTagName('body')[0];
+	/*实例按钮*/
+	let botton = document.createElement('div');
+	let botton_style = {
+		'display': 'block',
+		'position': 'fixed',
+		'width': `${w}px`,
+		'height': `${h}px`,
+		'left': `${-w*0.5}px`,
+		'top': `${height*0.5-w*0.5}px`,
+		'borderRadius': '50%',
+		'background': 'rgba(246,246,246,0.7)',
+		'boxShadow': '1px 0px 5px grey',
+		'cursor': 'pointer'
+	};
+	for (let i in botton_style) {
+		botton.style[i] = botton_style[i];
+	}
+	/*实例内容*/
+	let content = document.createElement('div');
+	let content_style = {
+		'display': 'none',
+		'position': 'fixed',
+		'width': `${Math.floor(width*0.8)}px`,
+		'height': `${Math.floor(height*0.9)}px`,
+		'left': `${Math.floor(width*0.1)}px`,
+		'top': `${Math.floor(height*0.03)}px`,
+		'padding': '20px 10px',
+		'overflow': 'auto',
+		'borderRadius': '10px',
+		'background': 'rgba(246,246,246,0.8)'
+	}
+	for (let i in content_style) {
+		content.style[i] = content_style[i];
+	}
+	/*给予id*/
+	content.setAttribute('id', '_menu');
+	botton.setAttribute('id', '_menu_controller');
+	/*事件监听*/
+	botton.addEventListener('click', function() {
+		anti_display('_menu');
+		anti_display('_menu_controller');
+	}, false);
+	/*_menu下属a的事件委托*/
+	content.onclick = function(e) {
+		e = e || window.event;
+		let target = e.target || e.srcElement;
+		if (target.nodeName.toLowerCase() == 'a') {
+			anti_display('_menu');
+			anti_display('_menu_controller');
+		}
+	}
+	/*插入*/
+	body.appendChild(botton);
+	body.appendChild(content);
+}
+/*为有inline-style的元素display值取反*/
+function anti_display(id) {
+	let dom = document.getElementById(id);
+	let regexp = /display: none|display:none/;
+	let style = dom.getAttribute('style');
+	regexp.test(style) ? dom.setAttribute('style', style.replace(/display: none|display:none/, 'display:block')) :
+		dom.setAttribute('style', style.replace(/display: block|display:block/, 'display:none'));
 }
 /*选择区域内的标题列表*/
 var header_in_block = ({
@@ -37,12 +99,12 @@ var header_in_block = ({
 	box = document.getElementById(box_id);
 	/*初始样式*/
 	let styles = {
-		'H1': ['display:inline-block', 'margin-left:1%', 'border:none'],
-		'H2': ['display:block', 'margin-left:3%', 'border:none'],
-		'H3': ['display:block', 'margin-left:5%', 'border:none'],
-		'H4': ['display:block', 'margin-left:7%', 'border:none'],
-		'H5': ['display:block', 'margin-left:9%', 'border:none'],
-		'H6': ['display:block', 'margin-left:11%']
+		'H1': ['display:inline-block', 'margin-left:3%', 'border:none'],
+		'H2': ['display:block', 'margin-left:5%', 'border:none'],
+		'H3': ['display:block', 'margin-left:7%', 'border:none'],
+		'H4': ['display:block', 'margin-left:9%', 'border:none'],
+		'H5': ['display:block', 'margin-left:11%', 'border:none'],
+		'H6': ['display:block', 'margin-left:13%']
 	}
 	/*获取所有标题节点*/
 	let allHeader = new Array();
@@ -59,7 +121,6 @@ var header_in_block = ({
 	});
 	console.log(allHeader)
 	/*将结果直接插入到网页中*/
-	/*依据offset进行排列*/
 	for (let i = 0; i < allHeader.length; i++) {
 		/*初始赋值*/
 		let a = document.createElement('a');
@@ -94,53 +155,6 @@ var header_in_block = ({
 			allHeader[i].node = a;
 		}
 	}
-}
-/*将在移动端侧边添加跟随目录*/
-var block_catalog = (width, height) => {
-	const w = Math.floor(width * 0.15),
-		h = w;
-	const body = document.getElementsByTagName('body')[0];
-	/*实例按钮*/
-	let botton = document.createElement('div');
-	let botton_style = {
-		'position': 'fixed',
-		'width': `${w}px`,
-		'height': `${h}px`,
-		'left': `${-w*0.5}px`,
-		'top': `${height*0.5-w*0.5}px`,
-		'borderRadius': '50%',
-		'background': 'rgba(246,246,246,0.7)',
-		'boxShadow': '1px 0px 5px grey',
-		'cursor': 'pointer'
-	};
-	for (let i in botton_style) {
-		botton.style[i] = botton_style[i];
-	}
-	/*实例内容*/
-	let content = document.createElement('div');
-	let content_style = {
-		'display': 'none',
-		'position': 'fixed',
-		'width': `${Math.floor(width*0.8)}px`,
-		'height': `${Math.floor(height*0.9)}px`,
-		'left': `${Math.floor(width*0.1)}px`,
-		'top': `${Math.floor(height*0.03)}px`,
-		'padding': '20px 10px',
-		'overflow': 'auto',
-		'borderRadius': '10px',
-		'background': 'rgb(246,246,246)'
-	}
-	for (let i in content_style) {
-		content.style[i] = content_style[i];
-	}
-	/*给予id*/
-	content.setAttribute('id', '_menu');
-	botton.setAttribute('id', '_menu_controller');
-	/*事件监听*/
-	botton.addEventListener('click', anti_display);
-	/*插入*/
-	body.appendChild(botton);
-	body.appendChild(content);
 }
 /*数据结构：树*/
 var _NODE = function(data) {
