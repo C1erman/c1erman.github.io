@@ -104,24 +104,25 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="前端学习中">
-<meta name="keywords" content="Blog,博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飘">
-<meta property="og:url" content="http://seefun.club/archives/index.html">
+  <meta name="description" content="来吧，反击的号角已经吹响！ 闭包と变量的作用域への攻撃。 因为ECMAScript6已经引入了let关键字，本章关于变量的部分将分两部分进行介绍。">
+<meta name="keywords" content="-JavaScript,-面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我不知道的作用域与闭包">
+<meta property="og:url" content="http://seefun.club/2019/04/12/About-Closure-and-Function/index.html">
 <meta property="og:site_name" content="飘">
-<meta property="og:description" content="前端学习中">
+<meta property="og:description" content="来吧，反击的号角已经吹响！ 闭包と变量的作用域への攻撃。 因为ECMAScript6已经引入了let关键字，本章关于变量的部分将分两部分进行介绍。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-12T12:29:30.815Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飘">
-<meta name="twitter:description" content="前端学习中">
+<meta name="twitter:title" content="我不知道的作用域与闭包">
+<meta name="twitter:description" content="来吧，反击的号角已经吹响！ 闭包と变量的作用域への攻撃。 因为ECMAScript6已经引入了let关键字，本章关于变量的部分将分两部分进行介绍。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/archives/">
+  <link rel="canonical" href="http://seefun.club/2019/04/12/About-Closure-and-Function/">
 
 
 
@@ -131,7 +132,7 @@
   };
 </script>
 
-  <title>归档 | 飘</title>
+  <title>我不知道的作用域与闭包 | 飘</title>
   
 
 
@@ -179,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -251,7 +252,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -272,22 +273,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -313,752 +298,262 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/12/About-Closure-and-Function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张可携">
+      <meta itemprop="description" content="前端学习中">
+      <meta itemprop="image" content="/images/profilePhoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飘">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">我不知道的作用域与闭包
+
+              
+            
+          </h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-12 18:45:13 / 修改时间：20:29:30" itemprop="dateCreated datePublished" datetime="2019-04-12T18:45:13+08:00">2019-04-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 23 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/我不知道的JavaScript/" itemprop="url" rel="index"><span itemprop="name">-我不知道的JavaScript</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/12/About-Closure-and-Function/" itemprop="url">
-            
-              <span itemprop="name">我不知道的作用域与闭包</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-12T18:45:13+08:00" content="2019-04-12">
-          04-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/08/About-HTTPS/" itemprop="url">
-            
-              <span itemprop="name">我不知道的HTTP与URL</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-08T12:44:59+08:00" content="2019-04-08">
-          04-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/07/Event-Loop-in-JavaScript/" itemprop="url">
-            
-              <span itemprop="name">我不知道的EventLoop</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-07T16:45:07+08:00" content="2019-04-07">
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/Loose-equality-in-JavaScript/" itemprop="url">
-            
-              <span itemprop="name">我不知道的==运算符</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T11:23:14+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/02/Palindrome-Number/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之判断是否为“回文数”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-02T16:22:50+08:00" content="2019-04-02">
-          04-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/01/String-to-Integer/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之“字符串转为整数”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-01T21:15:15+08:00" content="2019-04-01">
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/30/Number-in-JavaScript/" itemprop="url">
-            
-              <span itemprop="name">我不知道的Number</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-30T20:00:19+08:00" content="2019-03-30">
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/30/Reverse-Integer/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之“整数反转”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-30T17:33:36+08:00" content="2019-03-30">
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/26/ZigZag-Conversion/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之“Z字形变换”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-26T16:11:15+08:00" content="2019-03-26">
-          03-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/20/Longest-Palindromic-Substring/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之找出“最长回文子串”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-20T21:12:33+08:00" content="2019-03-20">
-          03-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/17/escape-character-of-markdown/" itemprop="url">
-            
-              <span itemprop="name">Markdown转义符</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-17T19:08:32+08:00" content="2019-03-17">
-          03-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/17/about-DOCTYPE/" itemprop="url">
-            
-              <span itemprop="name">我不知道的&lt;!DOCCTYPE html&gt;</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-17T18:05:06+08:00" content="2019-03-17">
-          03-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/13/first-face-linux/" itemprop="url">
-            
-              <span itemprop="name">初识Linux</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-13T09:45:46+08:00" content="2019-03-13">
-          03-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/12/Longest-Substring-Without-Repeating-Characters/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之寻找“无重复字符的最长子串”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-12T14:28:10+08:00" content="2019-03-12">
-          03-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/10/Median-of-Two-Sorted-Array/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之计算“两个有序数组的中位数”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-10T20:59:01+08:00" content="2019-03-10">
-          03-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/02/Add-Two-Numbers-Js/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之“两数相加”的链表表示</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-02T22:38:26+08:00" content="2019-03-02">
-          03-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/01/Two-Sum-Js/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之找出“两数之和”的数组下标</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-01T21:38:26+08:00" content="2019-03-01">
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/01/28/script-repeat-learning/" itemprop="url">
-            
-              <span itemprop="name">利用JavaScript实现刷课</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-28T19:22:34+08:00" content="2019-01-28">
-          01-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2018">2018</h2>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2018/10/11/bugs-json-myEclipse/" itemprop="url">
             
-              <span itemprop="name">在MyEclipse中使用JSON对象的依赖包问题</span>
             
-          </a>
-        
-      </h3>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-10-11T20:14:09+08:00" content="2018-10-11">
-          10-11
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2018/09/27/struts2-use-validate/" itemprop="url">
-            
-              <span itemprop="name">JSP表单验证</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-09-27T12:56:07+08:00" content="2018-09-27">
-          09-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <p>来吧，反击的号角已经吹响！</p>
+<p><strong>闭包</strong>と<strong>变量的作用域</strong>への攻撃。</p>
+<p>因为<code>ECMAScript6</code>已经引入了<code>let</code>关键字，本章关于变量的部分将分两部分进行介绍。</p>
+<a id="more"></a>
+<h2 id="ECMAScript5の变量"><a href="#ECMAScript5の变量" class="headerlink" title="ECMAScript5の变量"></a>ECMAScript5の变量</h2><h3 id="变量以函数为作用域"><a href="#变量以函数为作用域" class="headerlink" title="变量以函数为作用域"></a>变量以函数为作用域</h3><p><del>我就喜欢<code>JavaScript</code>的这些奇奇怪怪的语言特性。</del></p>
+<p>不同于其他大多数主流语言的块级作用域，<code>JavaScript</code>的变量是函数级作用域的：<strong>只有函数可以产生新的作用域</strong>。</p>
+<p>就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> foo = <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);  <span class="comment">//4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="变量声明的提前"><a href="#变量声明的提前" class="headerlink" title="变量声明的提前"></a>变量声明的提前</h3><p><code>JavaScript</code>会提前所有的变量<strong>声明</strong>，注意是声明而不是赋值，他会把所有的声明移到直接作用域的最前面。就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);  <span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> v = <span class="string">'s1meple'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(v);  <span class="comment">//'s1mple'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你<strong>重定义一个已经被定义过的变量</strong>，那么什么也不会发生。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'nihao'</span>;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//'nihao'</span></span><br></pre></td></tr></table></figure>
+<p>尤其需要注意的是函数：</p>
+<ul>
+<li>这是<strong>函数声明</strong>：<code>function foo(){}</code></li>
+<li>这是<strong>函数表达式</strong>：<code>var f=function foo(){foo()}</code></li>
+</ul>
+<p>函数声明可以完全提升，而显然，函数表达式只有<strong>变量的声明</strong>被提升。</p>
+<h3 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h3><p>相比在之前，你已经看到过很多形如这样的表达式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello!'</span>+a)</span><br><span class="line">&#125;(<span class="string">'Jack'</span>));</span><br><span class="line">+<span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'nihao!'</span>+b)</span><br><span class="line">&#125;(<span class="string">'libai'</span>);</span><br><span class="line"><span class="keyword">void</span> <span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'konnnichiwa!'</span>+c)</span><br><span class="line">&#125;(<span class="string">'yoshida'</span>);</span><br></pre></td></tr></table></figure>
+<p>它们全部都是<code>Immediately Invoked Function Expression</code>，即<strong>立即执行函数表达式</strong>。</p>
+<p>使用IIFE将会模拟出一个<strong>块级作用域</strong>，就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        ~<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> a = <span class="string">'nihao'</span>;</span><br><span class="line">            <span class="built_in">console</span>.log(a);  <span class="comment">//'nihao'</span></span><br><span class="line">        &#125;();</span><br><span class="line">        <span class="built_in">console</span>.log(a);  <span class="comment">//ReferenceError: a is not defined</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">//ReferenceError: a is not defined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于<code>IIFE</code>，我们有一些要注意的：</p>
+<ul>
+<li><strong>它是立即执行的</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name= <span class="string">'world'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> name = <span class="string">'yoshida'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbyd'</span> + name);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello'</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<p>它会输出什么呢？</p>
+<p>嗯哼？正确答案是<code>Goodbye yoshida</code>哟。</p>
+<p>在<code>if</code>语句中声明的变量<code>name</code>可是在整个<code>IIFE</code>中都有效哦，不要因为看到<code>IIFE</code>就忘了变量声明的提前~</p>
+<ul>
+<li>它<strong>必须是一个表达式</strong></li>
+</ul>
+<p>对，你可能很疑惑为什么函数写成那个样子就变成了<code>IIFE</code>：如果一个语句以<code>function</code>关键词开头，<strong>解析器会认为它是一个函数定义</strong>，但是一个函数声明并不会立即执行，反而会报错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'nihao'</span>);</span><br><span class="line">&#125;();</span><br><span class="line"><span class="comment">//SyntaxError: expected expression, got ')'</span></span><br></pre></td></tr></table></figure>
+<p>使用括号<code>()</code>的原因是：<strong>在括号中，只存在表达式</strong>。</p>
+<p>自然，在<code>function</code>关键字前面加上其他诸如<code>!</code>、<code>~</code>、<code>new</code>、<code>void</code>、<code>+</code>、<code>-</code>的目的，自然是让解析器认为这个语句是一个表达式。</p>
+<p>值得注意的是：<code>+function</code>的效率最高，<code>new function</code>的效率最低。</p>
+<ul>
+<li>别忘了后面的分号</li>
+</ul>
+<p>在两个IIFE中漏了分号，你的代码将会出问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'nihao'</span>);</span><br><span class="line">&#125;()  <span class="comment">//expected ;</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hey'</span>);</span><br><span class="line">&#125;());</span><br><span class="line"><span class="comment">//TypeError: (intermediate value)(...) is not a function</span></span><br></pre></td></tr></table></figure>
+<h2 id="ECMAScript6の变量"><a href="#ECMAScript6の变量" class="headerlink" title="ECMAScript6の变量"></a>ECMAScript6の变量</h2><h3 id="let关键字"><a href="#let关键字" class="headerlink" title="let关键字"></a>let关键字</h3><p>引入了<code>let</code>关键字的<code>JavaScript</code>好起来了。</p>
+<p><code>let</code>所声明的变量只在<code>let</code>命令所在的<strong>代码块</strong>内有效：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="string">'nihao'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">//'nihao'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//ReferenceError: a is not defined</span></span><br></pre></td></tr></table></figure>
+<p>需要我们注意的是，<code>let</code>命令：</p>
+<ul>
+<li><strong>不存在变量提升</strong>：变量不再可以在声明之前使用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//'nihao'</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'nihao'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//ReferenceError: can't access lexical declaration `b' before initialization</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="string">'connnichiwa'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>封闭作用域</li>
+</ul>
+<p>如果块中存在<code>let</code>和<code>const</code>命令，则这个块对这些命令声明的变量 ，<strong>从一开始就形成封闭作用域</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'nihao'</span>;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">//ReferenceError: can't access lexical declaration `a' before initialization</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="string">'connnichiwa'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>不允许重复声明</li>
+</ul>
+<p>与<code>var</code>关键字不同，<code>let</code>不允许在相同作用域内重复声明同一个变量：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'nihao'</span>;</span><br><span class="line"><span class="keyword">let</span> a;  <span class="comment">//SyntaxError: redeclaration of let a</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用let代替IIFE"><a href="#使用let代替IIFE" class="headerlink" title="使用let代替IIFE"></a>使用let代替IIFE</h3><p>可以说，<code>let</code>的出现解决了不得不使用IIFE的困境：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意，for中声明的i是单独的作用域，与for语句体中不同</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//0 1 2 3 4</span></span><br></pre></td></tr></table></figure>
+<h2 id="变量的环境管理"><a href="#变量的环境管理" class="headerlink" title="变量的环境管理"></a>变量的环境管理</h2><h2 id="闭包！闭包！闭包！"><a href="#闭包！闭包！闭包！" class="headerlink" title="闭包！闭包！闭包！"></a>闭包！闭包！闭包！</h2>
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
+          
+            <a href="/tags/面试/" rel="tag"># -面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/08/About-HTTPS/" rel="next" title="我不知道的HTTP与URL">
+                <i class="fa fa-chevron-left"></i> 我不知道的HTTP与URL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDAyNy8xNjU1NA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1078,8 +573,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1206,6 +710,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript5の变量"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript5の变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量以函数为作用域"><span class="nav-number">1.1.</span> <span class="nav-text">变量以函数为作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明的提前"><span class="nav-number">1.2.</span> <span class="nav-text">变量声明的提前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IIFE"><span class="nav-number">1.3.</span> <span class="nav-text">IIFE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript6の变量"><span class="nav-number">2.</span> <span class="nav-text">ECMAScript6の变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let关键字"><span class="nav-number">2.1.</span> <span class="nav-text">let关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用let代替IIFE"><span class="nav-number">2.2.</span> <span class="nav-text">使用let代替IIFE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的环境管理"><span class="nav-number">3.</span> <span class="nav-text">变量的环境管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包！闭包！闭包！"><span class="nav-number">4.</span> <span class="nav-text">闭包！闭包！闭包！</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1338,6 +859,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -1348,6 +873,23 @@
   
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/04/12/About-Closure-and-Function/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
