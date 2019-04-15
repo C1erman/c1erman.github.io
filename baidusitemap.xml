@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.club/2019/04/15/Regular-Expression-Matching/</loc>
+    <lastmod>2019-04-15</lastmod>
+  </url>  <url>
     <loc>http://seefun.club/2019/04/14/Operator-Priority-in-JS/</loc>
-    <lastmod>2019-04-14</lastmod>
+    <lastmod>2019-04-15</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/04/12/About-Closure-and-Function/</loc>
     <lastmod>2019-04-13</lastmod>
