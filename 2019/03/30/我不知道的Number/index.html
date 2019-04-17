@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-柑橘-32.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-柑橘-16.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<!-- 网页加载条 -->
+<script>
+(function(){var t,e,n,r,s,o,i,a,u,c,l,p,h,f,d,g,m,y,v,w,b,k,S,q,L,x,P,T,R,j,E,O,M,A,N,_,F,C,U,W,X,D,H,I,z,G,B,J,K=[].slice,Q={}.hasOwnProperty,V=function(t,e){function n(){this.constructor=t}for(var r in e)Q.call(e,r)&&(t[r]=e[r]);return n.prototype=e.prototype,t.prototype=new n,t.__super__=e.prototype,t},Y=[].indexOf||function(t){for(var e=0,n=this.length;n>e;e++)if(e in this&&this[e]===t)return e;return-1};for(b={catchupTime:100,initialRate:.03,minTime:250,ghostTime:100,maxProgressPerFrame:20,easeFactor:1.25,startOnPageLoad:!0,restartOnPushState:!0,restartOnRequestAfter:500,target:"body",elements:{checkInterval:100,selectors:["body"]},eventLag:{minSamples:10,sampleCount:3,lagThreshold:3},ajax:{trackMethods:["GET"],trackWebSockets:!0,ignoreURLs:[]}},R=function(){var t;return null!=(t="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance.now():void 0)?t:+new Date},E=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame,w=window.cancelAnimationFrame||window.mozCancelAnimationFrame,null==E&&(E=function(t){return setTimeout(t,50)},w=function(t){return clearTimeout(t)}),M=function(t){var e,n;return e=R(),(n=function(){var r;return(r=R()-e)>=33?(e=R(),t(r,function(){return E(n)})):setTimeout(n,33-r)})()},O=function(){var t,e,n;return n=arguments[0],e=arguments[1],t=3<=arguments.length?K.call(arguments,2):[],"function"==typeof n[e]?n[e].apply(n,t):n[e]},k=function(){var t,e,n,r,s,o,i;for(e=arguments[0],o=0,i=(r=2<=arguments.length?K.call(arguments,1):[]).length;i>o;o++)if(n=r[o])for(t in n)Q.call(n,t)&&(s=n[t],null!=e[t]&&"object"==typeof e[t]&&null!=s&&"object"==typeof s?k(e[t],s):e[t]=s);return e},m=function(t){var e,n,r,s,o;for(n=e=0,s=0,o=t.length;o>s;s++)r=t[s],n+=Math.abs(r),e++;return n/e},q=function(t,e){var n,r,s;if(null==t&&(t="options"),null==e&&(e=!0),s=document.querySelector("[data-pace-"+t+"]")){if(n=s.getAttribute("data-pace-"+t),!e)return n;try{return JSON.parse(n)}catch(t){return r=t,"undefined"!=typeof console&&null!==console?console.error("Error parsing inline pace options",r):void 0}}},i=function(){function t(){}return t.prototype.on=function(t,e,n,r){var s;return null==r&&(r=!1),null==this.bindings&&(this.bindings={}),null==(s=this.bindings)[t]&&(s[t]=[]),this.bindings[t].push({handler:e,ctx:n,once:r})},t.prototype.once=function(t,e,n){return this.on(t,e,n,!0)},t.prototype.off=function(t,e){var n,r,s;if(null!=(null!=(r=this.bindings)?r[t]:void 0)){if(null==e)return delete this.bindings[t];for(n=0,s=[];n<this.bindings[t].length;)s.push(this.bindings[t][n].handler===e?this.bindings[t].splice(n,1):n++);return s}},t.prototype.trigger=function(){var t,e,n,r,s,o,i,a,u;if(n=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],null!=(i=this.bindings)?i[n]:void 0){for(s=0,u=[];s<this.bindings[n].length;)a=this.bindings[n][s],r=a.handler,e=a.ctx,o=a.once,r.apply(null!=e?e:this,t),u.push(o?this.bindings[n].splice(s,1):s++);return u}},t}(),c=window.Pace||{},window.Pace=c,k(c,i.prototype),j=c.options=k({},b,window.paceOptions,q()),H=0,z=(B=["ajax","document","eventLag","elements"]).length;z>H;H++)F=B[H],!0===j[F]&&(j[F]=b[F]);u=function(t){function e(){return e.__super__.constructor.apply(this,arguments)}return V(e,t),e}(Error),e=function(){function t(){this.progress=0}return t.prototype.getElement=function(){var t;if(null==this.el){if(!(t=document.querySelector(j.target)))throw new u;this.el=document.createElement("div"),this.el.className="pace pace-active",document.body.className=document.body.className.replace(/pace-done/g,""),document.body.className+=" pace-running",this.el.innerHTML='<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>',null!=t.firstChild?t.insertBefore(this.el,t.firstChild):t.appendChild(this.el)}return this.el},t.prototype.finish=function(){var t;return(t=this.getElement()).className=t.className.replace("pace-active",""),t.className+=" pace-inactive",document.body.className=document.body.className.replace("pace-running",""),document.body.className+=" pace-done"},t.prototype.update=function(t){return this.progress=t,this.render()},t.prototype.destroy=function(){try{this.getElement().parentNode.removeChild(this.getElement())}catch(t){u=t}return this.el=void 0},t.prototype.render=function(){var t,e,n,r,s,o,i;if(null==document.querySelector(j.target))return!1;for(t=this.getElement(),r="translate3d("+this.progress+"%, 0, 0)",s=0,o=(i=["webkitTransform","msTransform","transform"]).length;o>s;s++)e=i[s],t.children[0].style[e]=r;return(!this.lastRenderedProgress||this.lastRenderedProgress|0!==this.progress|0)&&(t.children[0].setAttribute("data-progress-text",(0|this.progress)+"%"),this.progress>=100?n="99":(n=this.progress<10?"0":"",n+=0|this.progress),t.children[0].setAttribute("data-progress",""+n)),this.lastRenderedProgress=this.progress},t.prototype.done=function(){return this.progress>=100},t}(),a=function(){function t(){this.bindings={}}return t.prototype.trigger=function(t,e){var n,r,s,o,i;if(null!=this.bindings[t]){for(i=[],r=0,s=(o=this.bindings[t]).length;s>r;r++)n=o[r],i.push(n.call(this,e));return i}},t.prototype.on=function(t,e){var n;return null==(n=this.bindings)[t]&&(n[t]=[]),this.bindings[t].push(e)},t}(),D=window.XMLHttpRequest,X=window.XDomainRequest,W=window.WebSocket,S=function(t,e){var n,r;r=[];for(n in e.prototype)try{r.push(null==t[n]&&"function"!=typeof e[n]?"function"==typeof Object.defineProperty?Object.defineProperty(t,n,{get:function(){return e.prototype[n]},configurable:!0,enumerable:!0}):t[n]=e.prototype[n]:void 0)}catch(t){t}return r},P=[],c.ignore=function(){var t,e,n;return e=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],P.unshift("ignore"),n=e.apply(null,t),P.shift(),n},c.track=function(){var t,e,n;return e=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],P.unshift("track"),n=e.apply(null,t),P.shift(),n},_=function(t){var e;if(null==t&&(t="GET"),"track"===P[0])return"force";if(!P.length&&j.ajax){if("socket"===t&&j.ajax.trackWebSockets)return!0;if(e=t.toUpperCase(),Y.call(j.ajax.trackMethods,e)>=0)return!0}return!1},l=function(t){function e(){var t,n=this;e.__super__.constructor.apply(this,arguments),t=function(t){var e;return e=t.open,t.open=function(r,s){return _(r)&&n.trigger("request",{type:r,url:s,request:t}),e.apply(t,arguments)}},window.XMLHttpRequest=function(e){var n;return n=new D(e),t(n),n};try{S(window.XMLHttpRequest,D)}catch(t){}if(null!=X){window.XDomainRequest=function(){var e;return e=new X,t(e),e};try{S(window.XDomainRequest,X)}catch(t){}}if(null!=W&&j.ajax.trackWebSockets){window.WebSocket=function(t,e){var r;return r=null!=e?new W(t,e):new W(t),_("socket")&&n.trigger("request",{type:"socket",url:t,protocols:e,request:r}),r};try{S(window.WebSocket,W)}catch(t){}}}return V(e,a),e}(),I=null,N=function(t){var e,n,r,s;for(n=0,r=(s=j.ajax.ignoreURLs).length;r>n;n++)if(e=s[n],"string"==typeof e){if(-1!==t.indexOf(e))return!0}else if(e.test(t))return!0;return!1},(L=function(){return null==I&&(I=new l),I})().on("request",function(e){var n,r,s,o,i;return o=e.type,s=e.request,i=e.url,N(i)?void 0:c.running||!1===j.restartOnRequestAfter&&"force"!==_(o)?void 0:(r=arguments,"boolean"==typeof(n=j.restartOnRequestAfter||0)&&(n=0),setTimeout(function(){var e,n,i,a,u;if("socket"===o?s.readyState<2:0<(i=s.readyState)&&4>i){for(c.restart(),u=[],e=0,n=(a=c.sources).length;n>e;e++){if((F=a[e])instanceof t){F.watch.apply(F,r);break}u.push(void 0)}return u}},n))}),t=function(){function t(){var t=this;this.elements=[],L().on("request",function(){return t.watch.apply(t,arguments)})}return t.prototype.watch=function(t){var e,n,r,s;return r=t.type,e=t.request,s=t.url,N(s)?void 0:(n="socket"===r?new f(e):new d(e),this.elements.push(n))},t}(),d=function(){return function(t){var e,n,r,s,o,i=this;if(this.progress=0,null!=window.ProgressEvent)for(t.addEventListener("progress",function(t){return i.progress=t.lengthComputable?100*t.loaded/t.total:i.progress+(100-i.progress)/2},!1),o=["load","abort","timeout","error"],n=0,r=o.length;r>n;n++)e=o[n],t.addEventListener(e,function(){return i.progress=100},!1);else s=t.onreadystatechange,t.onreadystatechange=function(){var e;return 0===(e=t.readyState)||4===e?i.progress=100:3===t.readyState&&(i.progress=50),"function"==typeof s?s.apply(null,arguments):void 0}}}(),f=function(){return function(t){var e,n,r,s,o=this;for(this.progress=0,n=0,r=(s=["error","open"]).length;r>n;n++)e=s[n],t.addEventListener(e,function(){return o.progress=100},!1)}}(),r=function(){return function(t){var e,n,r,o;for(null==t&&(t={}),this.elements=[],null==t.selectors&&(t.selectors=[]),n=0,r=(o=t.selectors).length;r>n;n++)e=o[n],this.elements.push(new s(e))}}(),s=function(){function t(t){this.selector=t,this.progress=0,this.check()}return t.prototype.check=function(){var t=this;return document.querySelector(this.selector)?this.done():setTimeout(function(){return t.check()},j.elements.checkInterval)},t.prototype.done=function(){return this.progress=100},t}(),n=function(){function t(){var t,e,n=this;this.progress=null!=(e=this.states[document.readyState])?e:100,t=document.onreadystatechange,document.onreadystatechange=function(){return null!=n.states[document.readyState]&&(n.progress=n.states[document.readyState]),"function"==typeof t?t.apply(null,arguments):void 0}}return t.prototype.states={loading:0,interactive:50,complete:100},t}(),o=function(){return function(){var t,e,n,r,s,o=this;this.progress=0,t=0,s=[],r=0,n=R(),e=setInterval(function(){var i;return i=R()-n-50,n=R(),s.push(i),s.length>j.eventLag.sampleCount&&s.shift(),t=m(s),++r>=j.eventLag.minSamples&&t<j.eventLag.lagThreshold?(o.progress=100,clearInterval(e)):o.progress=3/(t+3)*100},50)}}(),h=function(){function t(t){this.source=t,this.last=this.sinceLastUpdate=0,this.rate=j.initialRate,this.catchup=0,this.progress=this.lastProgress=0,null!=this.source&&(this.progress=O(this.source,"progress"))}return t.prototype.tick=function(t,e){var n;return null==e&&(e=O(this.source,"progress")),e>=100&&(this.done=!0),e===this.last?this.sinceLastUpdate+=t:(this.sinceLastUpdate&&(this.rate=(e-this.last)/this.sinceLastUpdate),this.catchup=(e-this.progress)/j.catchupTime,this.sinceLastUpdate=0,this.last=e),e>this.progress&&(this.progress+=this.catchup*t),n=1-Math.pow(this.progress/100,j.easeFactor),this.progress+=n*this.rate*t,this.progress=Math.min(this.lastProgress+j.maxProgressPerFrame,this.progress),this.progress=Math.max(0,this.progress),this.progress=Math.min(100,this.progress),this.lastProgress=this.progress,this.progress},t}(),C=null,A=null,y=null,U=null,g=null,v=null,c.running=!1,x=function(){return j.restartOnPushState?c.restart():void 0},null!=window.history.pushState&&(G=window.history.pushState,window.history.pushState=function(){return x(),G.apply(window.history,arguments)}),null!=window.history.replaceState&&(J=window.history.replaceState,window.history.replaceState=function(){return x(),J.apply(window.history,arguments)}),p={ajax:t,elements:r,document:n,eventLag:o},(T=function(){var t,n,r,s,o,i,a,u;for(c.sources=C=[],n=0,s=(i=["ajax","elements","document","eventLag"]).length;s>n;n++)t=i[n],!1!==j[t]&&C.push(new p[t](j[t]));for(r=0,o=(u=null!=(a=j.extraSources)?a:[]).length;o>r;r++)F=u[r],C.push(new F(j));return c.bar=y=new e,A=[],U=new h})(),c.stop=function(){return c.trigger("stop"),c.running=!1,y.destroy(),v=!0,null!=g&&("function"==typeof w&&w(g),g=null),T()},c.restart=function(){return c.trigger("restart"),c.stop(),c.start()},c.go=function(){var t;return c.running=!0,y.render(),t=R(),v=!1,g=M(function(e,n){var r,s,o,i,a,u,l,p,f,d,g,m,w,b,k;for(100-y.progress,s=d=0,o=!0,u=g=0,w=C.length;w>g;u=++g)for(F=C[u],f=null!=A[u]?A[u]:A[u]=[],a=null!=(k=F.elements)?k:[F],l=m=0,b=a.length;b>m;l=++m)i=a[l],p=null!=f[l]?f[l]:f[l]=new h(i),o&=p.done,p.done||(s++,d+=p.tick(e));return r=d/s,y.update(U.tick(e,r)),y.done()||o||v?(y.update(100),c.trigger("done"),setTimeout(function(){return y.finish(),c.running=!1,c.trigger("hide")},Math.max(j.ghostTime,Math.max(j.minTime-(R()-t),0)))):n()})},c.start=function(t){k(j,t),c.running=!0;try{y.render()}catch(t){u=t}return document.querySelector(".pace")?(c.trigger("start"),c.go()):setTimeout(c.start,50)},"function"==typeof define&&define.amd?define(["pace"],function(){return c}):"object"==typeof exports?module.exports=c:j.startOnPageLoad&&c.start()}).call(this);
+</script>
+<script src="https://neveryu.github.io/js/src/pace.min.js"></script>
+
+  <meta name="description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
+<meta name="keywords" content="-JavaScript,-Number">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我不知道的Number">
+<meta property="og:url" content="http://seefun.club/2019/03/30/我不知道的Number/index.html">
+<meta property="og:site_name" content="归人1337">
+<meta property="og:description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js-2.png">
+<meta property="og:updated_time" content="2019-04-06T13:04:05.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我不知道的Number">
+<meta name="twitter:description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://seefun.club/2019/03/30/我不知道的Number/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>我不知道的Number | 归人1337</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">归人1337</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/03/30/我不知道的Number/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张可携">
+      <meta itemprop="description" content="前端爱好者">
+      <meta itemprop="image" content="/images/profilePhoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="归人1337">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">我不知道的Number
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-30 20:00:19" itemprop="dateCreated datePublished" datetime="2019-03-30T20:00:19+08:00">2019-03-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-06 21:04:05" itemprop="dateModified" datetime="2019-04-06T21:04:05+08:00">2019-04-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/我不知道的JavaScript/" itemprop="url" rel="index"><span itemprop="name">-我不知道的JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> = <span class="number">0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+<p>Why?</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">9007199254740992</span> + <span class="number">1</span> = <span class="number">9007199254740992</span></span><br></pre></td></tr></table></figure>
+<p>Why!</p>
+<a id="more"></a>
+<h2 id="数字字面量"><a href="#数字字面量" class="headerlink" title="数字字面量"></a>数字字面量</h2><p><code>JavaScript</code>的数字是双精度值，即64位数。基于浮点算术的IEEE标准：<a href="https://en.wikipedia.org/wiki/IEEE_754" target="_blank" rel="noopener">IEEE 754</a>。</p>
+<p>一个数字字面量可以是<strong>整型</strong>、<strong>浮点型</strong>或者<strong>十六进制</strong>整型：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="number">35</span>   <span class="comment">//35</span></span><br><span class="line">&gt;<span class="number">3.1415</span>  <span class="comment">//3.1415</span></span><br><span class="line">&gt;<span class="number">0xFF</span>  <span class="comment">//255</span></span><br></pre></td></tr></table></figure>
+<p>大部分的<code>JavaScript</code>引擎会在内部做优化并区分浮点数字和整型。</p>
+<h2 id="转换成数字"><a href="#转换成数字" class="headerlink" title="转换成数字"></a>转换成数字</h2><p>你可以使用这两种方法将任意值转换为数字：<code>Number(value)</code>、<code>+value</code>。</p>
+<p>第二种你可能不常见，但是总会有这种问题：<code>+&quot;&quot; = ?  //0</code></p>
+<h2 id="数字的内部表示"><a href="#数字的内部表示" class="headerlink" title="数字的内部表示"></a>数字的内部表示</h2><p><code>JavaScript</code>的数字是64位精度的，也叫做双精度，通常被叫做<code>double</code>。</p>
+<p>数字的内部描述基于IEEE 754标准，64位按照下表所示分布在数字的<strong>符号 Sign</strong>、<strong>指数 Exponent</strong>和<strong>分数 Ftrction</strong>上：</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>指数 [-1023 , 1024]</th>
+<th>分数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>占1位</td>
+<td>占11位</td>
+<td>占52位</td>
+</tr>
+<tr>
+<td>第63位</td>
+<td>第62~52位</td>
+<td>第52~0位</td>
+</tr>
+</tbody>
+</table>
+<p>一个数字的值根据下面的公式计算出来：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png" alt="数值的计算"></p>
+<blockquote>
+<p>前置的百分号<code>%</code>代表中间的数字采用二进制计数法编写。</p>
+</blockquote>
+<p>感到很奇怪？不怕，我将分别讲讲这三个表示。</p>
+<h3 id="符号-Sign"><a href="#符号-Sign" class="headerlink" title="符号 Sign"></a>符号 Sign</h3><p>如果标志位为0，为正数，否则为负数。</p>
+<h3 id="分数-Ftrction"><a href="#分数-Ftrction" class="headerlink" title="分数 Ftrction"></a>分数 Ftrction</h3><p><strong>尾数</strong>，是百分号<code>%</code>之后<code>1.</code>后面的数，记住，是二进制表示，<strong>并且1将占一位</strong>。</p>
+<p>而分数就是带上尾数的整体二进制表示喽，像这样：<code>%1.011</code>，其中<code>0</code>是第51位。</p>
+<h3 id="指数-Exponent"><a href="#指数-Exponent" class="headerlink" title="指数 Exponent"></a>指数 Exponent</h3><p>指数用于控制小数点的左右移动，因为是二进制数，所以是<strong>2的指数次方</strong>。指数为正则小数点右移，为负则左移。</p>
+<p>指数有11位，因此最大的取值范围位[-1023,1024]，但是需要注意的是：为了支持负指数，<code>JavaScript</code>使用偏<a href="https://en.wikipedia.org/wiki/Offset_binary" target="_blank" rel="noopener">移二进制</a>来编码：<strong>1023表示0，小于它的为负，大于它的为正</strong>。</p>
+<p>于是，原本11位的数字范围[0,2047]就能被划分为正、负两种，实际上指数需要通过<code>-1023</code>得到。</p>
+<p>就像下面这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E = 00000000000--&gt;0 - 1023 = -1023</span><br><span class="line">E = 01111111111--&gt;1023 - 1023 = 0</span><br><span class="line">E = 11111111111--&gt;2047 - 1023 = 1024</span><br></pre></td></tr></table></figure>
+<p>实际上，取反一个指数，只需要<strong>按位取反后减一</strong>即可。</p>
+<p>有两个特殊的指数：<code>0</code>和<code>2047</code>。</p>
+<ul>
+<li>指数为<code>2047</code>时，<code>JavaScript</code>将把这个数字表示为<code>NaN</code>或<code>Infinity</code>。</li>
+<li>指数为<code>0</code>时，如果分数也为0，这个数字就为<code>+0/-0</code>；如果分数不为0，用于表示接近0的很小的数字。</li>
+</ul>
+<p>为了使这两种情况都可用，这里用到了<strong>非规格化</strong>的方法，即<strong>不把</strong>小数点放在第一个非零数字后面。</p>
+<p>非规格化的最小数字为：<code>(-1)^(1/0) × %0.Ftrction × 2^(1-1023)</code>，此时如果规格化，则指数为-1023，即0。</p>
+<p>规格化的最小数字为：<code>(-1)^(1/0) × %1.Ftrction × 2^(1-1023)</code>。</p>
+<p>可以看到，非规格化的数字更小。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>二进制，二进制，不要问为什么分数没有2以上的数字出现。</p>
+<table>
+<thead>
+<tr>
+<th>S=0 \</th>
+<th>F=%101 \</th>
+<th>E=2</th>
+<th>Number = (-1)^0 × %1.101 × 2^2 = %110.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S=1 \</td>
+<td>F=%101 \</td>
+<td>E=-2</td>
+<td>Number = (-1)^1 × %1.101 × 2^(-2) = %-0.01101</td>
+</tr>
+</tbody>
+</table>
+<h2 id="处理舍入的错误"><a href="#处理舍入的错误" class="headerlink" title="处理舍入的错误"></a>处理舍入的错误</h2><p><code>JavaScript</code>的数字通常是作为十进制的浮点数字输入的，<strong>但是在内部它们其实是以二进制的浮点数字来表示的</strong>，这就会导致精确度问题。</p>
+<p>来い，看看<strong>十进制</strong>浮点数字和<strong>二进制</strong>浮点数字可以表示什么样的分数。</p>
+<h3 id="十进制系统"><a href="#十进制系统" class="headerlink" title="十进制系统"></a>十进制系统</h3><p>所有的分数是一个<strong>尾数被10的幂次相除</strong>的结果。</p>
+<p>因此，在分母位置上只有10的幂次。</p>
+<p>这就是为什么1/3不能精确的表示成一个十进制的浮点数字——我们无法将一个3放到分母上。</p>
+<h3 id="二进制系统"><a href="#二进制系统" class="headerlink" title="二进制系统"></a>二进制系统</h3><p>同理，二进制的浮点数字在<strong>分母的位置上只有2的幂次</strong>。</p>
+<p>如果分母上面只有2的幂次，那么这个十进制数字可以在<code>JavaScript</code>中被表示：</p>
+<ul>
+<li>0.5 = 5/10 = 1/2 = %0.1</li>
+<li>0.75 = 75/100 = 3/4 = %0.11</li>
+<li>0.125 = 125/1000 = 1/8 = %0.001</li>
+</ul>
+<p>etc.</p>
+<p>除此之外，其它的十进制分数都不能被精确的表示，因为它们在分母上还有除了2以外的数字：</p>
+<ul>
+<li>0.1 = 1/10 =1/(2×5)</li>
+<li>0.2 = 2/10 = 1/5</li>
+</ul>
+<p>etc.</p>
+<p>如此以来，就知道为什么会出现<strong>0.1+0.2!=0.3</strong>的情况了吧。</p>
+<p>我们可以提供一个函数，将边界错误的上界考虑进来，这个上界叫做<strong>机器精度</strong>，对于双精度，一个标准的精度值是2^-53。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">epsEqu</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> EPSILON = <span class="built_in">Math</span>.Pow(<span class="number">2</span>, <span class="number">-53</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(x - y) &lt; EPSILON;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="整数的表示"><a href="#整数的表示" class="headerlink" title="整数的表示"></a>整数的表示</h2><p>整形指的是没有十进制分数的数字。</p>
+<p><code>JavaScript</code>只有浮点数字，但是：</p>
+<ul>
+<li>大多数的<code>JavaScript</code>引擎将一个足够小的、没有十进制分数的数字存储成一个整形，并将这种形式持续尽可能长的形式，如果它变得太大或者出现了十进制的分数，它们就得返回浮点形式。</li>
+<li><code>ECMAScript</code>规范中有整形运算符，即所有的按位运算符。<strong>这些运算符将会把运算数转换成32位的整形以返回</strong>。</li>
+</ul>
+<p><span id="read_again"></span></p>
+<p>需要多少位来编码一个整数呢？尾数共有53位，1个在点的前面，52个跟在后面。</p>
+<p>请注意，分数位的最高位总是1，也就是说我们不能随便的使用所有的位。</p>
+<h3 id="最大"><a href="#最大" class="headerlink" title="最大"></a>最大</h3><p><code>JavaScript</code>只能<strong>处理</strong>最大至53位的整数值，即52位的分数加上一个来自指数的间接位：指数用于移动“分数”。</p>
+<p>下表解释了怎么将<strong>整型</strong>表示成<strong>浮点数</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>二进制位数</th>
+<th>范围</th>
+<th>编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1位</td>
+<td>0</td>
+<td>%0 × 2^0</td>
+</tr>
+<tr>
+<td>1位</td>
+<td>1</td>
+<td>%1 × 2^0</td>
+</tr>
+<tr>
+<td>2位</td>
+<td>2–3</td>
+<td>%1.0 × 2^1 \</td>
+<td>%1.1 × 2^1</td>
+</tr>
+<tr>
+<td></td>
+<td>……</td>
+<td>……</td>
+</tr>
+<tr>
+<td>53位</td>
+<td>2^52–2^53-1</td>
+<td>%1.F<sub>51</sub>……F<sub>0</sub> × 2^52</td>
+</tr>
+</tbody>
+</table>
+<p><code>JavaScript</code>只能安全的表示在( -2<sup>53</sup> , 2<sup>53</sup> )范围内的整数，因此，这些整数被叫做<strong>安全整数</strong>。</p>
+<h3 id="更大"><a href="#更大" class="headerlink" title="更大"></a>更大</h3><p>那么，不安全的呢？</p>
+<p>在<code>JavaScript</code>里，最大的数确实是 2<sup>53</sup>-1，但2<sup>53</sup>也可以被表示出来，因为有指数的帮助，就像这样：<code>%1.0 × 2^53</code>。</p>
+<p>来看一下位数更高的：</p>
+<table>
+<thead>
+<tr>
+<th>二进制位数</th>
+<th>范围</th>
+<th>编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>54位</td>
+<td>2^53–2^54-1</td>
+<td>%1.F<sub>51</sub>……F<sub>0</sub> <strong>0</strong> × 2^53</td>
+</tr>
+<tr>
+<td>55位</td>
+<td>2^54–2^55-1</td>
+<td>%1.F<sub>51</sub>……F<sub>0</sub> <strong>00</strong> × 2^54</td>
+</tr>
+<tr>
+<td>……</td>
+<td>……</td>
+<td>……</td>
+</tr>
+</tbody>
+</table>
+<p>看到了么？如果不明白<del>或许是我也不太懂</del>，请再一次<a href="#read_again">看看这里</a>。</p>
+<p>就像这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js-2.png" alt="解释"></p>
+<p>这意味着：对于54位数来讲，每两个数（1个二进制位）只能有一个能用这种方法表示。</p>
+<p>你表示了2<sup>53</sup>の<code>9007199254740992</code>，就没办法表示2<sup>53</sup>+1の<code>9007199254740993</code>。</p>
+<p>2<sup>53</sup> × 2可以被表示，因为此时指数还可用，加一就行。</p>
+<h2 id="他山之石"><a href="#他山之石" class="headerlink" title="他山之石"></a>他山之石</h2><p><a href="https://segmentfault.com/a/1190000017090272" target="_blank" rel="noopener">JavaScript是怎样编码数字的。</a></p>
+<p><a href="https://segmentfault.com/a/1190000013632163" target="_blank" rel="noopener">你对Number一无所知。</a></p>
+<h2 id="原力"><a href="#原力" class="headerlink" title="原力"></a>原力</h2><p><span id="funny_method"></span></p>
+<h3 id="通过运算符得到32位整数"><a href="#通过运算符得到32位整数" class="headerlink" title="通过运算符得到32位整数"></a>通过运算符得到32位整数</h3><ol>
+<li>二进制或<code>|</code></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x | <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>移位操作符<code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&gt;&gt;&gt;</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt;&lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入的x最好为正数，否则符号位也将参与计算</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toUnSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>位运算符<code>~</code></li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ~~x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
+          
+            <a href="/tags/Number/" rel="tag"># -Number</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/30/Reverse-Integer/" rel="next" title="LeetCode之“整数反转”">
+                <i class="fa fa-chevron-left"></i> LeetCode之“整数反转”
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/01/String-to-Integer/" rel="prev" title="LeetCode之“字符串转为整数”">
+                LeetCode之“字符串转为整数” <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDAyNy8xNjU1NA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="张可携">
+            
+              <p class="site-author-name" itemprop="name">张可携</p>
+              <div class="site-description motion-element" itemprop="description">前端爱好者</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/c1erman" title="GitHub &rarr; https://github.com/c1erman" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字字面量"><span class="nav-number">1.</span> <span class="nav-text">数字字面量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换成数字"><span class="nav-number">2.</span> <span class="nav-text">转换成数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字的内部表示"><span class="nav-number">3.</span> <span class="nav-text">数字的内部表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#符号-Sign"><span class="nav-number">3.1.</span> <span class="nav-text">符号 Sign</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分数-Ftrction"><span class="nav-number">3.2.</span> <span class="nav-text">分数 Ftrction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数-Exponent"><span class="nav-number">3.3.</span> <span class="nav-text">指数 Exponent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.4.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理舍入的错误"><span class="nav-number">4.</span> <span class="nav-text">处理舍入的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#十进制系统"><span class="nav-number">4.1.</span> <span class="nav-text">十进制系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制系统"><span class="nav-number">4.2.</span> <span class="nav-text">二进制系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数的表示"><span class="nav-number">5.</span> <span class="nav-text">整数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最大"><span class="nav-number">5.1.</span> <span class="nav-text">最大</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更大"><span class="nav-number">5.2.</span> <span class="nav-text">更大</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#他山之石"><span class="nav-number">6.</span> <span class="nav-text">他山之石</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原力"><span class="nav-number">7.</span> <span class="nav-text">原力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过运算符得到32位整数"><span class="nav-number">7.1.</span> <span class="nav-text">通过运算符得到32位整数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c1er And U</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+
+
+
+  <div class="footer-custom"><del>好好睡，晚安</del></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/03/30/我不知道的Number/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

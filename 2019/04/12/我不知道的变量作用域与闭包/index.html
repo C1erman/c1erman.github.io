@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-柑橘-32.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-柑橘-16.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<!-- 网页加载条 -->
+<script>
+(function(){var t,e,n,r,s,o,i,a,u,c,l,p,h,f,d,g,m,y,v,w,b,k,S,q,L,x,P,T,R,j,E,O,M,A,N,_,F,C,U,W,X,D,H,I,z,G,B,J,K=[].slice,Q={}.hasOwnProperty,V=function(t,e){function n(){this.constructor=t}for(var r in e)Q.call(e,r)&&(t[r]=e[r]);return n.prototype=e.prototype,t.prototype=new n,t.__super__=e.prototype,t},Y=[].indexOf||function(t){for(var e=0,n=this.length;n>e;e++)if(e in this&&this[e]===t)return e;return-1};for(b={catchupTime:100,initialRate:.03,minTime:250,ghostTime:100,maxProgressPerFrame:20,easeFactor:1.25,startOnPageLoad:!0,restartOnPushState:!0,restartOnRequestAfter:500,target:"body",elements:{checkInterval:100,selectors:["body"]},eventLag:{minSamples:10,sampleCount:3,lagThreshold:3},ajax:{trackMethods:["GET"],trackWebSockets:!0,ignoreURLs:[]}},R=function(){var t;return null!=(t="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance.now():void 0)?t:+new Date},E=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame,w=window.cancelAnimationFrame||window.mozCancelAnimationFrame,null==E&&(E=function(t){return setTimeout(t,50)},w=function(t){return clearTimeout(t)}),M=function(t){var e,n;return e=R(),(n=function(){var r;return(r=R()-e)>=33?(e=R(),t(r,function(){return E(n)})):setTimeout(n,33-r)})()},O=function(){var t,e,n;return n=arguments[0],e=arguments[1],t=3<=arguments.length?K.call(arguments,2):[],"function"==typeof n[e]?n[e].apply(n,t):n[e]},k=function(){var t,e,n,r,s,o,i;for(e=arguments[0],o=0,i=(r=2<=arguments.length?K.call(arguments,1):[]).length;i>o;o++)if(n=r[o])for(t in n)Q.call(n,t)&&(s=n[t],null!=e[t]&&"object"==typeof e[t]&&null!=s&&"object"==typeof s?k(e[t],s):e[t]=s);return e},m=function(t){var e,n,r,s,o;for(n=e=0,s=0,o=t.length;o>s;s++)r=t[s],n+=Math.abs(r),e++;return n/e},q=function(t,e){var n,r,s;if(null==t&&(t="options"),null==e&&(e=!0),s=document.querySelector("[data-pace-"+t+"]")){if(n=s.getAttribute("data-pace-"+t),!e)return n;try{return JSON.parse(n)}catch(t){return r=t,"undefined"!=typeof console&&null!==console?console.error("Error parsing inline pace options",r):void 0}}},i=function(){function t(){}return t.prototype.on=function(t,e,n,r){var s;return null==r&&(r=!1),null==this.bindings&&(this.bindings={}),null==(s=this.bindings)[t]&&(s[t]=[]),this.bindings[t].push({handler:e,ctx:n,once:r})},t.prototype.once=function(t,e,n){return this.on(t,e,n,!0)},t.prototype.off=function(t,e){var n,r,s;if(null!=(null!=(r=this.bindings)?r[t]:void 0)){if(null==e)return delete this.bindings[t];for(n=0,s=[];n<this.bindings[t].length;)s.push(this.bindings[t][n].handler===e?this.bindings[t].splice(n,1):n++);return s}},t.prototype.trigger=function(){var t,e,n,r,s,o,i,a,u;if(n=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],null!=(i=this.bindings)?i[n]:void 0){for(s=0,u=[];s<this.bindings[n].length;)a=this.bindings[n][s],r=a.handler,e=a.ctx,o=a.once,r.apply(null!=e?e:this,t),u.push(o?this.bindings[n].splice(s,1):s++);return u}},t}(),c=window.Pace||{},window.Pace=c,k(c,i.prototype),j=c.options=k({},b,window.paceOptions,q()),H=0,z=(B=["ajax","document","eventLag","elements"]).length;z>H;H++)F=B[H],!0===j[F]&&(j[F]=b[F]);u=function(t){function e(){return e.__super__.constructor.apply(this,arguments)}return V(e,t),e}(Error),e=function(){function t(){this.progress=0}return t.prototype.getElement=function(){var t;if(null==this.el){if(!(t=document.querySelector(j.target)))throw new u;this.el=document.createElement("div"),this.el.className="pace pace-active",document.body.className=document.body.className.replace(/pace-done/g,""),document.body.className+=" pace-running",this.el.innerHTML='<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>',null!=t.firstChild?t.insertBefore(this.el,t.firstChild):t.appendChild(this.el)}return this.el},t.prototype.finish=function(){var t;return(t=this.getElement()).className=t.className.replace("pace-active",""),t.className+=" pace-inactive",document.body.className=document.body.className.replace("pace-running",""),document.body.className+=" pace-done"},t.prototype.update=function(t){return this.progress=t,this.render()},t.prototype.destroy=function(){try{this.getElement().parentNode.removeChild(this.getElement())}catch(t){u=t}return this.el=void 0},t.prototype.render=function(){var t,e,n,r,s,o,i;if(null==document.querySelector(j.target))return!1;for(t=this.getElement(),r="translate3d("+this.progress+"%, 0, 0)",s=0,o=(i=["webkitTransform","msTransform","transform"]).length;o>s;s++)e=i[s],t.children[0].style[e]=r;return(!this.lastRenderedProgress||this.lastRenderedProgress|0!==this.progress|0)&&(t.children[0].setAttribute("data-progress-text",(0|this.progress)+"%"),this.progress>=100?n="99":(n=this.progress<10?"0":"",n+=0|this.progress),t.children[0].setAttribute("data-progress",""+n)),this.lastRenderedProgress=this.progress},t.prototype.done=function(){return this.progress>=100},t}(),a=function(){function t(){this.bindings={}}return t.prototype.trigger=function(t,e){var n,r,s,o,i;if(null!=this.bindings[t]){for(i=[],r=0,s=(o=this.bindings[t]).length;s>r;r++)n=o[r],i.push(n.call(this,e));return i}},t.prototype.on=function(t,e){var n;return null==(n=this.bindings)[t]&&(n[t]=[]),this.bindings[t].push(e)},t}(),D=window.XMLHttpRequest,X=window.XDomainRequest,W=window.WebSocket,S=function(t,e){var n,r;r=[];for(n in e.prototype)try{r.push(null==t[n]&&"function"!=typeof e[n]?"function"==typeof Object.defineProperty?Object.defineProperty(t,n,{get:function(){return e.prototype[n]},configurable:!0,enumerable:!0}):t[n]=e.prototype[n]:void 0)}catch(t){t}return r},P=[],c.ignore=function(){var t,e,n;return e=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],P.unshift("ignore"),n=e.apply(null,t),P.shift(),n},c.track=function(){var t,e,n;return e=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],P.unshift("track"),n=e.apply(null,t),P.shift(),n},_=function(t){var e;if(null==t&&(t="GET"),"track"===P[0])return"force";if(!P.length&&j.ajax){if("socket"===t&&j.ajax.trackWebSockets)return!0;if(e=t.toUpperCase(),Y.call(j.ajax.trackMethods,e)>=0)return!0}return!1},l=function(t){function e(){var t,n=this;e.__super__.constructor.apply(this,arguments),t=function(t){var e;return e=t.open,t.open=function(r,s){return _(r)&&n.trigger("request",{type:r,url:s,request:t}),e.apply(t,arguments)}},window.XMLHttpRequest=function(e){var n;return n=new D(e),t(n),n};try{S(window.XMLHttpRequest,D)}catch(t){}if(null!=X){window.XDomainRequest=function(){var e;return e=new X,t(e),e};try{S(window.XDomainRequest,X)}catch(t){}}if(null!=W&&j.ajax.trackWebSockets){window.WebSocket=function(t,e){var r;return r=null!=e?new W(t,e):new W(t),_("socket")&&n.trigger("request",{type:"socket",url:t,protocols:e,request:r}),r};try{S(window.WebSocket,W)}catch(t){}}}return V(e,a),e}(),I=null,N=function(t){var e,n,r,s;for(n=0,r=(s=j.ajax.ignoreURLs).length;r>n;n++)if(e=s[n],"string"==typeof e){if(-1!==t.indexOf(e))return!0}else if(e.test(t))return!0;return!1},(L=function(){return null==I&&(I=new l),I})().on("request",function(e){var n,r,s,o,i;return o=e.type,s=e.request,i=e.url,N(i)?void 0:c.running||!1===j.restartOnRequestAfter&&"force"!==_(o)?void 0:(r=arguments,"boolean"==typeof(n=j.restartOnRequestAfter||0)&&(n=0),setTimeout(function(){var e,n,i,a,u;if("socket"===o?s.readyState<2:0<(i=s.readyState)&&4>i){for(c.restart(),u=[],e=0,n=(a=c.sources).length;n>e;e++){if((F=a[e])instanceof t){F.watch.apply(F,r);break}u.push(void 0)}return u}},n))}),t=function(){function t(){var t=this;this.elements=[],L().on("request",function(){return t.watch.apply(t,arguments)})}return t.prototype.watch=function(t){var e,n,r,s;return r=t.type,e=t.request,s=t.url,N(s)?void 0:(n="socket"===r?new f(e):new d(e),this.elements.push(n))},t}(),d=function(){return function(t){var e,n,r,s,o,i=this;if(this.progress=0,null!=window.ProgressEvent)for(t.addEventListener("progress",function(t){return i.progress=t.lengthComputable?100*t.loaded/t.total:i.progress+(100-i.progress)/2},!1),o=["load","abort","timeout","error"],n=0,r=o.length;r>n;n++)e=o[n],t.addEventListener(e,function(){return i.progress=100},!1);else s=t.onreadystatechange,t.onreadystatechange=function(){var e;return 0===(e=t.readyState)||4===e?i.progress=100:3===t.readyState&&(i.progress=50),"function"==typeof s?s.apply(null,arguments):void 0}}}(),f=function(){return function(t){var e,n,r,s,o=this;for(this.progress=0,n=0,r=(s=["error","open"]).length;r>n;n++)e=s[n],t.addEventListener(e,function(){return o.progress=100},!1)}}(),r=function(){return function(t){var e,n,r,o;for(null==t&&(t={}),this.elements=[],null==t.selectors&&(t.selectors=[]),n=0,r=(o=t.selectors).length;r>n;n++)e=o[n],this.elements.push(new s(e))}}(),s=function(){function t(t){this.selector=t,this.progress=0,this.check()}return t.prototype.check=function(){var t=this;return document.querySelector(this.selector)?this.done():setTimeout(function(){return t.check()},j.elements.checkInterval)},t.prototype.done=function(){return this.progress=100},t}(),n=function(){function t(){var t,e,n=this;this.progress=null!=(e=this.states[document.readyState])?e:100,t=document.onreadystatechange,document.onreadystatechange=function(){return null!=n.states[document.readyState]&&(n.progress=n.states[document.readyState]),"function"==typeof t?t.apply(null,arguments):void 0}}return t.prototype.states={loading:0,interactive:50,complete:100},t}(),o=function(){return function(){var t,e,n,r,s,o=this;this.progress=0,t=0,s=[],r=0,n=R(),e=setInterval(function(){var i;return i=R()-n-50,n=R(),s.push(i),s.length>j.eventLag.sampleCount&&s.shift(),t=m(s),++r>=j.eventLag.minSamples&&t<j.eventLag.lagThreshold?(o.progress=100,clearInterval(e)):o.progress=3/(t+3)*100},50)}}(),h=function(){function t(t){this.source=t,this.last=this.sinceLastUpdate=0,this.rate=j.initialRate,this.catchup=0,this.progress=this.lastProgress=0,null!=this.source&&(this.progress=O(this.source,"progress"))}return t.prototype.tick=function(t,e){var n;return null==e&&(e=O(this.source,"progress")),e>=100&&(this.done=!0),e===this.last?this.sinceLastUpdate+=t:(this.sinceLastUpdate&&(this.rate=(e-this.last)/this.sinceLastUpdate),this.catchup=(e-this.progress)/j.catchupTime,this.sinceLastUpdate=0,this.last=e),e>this.progress&&(this.progress+=this.catchup*t),n=1-Math.pow(this.progress/100,j.easeFactor),this.progress+=n*this.rate*t,this.progress=Math.min(this.lastProgress+j.maxProgressPerFrame,this.progress),this.progress=Math.max(0,this.progress),this.progress=Math.min(100,this.progress),this.lastProgress=this.progress,this.progress},t}(),C=null,A=null,y=null,U=null,g=null,v=null,c.running=!1,x=function(){return j.restartOnPushState?c.restart():void 0},null!=window.history.pushState&&(G=window.history.pushState,window.history.pushState=function(){return x(),G.apply(window.history,arguments)}),null!=window.history.replaceState&&(J=window.history.replaceState,window.history.replaceState=function(){return x(),J.apply(window.history,arguments)}),p={ajax:t,elements:r,document:n,eventLag:o},(T=function(){var t,n,r,s,o,i,a,u;for(c.sources=C=[],n=0,s=(i=["ajax","elements","document","eventLag"]).length;s>n;n++)t=i[n],!1!==j[t]&&C.push(new p[t](j[t]));for(r=0,o=(u=null!=(a=j.extraSources)?a:[]).length;o>r;r++)F=u[r],C.push(new F(j));return c.bar=y=new e,A=[],U=new h})(),c.stop=function(){return c.trigger("stop"),c.running=!1,y.destroy(),v=!0,null!=g&&("function"==typeof w&&w(g),g=null),T()},c.restart=function(){return c.trigger("restart"),c.stop(),c.start()},c.go=function(){var t;return c.running=!0,y.render(),t=R(),v=!1,g=M(function(e,n){var r,s,o,i,a,u,l,p,f,d,g,m,w,b,k;for(100-y.progress,s=d=0,o=!0,u=g=0,w=C.length;w>g;u=++g)for(F=C[u],f=null!=A[u]?A[u]:A[u]=[],a=null!=(k=F.elements)?k:[F],l=m=0,b=a.length;b>m;l=++m)i=a[l],p=null!=f[l]?f[l]:f[l]=new h(i),o&=p.done,p.done||(s++,d+=p.tick(e));return r=d/s,y.update(U.tick(e,r)),y.done()||o||v?(y.update(100),c.trigger("done"),setTimeout(function(){return y.finish(),c.running=!1,c.trigger("hide")},Math.max(j.ghostTime,Math.max(j.minTime-(R()-t),0)))):n()})},c.start=function(t){k(j,t),c.running=!0;try{y.render()}catch(t){u=t}return document.querySelector(".pace")?(c.trigger("start"),c.go()):setTimeout(c.start,50)},"function"==typeof define&&define.amd?define(["pace"],function(){return c}):"object"==typeof exports?module.exports=c:j.startOnPageLoad&&c.start()}).call(this);
+</script>
+<script src="https://neveryu.github.io/js/src/pace.min.js"></script>
+
+  <meta name="description" content="来吧，反击的号角已经吹响！ 闭包と变量的作用域への攻撃。 因为ECMAScript6已经引入了let关键字，本章关于变量的部分将分两部分进行介绍。">
+<meta name="keywords" content="-JavaScript,-面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我不知道的变量作用域与闭包">
+<meta property="og:url" content="http://seefun.club/2019/04/12/我不知道的变量作用域与闭包/index.html">
+<meta property="og:site_name" content="归人1337">
+<meta property="og:description" content="来吧，反击的号角已经吹响！ 闭包と变量的作用域への攻撃。 因为ECMAScript6已经引入了let关键字，本章关于变量的部分将分两部分进行介绍。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-6.png">
+<meta property="og:updated_time" content="2019-04-13T05:09:54.837Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我不知道的变量作用域与闭包">
+<meta name="twitter:description" content="来吧，反击的号角已经吹响！ 闭包と变量的作用域への攻撃。 因为ECMAScript6已经引入了let关键字，本章关于变量的部分将分两部分进行介绍。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-1.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://seefun.club/2019/04/12/我不知道的变量作用域与闭包/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>我不知道的变量作用域与闭包 | 归人1337</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">归人1337</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/12/我不知道的变量作用域与闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张可携">
+      <meta itemprop="description" content="前端爱好者">
+      <meta itemprop="image" content="/images/profilePhoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="归人1337">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">我不知道的变量作用域与闭包
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-12 18:45:13" itemprop="dateCreated datePublished" datetime="2019-04-12T18:45:13+08:00">2019-04-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-13 13:09:54" itemprop="dateModified" datetime="2019-04-13T13:09:54+08:00">2019-04-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/我不知道的JavaScript/" itemprop="url" rel="index"><span itemprop="name">-我不知道的JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>来吧，反击的号角已经吹响！</p>
+<p><strong>闭包</strong>と<strong>变量的作用域</strong>への攻撃。</p>
+<p>因为<code>ECMAScript6</code>已经引入了<code>let</code>关键字，本章关于变量的部分将分两部分进行介绍。</p>
+<a id="more"></a>
+<h2 id="ECMAScript5の变量"><a href="#ECMAScript5の变量" class="headerlink" title="ECMAScript5の变量"></a>ECMAScript5の变量</h2><h3 id="变量以函数为作用域"><a href="#变量以函数为作用域" class="headerlink" title="变量以函数为作用域"></a>变量以函数为作用域</h3><p><del>我就喜欢<code>JavaScript</code>的这些奇奇怪怪的语言特性。</del></p>
+<p>不同于其他大多数主流语言的块级作用域，<code>JavaScript</code>的变量是函数级作用域的：<strong>只有函数可以产生新的作用域</strong>。</p>
+<p>就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> foo = <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(foo);  <span class="comment">//4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="变量声明的提前"><a href="#变量声明的提前" class="headerlink" title="变量声明的提前"></a>变量声明的提前</h3><p><code>JavaScript</code>会提前所有的变量<strong>声明</strong>，注意是<strong>声明</strong>而不是<strong>赋值</strong>，它会把所有的声明移到直接作用域的最前面。就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);  <span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> v = <span class="string">'s1meple'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(v);  <span class="comment">//'s1mple'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你<strong>重定义一个已经被定义过的变量</strong>，那么什么也不会发生。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'nihao'</span>;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//'nihao'</span></span><br></pre></td></tr></table></figure>
+<p>尤其需要注意的是<strong>函数</strong>：</p>
+<ul>
+<li>这是<strong>函数声明</strong>：<code>function foo(){}</code></li>
+<li>这是<strong>函数表达式</strong>：<code>var f=function foo(){foo()}</code></li>
+</ul>
+<p>函数声明可以完全提升，而显然，函数表达式只有<strong>变量的声明</strong>被提升。</p>
+<h3 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h3><p>相比在之前，你可能已经看到过很多形如这样的表达式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello!'</span>+a)</span><br><span class="line">&#125;(<span class="string">'Jack'</span>));</span><br><span class="line">+<span class="function"><span class="keyword">function</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'nihao!'</span>+b)</span><br><span class="line">&#125;(<span class="string">'libai'</span>);</span><br><span class="line"><span class="keyword">void</span> <span class="function"><span class="keyword">function</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'konnnichiha!'</span>+c)</span><br><span class="line">&#125;(<span class="string">'yoshida'</span>);</span><br></pre></td></tr></table></figure>
+<p>它们全部都是<code>Immediately Invoked Function Expression</code>，即<strong>立即执行函数表达式</strong>。</p>
+<p>使用IIFE将会模拟出一个<strong>块级作用域</strong>，就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">        ~<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> a = <span class="string">'nihao'</span>;</span><br><span class="line">            <span class="built_in">console</span>.log(a);  <span class="comment">//'nihao'</span></span><br><span class="line">        &#125;();</span><br><span class="line">        <span class="built_in">console</span>.log(a);  <span class="comment">//ReferenceError: a is not defined</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">//ReferenceError: a is not defined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于<code>IIFE</code>，我们有一些要注意的：</p>
+<ul>
+<li><strong>它是立即执行的</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'world'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> name = <span class="string">'yoshida'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbyd'</span> + name);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello'</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+<p>它会输出什么呢？</p>
+<p>嗯哼？正确答案是<code>Goodbye yoshida</code>哟。</p>
+<p>在<code>if</code>语句中声明的变量<code>name</code>可是在整个<code>IIFE</code>中都有效哦，不要因为看到<code>IIFE</code>就忘了变量声明的提前~</p>
+<ul>
+<li>它<strong>必须是一个表达式</strong></li>
+</ul>
+<p>对，你可能很疑惑为什么函数写成那个样子就变成了<code>IIFE</code>：如果一个语句以<code>function</code>关键词开头，<strong>解析器会认为它是一个函数定义</strong>，但是一个函数声明并不会立即执行，反而会报错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'nihao'</span>);</span><br><span class="line">&#125;();</span><br><span class="line"><span class="comment">//SyntaxError: expected expression, got ')'</span></span><br></pre></td></tr></table></figure>
+<p>使用括号<code>()</code>的原因是：<strong>在括号中，只存在表达式</strong>。</p>
+<p>自然，在<code>function</code>关键字前面加上其他诸如<code>!</code>、<code>~</code>、<code>new</code>、<code>void</code>、<code>+</code>、<code>-</code>的目的，自然是让解析器认为这个语句是一个表达式。</p>
+<p>值得注意的是：<code>+function</code>的效率最高，<code>new function</code>的效率最低。</p>
+<ul>
+<li>别忘了后面的分号</li>
+</ul>
+<p>在两个IIFE中漏了分号，你的代码将会出问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'nihao'</span>);</span><br><span class="line">&#125;()  <span class="comment">//expected ;</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hey'</span>);</span><br><span class="line">&#125;());</span><br><span class="line"><span class="comment">//TypeError: (intermediate value)(...) is not a function</span></span><br></pre></td></tr></table></figure>
+<h2 id="ECMAScript6の变量"><a href="#ECMAScript6の变量" class="headerlink" title="ECMAScript6の变量"></a>ECMAScript6の变量</h2><h3 id="let关键字"><a href="#let关键字" class="headerlink" title="let关键字"></a>let关键字</h3><p>引入了<code>let</code>关键字的<code>JavaScript</code>好起来了。</p>
+<p><code>let</code>所声明的变量只在<code>let</code>命令所在的<strong>代码块</strong>内有效：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="string">'nihao'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">//'nihao'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//ReferenceError: a is not defined</span></span><br></pre></td></tr></table></figure>
+<p>需要我们注意的是，<code>let</code>命令：</p>
+<ul>
+<li><strong>不存在变量提升</strong>：变量不再可以在声明之前使用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//'nihao'</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="string">'nihao'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//ReferenceError: can't access lexical declaration `b' before initialization</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="string">'connnichiha'</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>封闭作用域</li>
+</ul>
+<p>如果块中存在<code>let</code>和<code>const</code>命令，则这个块对这些命令声明的变量 ，<strong>从一开始就形成封闭作用域</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'nihao'</span>;</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);  <span class="comment">//ReferenceError: can't access lexical declaration `a' before initialization</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="string">'connnichiha'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>不允许重复声明</li>
+</ul>
+<p>与<code>var</code>关键字不同，<code>let</code>不允许在相同作用域内重复声明同一个变量：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">'nihao'</span>;</span><br><span class="line"><span class="keyword">let</span> a;  <span class="comment">//SyntaxError: redeclaration of let a</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用let代替IIFE"><a href="#使用let代替IIFE" class="headerlink" title="使用let代替IIFE"></a>使用let代替IIFE</h3><p>可以说，<code>let</code>的出现解决了不得不使用IIFE的困境：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意，for中声明的i是单独的作用域，与for语句体中不同</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(i) </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0 1 2 …… 9</span></span><br></pre></td></tr></table></figure>
+<h2 id="变量的环境管理"><a href="#变量的环境管理" class="headerlink" title="变量的环境管理"></a>变量的环境管理</h2><p>变量总需要一定的空间进行存储，而<code>JavaScript</code>中提供存储空间的数据结构被称为<strong>环境</strong>。</p>
+<p>环境被存储在堆中，它将变量名与变量的值做映射。</p>
+<h3 id="从两种维度来分析变量环境"><a href="#从两种维度来分析变量环境" class="headerlink" title="从两种维度来分析变量环境"></a>从两种维度来分析变量环境</h3><p>变量有两种传递的方式，它可以被分为两种维度：</p>
+<ol>
+<li><strong>动态维度</strong>：执行上下文的栈</li>
+</ol>
+<p>每当一个函数被调用，它就需要给它的参数和变量准备新的存储空间，调用结束后，如果不再有指向该空间的引用，空间通常会被回收——这也是<code>JavaScript</code>的垃圾回收机制。</p>
+<p>函数的执行上下文——即环境的引用是在栈中进行管理的，这里的栈，就是执行栈。</p>
+<ol start="2">
+<li><strong>词法维度</strong>：环境链</li>
+</ol>
+<p>无论一个函数被调用了多少次，它总要访问自己（最新）的本地变量和外部作用域的变量。<code>JavaScript</code>会通过函数的内部属性<code>[[Scope]]</code>来记录函数的作用域。</p>
+<p>在函数调用时，这个内部属性便起了作用：它会为由于函数调用所创建的新的执行上下文<strong>添加一个外层域</strong><code>Outer</code>，这个外层域指向了<code>[[Scope]]</code>所记录的、函数创建时就确定下来的函数作用域。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>不然来看一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> b = <span class="string">'hello'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">c</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="string">'nihao'</span>;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="string">'connnichiha'</span>);  <span class="comment">//'hello'</span></span><br></pre></td></tr></table></figure>
+<p>好，我们来看看每一步到底发生了什么。</p>
+<ol>
+<li>变量<code>b</code>和函数<code>f()</code>被存在全局环境中，这是显而易见的。还记得我们之前说的函数内部属性<code>[[Scope]]</code>么：通过<code>[[Scope]]</code>来记录函数的作用域。函数<code>f()</code>的作用域——全局环境。</li>
+<li>接下来，函数执行了。<code>JavaScript</code>会创建一个新的执行上下文用于管理参数和本地变量，函数通过<code>[[Scope]]</code>初始化出的外层域<code>Outer</code>得知了自己应该运行在——全局环境中。因此，访问变量<code>b</code>并不会出错。</li>
+</ol>
+<p>整个过程就像下面这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-1.png" alt="变量环境"></p>
+<h2 id="闭包！闭包！闭包！"><a href="#闭包！闭包！闭包！" class="headerlink" title="闭包！闭包！闭包！"></a>闭包！闭包！闭包！</h2><h3 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h3><p><code>Closure</code>，<strong>闭包：使得函数可以维持其创建时所在的作用域</strong>。换句话来说，闭包是一个函数外加上该函数创建时所建立的作用域。</p>
+<p>来看一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">ff</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line">        a = a + b;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> closure = f(<span class="number">1</span>);</span><br><span class="line">closure(<span class="number">2</span>);  <span class="comment">//3</span></span><br><span class="line">closure(<span class="number">5</span>);  <span class="comment">//8</span></span><br></pre></td></tr></table></figure>
+<h3 id="从环境角度来看闭包"><a href="#从环境角度来看闭包" class="headerlink" title="从环境角度来看闭包"></a>从环境角度来看闭包</h3><p>闭包是一个代码执行完成之后离开，作用域环境依旧存在的例子。</p>
+<p>想一想我们之前所讨论的<strong>变量的环境管理</strong>，来看一看发生了什么。</p>
+<ol>
+<li><p>函数<code>f()</code>定义之后，该函数将被添加到全局环境中，<code>[[Scope]]</code>指向了——全局环境。就像这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-2.png" alt="第一步"></p>
+</li>
+<li><p>接着，变量<code>closure</code>的<strong>赋值之前</strong>，发生了函数的调用，正如我们之前所反复强调的那样：<code>JavaScript</code>为函数<code>f()</code>创建了新的执行上下文，它的外层域<code>Outer</code>指向了全局环境，就像这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-3.png" alt="第二步"></p>
+</li>
+<li><p>接着，为变量<code>closure</code>赋值，函数<code>f()</code>的调用已然结束，于是函数<code>f()</code>的执行上下文便被从执行栈中移除，但是函数<code>f()</code>的环境仍然存在于堆中——<code>ff.[[scope]]</code>还引用着。因此，<code>ff()</code>就是一个闭包——函数加上创建时的环境。就像这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-4.png" alt="第三部"></p>
+</li>
+<li><p>接着，发生了函数调用：<code>closure(2)</code>，一个新的执行上下文被创建，它的外层环境显然就是<code>ff()</code>的外层环境——即<code>ff.[[scope]]</code>，在这个环境中，仍然访问的到变量<code>a</code>，所以函数正常的执行了。就像这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-5.png" alt="第四部"></p>
+</li>
+<li><p>接着，函数<code>closure(2)</code>的调用结束，<code>ff()</code>的环境不再被人引用，所以将会被移除——但是函数<code>f()</code>的环境仍然存在，正如我们预期的那样。就像这样：</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/closure-6.png" alt="第五步"></p>
+<h3 id="警惕"><a href="#警惕" class="headerlink" title="警惕"></a>警惕</h3><p>怎么样，现在知道为什么会发生下述问题了吧：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ans = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123;</span><br><span class="line">        ans.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line">f()[<span class="number">0</span>]();  <span class="comment">//3</span></span><br><span class="line">f()[<span class="number">1</span>]();  <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<p>在每次循环所返回的函数中，它们共享了一个<code>[[scope]]</code>，指向了函数<code>f()</code>，因此在循环结束后，变量<code>i</code>便变成了<code>3</code>。</p>
+<p>由于<code>let</code>关键字的出现，我们便能很简单的解决这个问题，尽量使用<code>let</code>来声明变量而不是<code>var</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> ans = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)&#123; <span class="comment">//使用了let</span></span><br><span class="line">        ans.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line">f()[<span class="number">0</span>]();  <span class="comment">//0</span></span><br><span class="line">f()[<span class="number">1</span>]();  <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
+          
+            <a href="/tags/面试/" rel="tag"># -面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/08/我不知道的HTTP与URL/" rel="next" title="我不知道的HTTP与URL">
+                <i class="fa fa-chevron-left"></i> 我不知道的HTTP与URL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/14/我不知道的运算符优先级与连等/" rel="prev" title="我不知道的运算符优先级与连等">
+                我不知道的运算符优先级与连等 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDAyNy8xNjU1NA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="张可携">
+            
+              <p class="site-author-name" itemprop="name">张可携</p>
+              <div class="site-description motion-element" itemprop="description">前端爱好者</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/c1erman" title="GitHub &rarr; https://github.com/c1erman" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript5の变量"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript5の变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量以函数为作用域"><span class="nav-number">1.1.</span> <span class="nav-text">变量以函数为作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明的提前"><span class="nav-number">1.2.</span> <span class="nav-text">变量声明的提前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IIFE"><span class="nav-number">1.3.</span> <span class="nav-text">IIFE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript6の变量"><span class="nav-number">2.</span> <span class="nav-text">ECMAScript6の变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let关键字"><span class="nav-number">2.1.</span> <span class="nav-text">let关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用let代替IIFE"><span class="nav-number">2.2.</span> <span class="nav-text">使用let代替IIFE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的环境管理"><span class="nav-number">3.</span> <span class="nav-text">变量的环境管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从两种维度来分析变量环境"><span class="nav-number">3.1.</span> <span class="nav-text">从两种维度来分析变量环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">3.2.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包！闭包！闭包！"><span class="nav-number">4.</span> <span class="nav-text">闭包！闭包！闭包！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是闭包"><span class="nav-number">4.1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从环境角度来看闭包"><span class="nav-number">4.2.</span> <span class="nav-text">从环境角度来看闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#警惕"><span class="nav-number">4.3.</span> <span class="nav-text">警惕</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c1er And U</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+
+
+
+  <div class="footer-custom"><del>好好睡，晚安</del></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/04/12/我不知道的变量作用域与闭包/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

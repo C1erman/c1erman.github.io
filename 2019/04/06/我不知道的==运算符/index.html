@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-柑橘-32.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-柑橘-16.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+<!-- 网页加载条 -->
+<script>
+(function(){var t,e,n,r,s,o,i,a,u,c,l,p,h,f,d,g,m,y,v,w,b,k,S,q,L,x,P,T,R,j,E,O,M,A,N,_,F,C,U,W,X,D,H,I,z,G,B,J,K=[].slice,Q={}.hasOwnProperty,V=function(t,e){function n(){this.constructor=t}for(var r in e)Q.call(e,r)&&(t[r]=e[r]);return n.prototype=e.prototype,t.prototype=new n,t.__super__=e.prototype,t},Y=[].indexOf||function(t){for(var e=0,n=this.length;n>e;e++)if(e in this&&this[e]===t)return e;return-1};for(b={catchupTime:100,initialRate:.03,minTime:250,ghostTime:100,maxProgressPerFrame:20,easeFactor:1.25,startOnPageLoad:!0,restartOnPushState:!0,restartOnRequestAfter:500,target:"body",elements:{checkInterval:100,selectors:["body"]},eventLag:{minSamples:10,sampleCount:3,lagThreshold:3},ajax:{trackMethods:["GET"],trackWebSockets:!0,ignoreURLs:[]}},R=function(){var t;return null!=(t="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance.now():void 0)?t:+new Date},E=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame,w=window.cancelAnimationFrame||window.mozCancelAnimationFrame,null==E&&(E=function(t){return setTimeout(t,50)},w=function(t){return clearTimeout(t)}),M=function(t){var e,n;return e=R(),(n=function(){var r;return(r=R()-e)>=33?(e=R(),t(r,function(){return E(n)})):setTimeout(n,33-r)})()},O=function(){var t,e,n;return n=arguments[0],e=arguments[1],t=3<=arguments.length?K.call(arguments,2):[],"function"==typeof n[e]?n[e].apply(n,t):n[e]},k=function(){var t,e,n,r,s,o,i;for(e=arguments[0],o=0,i=(r=2<=arguments.length?K.call(arguments,1):[]).length;i>o;o++)if(n=r[o])for(t in n)Q.call(n,t)&&(s=n[t],null!=e[t]&&"object"==typeof e[t]&&null!=s&&"object"==typeof s?k(e[t],s):e[t]=s);return e},m=function(t){var e,n,r,s,o;for(n=e=0,s=0,o=t.length;o>s;s++)r=t[s],n+=Math.abs(r),e++;return n/e},q=function(t,e){var n,r,s;if(null==t&&(t="options"),null==e&&(e=!0),s=document.querySelector("[data-pace-"+t+"]")){if(n=s.getAttribute("data-pace-"+t),!e)return n;try{return JSON.parse(n)}catch(t){return r=t,"undefined"!=typeof console&&null!==console?console.error("Error parsing inline pace options",r):void 0}}},i=function(){function t(){}return t.prototype.on=function(t,e,n,r){var s;return null==r&&(r=!1),null==this.bindings&&(this.bindings={}),null==(s=this.bindings)[t]&&(s[t]=[]),this.bindings[t].push({handler:e,ctx:n,once:r})},t.prototype.once=function(t,e,n){return this.on(t,e,n,!0)},t.prototype.off=function(t,e){var n,r,s;if(null!=(null!=(r=this.bindings)?r[t]:void 0)){if(null==e)return delete this.bindings[t];for(n=0,s=[];n<this.bindings[t].length;)s.push(this.bindings[t][n].handler===e?this.bindings[t].splice(n,1):n++);return s}},t.prototype.trigger=function(){var t,e,n,r,s,o,i,a,u;if(n=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],null!=(i=this.bindings)?i[n]:void 0){for(s=0,u=[];s<this.bindings[n].length;)a=this.bindings[n][s],r=a.handler,e=a.ctx,o=a.once,r.apply(null!=e?e:this,t),u.push(o?this.bindings[n].splice(s,1):s++);return u}},t}(),c=window.Pace||{},window.Pace=c,k(c,i.prototype),j=c.options=k({},b,window.paceOptions,q()),H=0,z=(B=["ajax","document","eventLag","elements"]).length;z>H;H++)F=B[H],!0===j[F]&&(j[F]=b[F]);u=function(t){function e(){return e.__super__.constructor.apply(this,arguments)}return V(e,t),e}(Error),e=function(){function t(){this.progress=0}return t.prototype.getElement=function(){var t;if(null==this.el){if(!(t=document.querySelector(j.target)))throw new u;this.el=document.createElement("div"),this.el.className="pace pace-active",document.body.className=document.body.className.replace(/pace-done/g,""),document.body.className+=" pace-running",this.el.innerHTML='<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>',null!=t.firstChild?t.insertBefore(this.el,t.firstChild):t.appendChild(this.el)}return this.el},t.prototype.finish=function(){var t;return(t=this.getElement()).className=t.className.replace("pace-active",""),t.className+=" pace-inactive",document.body.className=document.body.className.replace("pace-running",""),document.body.className+=" pace-done"},t.prototype.update=function(t){return this.progress=t,this.render()},t.prototype.destroy=function(){try{this.getElement().parentNode.removeChild(this.getElement())}catch(t){u=t}return this.el=void 0},t.prototype.render=function(){var t,e,n,r,s,o,i;if(null==document.querySelector(j.target))return!1;for(t=this.getElement(),r="translate3d("+this.progress+"%, 0, 0)",s=0,o=(i=["webkitTransform","msTransform","transform"]).length;o>s;s++)e=i[s],t.children[0].style[e]=r;return(!this.lastRenderedProgress||this.lastRenderedProgress|0!==this.progress|0)&&(t.children[0].setAttribute("data-progress-text",(0|this.progress)+"%"),this.progress>=100?n="99":(n=this.progress<10?"0":"",n+=0|this.progress),t.children[0].setAttribute("data-progress",""+n)),this.lastRenderedProgress=this.progress},t.prototype.done=function(){return this.progress>=100},t}(),a=function(){function t(){this.bindings={}}return t.prototype.trigger=function(t,e){var n,r,s,o,i;if(null!=this.bindings[t]){for(i=[],r=0,s=(o=this.bindings[t]).length;s>r;r++)n=o[r],i.push(n.call(this,e));return i}},t.prototype.on=function(t,e){var n;return null==(n=this.bindings)[t]&&(n[t]=[]),this.bindings[t].push(e)},t}(),D=window.XMLHttpRequest,X=window.XDomainRequest,W=window.WebSocket,S=function(t,e){var n,r;r=[];for(n in e.prototype)try{r.push(null==t[n]&&"function"!=typeof e[n]?"function"==typeof Object.defineProperty?Object.defineProperty(t,n,{get:function(){return e.prototype[n]},configurable:!0,enumerable:!0}):t[n]=e.prototype[n]:void 0)}catch(t){t}return r},P=[],c.ignore=function(){var t,e,n;return e=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],P.unshift("ignore"),n=e.apply(null,t),P.shift(),n},c.track=function(){var t,e,n;return e=arguments[0],t=2<=arguments.length?K.call(arguments,1):[],P.unshift("track"),n=e.apply(null,t),P.shift(),n},_=function(t){var e;if(null==t&&(t="GET"),"track"===P[0])return"force";if(!P.length&&j.ajax){if("socket"===t&&j.ajax.trackWebSockets)return!0;if(e=t.toUpperCase(),Y.call(j.ajax.trackMethods,e)>=0)return!0}return!1},l=function(t){function e(){var t,n=this;e.__super__.constructor.apply(this,arguments),t=function(t){var e;return e=t.open,t.open=function(r,s){return _(r)&&n.trigger("request",{type:r,url:s,request:t}),e.apply(t,arguments)}},window.XMLHttpRequest=function(e){var n;return n=new D(e),t(n),n};try{S(window.XMLHttpRequest,D)}catch(t){}if(null!=X){window.XDomainRequest=function(){var e;return e=new X,t(e),e};try{S(window.XDomainRequest,X)}catch(t){}}if(null!=W&&j.ajax.trackWebSockets){window.WebSocket=function(t,e){var r;return r=null!=e?new W(t,e):new W(t),_("socket")&&n.trigger("request",{type:"socket",url:t,protocols:e,request:r}),r};try{S(window.WebSocket,W)}catch(t){}}}return V(e,a),e}(),I=null,N=function(t){var e,n,r,s;for(n=0,r=(s=j.ajax.ignoreURLs).length;r>n;n++)if(e=s[n],"string"==typeof e){if(-1!==t.indexOf(e))return!0}else if(e.test(t))return!0;return!1},(L=function(){return null==I&&(I=new l),I})().on("request",function(e){var n,r,s,o,i;return o=e.type,s=e.request,i=e.url,N(i)?void 0:c.running||!1===j.restartOnRequestAfter&&"force"!==_(o)?void 0:(r=arguments,"boolean"==typeof(n=j.restartOnRequestAfter||0)&&(n=0),setTimeout(function(){var e,n,i,a,u;if("socket"===o?s.readyState<2:0<(i=s.readyState)&&4>i){for(c.restart(),u=[],e=0,n=(a=c.sources).length;n>e;e++){if((F=a[e])instanceof t){F.watch.apply(F,r);break}u.push(void 0)}return u}},n))}),t=function(){function t(){var t=this;this.elements=[],L().on("request",function(){return t.watch.apply(t,arguments)})}return t.prototype.watch=function(t){var e,n,r,s;return r=t.type,e=t.request,s=t.url,N(s)?void 0:(n="socket"===r?new f(e):new d(e),this.elements.push(n))},t}(),d=function(){return function(t){var e,n,r,s,o,i=this;if(this.progress=0,null!=window.ProgressEvent)for(t.addEventListener("progress",function(t){return i.progress=t.lengthComputable?100*t.loaded/t.total:i.progress+(100-i.progress)/2},!1),o=["load","abort","timeout","error"],n=0,r=o.length;r>n;n++)e=o[n],t.addEventListener(e,function(){return i.progress=100},!1);else s=t.onreadystatechange,t.onreadystatechange=function(){var e;return 0===(e=t.readyState)||4===e?i.progress=100:3===t.readyState&&(i.progress=50),"function"==typeof s?s.apply(null,arguments):void 0}}}(),f=function(){return function(t){var e,n,r,s,o=this;for(this.progress=0,n=0,r=(s=["error","open"]).length;r>n;n++)e=s[n],t.addEventListener(e,function(){return o.progress=100},!1)}}(),r=function(){return function(t){var e,n,r,o;for(null==t&&(t={}),this.elements=[],null==t.selectors&&(t.selectors=[]),n=0,r=(o=t.selectors).length;r>n;n++)e=o[n],this.elements.push(new s(e))}}(),s=function(){function t(t){this.selector=t,this.progress=0,this.check()}return t.prototype.check=function(){var t=this;return document.querySelector(this.selector)?this.done():setTimeout(function(){return t.check()},j.elements.checkInterval)},t.prototype.done=function(){return this.progress=100},t}(),n=function(){function t(){var t,e,n=this;this.progress=null!=(e=this.states[document.readyState])?e:100,t=document.onreadystatechange,document.onreadystatechange=function(){return null!=n.states[document.readyState]&&(n.progress=n.states[document.readyState]),"function"==typeof t?t.apply(null,arguments):void 0}}return t.prototype.states={loading:0,interactive:50,complete:100},t}(),o=function(){return function(){var t,e,n,r,s,o=this;this.progress=0,t=0,s=[],r=0,n=R(),e=setInterval(function(){var i;return i=R()-n-50,n=R(),s.push(i),s.length>j.eventLag.sampleCount&&s.shift(),t=m(s),++r>=j.eventLag.minSamples&&t<j.eventLag.lagThreshold?(o.progress=100,clearInterval(e)):o.progress=3/(t+3)*100},50)}}(),h=function(){function t(t){this.source=t,this.last=this.sinceLastUpdate=0,this.rate=j.initialRate,this.catchup=0,this.progress=this.lastProgress=0,null!=this.source&&(this.progress=O(this.source,"progress"))}return t.prototype.tick=function(t,e){var n;return null==e&&(e=O(this.source,"progress")),e>=100&&(this.done=!0),e===this.last?this.sinceLastUpdate+=t:(this.sinceLastUpdate&&(this.rate=(e-this.last)/this.sinceLastUpdate),this.catchup=(e-this.progress)/j.catchupTime,this.sinceLastUpdate=0,this.last=e),e>this.progress&&(this.progress+=this.catchup*t),n=1-Math.pow(this.progress/100,j.easeFactor),this.progress+=n*this.rate*t,this.progress=Math.min(this.lastProgress+j.maxProgressPerFrame,this.progress),this.progress=Math.max(0,this.progress),this.progress=Math.min(100,this.progress),this.lastProgress=this.progress,this.progress},t}(),C=null,A=null,y=null,U=null,g=null,v=null,c.running=!1,x=function(){return j.restartOnPushState?c.restart():void 0},null!=window.history.pushState&&(G=window.history.pushState,window.history.pushState=function(){return x(),G.apply(window.history,arguments)}),null!=window.history.replaceState&&(J=window.history.replaceState,window.history.replaceState=function(){return x(),J.apply(window.history,arguments)}),p={ajax:t,elements:r,document:n,eventLag:o},(T=function(){var t,n,r,s,o,i,a,u;for(c.sources=C=[],n=0,s=(i=["ajax","elements","document","eventLag"]).length;s>n;n++)t=i[n],!1!==j[t]&&C.push(new p[t](j[t]));for(r=0,o=(u=null!=(a=j.extraSources)?a:[]).length;o>r;r++)F=u[r],C.push(new F(j));return c.bar=y=new e,A=[],U=new h})(),c.stop=function(){return c.trigger("stop"),c.running=!1,y.destroy(),v=!0,null!=g&&("function"==typeof w&&w(g),g=null),T()},c.restart=function(){return c.trigger("restart"),c.stop(),c.start()},c.go=function(){var t;return c.running=!0,y.render(),t=R(),v=!1,g=M(function(e,n){var r,s,o,i,a,u,l,p,f,d,g,m,w,b,k;for(100-y.progress,s=d=0,o=!0,u=g=0,w=C.length;w>g;u=++g)for(F=C[u],f=null!=A[u]?A[u]:A[u]=[],a=null!=(k=F.elements)?k:[F],l=m=0,b=a.length;b>m;l=++m)i=a[l],p=null!=f[l]?f[l]:f[l]=new h(i),o&=p.done,p.done||(s++,d+=p.tick(e));return r=d/s,y.update(U.tick(e,r)),y.done()||o||v?(y.update(100),c.trigger("done"),setTimeout(function(){return y.finish(),c.running=!1,c.trigger("hide")},Math.max(j.ghostTime,Math.max(j.minTime-(R()-t),0)))):n()})},c.start=function(t){k(j,t),c.running=!0;try{y.render()}catch(t){u=t}return document.querySelector(".pace")?(c.trigger("start"),c.go()):setTimeout(c.start,50)},"function"==typeof define&&define.amd?define(["pace"],function(){return c}):"object"==typeof exports?module.exports=c:j.startOnPageLoad&&c.start()}).call(this);
+</script>
+<script src="https://neveryu.github.io/js/src/pace.min.js"></script>
+
+  <meta name="description" content="宽松比较，即==运算符，涉及到了JavaScript中的很多知识点。 这篇文章你绝对感兴趣。">
+<meta name="keywords" content="-JavaScript,-运算符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我不知道的==运算符">
+<meta property="og:url" content="http://seefun.club/2019/04/06/我不知道的==运算符/index.html">
+<meta property="og:site_name" content="归人1337">
+<meta property="og:description" content="宽松比较，即==运算符，涉及到了JavaScript中的很多知识点。 这篇文章你绝对感兴趣。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-07T08:23:12.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我不知道的==运算符">
+<meta name="twitter:description" content="宽松比较，即==运算符，涉及到了JavaScript中的很多知识点。 这篇文章你绝对感兴趣。">
+
+
+
+
+
+
+  <link rel="canonical" href="http://seefun.club/2019/04/06/我不知道的==运算符/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>我不知道的==运算符 | 归人1337</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">归人1337</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/06/我不知道的==运算符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张可携">
+      <meta itemprop="description" content="前端爱好者">
+      <meta itemprop="image" content="/images/profilePhoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="归人1337">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">我不知道的==运算符
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-06 11:23:14" itemprop="dateCreated datePublished" datetime="2019-04-06T11:23:14+08:00">2019-04-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-07 16:23:12" itemprop="dateModified" datetime="2019-04-07T16:23:12+08:00">2019-04-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/我不知道的JavaScript/" itemprop="url" rel="index"><span itemprop="name">-我不知道的JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>宽松比较，即<code>==</code>运算符，涉及到了<code>JavaScript</code>中的很多知识点。</p>
+<p>这篇文章你绝对感兴趣。</p>
+<a id="more"></a>
+<h2 id="从数据类型开始"><a href="#从数据类型开始" class="headerlink" title="从数据类型开始"></a>从数据类型开始</h2><h3 id="原始数据类型とは"><a href="#原始数据类型とは" class="headerlink" title="原始数据类型とは"></a>原始数据类型とは</h3><p><strong>原始数据类型</strong>（primitive data type）多数人习惯叫做<strong>基本数据类型</strong>。</p>
+<p>按照<a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank" rel="noopener">MDN的解释</a>：</p>
+<blockquote>
+<p>In <a href="https://developer.mozilla.org/en-US/docs/Glossary/JavaScript" target="_blank" rel="noopener">JavaScript</a>, a <strong>primitive</strong> (primitive value, primitive data type) is data that is not an <a href="https://developer.mozilla.org/en-US/docs/Glossary/object" target="_blank" rel="noopener">object</a> and has no <a href="https://developer.mozilla.org/en-US/docs/Glossary/method" target="_blank" rel="noopener">methods</a>. There are 6 primitive data types: <a href="https://developer.mozilla.org/en-US/docs/Glossary/string" target="_blank" rel="noopener">string</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/number" target="_blank" rel="noopener">number</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/boolean" target="_blank" rel="noopener">boolean</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/null" target="_blank" rel="noopener">null</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/undefined" target="_blank" rel="noopener">undefined</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/symbol" target="_blank" rel="noopener">symbol</a> (new in <a href="https://developer.mozilla.org/en-US/docs/Glossary/ECMAScript" target="_blank" rel="noopener">ECMAScript</a> 2015).</p>
+</blockquote>
+<p>需要注意的是：原始数据类型<strong>不是对象</strong>，并且自身<strong>不提供方法</strong>。</p>
+<p>原始数据类型如下所示：</p>
+<ul>
+<li><code>Undefined</code>、<code>Null</code></li>
+<li><code>Boolean</code>、<code>String</code>、<code>Number</code>、<code>Symbol</code></li>
+</ul>
+<p>你可能会问：<code>Object</code>呢，它算不算。</p>
+<p>我的回答是：<code>Object</code>是一种<strong>数据类型</strong>，而不是<strong>原始数据类型</strong>。并且，除了原始数据类型以外的<strong>类型</strong>都是<code>Object</code>，就像<code>Array</code>、<code>Function</code>等。</p>
+<p>实际上，我通常把<code>Array</code>这些叫做是一种<strong>引用类型</strong>。</p>
+<h3 id="原始值和对象"><a href="#原始值和对象" class="headerlink" title="原始值和对象"></a>原始值和对象</h3><p>那么，原始值（这里指原始数据类型）与对象的区别是什么呢？</p>
+<p>两者最主要的区别是：<strong>每个对象都有唯一的标识且只（严格地）等于自己</strong>，而对<strong>原始值只要编码值相同，则被认为相同</strong>。</p>
+<p>就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=&#123;&#125;,b=&#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a==b)  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(a===b)  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="string">'😐'</span>,b=<span class="string">'😐'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a==b)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(a===b)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h4 id="原始值"><a href="#原始值" class="headerlink" title="原始值"></a>原始值</h4><p>原始值具有以下特点：</p>
+<ul>
+<li>按值进行比较</li>
+<li>不可改变：其属性不能被改变、添加、移除</li>
+</ul>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>对象具有以下特点：</p>
+<ul>
+<li>按引用进行比较</li>
+<li>默认可变：对象属性可以很自由的被改变、添加、移除</li>
+</ul>
+<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><p>有两种对值进行分类的操作符：<code>typeof</code>、<code>instanceof</code>。</p>
+<p>还有一个方法：<code>Object.prototype.toString.call(object)</code>。</p>
+<h4 id="typeof主要用于原始值"><a href="#typeof主要用于原始值" class="headerlink" title="typeof主要用于原始值"></a>typeof主要用于原始值</h4><p>注意<strong>主要</strong>这两个字，因为有<code>function</code>的存在。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">1</span>  <span class="comment">//"number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">""</span>  <span class="comment">//"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>  <span class="comment">//"boolean"</span></span><br><span class="line"><span class="keyword">typeof</span> undifined  <span class="comment">//"undifined"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>  <span class="comment">//"object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;  <span class="comment">//"function"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;  <span class="comment">//"object"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>typeof null的历史</p>
+<p>第一代JavaScript引擎的值表示为32位的字符，<strong>最低的3位作为值的类型标识</strong>，表示该值是对象、浮点数或其他。</p>
+<p>对象的标识是000，而使用机器语言NULL指针的null，它的所有位均为0，这样一来，<strong>typeof检测值的标识位</strong>时，null便表示为object了。</p>
+</blockquote>
+<h4 id="instanceof用于对象"><a href="#instanceof用于对象" class="headerlink" title="instanceof用于对象"></a>instanceof用于对象</h4><p>查询一个值是否通过某个构造器<code>constructor</code>被创建出来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=&#123;&#125;</span><br><span class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br><span class="line">a <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h4 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString()"></a>Object.prototype.toString()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>)  <span class="comment">//"[object Number]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">false</span>)  <span class="comment">//"[object Boolean]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(&#123;&#125;)  <span class="comment">//"[object Object]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">''</span>)  <span class="comment">//"[object String]"</span></span><br></pre></td></tr></table></figure>
+<h2 id="深入类型转换"><a href="#深入类型转换" class="headerlink" title="深入类型转换"></a>深入类型转换</h2><h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><p>其他值到布尔值的转换如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>布尔值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td>false</td>
+</tr>
+<tr>
+<td>null</td>
+<td>false</td>
+</tr>
+<tr>
+<td>数字</td>
+<td><code></code>0 NaN`为false、其他为true</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td><code>&#39;&#39;</code>为false、其他为true</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>总为true</td>
+</tr>
+</tbody>
+</table>
+<p>手动转换为<code>boolean</code>的方法如下：</p>
+<ul>
+<li><code>Boolean(Value)</code></li>
+<li><code>Value ? true : false</code></li>
+<li><code>!!Value</code></li>
+</ul>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>其他值到数字的转换如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>数字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undifined</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>null</td>
+<td>0</td>
+</tr>
+<tr>
+<td>布尔值</td>
+<td>true为1、false为0</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>空字符串为0、其它解析字符串中的数字，会忽略开头和结尾的空格、遇到非法字符就为NaN</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>转换为原始类型</td>
+</tr>
+</tbody>
+</table>
+<p>手动转换为<code>Number</code>的方法如下：</p>
+<ul>
+<li><code>Number()</code></li>
+<li><code>parseFloat()</code></li>
+</ul>
+<p><code>parseFloat()</code>会将参数强制转换为字符串，效率较低，并且会将空字符串转换为<code>NaN</code>。它会一直解析到最后一个合法的字符，而<code>Number()</code>遇到非法字符会直接转为<code>NaN</code>。</p>
+<ul>
+<li><code>parseInt(string,radix)</code></li>
+</ul>
+<p>基数的范围为：大于等于2，且小于等于36。基数默认是10，除非要被解析的字符串以<code>0x</code>或者<code>0X</code>开头，此时为16进制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;123#&apos;)  //NaN</span><br><span class="line">parseFloat(&apos;123#&apos;)  //123</span><br><span class="line">parseInt(&apos;123#&apos;)  //123</span><br></pre></td></tr></table></figure>
+<h2 id="使用-时发生了什么"><a href="#使用-时发生了什么" class="headerlink" title="使用==时发生了什么"></a>使用==时发生了什么</h2><h3 id="将值转换为原始值"><a href="#将值转换为原始值" class="headerlink" title="将值转换为原始值"></a>将值转换为原始值</h3><p>要将任意值转换为<strong>数字</strong>或<strong>字符串</strong>，首先会被转换为任意的原始值，然后再转换为最终的结果。</p>
+<p>ECMAScript规范中有一个内部函数，<code>ToPrimitive()</code>，不能被访问到，但是它能帮助你理解<strong>对象是如何转换为数字和字符串的</strong>。</p>
+<p>该函数形如：<code>ToPrimitive(input,PreferredType?)</code>。</p>
+<p>可选参数<code>PreferredType</code>表明转换后的类型：它可以是<code>Number</code>或<code>String</code>，具体取决于当时的情况。</p>
+<blockquote>
+<p>如果<code>PreferredType</code>为<code>Number</code>，会执行以下步骤：</p>
+<ol>
+<li>如果input是原始值，则返回input</li>
+<li>如果input是对象，调用<code>input.valueOf()</code>，如果其结果是原始值就返回</li>
+<li>如果结果不是原始值，调用<code>input.toString()</code>，如果其结果是原始值就返回</li>
+<li>如果结果不是原始值，抛出<code>TypeError</code></li>
+</ol>
+<p>而<code>PreferredType</code>为<code>String</code>时，只是更改第2、3步的执行顺序。</p>
+</blockquote>
+<p>因此，一个对象重写了<code>valueOf()</code>或者<code>toString()</code>，就分别会影响<code>Number()</code>或<code>String()</code>。</p>
+<h3 id="宽松比较"><a href="#宽松比较" class="headerlink" title="宽松比较"></a>宽松比较</h3><p>如果两个运算数的类型相同，是六种规范类型Undefined、Null、Boolean、Number、Object时，使用严格相等比较它们。</p>
+<p>如果两个运算数的类型不同，则会触发以下操作：</p>
+<ul>
+<li><code>undefined</code>和<code>null</code>被认为是宽松相等的，而不严格相等</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">undiundefined == <span class="literal">null</span>  <span class="comment">//true</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">null</span>  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>一个字符串和一个数字时，将字符串转换为一个数字，再使用严格相等比较两者</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span> == <span class="string">'123'</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>一个布尔值和非布尔值，将布尔值转化为0或1，再进行宽松比较</p>
+</li>
+<li><p>一个对象和一个数字或一个字符串，则将对象转为原始值，再进行宽松比较</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> == <span class="number">1</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>其它均为false</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[] == <span class="literal">false</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="补漏"><a href="#补漏" class="headerlink" title="补漏"></a>补漏</h3><ul>
+<li>特殊数字<code>NaN</code>和本身不相等：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NaN == NaN  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<h2 id="我不知道的"><a href="#我不知道的" class="headerlink" title="我不知道的"></a>我不知道的</h2><p><code>JavaScript</code>真神奇！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[] == <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">	[] === <span class="number">0</span>  <span class="comment">//false</span></span><br><span class="line">	+[] === <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">	-[] === <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">[] !== []  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p><code>+</code>操作符<strong>转数字为字符串</strong>，<code>-</code>操作符<code>转字符串为数字</code>，并同时注意它们是二操作数的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="string">'11'</span>+<span class="number">2</span>-<span class="string">'1'</span></span><br><span class="line"><span class="built_in">console</span>.log(foo)  <span class="comment">//111</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> foo)  <span class="comment">//"number"</span></span><br></pre></td></tr></table></figure>
+<p>十进制字面量可以以<code>0</code>作为开始，后面跟着其他十进制数，但是假如前导<code>0</code>之后的所有数字都小于<code>8</code>，那么这个数就会被解析为一个八进制的数，但<code>08</code>和<code>09</code>例外。</p>
+<p>详情请参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors/Bad_octal?utm_source=mozilla&amp;utm_medium=firefox-console-errors&amp;utm_campaign=default" target="_blank" rel="noopener">这个文档</a>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span>+<span class="number">010</span>  <span class="comment">//"8"</span></span><br><span class="line"><span class="string">''</span>+<span class="number">0101</span>  <span class="comment">//"72"</span></span><br><span class="line"><span class="string">''</span>+<span class="number">08</span>  <span class="comment">//'8'</span></span><br><span class="line"><span class="string">''</span>+<span class="number">09</span>  <span class="comment">//"9"</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
+          
+            <a href="/tags/运算符/" rel="tag"># -运算符</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/02/Palindrome-Number/" rel="next" title="LeetCode之判断是否为“回文数”">
+                <i class="fa fa-chevron-left"></i> LeetCode之判断是否为“回文数”
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/07/我不知道的EventLoop/" rel="prev" title="我不知道的EventLoop">
+                我不知道的EventLoop <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDAyNy8xNjU1NA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="张可携">
+            
+              <p class="site-author-name" itemprop="name">张可携</p>
+              <div class="site-description motion-element" itemprop="description">前端爱好者</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/c1erman" title="GitHub &rarr; https://github.com/c1erman" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从数据类型开始"><span class="nav-number">1.</span> <span class="nav-text">从数据类型开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始数据类型とは"><span class="nav-number">1.1.</span> <span class="nav-text">原始数据类型とは</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始值和对象"><span class="nav-number">1.2.</span> <span class="nav-text">原始值和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原始值"><span class="nav-number">1.2.1.</span> <span class="nav-text">原始值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">1.2.2.</span> <span class="nav-text">对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">1.3.</span> <span class="nav-text">类型检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof主要用于原始值"><span class="nav-number">1.3.1.</span> <span class="nav-text">typeof主要用于原始值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof用于对象"><span class="nav-number">1.3.2.</span> <span class="nav-text">instanceof用于对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">1.3.3.</span> <span class="nav-text">Object.prototype.toString()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入类型转换"><span class="nav-number">2.</span> <span class="nav-text">深入类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean"><span class="nav-number">2.1.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">2.2.</span> <span class="nav-text">Number</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-时发生了什么"><span class="nav-number">3.</span> <span class="nav-text">使用==时发生了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将值转换为原始值"><span class="nav-number">3.1.</span> <span class="nav-text">将值转换为原始值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宽松比较"><span class="nav-number">3.2.</span> <span class="nav-text">宽松比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补漏"><span class="nav-number">3.3.</span> <span class="nav-text">补漏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我不知道的"><span class="nav-number">4.</span> <span class="nav-text">我不知道的</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">c1er And U</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+
+
+
+  <div class="footer-custom"><del>好好睡，晚安</del></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/04/06/我不知道的==运算符/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>
