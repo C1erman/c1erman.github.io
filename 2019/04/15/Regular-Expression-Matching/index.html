@@ -104,18 +104,18 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="题目给定一个字符串 (s) 和一个字符模式 (p)。实现支持 &amp;#39;.&amp;#39; 和 &amp;#39;*&amp;#39; 的正则表达式匹配。  ‘.’ 匹配任意单个字符。‘*’ 匹配零个或多个前面的元素。  匹配应该覆盖整个字符串 (s) ，而不是部分字符串。">
+  <meta name="description" content="题目给定一个字符串 (s) 和一个字符模式 (p)。实现支持 &amp;#39;.&amp;#39; 和 &amp;#39;*&amp;#39; 的正则表达式匹配。  &amp;#39;.&amp;#39; 匹配任意单个字符。&amp;#39;*&amp;#39; 匹配零个或多个前面的元素。  匹配应该覆盖整个字符串 (s) ，而不是部分字符串。">
 <meta name="keywords" content="-JavaScript,-LeetCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode之实现“正则表达式匹配”">
 <meta property="og:url" content="http://seefun.club/2019/04/15/Regular-Expression-Matching/index.html">
-<meta property="og:site_name" content="飘">
-<meta property="og:description" content="题目给定一个字符串 (s) 和一个字符模式 (p)。实现支持 &amp;#39;.&amp;#39; 和 &amp;#39;*&amp;#39; 的正则表达式匹配。  ‘.’ 匹配任意单个字符。‘*’ 匹配零个或多个前面的元素。  匹配应该覆盖整个字符串 (s) ，而不是部分字符串。">
+<meta property="og:site_name" content="归人1337">
+<meta property="og:description" content="题目给定一个字符串 (s) 和一个字符模式 (p)。实现支持 &amp;#39;.&amp;#39; 和 &amp;#39;*&amp;#39; 的正则表达式匹配。  &amp;#39;.&amp;#39; 匹配任意单个字符。&amp;#39;*&amp;#39; 匹配零个或多个前面的元素。  匹配应该覆盖整个字符串 (s) ，而不是部分字符串。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-15T14:45:34.358Z">
+<meta property="og:updated_time" content="2019-04-17T05:21:47.548Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode之实现“正则表达式匹配”">
-<meta name="twitter:description" content="题目给定一个字符串 (s) 和一个字符模式 (p)。实现支持 &amp;#39;.&amp;#39; 和 &amp;#39;*&amp;#39; 的正则表达式匹配。  ‘.’ 匹配任意单个字符。‘*’ 匹配零个或多个前面的元素。  匹配应该覆盖整个字符串 (s) ，而不是部分字符串。">
+<meta name="twitter:description" content="题目给定一个字符串 (s) 和一个字符模式 (p)。实现支持 &amp;#39;.&amp;#39; 和 &amp;#39;*&amp;#39; 的正则表达式匹配。  &amp;#39;.&amp;#39; 匹配任意单个字符。&amp;#39;*&amp;#39; 匹配零个或多个前面的元素。  匹配应该覆盖整个字符串 (s) ，而不是部分字符串。">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>LeetCode之实现“正则表达式匹配” | 飘</title>
+  <title>LeetCode之实现“正则表达式匹配” | 归人1337</title>
   
 
 
@@ -191,7 +191,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">飘</span>
+        <span class="site-title">归人1337</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -246,6 +246,23 @@
     
 
     <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -318,12 +335,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
-      <meta itemprop="description" content="前端学习中">
+      <meta itemprop="description" content="前端爱好者">
       <meta itemprop="image" content="/images/profilePhoto.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飘">
+      <meta itemprop="name" content="归人1337">
     </span>
 
     
@@ -357,12 +374,24 @@
                 
               
 
-              <time title="创建时间：2019-04-15 22:06:43 / 修改时间：22:45:34" itemprop="dateCreated datePublished" datetime="2019-04-15T22:06:43+08:00">2019-04-15</time>
+              <time title="创建时间：2019-04-15 22:06:43" itemprop="dateCreated datePublished" datetime="2019-04-15T22:06:43+08:00">2019-04-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-17 13:21:47" itemprop="dateModified" datetime="2019-04-17T13:21:47+08:00">2019-04-17</time>
               
             
           </span>
@@ -416,7 +445,7 @@
       
         <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个字符串 (<code>s</code>) 和一个字符模式 (<code>p</code>)。实现支持 <code>&#39;.&#39;</code> 和 <code>&#39;*&#39;</code> 的正则表达式匹配。</p>
 <blockquote>
-<p>‘.’ 匹配任意单个字符。<br>‘*’ 匹配零个或多个前面的元素。</p>
+<p><code>&#39;.&#39;</code> 匹配任意单个字符。<br><code>&#39;*&#39;</code> 匹配零个或多个前面的元素。</p>
 </blockquote>
 <p>匹配应该覆盖<strong>整个</strong>字符串 (<code>s</code>) ，而不是部分字符串。</p>
 <a id="more"></a>
@@ -558,7 +587,7 @@
               <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="张可携">
             
               <p class="site-author-name" itemprop="name">张可携</p>
-              <div class="site-description motion-element" itemprop="description">前端学习中</div>
+              <div class="site-description motion-element" itemprop="description">前端爱好者</div>
           </div>
 
           
@@ -580,6 +609,10 @@
                 <div class="site-state-item site-state-categories">
                   
                     
+                      <a href="/categories/">
+                    
+                  
+                    
                     
                       
                     
@@ -599,7 +632,7 @@
                     
                     <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">分类</span>
-                  
+                  </a>
                 </div>
               
 
