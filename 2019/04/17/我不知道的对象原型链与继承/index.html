@@ -107,15 +107,15 @@
   <meta name="description" content="虽说掌握这个知识点已经很久了，但温故而知新的感觉不要太棒。 本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对对象的扩展，请参阅：这个站点。 嗯，再次推荐《Speaking JavaScript》。">
 <meta name="keywords" content="-JavaScript,-面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我不知道的原型链与继承">
-<meta property="og:url" content="http://seefun.club/2019/04/17/我不知道的原型链/index.html">
+<meta property="og:title" content="我不知道的对象原型链与继承">
+<meta property="og:url" content="http://seefun.club/2019/04/17/我不知道的对象原型链与继承/index.html">
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="虽说掌握这个知识点已经很久了，但温故而知新的感觉不要太棒。 本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对对象的扩展，请参阅：这个站点。 嗯，再次推荐《Speaking JavaScript》。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/prototype-1.png">
-<meta property="og:updated_time" content="2019-04-18T01:34:04.762Z">
+<meta property="og:updated_time" content="2019-04-18T10:39:11.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我不知道的原型链与继承">
+<meta name="twitter:title" content="我不知道的对象原型链与继承">
 <meta name="twitter:description" content="虽说掌握这个知识点已经很久了，但温故而知新的感觉不要太棒。 本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对对象的扩展，请参阅：这个站点。 嗯，再次推荐《Speaking JavaScript》。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/prototype-1.png">
 
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/04/17/我不知道的原型链/">
+  <link rel="canonical" href="http://seefun.club/2019/04/17/我不知道的对象原型链与继承/">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>我不知道的原型链与继承 | 归人1337</title>
+  <title>我不知道的对象原型链与继承 | 归人1337</title>
   
 
 
@@ -333,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/17/我不知道的原型链/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/17/我不知道的对象原型链与继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -350,7 +350,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">我不知道的原型链与继承
+          <h2 class="post-title" itemprop="name headline">我不知道的对象原型链与继承
 
               
             
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-18 09:34:04" itemprop="dateModified" datetime="2019-04-18T09:34:04+08:00">2019-04-18</time>
+                <time title="修改时间：2019-04-18 18:39:11" itemprop="dateModified" datetime="2019-04-18T18:39:11+08:00">2019-04-18</time>
               
             
           </span>
@@ -446,22 +446,28 @@
 
       
         <p>虽说掌握这个知识点已经很久了，但温故而知新的感觉不要太棒。</p>
-<p>本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对<strong>对象</strong>的扩展，请参阅：<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">这个站点</a>。</p>
+<p>本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对对象的扩展，请参阅：<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">这个站点</a>。</p>
 <p>嗯，再次推荐<a href="http://speakingjs.com/" target="_blank" rel="noopener">《Speaking JavaScript》</a>。</p>
 <a id="more"></a>
 <p>首先，请再次明确这个基本概念：<strong>函数也是对象</strong>。</p>
-<p>因此看完这篇文章后，希望你已经懂得了函数的原型链。</p>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>概括地说，<code>JavaScript</code>中的对象是从字符串到属性的映射。这也难怪不少人将对象用于<code>Map</code>结构的简单实现。</p>
+<p>因此看完这篇文章后，希望不要再发出什么是函数的原型链这种问题。</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>概括地说，<code>JavaScript</code>中的<strong>对象是从字符串到属性的映射</strong>。这也难怪不少人将对象用作<code>Map</code>结构的简单实现。</p>
 <h3 id="对象的属性类型"><a href="#对象的属性类型" class="headerlink" title="对象的属性类型"></a>对象的属性类型</h3><p>一个对象可以拥有许多属性：自有属性、继承属性、内置属性等等。而他们可以被分为三类：</p>
 <ul>
-<li><strong>（一般）属性</strong>：我们通常所做的、信手为对象所添加的属性，属性的值可以是任意JavaScript值</li>
+<li><strong>（一般）属性</strong>：我们通常所做的、信手为对象所添加的属性，属性的值可以是任意<code>JavaScript</code>值</li>
 <li><strong>访问器</strong>：访问器是一个方法，它提供了在用户读取、写入一个对象的属性时可以计算属性的值的权力</li>
 <li><strong>内置属性</strong>：只存在于<code>ECMAScript</code>语言规范中，规范将内置属性的键置于方括号中，比如<code>Object[[Prototype]]</code></li>
 </ul>
 <h3 id="获取对象的属性"><a href="#获取对象的属性" class="headerlink" title="获取对象的属性"></a>获取对象的属性</h3><p>你可以通过<code>.</code>运算符、<code>[]</code>运算符来获取对象的属性。</p>
 <p><code>[]</code>运算符提供了<strong>用表达式计算得出键名</strong>的能力：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;<span class="string">'s1mple'</span>: <span class="string">'nihao'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o[<span class="string">'simple'</span>.replace(<span class="string">'i'</span>,<span class="string">'1'</span>)]);  <span class="comment">//nihao</span></span><br></pre></td></tr></table></figure>
-<p>一个对象的属性名<strong>总是字符串</strong>，因此，即使使用<code>JavaScript</code>中的保留字作为属性名也是被允许的。</p>
+<p>一个对象的属性名<strong>总是字符串</strong>，因此，即使使用<code>JavaScript</code>中的保留字作为属性名也是被允许的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">    <span class="keyword">var</span> : <span class="string">'nihao'</span>,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> : <span class="title">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">o.var;  <span class="comment">//nihao</span></span><br><span class="line">o.function();  <span class="comment">//hello</span></span><br></pre></td></tr></table></figure>
+<p>但是你需要注意的是：</p>
+<p><strong>使用<code>.</code>运算符访问属性时，属性的键必须是标识符</strong>，这一点与属性的键是字符串并不冲突：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o =&#123;</span><br><span class="line">    <span class="number">0</span> : <span class="string">'nihao'</span>,</span><br><span class="line">    name : <span class="string">'hello'</span></span><br><span class="line">&#125;</span><br><span class="line">o<span class="number">.0</span>;  <span class="comment">//SyntaxError: unexpected token: numeric literal</span></span><br><span class="line">o.<span class="string">'0'</span>;  <span class="comment">//SyntaxError: missing name after . operator</span></span><br><span class="line">o.[<span class="number">0</span>];  <span class="comment">//"nihao"</span></span><br><span class="line">o.name;  <span class="comment">//"nihao"</span></span><br><span class="line">o[name];  <span class="comment">//undefined</span></span><br><span class="line">o[<span class="string">'name'</span>];  <span class="comment">//"hello"</span></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">'name'</span>;</span><br><span class="line">o[name];  <span class="comment">//"hello"</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，对象<code>o</code>拥有了一个<strong>非标识符</strong>的键名<code>0</code>，那么它只能使用<code>[]</code>运算符访问，而<code>JavaScript</code>仍然会将<code>0</code>转为<code>&#39;0&#39;</code>来保存。换句话说，<code>[]</code>运算符里面的表达式最总都会执行<code>.toString()</code>的操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">o[a()];  <span class="comment">//"nihao"</span></span><br></pre></td></tr></table></figure>
 <h3 id="操作属性"><a href="#操作属性" class="headerlink" title="操作属性"></a>操作属性</h3><ul>
 <li><strong>设置属性</strong>：你可以使用赋值操作符<code>=</code>为指向的属性赋值，例如：</li>
 </ul>
@@ -470,9 +476,17 @@
 <li><strong>删除属性</strong>：使用<code>delete</code>操作符从一个对象中完全移除一个属性，即整个键值对。注意：删除只影响一个对象的<strong>自有属性</strong>，并不涉及它的原型</li>
 </ul>
 <blockquote>
-<p><code>delete</code>的返回值：</p>
+<p><strong><code>delete</code>的返回值</strong>：</p>
 <p>如果属性是自有属性，且不能被删除，<code>delete</code>会返回<code>false</code>。其它的所有情况都会返回<code>true</code>，也就是说，即使是删除继承来的属性，也会返回<code>true</code>，虽说根本不会删除。</p>
 </blockquote>
+<ul>
+<li><code>Object.defineProperty(Obj, propKey, propDesc)</code></li>
+</ul>
+<p>创建或改变<code>Obj</code>对象键名为<code>propKey</code>的属性，并通过<code>propDesc</code>，一个属性描述对象，指定这个属性的特性，关于属性特性与属性描述对象，接下来就会讲到。</p>
+<ul>
+<li><code>Object.defineProperties(Obj, propDescObj)</code></li>
+</ul>
+<p>该方法是上述方法的批量处理版本。</p>
 <h3 id="访问器"><a href="#访问器" class="headerlink" title="访问器"></a>访问器</h3><p>访问器用于修改读取、写入对象属性这两种操作的<strong>默认行为</strong>。例如，你可以禁止设置某个属性，而读取属性时，也可以对返回值进行一些计算。就像这样：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">    <span class="keyword">get</span> name()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'nihao'</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span> name(v)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`changed to <span class="subst">$&#123;v&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.name;  <span class="comment">//nihao</span></span><br><span class="line">o.name = <span class="string">'hello'</span>;  <span class="comment">//changed to hello</span></span><br><span class="line">o.name;  <span class="comment">//nihao</span></span><br></pre></td></tr></table></figure>
 <h3 id="属性特性与属性描述符"><a href="#属性特性与属性描述符" class="headerlink" title="属性特性与属性描述符"></a>属性特性与属性描述符</h3><p>所有的属性状态，包括它的数据，都存储在特性中。它们是属性拥有的字段，就像对象拥有的属性。特性的键通常写在双方括号中，特性与普通属性和访问器<code>getter</code>、<code>setter</code>有关。</p>
@@ -486,7 +500,7 @@
 <li><code>[[Get]]</code>持有<code>getter</code>，<strong>读取属性时调用的函数</strong>，该函数计算读取的结果</li>
 <li><code>[[Set]]</code>持有<code>setter</code>，为<strong>属性设置时调用的函数</strong>，该函数接收设置的值作为参数</li>
 </ul>
-<p>所有的属性都有以下特性：</p>
+<p><strong>所有的属性</strong>都有以下特性：</p>
 <ul>
 <li><code>[[Enumerable]]</code>持有一个布尔值，<strong>设置一个属性是否可以枚举</strong>，如果不可枚举，则会在一些操作中忽略这个属性</li>
 <li><code>[[Configurable]]</code>持有一个布尔值，如果它是<code>false</code>，那么你<strong>不能删除、改变属性的任何特性</strong>，除了<code>[[Value]]</code></li>
@@ -531,8 +545,121 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    value : <span class="string">'nihao'</span>,</span><br><span class="line">    writable : <span class="literal">false</span>,</span><br><span class="line">    enumerable : <span class="literal">true</span>,</span><br><span class="line">    configurable : <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="对象间的原型关系"><a href="#对象间的原型关系" class="headerlink" title="对象间的原型关系"></a>对象间的原型关系</h2><p>两个对象间的原型关系类似继承：<strong>每个对象都可以把另一个对象作为它的原型</strong>，并继承原型的所有属性。对象通过内部属性<code>[[prototype]]</code>指定它的原型，通过该属性连接成的对象链即为原型链。就像这样：</p>
 <p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/prototype-1.png" alt="对象间的原型链"></p>
-<p>有了继承关系，自然就有了：函数覆盖、自由属性、继承属性这些概念。</p>
-<h2 id="对象的属性遍历"><a href="#对象的属性遍历" class="headerlink" title="对象的属性遍历"></a>对象的属性遍历</h2>
+<p>有了继承关系，自然就有了：函数覆盖、自有属性、继承属性这些概念。</p>
+<ul>
+<li><strong>函数覆盖</strong>：</li>
+</ul>
+<p>在一个原型链中，一个对象的属性可以覆写之后对象的，即继承了该对象的子对象的，相同键的属性。前者的属性最先被找到，它隐藏了后者的属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> proto = &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> : <span class="title">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'nihao'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> sub = &#123;&#125;;</span><br><span class="line">sub.__proto__ = proto;</span><br><span class="line">sub.function();  <span class="comment">//nihao</span></span><br><span class="line">sub.function = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</span><br><span class="line">&#125;</span><br><span class="line">sub.function();  <span class="comment">//hello</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>继承属性</strong>：</li>
+</ul>
+<p>你可以访问继承来的属性，就像对象本身拥有这个属性一样。</p>
+<p>当你通过一个对象访问某个属性时，<code>JavaScript</code>首先从本对象开始查找，接着是它的原型，以及原型的原型。当你调用一个方法时，容易出错的是因为<code>this</code>的值<strong>总是最初的那个对象</strong>，这可能会导致一些问题。</p>
+<h3 id="特殊属性-proto"><a href="#特殊属性-proto" class="headerlink" title="特殊属性__proto__"></a>特殊属性<code>__proto__</code></h3><p>我们并没有办法直接访问到对象的内部属性<code>[[Prototype]]</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;&#125;;</span><br><span class="line">o[[Prototype]];  <span class="comment">//ReferenceError: Prototype is not defined</span></span><br></pre></td></tr></table></figure>
+<p>但是，大部分<code>JavaScript</code>引擎有特殊的属性可以获取和设置对象的原型：<code>__proto__</code>。即<code>__proto__ === [[Prototype]]</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;&#125;;</span><br><span class="line">o.__proto__;  <span class="comment">//Object &#123; … &#125;</span></span><br><span class="line">o.__proto__ = <span class="built_in">Array</span>.prototype;</span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(o) === <span class="built_in">Array</span>.prototype;  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="操作对象原型"><a href="#操作对象原型" class="headerlink" title="操作对象原型"></a>操作对象原型</h2><p>你可以通过以下方法来获取或设置对象的原型：</p>
+<ul>
+<li><strong>特殊属性<code>__proto__</code></strong></li>
+<li><code>Object.getPrototypeOf(xxx)</code></li>
+</ul>
+<p>使用该方法可以<strong>获取一个对象的原型</strong>。</p>
+<ul>
+<li>属性<code>prototype</code></li>
+</ul>
+<p><code>JavaScript</code>内置对象均拥有这个属性，而普通的对象没有这个属性，可以通过继承以获得该属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;&#125;;</span><br><span class="line">o.prototype;  <span class="comment">//undefined</span></span><br><span class="line">o.__proto__ = <span class="built_in">Array</span>;</span><br><span class="line"><span class="built_in">Array</span>.prototype;  <span class="comment">//Array []</span></span><br><span class="line">o.prototype;  <span class="comment">//Array []</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Object.create(proto, protoDescObj?)</code></li>
+</ul>
+<p>该方法创建一个原型为<code>proto</code>的对象，同时你也可以传入一个可选参数<code>protoDescObj</code>，它就是我们之前所讲述的<strong>属性描述符对象</strong>。就像下面这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> proto = &#123;</span><br><span class="line">    say : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">' hello'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> libai = <span class="built_in">Object</span>.create(proto,&#123;</span><br><span class="line">    name : &#123;</span><br><span class="line">        value : <span class="string">'libai'</span>,</span><br><span class="line">        writable : <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">libai.say();  <span class="comment">//libai hello</span></span><br><span class="line">libai.name = <span class="string">'Chinese'</span>;</span><br><span class="line">libai.say();  <span class="comment">//Chinese hello</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Object_1.prototype.isPrototypeOf(Object_2)</code></li>
+</ul>
+<p>该方法会判断<code>Object_1</code>是否是<code>Object_2</code>的<strong>直接或间接</strong>原型。</p>
+<h2 id="对象的属性遍历"><a href="#对象的属性遍历" class="headerlink" title="对象的属性遍历"></a>对象的属性遍历</h2><p>通常来讲，遍历一个对象的属性受以下两方面影响：</p>
+<ul>
+<li><strong>继承</strong>：即自有属性与继承属性</li>
+<li><strong>枚举</strong>：枚举属性与非枚举属性</li>
+</ul>
+<h3 id="遍历自有属性的键"><a href="#遍历自有属性的键" class="headerlink" title="遍历自有属性的键"></a>遍历自有属性的键</h3><p>使用以下方法来遍历<strong>自有属性的键</strong>。</p>
+<ul>
+<li><code>Object.getOwnPropertyNames(Obj)</code></li>
+</ul>
+<p>该方法会返回<code>Obj</code>的<strong>所有自有的属性键</strong>。</p>
+<ul>
+<li><code>Object.keys(Obj)</code></li>
+</ul>
+<p>该方法会返回<code>Obj</code>的<strong>所有可枚举的自有属性键</strong>。</p>
+<blockquote>
+<p><strong>枚举性</strong></p>
+<p>属性的枚举性是一个特性，标识为<code>true</code>的则可以被枚举。</p>
+<p><strong>系统创建的属性不可枚举，而用户创建的属性可以枚举</strong>。</p>
+</blockquote>
+<h3 id="遍历所有属性的键"><a href="#遍历所有属性的键" class="headerlink" title="遍历所有属性的键"></a>遍历所有属性的键</h3><p>使用以下方法来遍历所有属性，即自有属性与继承属性的键。</p>
+<ul>
+<li><code>for...in</code>循环</li>
+</ul>
+<p>该方法会遍历某一对象的所有可枚举的属性。</p>
+<ul>
+<li>利用<code>Object.getOwnPropertyNames()</code>函数与对象原型链，实现一个递归的函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAllPropertyNames</span>(<span class="params">Obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = [];</span><br><span class="line">    <span class="keyword">while</span>(Obj)&#123;</span><br><span class="line">        result.push(<span class="built_in">Object</span>.getOwnPropertyNames(Obj));</span><br><span class="line">        Obj = <span class="built_in">Object</span>.getProtorypeOf(Obj);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="检测属性是否存在"><a href="#检测属性是否存在" class="headerlink" title="检测属性是否存在"></a>检测属性是否存在</h3><ul>
+<li>使用<code>in</code>运算符可以检测一个属性，自有属性或继承属性，是否存在</li>
+<li><code>Object.prototype.hasOwnProperty(key)</code></li>
+</ul>
+<p>该方法检测某个对象是否具有一个键名为<code>key</code>的<strong>自有属性</strong>。</p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p><code>JavaScript</code>提供了一系列的内置对象，我们可以通过<code>new</code>操作符来创建这些内置对象的实例。构造函数在某些方面和普通函数类似，但命名、设置和调用不同。</p>
+<p>构造函数及其实例化的对象有以下特点：</p>
+<ul>
+<li>数据是由实例指定的，并存储在实例对象的自有属性中</li>
+<li>行为被所有的实例所共享</li>
+</ul>
+<p>就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Man</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`hello, I am <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> libai = <span class="keyword">new</span> Man(<span class="string">'libai'</span>);</span><br><span class="line">libai.say();  <span class="comment">//hello, I am libai</span></span><br><span class="line"><span class="keyword">let</span> niko = <span class="keyword">new</span> Man(<span class="string">'niko'</span>);</span><br><span class="line">niko.say();  <span class="comment">//hello, I am niko</span></span><br></pre></td></tr></table></figure>
+<h3 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a><code>new</code>操作符</h3><p>一个函数，只有通过<code>new</code>操作符调用时，才会变成构造函数。</p>
+<p>以上述<code>Man()</code>函数为例，<code>new</code>操作符的执行步骤如下：</p>
+<ol>
+<li>首先<strong>设置行为</strong>：创建一个新对象，其原型为<code>Man.prototype</code>。</li>
+<li>然后<strong>设置属性</strong>：<code>Man</code>接收一个实例作为隐式参数<code>this</code>，并为实例添加属性。</li>
+</ol>
+<p>知道了<code>new</code>操作符的工作机理，我们就可以手动实现它：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newOperator</span>(<span class="params">Constructor , Arguments</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> thisObject = <span class="built_in">Object</span>.create(Constructor.prototype);</span><br><span class="line">    <span class="keyword">let</span> result = Constructor.apply(thisObject, Arguments);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> result === <span class="string">'object'</span> &amp;&amp; result !== <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> thisObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="函数的prototype与constructor"><a href="#函数的prototype与constructor" class="headerlink" title="函数的prototype与constructor"></a>函数的<code>prototype</code>与<code>constructor</code></h3><h4 id="prototype属性"><a href="#prototype属性" class="headerlink" title="prototype属性"></a><code>prototype</code>属性</h4><p><strong>每个函数</strong>都有一个特殊的属性，那就是<code>prototype</code>属性，该属性指向一个对象，<strong>该对象是构造函数所有实例的原型</strong>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(<span class="keyword">new</span> a()) === a.prototype;  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>但是你可能突然想到了一些其它东西：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">a.prototype === a.__proto__;  <span class="comment">//false</span></span><br><span class="line">a.prototype === <span class="built_in">Object</span>.getPrototypeOf(a);  <span class="comment">//false</span></span><br><span class="line">a.__proto__ === <span class="built_in">Object</span>.getPrototypeOf(a);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>你可能会想：怎么会，从语义上来说<code>prototype</code>、<code>getPrototypeOf</code>和<code>__proto__</code>不都是获取原型么？</p>
+<p>不要急，我们先来看看这三个原型都是什么东西：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'yoshida'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Object</span>.create(a);</span><br><span class="line"></span><br><span class="line">a.prototype;  <span class="comment">//Object &#123; … &#125; ==&gt;  constructor: function a(); &lt;prototype&gt;: Object &#123; … &#125;</span></span><br><span class="line">a.__proto__;  <span class="comment">//function ()</span></span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(a);  <span class="comment">//function ()</span></span><br><span class="line"></span><br><span class="line">b.__proto__ === <span class="built_in">Object</span>.getPrototypeOf(b) === a;  <span class="comment">//true</span></span><br><span class="line">b.prototype === a.prototype;  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>..prototype.isPrototypeOf(a);  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.isPrototypeOf(a.__proto__);  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>原来如此，这就是普通对象与函数的差别了。</p>
+<p><code>__proto__</code>与<code>Object.getPrototypeOf()</code>或取到的都是<strong>继承关系上的原型</strong>，即：一个对象可以是另一个对象的原型。由于<code>a</code>与<code>b</code>均是函数，它们的原型自然是继承了<code>Function</code>的一个函数对象。</p>
+<p><code>prototype</code>是一个函数对象才具有的属性，指代了其<strong>所有实例的原型</strong>。</p>
+<h4 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a><code>constructor</code>属性</h4><p>每个函数的<code>prototype</code>对象拥有一个<code>constructor</code>属性，它指向该函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">a.prototype.constructor === a;  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>因为每个实例都从原型中继承了<code>constructor</code>属性，所以你可以获得它的构造函数。</p>
+<blockquote>
+<p><strong>最佳实践</strong>：</p>
+<p>你应该保证<code>xx.prototype.constructor === xx</code>断言成立。</p>
+<p>因此，尽量<strong>避免替换</strong><code>xx.prototype</code>对象，而只为它增加属性。如果替换了，你应该手动为它的<code>constructor</code>属性赋予正确的值。</p>
+</blockquote>
+<h2 id="对象的复制"><a href="#对象的复制" class="headerlink" title="对象的复制"></a>对象的复制</h2><p>为了创建一个对象相同的复制，你需要确保：</p>
+<ol>
+<li>拷贝必须具有与原对象相同的原型。</li>
+<li>拷贝必须具有与原对象相同的属性和属性特性。</li>
+</ol>
+<p>就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyObject</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//确保原型</span></span><br><span class="line">    <span class="keyword">let</span> result = <span class="built_in">Object</span>.create(<span class="built_in">Object</span>.getPrototypeOf(target));</span><br><span class="line">    <span class="comment">//确保属性以及属性特性</span></span><br><span class="line">    <span class="built_in">Object</span>.getOwnPropertyNames(target).forEach(<span class="function">(<span class="params">key</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> desc = <span class="built_in">Object</span>.getOwnPropertyDescriptor(target, key);</span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(result, key, desc);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="浅拷贝与深拷贝"><a href="#浅拷贝与深拷贝" class="headerlink" title="浅拷贝与深拷贝"></a>浅拷贝与深拷贝</h3><p>简单来说，<strong>浅拷贝</strong>只复制一层对象的属性，而<strong>深拷贝</strong>则会递归复制对象的每一层属性。</p>
+<p>上述方法实现了深拷贝。</p>
+<p>同时，你还可以借助<code>JSON</code>实现深拷贝：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copeObject</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(target));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个方法的原理是：使用<code>JSON.stringify()</code>将对象的描述<strong>序列化为一个字符串</strong>，再利用<code>JSON.parse()</code>将字符串还原为对象，因此，一个对象的所有属性均可以被全部复制下来。</p>
+
       
     </div>
 
@@ -570,8 +697,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/17/我不知道的对象原型链与继承/" rel="next" title="我不知道的对象原型链与继承">
-                <i class="fa fa-chevron-left"></i> 我不知道的对象原型链与继承
+              <a href="/2019/04/15/Regular-Expression-Matching/" rel="next" title="LeetCode之实现“正则表达式匹配”">
+                <i class="fa fa-chevron-left"></i> LeetCode之实现“正则表达式匹配”
               </a>
             
           </div>
@@ -580,8 +707,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/17/我不知道的原型链与继承/" rel="prev" title="我不知道的对象原型链与继承">
-                我不知道的对象原型链与继承 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/17/我不知道的原型链/" rel="prev" title="我不知道的原型链与继承">
+                我不知道的原型链与继承 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -783,7 +910,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的属性类型"><span class="nav-number">1.1.</span> <span class="nav-text">对象的属性类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取对象的属性"><span class="nav-number">1.2.</span> <span class="nav-text">获取对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作属性"><span class="nav-number">1.3.</span> <span class="nav-text">操作属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问器"><span class="nav-number">1.4.</span> <span class="nav-text">访问器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性特性与属性描述符"><span class="nav-number">1.5.</span> <span class="nav-text">属性特性与属性描述符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象间的原型关系"><span class="nav-number">2.</span> <span class="nav-text">对象间的原型关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的属性遍历"><span class="nav-number">3.</span> <span class="nav-text">对象的属性遍历</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的属性类型"><span class="nav-number">1.1.</span> <span class="nav-text">对象的属性类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取对象的属性"><span class="nav-number">1.2.</span> <span class="nav-text">获取对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作属性"><span class="nav-number">1.3.</span> <span class="nav-text">操作属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问器"><span class="nav-number">1.4.</span> <span class="nav-text">访问器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性特性与属性描述符"><span class="nav-number">1.5.</span> <span class="nav-text">属性特性与属性描述符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象间的原型关系"><span class="nav-number">2.</span> <span class="nav-text">对象间的原型关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊属性-proto"><span class="nav-number">2.1.</span> <span class="nav-text">特殊属性__proto__</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作对象原型"><span class="nav-number">3.</span> <span class="nav-text">操作对象原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的属性遍历"><span class="nav-number">4.</span> <span class="nav-text">对象的属性遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历自有属性的键"><span class="nav-number">4.1.</span> <span class="nav-text">遍历自有属性的键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历所有属性的键"><span class="nav-number">4.2.</span> <span class="nav-text">遍历所有属性的键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测属性是否存在"><span class="nav-number">4.3.</span> <span class="nav-text">检测属性是否存在</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">5.</span> <span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#new操作符"><span class="nav-number">5.1.</span> <span class="nav-text">new操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的prototype与constructor"><span class="nav-number">5.2.</span> <span class="nav-text">函数的prototype与constructor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prototype属性"><span class="nav-number">5.2.1.</span> <span class="nav-text">prototype属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#constructor属性"><span class="nav-number">5.2.2.</span> <span class="nav-text">constructor属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的复制"><span class="nav-number">6.</span> <span class="nav-text">对象的复制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">6.1.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -939,7 +1066,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/04/17/我不知道的原型链/'
+    refer: '2019/04/17/我不知道的对象原型链与继承/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

@@ -104,28 +104,27 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
-<meta name="keywords" content="-JavaScript,-Number">
+  <meta name="description" content="虽说掌握这个知识点已经很久了，但温故而知新的感觉不要太棒。 本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对对象的扩展，请参阅：这个站点。 嗯，再次推荐《Speaking JavaScript》。">
+<meta name="keywords" content="-JavaScript,-面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我不知道的Number">
-<meta property="og:url" content="http://seefun.club/2019/03/30/我不知道的Number/index.html">
+<meta property="og:title" content="我不知道的对象原型链与继承">
+<meta property="og:url" content="http://seefun.club/2019/04/17/我不知道的原型链与继承/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
+<meta property="og:description" content="虽说掌握这个知识点已经很久了，但温故而知新的感觉不要太棒。 本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对对象的扩展，请参阅：这个站点。 嗯，再次推荐《Speaking JavaScript》。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js-2.png">
-<meta property="og:updated_time" content="2019-04-06T13:04:05.941Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/prototype-1.png">
+<meta property="og:updated_time" content="2019-04-18T07:00:37.639Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我不知道的Number">
-<meta name="twitter:description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png">
+<meta name="twitter:title" content="我不知道的对象原型链与继承">
+<meta name="twitter:description" content="虽说掌握这个知识点已经很久了，但温故而知新的感觉不要太棒。 本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对对象的扩展，请参阅：这个站点。 嗯，再次推荐《Speaking JavaScript》。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/prototype-1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/03/30/我不知道的Number/">
+  <link rel="canonical" href="http://seefun.club/2019/04/17/我不知道的原型链与继承/">
 
 
 
@@ -135,7 +134,7 @@
   };
 </script>
 
-  <title>我不知道的Number | 归人1337</title>
+  <title>我不知道的对象原型链与继承 | 归人1337</title>
   
 
 
@@ -334,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/03/30/我不知道的Number/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/17/我不知道的原型链与继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -351,7 +350,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">我不知道的Number
+          <h2 class="post-title" itemprop="name headline">我不知道的对象原型链与继承
 
               
             
@@ -377,7 +376,7 @@
                 
               
 
-              <time title="创建时间：2019-03-30 20:00:19" itemprop="dateCreated datePublished" datetime="2019-03-30T20:00:19+08:00">2019-03-30</time>
+              <time title="创建时间：2019-04-17 13:30:55" itemprop="dateCreated datePublished" datetime="2019-04-17T13:30:55+08:00">2019-04-17</time>
             
 
             
@@ -394,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-06 21:04:05" itemprop="dateModified" datetime="2019-04-06T21:04:05+08:00">2019-04-06</time>
+                <time title="修改时间：2019-04-18 15:00:37" itemprop="dateModified" datetime="2019-04-18T15:00:37+08:00">2019-04-18</time>
               
             
           </span>
@@ -446,207 +445,153 @@
       
 
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> = <span class="number">0.30000000000000004</span></span><br></pre></td></tr></table></figure>
-<p>Why?</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">9007199254740992</span> + <span class="number">1</span> = <span class="number">9007199254740992</span></span><br></pre></td></tr></table></figure>
-<p>Why!</p>
+        <p>虽说掌握这个知识点已经很久了，但温故而知新的感觉不要太棒。</p>
+<p>本文只讲述ES5版本下对象的相关知识，如需深入了解ES6对对象的扩展，请参阅：<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">这个站点</a>。</p>
+<p>嗯，再次推荐<a href="http://speakingjs.com/" target="_blank" rel="noopener">《Speaking JavaScript》</a>。</p>
 <a id="more"></a>
-<h2 id="数字字面量"><a href="#数字字面量" class="headerlink" title="数字字面量"></a>数字字面量</h2><p><code>JavaScript</code>的数字是双精度值，即64位数。基于浮点算术的IEEE标准：<a href="https://en.wikipedia.org/wiki/IEEE_754" target="_blank" rel="noopener">IEEE 754</a>。</p>
-<p>一个数字字面量可以是<strong>整型</strong>、<strong>浮点型</strong>或者<strong>十六进制</strong>整型：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="number">35</span>   <span class="comment">//35</span></span><br><span class="line">&gt;<span class="number">3.1415</span>  <span class="comment">//3.1415</span></span><br><span class="line">&gt;<span class="number">0xFF</span>  <span class="comment">//255</span></span><br></pre></td></tr></table></figure>
-<p>大部分的<code>JavaScript</code>引擎会在内部做优化并区分浮点数字和整型。</p>
-<h2 id="转换成数字"><a href="#转换成数字" class="headerlink" title="转换成数字"></a>转换成数字</h2><p>你可以使用这两种方法将任意值转换为数字：<code>Number(value)</code>、<code>+value</code>。</p>
-<p>第二种你可能不常见，但是总会有这种问题：<code>+&quot;&quot; = ?  //0</code></p>
-<h2 id="数字的内部表示"><a href="#数字的内部表示" class="headerlink" title="数字的内部表示"></a>数字的内部表示</h2><p><code>JavaScript</code>的数字是64位精度的，也叫做双精度，通常被叫做<code>double</code>。</p>
-<p>数字的内部描述基于IEEE 754标准，64位按照下表所示分布在数字的<strong>符号 Sign</strong>、<strong>指数 Exponent</strong>和<strong>分数 Ftrction</strong>上：</p>
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>指数 [-1023 , 1024]</th>
-<th>分数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>占1位</td>
-<td>占11位</td>
-<td>占52位</td>
-</tr>
-<tr>
-<td>第63位</td>
-<td>第62~52位</td>
-<td>第52~0位</td>
-</tr>
-</tbody>
-</table>
-<p>一个数字的值根据下面的公式计算出来：</p>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png" alt="数值的计算"></p>
+<p>首先，请再次明确这个基本概念：<strong>函数也是对象</strong>。</p>
+<p>因此看完这篇文章后，希望不要再发出什么是函数的原型链这种问题。</p>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>概括地说，<code>JavaScript</code>中的<strong>对象是从字符串到属性的映射</strong>。这也难怪不少人将对象用作<code>Map</code>结构的简单实现。</p>
+<h3 id="对象的属性类型"><a href="#对象的属性类型" class="headerlink" title="对象的属性类型"></a>对象的属性类型</h3><p>一个对象可以拥有许多属性：自有属性、继承属性、内置属性等等。而他们可以被分为三类：</p>
+<ul>
+<li><strong>（一般）属性</strong>：我们通常所做的、信手为对象所添加的属性，属性的值可以是任意JavaScript值</li>
+<li><strong>访问器</strong>：访问器是一个方法，它提供了在用户读取、写入一个对象的属性时可以计算属性的值的权力</li>
+<li><strong>内置属性</strong>：只存在于<code>ECMAScript</code>语言规范中，规范将内置属性的键置于方括号中，比如<code>Object[[Prototype]]</code></li>
+</ul>
+<h3 id="获取对象的属性"><a href="#获取对象的属性" class="headerlink" title="获取对象的属性"></a>获取对象的属性</h3><p>你可以通过<code>.</code>运算符、<code>[]</code>运算符来获取对象的属性。</p>
+<p><code>[]</code>运算符提供了<strong>用表达式计算得出键名</strong>的能力：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;<span class="string">'s1mple'</span>: <span class="string">'nihao'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(o[<span class="string">'simple'</span>.replace(<span class="string">'i'</span>,<span class="string">'1'</span>)]);  <span class="comment">//nihao</span></span><br></pre></td></tr></table></figure>
+<p>一个对象的属性名<strong>总是字符串</strong>，因此，即使使用<code>JavaScript</code>中的保留字作为属性名也是被允许的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">    <span class="keyword">var</span> : <span class="string">'nihao'</span>,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> : <span class="title">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">o.var;  <span class="comment">//nihao</span></span><br><span class="line">o.function();  <span class="comment">//hello</span></span><br></pre></td></tr></table></figure>
+<p>但是你需要注意的是：</p>
+<p><strong>使用<code>.</code>运算符访问属性时，属性的键必须是标识符</strong>，这一点与属性的键是字符串并不冲突：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o =&#123;</span><br><span class="line">    <span class="number">0</span> : <span class="string">'nihao'</span>,</span><br><span class="line">    name : <span class="string">'hello'</span></span><br><span class="line">&#125;</span><br><span class="line">o<span class="number">.0</span>;  <span class="comment">//SyntaxError: unexpected token: numeric literal</span></span><br><span class="line">o.<span class="string">'0'</span>;  <span class="comment">//SyntaxError: missing name after . operator</span></span><br><span class="line">o.[<span class="number">0</span>];  <span class="comment">//"nihao"</span></span><br><span class="line">o.name;  <span class="comment">//"nihao"</span></span><br><span class="line">o[name];  <span class="comment">//undefined</span></span><br><span class="line">o[<span class="string">'name'</span>];  <span class="comment">//"hello"</span></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">'name'</span>;</span><br><span class="line">o[name];  <span class="comment">//"hello"</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，对象<code>o</code>拥有了一个<strong>非标识符</strong>的键名<code>0</code>，那么它只能使用<code>[]</code>运算符访问，而<code>JavaScript</code>仍然会将<code>0</code>转为<code>&#39;0&#39;</code>来保存。换句话说，<code>[]</code>运算符里面的表达式最总都会执行<code>.toString()</code>的操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">o[a()];  <span class="comment">//"nihao"</span></span><br></pre></td></tr></table></figure>
+<h3 id="操作属性"><a href="#操作属性" class="headerlink" title="操作属性"></a>操作属性</h3><ul>
+<li><strong>设置属性</strong>：你可以使用赋值操作符<code>=</code>为指向的属性赋值，例如：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.name = <span class="string">'nihao'</span>;</span><br><span class="line">subObject[<span class="string">'prototype'</span>] = <span class="built_in">Object</span>;  <span class="comment">//在浏览器中不起作用</span></span><br><span class="line">subObject[<span class="string">'__proto__'</span>] = <span class="built_in">Object</span>;  <span class="comment">//在浏览器中起作用</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>删除属性</strong>：使用<code>delete</code>操作符从一个对象中完全移除一个属性，即整个键值对。注意：删除只影响一个对象的<strong>自有属性</strong>，并不涉及它的原型</li>
+</ul>
 <blockquote>
-<p>前置的百分号<code>%</code>代表中间的数字采用二进制计数法编写。</p>
+<p><code>delete</code>的返回值：</p>
+<p>如果属性是自有属性，且不能被删除，<code>delete</code>会返回<code>false</code>。其它的所有情况都会返回<code>true</code>，也就是说，即使是删除继承来的属性，也会返回<code>true</code>，虽说根本不会删除。</p>
 </blockquote>
-<p>感到很奇怪？不怕，我将分别讲讲这三个表示。</p>
-<h3 id="符号-Sign"><a href="#符号-Sign" class="headerlink" title="符号 Sign"></a>符号 Sign</h3><p>如果标志位为0，为正数，否则为负数。</p>
-<h3 id="分数-Ftrction"><a href="#分数-Ftrction" class="headerlink" title="分数 Ftrction"></a>分数 Ftrction</h3><p><strong>尾数</strong>，是百分号<code>%</code>之后<code>1.</code>后面的数，记住，是二进制表示，<strong>并且1将占一位</strong>。</p>
-<p>而分数就是带上尾数的整体二进制表示喽，像这样：<code>%1.011</code>，其中<code>0</code>是第51位。</p>
-<h3 id="指数-Exponent"><a href="#指数-Exponent" class="headerlink" title="指数 Exponent"></a>指数 Exponent</h3><p>指数用于控制小数点的左右移动，因为是二进制数，所以是<strong>2的指数次方</strong>。指数为正则小数点右移，为负则左移。</p>
-<p>指数有11位，因此最大的取值范围位[-1023,1024]，但是需要注意的是：为了支持负指数，<code>JavaScript</code>使用偏<a href="https://en.wikipedia.org/wiki/Offset_binary" target="_blank" rel="noopener">移二进制</a>来编码：<strong>1023表示0，小于它的为负，大于它的为正</strong>。</p>
-<p>于是，原本11位的数字范围[0,2047]就能被划分为正、负两种，实际上指数需要通过<code>-1023</code>得到。</p>
-<p>就像下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E = 00000000000--&gt;0 - 1023 = -1023</span><br><span class="line">E = 01111111111--&gt;1023 - 1023 = 0</span><br><span class="line">E = 11111111111--&gt;2047 - 1023 = 1024</span><br></pre></td></tr></table></figure>
-<p>实际上，取反一个指数，只需要<strong>按位取反后减一</strong>即可。</p>
-<p>有两个特殊的指数：<code>0</code>和<code>2047</code>。</p>
+<h3 id="访问器"><a href="#访问器" class="headerlink" title="访问器"></a>访问器</h3><p>访问器用于修改读取、写入对象属性这两种操作的<strong>默认行为</strong>。例如，你可以禁止设置某个属性，而读取属性时，也可以对返回值进行一些计算。就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">    <span class="keyword">get</span> name()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'nihao'</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span> name(v)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`changed to <span class="subst">$&#123;v&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.name;  <span class="comment">//nihao</span></span><br><span class="line">o.name = <span class="string">'hello'</span>;  <span class="comment">//changed to hello</span></span><br><span class="line">o.name;  <span class="comment">//nihao</span></span><br></pre></td></tr></table></figure>
+<h3 id="属性特性与属性描述符"><a href="#属性特性与属性描述符" class="headerlink" title="属性特性与属性描述符"></a>属性特性与属性描述符</h3><p>所有的属性状态，包括它的数据，都存储在特性中。它们是属性拥有的字段，就像对象拥有的属性。特性的键通常写在双方括号中，特性与普通属性和访问器<code>getter</code>、<code>setter</code>有关。</p>
+<p><strong>普通属性</strong>拥有以下特性：</p>
 <ul>
-<li>指数为<code>2047</code>时，<code>JavaScript</code>将把这个数字表示为<code>NaN</code>或<code>Infinity</code>。</li>
-<li>指数为<code>0</code>时，如果分数也为0，这个数字就为<code>+0/-0</code>；如果分数不为0，用于表示接近0的很小的数字。</li>
+<li><code>[[Value]]</code>持有<strong>属性的值</strong>，即它的数据</li>
+<li><code>[[Writable]]</code>持有布尔类型的值，表示<strong>属性值是否可以改变</strong></li>
 </ul>
-<p>为了使这两种情况都可用，这里用到了<strong>非规格化</strong>的方法，即<strong>不把</strong>小数点放在第一个非零数字后面。</p>
-<p>非规格化的最小数字为：<code>(-1)^(1/0) × %0.Ftrction × 2^(1-1023)</code>，此时如果规格化，则指数为-1023，即0。</p>
-<p>规格化的最小数字为：<code>(-1)^(1/0) × %1.Ftrction × 2^(1-1023)</code>。</p>
-<p>可以看到，非规格化的数字更小。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>二进制，二进制，不要问为什么分数没有2以上的数字出现。</p>
+<p><strong>访问器</strong>具有以下特性：</p>
+<ul>
+<li><code>[[Get]]</code>持有<code>getter</code>，<strong>读取属性时调用的函数</strong>，该函数计算读取的结果</li>
+<li><code>[[Set]]</code>持有<code>setter</code>，为<strong>属性设置时调用的函数</strong>，该函数接收设置的值作为参数</li>
+</ul>
+<p><strong>所有的属性</strong>都有以下特性：</p>
+<ul>
+<li><code>[[Enumerable]]</code>持有一个布尔值，<strong>设置一个属性是否可以枚举</strong>，如果不可枚举，则会在一些操作中忽略这个属性</li>
+<li><code>[[Configurable]]</code>持有一个布尔值，如果它是<code>false</code>，那么你<strong>不能删除、改变属性的任何特性</strong>，除了<code>[[Value]]</code></li>
+</ul>
+<p>如果没有指定特性，属性的特性的默认值如下：</p>
 <table>
 <thead>
 <tr>
-<th>S=0 \</th>
-<th>F=%101 \</th>
-<th>E=2</th>
-<th>Number = (-1)^0 × %1.101 × 2^2 = %110.1</th>
+<th>属性键</th>
+<th>默认值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>S=1 \</td>
-<td>F=%101 \</td>
-<td>E=-2</td>
-<td>Number = (-1)^1 × %1.101 × 2^(-2) = %-0.01101</td>
+<td><code>[[Value]]</code></td>
+<td>undefined</td>
+</tr>
+<tr>
+<td><code>[[Get]]</code></td>
+<td>undefined</td>
+</tr>
+<tr>
+<td><code>[[Set]]</code></td>
+<td>undefined</td>
+</tr>
+<tr>
+<td><code>[[Writable]]</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>[[Enumerable]]</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>[[Configurable]]</code></td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
-<h2 id="处理舍入的错误"><a href="#处理舍入的错误" class="headerlink" title="处理舍入的错误"></a>处理舍入的错误</h2><p><code>JavaScript</code>的数字通常是作为十进制的浮点数字输入的，<strong>但是在内部它们其实是以二进制的浮点数字来表示的</strong>，这就会导致精确度问题。</p>
-<p>来い，看看<strong>十进制</strong>浮点数字和<strong>二进制</strong>浮点数字可以表示什么样的分数。</p>
-<h3 id="十进制系统"><a href="#十进制系统" class="headerlink" title="十进制系统"></a>十进制系统</h3><p>所有的分数是一个<strong>尾数被10的幂次相除</strong>的结果。</p>
-<p>因此，在分母位置上只有10的幂次。</p>
-<p>这就是为什么1/3不能精确的表示成一个十进制的浮点数字——我们无法将一个3放到分母上。</p>
-<h3 id="二进制系统"><a href="#二进制系统" class="headerlink" title="二进制系统"></a>二进制系统</h3><p>同理，二进制的浮点数字在<strong>分母的位置上只有2的幂次</strong>。</p>
-<p>如果分母上面只有2的幂次，那么这个十进制数字可以在<code>JavaScript</code>中被表示：</p>
+<p>属性描述符是用于<strong>编程处理特性的一种数据结构</strong>，每个描述符的属性对应一个特性。</p>
+<p>例如，下面是一个只读属性的描述符：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    value : <span class="string">'nihao'</span>,</span><br><span class="line">    writable : <span class="literal">false</span>,</span><br><span class="line">    enumerable : <span class="literal">true</span>,</span><br><span class="line">    configurable : <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="对象间的原型关系"><a href="#对象间的原型关系" class="headerlink" title="对象间的原型关系"></a>对象间的原型关系</h2><p>两个对象间的原型关系类似继承：<strong>每个对象都可以把另一个对象作为它的原型</strong>，并继承原型的所有属性。对象通过内部属性<code>[[prototype]]</code>指定它的原型，通过该属性连接成的对象链即为原型链。就像这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/prototype-1.png" alt="对象间的原型链"></p>
+<p>有了继承关系，自然就有了：函数覆盖、自有属性、继承属性这些概念。</p>
 <ul>
-<li>0.5 = 5/10 = 1/2 = %0.1</li>
-<li>0.75 = 75/100 = 3/4 = %0.11</li>
-<li>0.125 = 125/1000 = 1/8 = %0.001</li>
+<li><strong>函数覆盖</strong>：</li>
 </ul>
-<p>etc.</p>
-<p>除此之外，其它的十进制分数都不能被精确的表示，因为它们在分母上还有除了2以外的数字：</p>
+<p>在一个原型链中，一个对象的属性可以覆写之后对象的，即继承了该对象的子对象的，相同键的属性。前者的属性最先被找到，它隐藏了后者的属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> proto = &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> : <span class="title">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'nihao'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> sub = &#123;&#125;;</span><br><span class="line">sub.__proto__ = proto;</span><br><span class="line">sub.function();  <span class="comment">//nihao</span></span><br><span class="line">sub.function = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</span><br><span class="line">&#125;</span><br><span class="line">sub.function();  <span class="comment">//hello</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>0.1 = 1/10 =1/(2×5)</li>
-<li>0.2 = 2/10 = 1/5</li>
+<li><strong>继承属性</strong>：</li>
 </ul>
-<p>etc.</p>
-<p>如此以来，就知道为什么会出现<strong>0.1+0.2!=0.3</strong>的情况了吧。</p>
-<p>我们可以提供一个函数，将边界错误的上界考虑进来，这个上界叫做<strong>机器精度</strong>，对于双精度，一个标准的精度值是2^-53。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">epsEqu</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> EPSILON = <span class="built_in">Math</span>.Pow(<span class="number">2</span>, <span class="number">-53</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(x - y) &lt; EPSILON;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="整数的表示"><a href="#整数的表示" class="headerlink" title="整数的表示"></a>整数的表示</h2><p>整形指的是没有十进制分数的数字。</p>
-<p><code>JavaScript</code>只有浮点数字，但是：</p>
+<p>你可以访问继承来的属性，就像对象本身拥有这个属性一样。</p>
+<p>当你通过一个对象访问某个属性时，<code>JavaScript</code>首先从本对象开始查找，接着是它的原型，以及原型的原型。当你调用一个方法时，容易出错的是因为<code>this</code>的值<strong>总是最初的那个对象</strong>，这可能会导致一些问题。</p>
+<h3 id="特殊属性-proto"><a href="#特殊属性-proto" class="headerlink" title="特殊属性__proto__"></a>特殊属性<code>__proto__</code></h3><p>我们并没有办法直接访问到对象的内部属性<code>[[Prototype]]</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;&#125;;</span><br><span class="line">o[[Prototype]];  <span class="comment">//ReferenceError: Prototype is not defined</span></span><br></pre></td></tr></table></figure>
+<p>但是，大部分<code>JavaScript</code>引擎有特殊的属性可以获取和设置对象的原型：<code>__proto__</code>。即<code>__proto__ === [[Prototype]]</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;&#125;;</span><br><span class="line">o.__proto__;  <span class="comment">//Object &#123; … &#125;</span></span><br><span class="line">o.__proto__ = <span class="built_in">Array</span>.prototype;</span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(o) === <span class="built_in">Array</span>.prototype;  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="操作对象原型"><a href="#操作对象原型" class="headerlink" title="操作对象原型"></a>操作对象原型</h2><p>你可以通过以下方法来获取或设置对象的原型：</p>
 <ul>
-<li>大多数的<code>JavaScript</code>引擎将一个足够小的、没有十进制分数的数字存储成一个整形，并将这种形式持续尽可能长的形式，如果它变得太大或者出现了十进制的分数，它们就得返回浮点形式。</li>
-<li><code>ECMAScript</code>规范中有整形运算符，即所有的按位运算符。<strong>这些运算符将会把运算数转换成32位的整形以返回</strong>。</li>
+<li><strong>特殊属性<code>__proto__</code></strong></li>
+<li><code>Object.getPrototypeOf(xxx)</code></li>
 </ul>
-<p><span id="read_again"></span></p>
-<p>需要多少位来编码一个整数呢？尾数共有53位，1个在点的前面，52个跟在后面。</p>
-<p>请注意，分数位的最高位总是1，也就是说我们不能随便的使用所有的位。</p>
-<h3 id="最大"><a href="#最大" class="headerlink" title="最大"></a>最大</h3><p><code>JavaScript</code>只能<strong>处理</strong>最大至53位的整数值，即52位的分数加上一个来自指数的间接位：指数用于移动“分数”。</p>
-<p>下表解释了怎么将<strong>整型</strong>表示成<strong>浮点数</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>二进制位数</th>
-<th>范围</th>
-<th>编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1位</td>
-<td>0</td>
-<td>%0 × 2^0</td>
-</tr>
-<tr>
-<td>1位</td>
-<td>1</td>
-<td>%1 × 2^0</td>
-</tr>
-<tr>
-<td>2位</td>
-<td>2–3</td>
-<td>%1.0 × 2^1 \</td>
-<td>%1.1 × 2^1</td>
-</tr>
-<tr>
-<td></td>
-<td>……</td>
-<td>……</td>
-</tr>
-<tr>
-<td>53位</td>
-<td>2^52–2^53-1</td>
-<td>%1.F<sub>51</sub>……F<sub>0</sub> × 2^52</td>
-</tr>
-</tbody>
-</table>
-<p><code>JavaScript</code>只能安全的表示在( -2<sup>53</sup> , 2<sup>53</sup> )范围内的整数，因此，这些整数被叫做<strong>安全整数</strong>。</p>
-<h3 id="更大"><a href="#更大" class="headerlink" title="更大"></a>更大</h3><p>那么，不安全的呢？</p>
-<p>在<code>JavaScript</code>里，最大的数确实是 2<sup>53</sup>-1，但2<sup>53</sup>也可以被表示出来，因为有指数的帮助，就像这样：<code>%1.0 × 2^53</code>。</p>
-<p>来看一下位数更高的：</p>
-<table>
-<thead>
-<tr>
-<th>二进制位数</th>
-<th>范围</th>
-<th>编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>54位</td>
-<td>2^53–2^54-1</td>
-<td>%1.F<sub>51</sub>……F<sub>0</sub> <strong>0</strong> × 2^53</td>
-</tr>
-<tr>
-<td>55位</td>
-<td>2^54–2^55-1</td>
-<td>%1.F<sub>51</sub>……F<sub>0</sub> <strong>00</strong> × 2^54</td>
-</tr>
-<tr>
-<td>……</td>
-<td>……</td>
-<td>……</td>
-</tr>
-</tbody>
-</table>
-<p>看到了么？如果不明白<del>或许是我也不太懂</del>，请再一次<a href="#read_again">看看这里</a>。</p>
-<p>就像这样：</p>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js-2.png" alt="解释"></p>
-<p>这意味着：对于54位数来讲，每两个数（1个二进制位）只能有一个能用这种方法表示。</p>
-<p>你表示了2<sup>53</sup>の<code>9007199254740992</code>，就没办法表示2<sup>53</sup>+1の<code>9007199254740993</code>。</p>
-<p>2<sup>53</sup> × 2可以被表示，因为此时指数还可用，加一就行。</p>
-<h2 id="他山之石"><a href="#他山之石" class="headerlink" title="他山之石"></a>他山之石</h2><p><a href="https://segmentfault.com/a/1190000017090272" target="_blank" rel="noopener">JavaScript是怎样编码数字的。</a></p>
-<p><a href="https://segmentfault.com/a/1190000013632163" target="_blank" rel="noopener">你对Number一无所知。</a></p>
-<h2 id="原力"><a href="#原力" class="headerlink" title="原力"></a>原力</h2><p><span id="funny_method"></span></p>
-<h3 id="通过运算符得到32位整数"><a href="#通过运算符得到32位整数" class="headerlink" title="通过运算符得到32位整数"></a>通过运算符得到32位整数</h3><ol>
-<li>二进制或<code>|</code></li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x | <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>移位操作符<code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&gt;&gt;&gt;</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt;&lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入的x最好为正数，否则符号位也将参与计算</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toUnSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>位运算符<code>~</code></li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ~~x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>使用该方法可以<strong>获取一个对象的原型</strong>。</p>
+<ul>
+<li>属性<code>prototype</code></li>
+</ul>
+<p><code>JavaScript</code>内置对象均拥有这个属性，而普通的对象没有这个属性，可以通过继承以获得该属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;&#125;;</span><br><span class="line">o.prototype;  <span class="comment">//undefined</span></span><br><span class="line">o.__proto__ = <span class="built_in">Array</span>;</span><br><span class="line"><span class="built_in">Array</span>.prototype;  <span class="comment">//Array []</span></span><br><span class="line">o.prototype;  <span class="comment">//Array []</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Object.create(proto, protoDescObj?)</code></li>
+</ul>
+<p>该方法创建一个原型为<code>proto</code>的对象，同时你也可以传入一个可选参数<code>protoDescObj</code>，它就是我们之前所讲述的<strong>属性描述符对象</strong>。就像下面这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> proto = &#123;</span><br><span class="line">    say : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">' hello'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> libai = <span class="built_in">Object</span>.create(proto,&#123;</span><br><span class="line">    name : &#123;</span><br><span class="line">        value : <span class="string">'libai'</span>,</span><br><span class="line">        writable : <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">libai.say();  <span class="comment">//libai hello</span></span><br><span class="line">libai.name = <span class="string">'Chinese'</span>;</span><br><span class="line">libai.say();  <span class="comment">//Chinese hello</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Object_1.prototype.isPrototypeOf(Object_2)</code></li>
+</ul>
+<p>该方法会判断<code>Object_1</code>是否是<code>Object_2</code>的<strong>直接或间接</strong>原型。</p>
+<h2 id="对象的属性遍历"><a href="#对象的属性遍历" class="headerlink" title="对象的属性遍历"></a>对象的属性遍历</h2><p>通常来讲，遍历一个对象的属性受以下两方面影响：</p>
+<ul>
+<li><strong>继承</strong>：即自有属性与继承属性</li>
+<li><strong>枚举</strong>：枚举属性与非枚举属性</li>
+</ul>
+<h3 id="遍历自有属性的键"><a href="#遍历自有属性的键" class="headerlink" title="遍历自有属性的键"></a>遍历自有属性的键</h3><p>使用以下方法来遍历<strong>自有属性的键</strong>。</p>
+<ul>
+<li><code>Object.getOwnPropertyName(Obj)</code></li>
+</ul>
+<p>该方法会返回<code>Obj</code>的<strong>所有自有的属性键</strong>。</p>
+<ul>
+<li><code>Object.keys(Obj)</code></li>
+</ul>
+<p>该方法会返回<code>Obj</code>的<strong>所有可枚举的属性键</strong>。</p>
+<blockquote>
+<p>枚举性</p>
+<p>属性的枚举性是一个特性，标识为<code>true</code>的则可以被枚举。</p>
+<p>所有</p>
+</blockquote>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2>
       
     </div>
 
@@ -671,7 +616,7 @@
           
             <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
           
-            <a href="/tags/Number/" rel="tag"># -Number</a>
+            <a href="/tags/面试/" rel="tag"># -面试</a>
           
         </div>
       
@@ -684,8 +629,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/30/Reverse-Integer/" rel="next" title="LeetCode之“整数反转”">
-                <i class="fa fa-chevron-left"></i> LeetCode之“整数反转”
+              <a href="/2019/04/17/我不知道的原型链/" rel="next" title="我不知道的原型链与继承">
+                <i class="fa fa-chevron-left"></i> 我不知道的原型链与继承
               </a>
             
           </div>
@@ -693,10 +638,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/01/String-to-Integer/" rel="prev" title="LeetCode之“字符串转为整数”">
-                LeetCode之“字符串转为整数” <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -897,7 +838,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字字面量"><span class="nav-number">1.</span> <span class="nav-text">数字字面量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换成数字"><span class="nav-number">2.</span> <span class="nav-text">转换成数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字的内部表示"><span class="nav-number">3.</span> <span class="nav-text">数字的内部表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#符号-Sign"><span class="nav-number">3.1.</span> <span class="nav-text">符号 Sign</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分数-Ftrction"><span class="nav-number">3.2.</span> <span class="nav-text">分数 Ftrction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数-Exponent"><span class="nav-number">3.3.</span> <span class="nav-text">指数 Exponent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.4.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理舍入的错误"><span class="nav-number">4.</span> <span class="nav-text">处理舍入的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#十进制系统"><span class="nav-number">4.1.</span> <span class="nav-text">十进制系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制系统"><span class="nav-number">4.2.</span> <span class="nav-text">二进制系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数的表示"><span class="nav-number">5.</span> <span class="nav-text">整数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最大"><span class="nav-number">5.1.</span> <span class="nav-text">最大</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更大"><span class="nav-number">5.2.</span> <span class="nav-text">更大</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#他山之石"><span class="nav-number">6.</span> <span class="nav-text">他山之石</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原力"><span class="nav-number">7.</span> <span class="nav-text">原力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过运算符得到32位整数"><span class="nav-number">7.1.</span> <span class="nav-text">通过运算符得到32位整数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">1.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的属性类型"><span class="nav-number">1.1.</span> <span class="nav-text">对象的属性类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取对象的属性"><span class="nav-number">1.2.</span> <span class="nav-text">获取对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作属性"><span class="nav-number">1.3.</span> <span class="nav-text">操作属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问器"><span class="nav-number">1.4.</span> <span class="nav-text">访问器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性特性与属性描述符"><span class="nav-number">1.5.</span> <span class="nav-text">属性特性与属性描述符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象间的原型关系"><span class="nav-number">2.</span> <span class="nav-text">对象间的原型关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊属性-proto"><span class="nav-number">2.1.</span> <span class="nav-text">特殊属性__proto__</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作对象原型"><span class="nav-number">3.</span> <span class="nav-text">操作对象原型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的属性遍历"><span class="nav-number">4.</span> <span class="nav-text">对象的属性遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历自有属性的键"><span class="nav-number">4.1.</span> <span class="nav-text">遍历自有属性的键</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">5.</span> <span class="nav-text">构造函数</span></a></li></ol></div>
             
 
           </div>
@@ -1053,7 +994,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/03/30/我不知道的Number/'
+    refer: '2019/04/17/我不知道的原型链与继承/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
