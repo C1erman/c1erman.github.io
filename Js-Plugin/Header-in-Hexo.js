@@ -156,6 +156,7 @@ var header_in_block = ({
 		}
 	}
 }
+
 /*数据结构：树*/
 var _NODE = function(data) {
 	this.data = data;
