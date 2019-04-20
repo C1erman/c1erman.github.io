@@ -104,28 +104,25 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
-<meta name="keywords" content="-JavaScript,-Number">
+  <meta name="description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。">
+<meta name="keywords" content="-JavaScript,-面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我不知道的Number">
-<meta property="og:url" content="http://seefun.club/2019/03/30/我不知道的Number/index.html">
+<meta property="og:title" content="我不知道的Symbol.Iterator与遍历">
+<meta property="og:url" content="http://seefun.club/2019/04/20/我不知道的Iterator与遍历/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
+<meta property="og:description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js-2.png">
-<meta property="og:updated_time" content="2019-04-06T13:04:05.941Z">
+<meta property="og:updated_time" content="2019-04-20T12:21:22.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我不知道的Number">
-<meta name="twitter:description" content="10.1 + 0.2 = 0.30000000000000004 Why? 19007199254740992 + 1 = 9007199254740992 Why!">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png">
+<meta name="twitter:title" content="我不知道的Symbol.Iterator与遍历">
+<meta name="twitter:description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/03/30/我不知道的Number/">
+  <link rel="canonical" href="http://seefun.club/2019/04/20/我不知道的Iterator与遍历/">
 
 
 
@@ -135,7 +132,7 @@
   };
 </script>
 
-  <title>我不知道的Number | 归人1337</title>
+  <title>我不知道的Symbol.Iterator与遍历 | 归人1337</title>
   
 
 
@@ -334,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/03/30/我不知道的Number/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/20/我不知道的Iterator与遍历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -351,7 +348,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">我不知道的Number
+          <h2 class="post-title" itemprop="name headline">我不知道的Symbol.Iterator与遍历
 
               
             
@@ -377,24 +374,12 @@
                 
               
 
-              <time title="创建时间：2019-03-30 20:00:19" itemprop="dateCreated datePublished" datetime="2019-03-30T20:00:19+08:00">2019-03-30</time>
+              <time title="创建时间：2019-04-20 19:13:38 / 修改时间：20:21:22" itemprop="dateCreated datePublished" datetime="2019-04-20T19:13:38+08:00">2019-04-20</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-06 21:04:05" itemprop="dateModified" datetime="2019-04-06T21:04:05+08:00">2019-04-06</time>
               
             
           </span>
@@ -446,206 +431,32 @@
       
 
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> = <span class="number">0.30000000000000004</span></span><br></pre></td></tr></table></figure>
-<p>Why?</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">9007199254740992</span> + <span class="number">1</span> = <span class="number">9007199254740992</span></span><br></pre></td></tr></table></figure>
-<p>Why!</p>
+        <p><code>ES6</code>借鉴了<code>C++</code>、<code>Java</code>等语言，引入了for…of循环，作为<strong>遍历所有数据结构</strong>的统一方法。</p>
+<p>要被遍历的数据结构必须部署<code>Symbol.iterator</code>属性，即<code>iterator</code>接口。</p>
 <a id="more"></a>
-<h2 id="数字字面量"><a href="#数字字面量" class="headerlink" title="数字字面量"></a>数字字面量</h2><p><code>JavaScript</code>的数字是双精度值，即64位数。基于浮点算术的IEEE标准：<a href="https://en.wikipedia.org/wiki/IEEE_754" target="_blank" rel="noopener">IEEE 754</a>。</p>
-<p>一个数字字面量可以是<strong>整型</strong>、<strong>浮点型</strong>或者<strong>十六进制</strong>整型：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="number">35</span>   <span class="comment">//35</span></span><br><span class="line">&gt;<span class="number">3.1415</span>  <span class="comment">//3.1415</span></span><br><span class="line">&gt;<span class="number">0xFF</span>  <span class="comment">//255</span></span><br></pre></td></tr></table></figure>
-<p>大部分的<code>JavaScript</code>引擎会在内部做优化并区分浮点数字和整型。</p>
-<h2 id="转换成数字"><a href="#转换成数字" class="headerlink" title="转换成数字"></a>转换成数字</h2><p>你可以使用这两种方法将任意值转换为数字：<code>Number(value)</code>、<code>+value</code>。</p>
-<p>第二种你可能不常见，但是总会有这种问题：<code>+&quot;&quot; = ?  //0</code></p>
-<h2 id="数字的内部表示"><a href="#数字的内部表示" class="headerlink" title="数字的内部表示"></a>数字的内部表示</h2><p><code>JavaScript</code>的数字是64位精度的，也叫做双精度，通常被叫做<code>double</code>。</p>
-<p>数字的内部描述基于IEEE 754标准，64位按照下表所示分布在数字的<strong>符号 Sign</strong>、<strong>指数 Exponent</strong>和<strong>分数 Ftrction</strong>上：</p>
-<table>
-<thead>
-<tr>
-<th>符号</th>
-<th>指数 [-1023 , 1024]</th>
-<th>分数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>占1位</td>
-<td>占11位</td>
-<td>占52位</td>
-</tr>
-<tr>
-<td>第63位</td>
-<td>第62~52位</td>
-<td>第52~0位</td>
-</tr>
-</tbody>
-</table>
-<p>一个数字的值根据下面的公式计算出来：</p>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png" alt="数值的计算"></p>
+<h2 id="ECMAScript-6"><a href="#ECMAScript-6" class="headerlink" title="ECMAScript 6"></a>ECMAScript 6</h2><p><code>ECMAScript 6</code>是<code>JavaScript</code>语言的下一代标准，于2015年6月正式发布，它是一个泛称，涵盖了ES2015、ES2016、ES2017等。</p>
+<p>自1996年11月<code>JavaScript</code>被提交到国际标准化组织<code>ECMA</code>、并于1997年发表<code>ECMA-262</code>号标准文件，即浏览器脚本语言的标准<code>ECMAScript 1.0</code>后，已经过去23年了。</p>
+<p><code>ES6</code>带来了一系列新的特性：<code>let</code>命令、<code>const</code>命令实现了块级作用域，字符串支持了<code>Unicode</code>表示，实现了函数的默认参数，箭头函数解决了一部分<code>this</code>的问题，新的基础数据类型<code>Symbol</code>，以及新的数据结构<code>Set</code>与<code>Map</code>，更为重要的是<code>Promise</code>、<code>Generator</code>、<code>async</code>使得原生异步编程成为了可能。</p>
+<p>当然，上述提到的仅仅是这些崭新特性的一瞥，如需了解<code>ES6</code>的全部特性，请关注<a href="https://github.com/tc39/ecma262" target="_blank" rel="noopener">ES6的最新进展</a>、<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ES6入门</a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" rel="noopener">MDN</a>。</p>
+<h3 id="Symbol概述"><a href="#Symbol概述" class="headerlink" title="Symbol概述"></a>Symbol概述</h3><p>因为与本篇文章有关，所以不得不首先了解一下<code>Symbol</code>。</p>
+<p><code>ES5</code>的对象属性名都是字符串，这容易造成属性名的冲突。这是候你可能回想，如果能够保证每个属性的名字独一无二就好了。而这就是<code>ES6</code>引入<code>Symbol</code>的原因。</p>
+<p><code>ES6</code>引入了<code>Symbol</code>，作为第七种原始数据类型，用于表示独一无二的值。</p>
 <blockquote>
-<p>前置的百分号<code>%</code>代表中间的数字采用二进制计数法编写。</p>
+<p><strong>原始数据类型：</strong></p>
+<p><code>undefined</code>、<code>null</code></p>
+<p><code>bool</code>、<code>string</code>、<code>number</code> </p>
+<p><code>object</code></p>
+<p><code>symbol</code></p>
 </blockquote>
-<p>感到很奇怪？不怕，我将分别讲讲这三个表示。</p>
-<h3 id="符号-Sign"><a href="#符号-Sign" class="headerlink" title="符号 Sign"></a>符号 Sign</h3><p>如果标志位为0，为正数，否则为负数。</p>
-<h3 id="分数-Ftrction"><a href="#分数-Ftrction" class="headerlink" title="分数 Ftrction"></a>分数 Ftrction</h3><p><strong>尾数</strong>，是百分号<code>%</code>之后<code>1.</code>后面的数，记住，是二进制表示，<strong>并且1将占一位</strong>。</p>
-<p>而分数就是带上尾数的整体二进制表示喽，像这样：<code>%1.011</code>，其中<code>0</code>是第51位。</p>
-<h3 id="指数-Exponent"><a href="#指数-Exponent" class="headerlink" title="指数 Exponent"></a>指数 Exponent</h3><p>指数用于控制小数点的左右移动，因为是二进制数，所以是<strong>2的指数次方</strong>。指数为正则小数点右移，为负则左移。</p>
-<p>指数有11位，因此最大的取值范围位[-1023,1024]，但是需要注意的是：为了支持负指数，<code>JavaScript</code>使用偏<a href="https://en.wikipedia.org/wiki/Offset_binary" target="_blank" rel="noopener">移二进制</a>来编码：<strong>1023表示0，小于它的为负，大于它的为正</strong>。</p>
-<p>于是，原本11位的数字范围[0,2047]就能被划分为正、负两种，实际上指数需要通过<code>-1023</code>得到。</p>
-<p>就像下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E = 00000000000--&gt;0 - 1023 = -1023</span><br><span class="line">E = 01111111111--&gt;1023 - 1023 = 0</span><br><span class="line">E = 11111111111--&gt;2047 - 1023 = 1024</span><br></pre></td></tr></table></figure>
-<p>实际上，取反一个指数，只需要<strong>按位取反后减一</strong>即可。</p>
-<p>有两个特殊的指数：<code>0</code>和<code>2047</code>。</p>
-<ul>
-<li>指数为<code>2047</code>时，<code>JavaScript</code>将把这个数字表示为<code>NaN</code>或<code>Infinity</code>。</li>
-<li>指数为<code>0</code>时，如果分数也为0，这个数字就为<code>+0/-0</code>；如果分数不为0，用于表示接近0的很小的数字。</li>
-</ul>
-<p>为了使这两种情况都可用，这里用到了<strong>非规格化</strong>的方法，即<strong>不把</strong>小数点放在第一个非零数字后面。</p>
-<p>非规格化的最小数字为：<code>(-1)^(1/0) × %0.Ftrction × 2^(1-1023)</code>，此时如果规格化，则指数为-1023，即0。</p>
-<p>规格化的最小数字为：<code>(-1)^(1/0) × %1.Ftrction × 2^(1-1023)</code>。</p>
-<p>可以看到，非规格化的数字更小。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>二进制，二进制，不要问为什么分数没有2以上的数字出现。</p>
-<table>
-<thead>
-<tr>
-<th>S=0 \</th>
-<th>F=%101 \</th>
-<th>E=2</th>
-<th>Number = (-1)^0 × %1.101 × 2^2 = %110.1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>S=1 \</td>
-<td>F=%101 \</td>
-<td>E=-2</td>
-<td>Number = (-1)^1 × %1.101 × 2^(-2) = %-0.01101</td>
-</tr>
-</tbody>
-</table>
-<h2 id="处理舍入的错误"><a href="#处理舍入的错误" class="headerlink" title="处理舍入的错误"></a>处理舍入的错误</h2><p><code>JavaScript</code>的数字通常是作为十进制的浮点数字输入的，<strong>但是在内部它们其实是以二进制的浮点数字来表示的</strong>，这就会导致精确度问题。</p>
-<p>来い，看看<strong>十进制</strong>浮点数字和<strong>二进制</strong>浮点数字可以表示什么样的分数。</p>
-<h3 id="十进制系统"><a href="#十进制系统" class="headerlink" title="十进制系统"></a>十进制系统</h3><p>所有的分数是一个<strong>尾数被10的幂次相除</strong>的结果。</p>
-<p>因此，在分母位置上只有10的幂次。</p>
-<p>这就是为什么1/3不能精确的表示成一个十进制的浮点数字——我们无法将一个3放到分母上。</p>
-<h3 id="二进制系统"><a href="#二进制系统" class="headerlink" title="二进制系统"></a>二进制系统</h3><p>同理，二进制的浮点数字在<strong>分母的位置上只有2的幂次</strong>。</p>
-<p>如果分母上面只有2的幂次，那么这个十进制数字可以在<code>JavaScript</code>中被表示：</p>
-<ul>
-<li>0.5 = 5/10 = 1/2 = %0.1</li>
-<li>0.75 = 75/100 = 3/4 = %0.11</li>
-<li>0.125 = 125/1000 = 1/8 = %0.001</li>
-</ul>
-<p>etc.</p>
-<p>除此之外，其它的十进制分数都不能被精确的表示，因为它们在分母上还有除了2以外的数字：</p>
-<ul>
-<li>0.1 = 1/10 =1/(2×5)</li>
-<li>0.2 = 2/10 = 1/5</li>
-</ul>
-<p>etc.</p>
-<p>如此以来，就知道为什么会出现<strong>0.1+0.2!=0.3</strong>的情况了吧。</p>
-<p>我们可以提供一个函数，将边界错误的上界考虑进来，这个上界叫做<strong>机器精度</strong>，对于双精度，一个标准的精度值是2^-53。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">epsEqu</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> EPSILON = <span class="built_in">Math</span>.Pow(<span class="number">2</span>, <span class="number">-53</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(x - y) &lt; EPSILON;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="整数的表示"><a href="#整数的表示" class="headerlink" title="整数的表示"></a>整数的表示</h2><p>整形指的是没有十进制分数的数字。</p>
-<p><code>JavaScript</code>只有浮点数字，但是：</p>
-<ul>
-<li>大多数的<code>JavaScript</code>引擎将一个足够小的、没有十进制分数的数字存储成一个整形，并将这种形式持续尽可能长的形式，如果它变得太大或者出现了十进制的分数，它们就得返回浮点形式。</li>
-<li><code>ECMAScript</code>规范中有整形运算符，即所有的按位运算符。<strong>这些运算符将会把运算数转换成32位的整形以返回</strong>。</li>
-</ul>
-<p><span id="read_again"></span></p>
-<p>需要多少位来编码一个整数呢？尾数共有53位，1个在点的前面，52个跟在后面。</p>
-<p>请注意，分数位的最高位总是1，也就是说我们不能随便的使用所有的位。</p>
-<h3 id="最大"><a href="#最大" class="headerlink" title="最大"></a>最大</h3><p><code>JavaScript</code>只能<strong>处理</strong>最大至53位的整数值，即52位的分数加上一个来自指数的间接位：指数用于移动“分数”。</p>
-<p>下表解释了怎么将<strong>整型</strong>表示成<strong>浮点数</strong>：</p>
-<table>
-<thead>
-<tr>
-<th>二进制位数</th>
-<th>范围</th>
-<th>编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1位</td>
-<td>0</td>
-<td>%0 × 2^0</td>
-</tr>
-<tr>
-<td>1位</td>
-<td>1</td>
-<td>%1 × 2^0</td>
-</tr>
-<tr>
-<td>2位</td>
-<td>2–3</td>
-<td>%1.0 × 2^1 \</td>
-<td>%1.1 × 2^1</td>
-</tr>
-<tr>
-<td></td>
-<td>……</td>
-<td>……</td>
-</tr>
-<tr>
-<td>53位</td>
-<td>2^52–2^53-1</td>
-<td>%1.F<sub>51</sub>……F<sub>0</sub> × 2^52</td>
-</tr>
-</tbody>
-</table>
-<p><code>JavaScript</code>只能安全的表示在( -2<sup>53</sup> , 2<sup>53</sup> )范围内的整数，因此，这些整数被叫做<strong>安全整数</strong>。</p>
-<h3 id="更大"><a href="#更大" class="headerlink" title="更大"></a>更大</h3><p>那么，不安全的呢？</p>
-<p>在<code>JavaScript</code>里，最大的数确实是 2<sup>53</sup>-1，但2<sup>53</sup>也可以被表示出来，因为有指数的帮助，就像这样：<code>%1.0 × 2^53</code>。</p>
-<p>来看一下位数更高的：</p>
-<table>
-<thead>
-<tr>
-<th>二进制位数</th>
-<th>范围</th>
-<th>编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>54位</td>
-<td>2^53–2^54-1</td>
-<td>%1.F<sub>51</sub>……F<sub>0</sub> <strong>0</strong> × 2^53</td>
-</tr>
-<tr>
-<td>55位</td>
-<td>2^54–2^55-1</td>
-<td>%1.F<sub>51</sub>……F<sub>0</sub> <strong>00</strong> × 2^54</td>
-</tr>
-<tr>
-<td>……</td>
-<td>……</td>
-<td>……</td>
-</tr>
-</tbody>
-</table>
-<p>看到了么？如果不明白<del>或许是我也不太懂</del>，请再一次<a href="#read_again">看看这里</a>。</p>
-<p>就像这样：</p>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js-2.png" alt="解释"></p>
-<p>这意味着：对于54位数来讲，每两个数（1个二进制位）只能有一个能用这种方法表示。</p>
-<p>你表示了2<sup>53</sup>の<code>9007199254740992</code>，就没办法表示2<sup>53</sup>+1の<code>9007199254740993</code>。</p>
-<p>2<sup>53</sup> × 2可以被表示，因为此时指数还可用，加一就行。</p>
-<h2 id="他山之石"><a href="#他山之石" class="headerlink" title="他山之石"></a>他山之石</h2><p><a href="https://segmentfault.com/a/1190000017090272" target="_blank" rel="noopener">JavaScript是怎样编码数字的。</a></p>
-<p><a href="https://segmentfault.com/a/1190000013632163" target="_blank" rel="noopener">你对Number一无所知。</a></p>
-<h2 id="原力"><a href="#原力" class="headerlink" title="原力"></a>原力</h2><p><span id="funny_method"></span></p>
-<h3 id="通过运算符得到32位整数"><a href="#通过运算符得到32位整数" class="headerlink" title="通过运算符得到32位整数"></a>通过运算符得到32位整数</h3><ol>
-<li>二进制或<code>|</code></li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x | <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>移位操作符<code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&gt;&gt;&gt;</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt;&lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入的x最好为正数，否则符号位也将参与计算</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toUnSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>位运算符<code>~</code></li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ~~x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>Symbol</code>值通过<code>Symbol</code>函数生成，就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> symbol = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">typeof</span> symbol;  <span class="comment">//"symbol"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p><code>Symbol</code><strong>是原始数据类型</strong>，不是对象，因此更没有构造函数一说，自然不能使用<code>new</code>关键字。</p>
+</blockquote>
+<p>同时，<code>Symbol()</code>函数可以接收一个字符串作为参数，如果传入的是对象，则会<a href="https://www.seefun.club/2019/04/06/我不知道的==运算符/#function_ToPrimitive" target="_blank" rel="noopener">调用内置函数</a><code>ToPrimitive()</code>转为字符串。就像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="built_in">Symbol</span>(<span class="string">'nihao'</span>);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Symbol</span>(&#123;</span><br><span class="line">    <span class="comment">//OverWrite</span></span><br><span class="line">    toString()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'connnichiha'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">a;  <span class="comment">//Symbol(nihao)</span></span><br><span class="line">b;  <span class="comment">//Symbol(connnichiha)</span></span><br></pre></td></tr></table></figure>
+<p>正如被描述的那样，</p>
 
       
     </div>
@@ -671,7 +482,7 @@
           
             <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
           
-            <a href="/tags/Number/" rel="tag"># -Number</a>
+            <a href="/tags/面试/" rel="tag"># -面试</a>
           
         </div>
       
@@ -684,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/30/Reverse-Integer/" rel="next" title="LeetCode之“整数反转”">
-                <i class="fa fa-chevron-left"></i> LeetCode之“整数反转”
+              <a href="/2019/04/20/我不知道的Symbol.Iterator与遍历/" rel="next" title="我不知道的Symbol.Iterator与遍历">
+                <i class="fa fa-chevron-left"></i> 我不知道的Symbol.Iterator与遍历
               </a>
             
           </div>
@@ -693,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/01/String-to-Integer/" rel="prev" title="LeetCode之“字符串转为整数”">
-                LeetCode之“字符串转为整数” <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -897,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字字面量"><span class="nav-number">1.</span> <span class="nav-text">数字字面量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换成数字"><span class="nav-number">2.</span> <span class="nav-text">转换成数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字的内部表示"><span class="nav-number">3.</span> <span class="nav-text">数字的内部表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#符号-Sign"><span class="nav-number">3.1.</span> <span class="nav-text">符号 Sign</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分数-Ftrction"><span class="nav-number">3.2.</span> <span class="nav-text">分数 Ftrction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数-Exponent"><span class="nav-number">3.3.</span> <span class="nav-text">指数 Exponent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.4.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理舍入的错误"><span class="nav-number">4.</span> <span class="nav-text">处理舍入的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#十进制系统"><span class="nav-number">4.1.</span> <span class="nav-text">十进制系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制系统"><span class="nav-number">4.2.</span> <span class="nav-text">二进制系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数的表示"><span class="nav-number">5.</span> <span class="nav-text">整数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最大"><span class="nav-number">5.1.</span> <span class="nav-text">最大</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更大"><span class="nav-number">5.2.</span> <span class="nav-text">更大</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#他山之石"><span class="nav-number">6.</span> <span class="nav-text">他山之石</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原力"><span class="nav-number">7.</span> <span class="nav-text">原力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过运算符得到32位整数"><span class="nav-number">7.1.</span> <span class="nav-text">通过运算符得到32位整数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript-6"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript 6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol概述"><span class="nav-number">1.1.</span> <span class="nav-text">Symbol概述</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1053,7 +860,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/03/30/我不知道的Number/'
+    refer: '2019/04/20/我不知道的Iterator与遍历/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
