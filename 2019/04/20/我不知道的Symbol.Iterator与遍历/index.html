@@ -104,18 +104,18 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。">
+  <meta name="description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。 for...of可以消费这个接口。">
 <meta name="keywords" content="-JavaScript,-面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我不知道的Symbol.Iterator与遍历">
 <meta property="og:url" content="http://seefun.club/2019/04/20/我不知道的Symbol.Iterator与遍历/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。">
+<meta property="og:description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。 for...of可以消费这个接口。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-20T12:35:27.815Z">
+<meta property="og:updated_time" content="2019-04-21T10:26:27.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的Symbol.Iterator与遍历">
-<meta name="twitter:description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。">
+<meta name="twitter:description" content="ES6借鉴了C++、Java等语言，引入了for…of循环，作为遍历所有数据结构的统一方法。 要被遍历的数据结构必须部署Symbol.iterator属性，即iterator接口。 for...of可以消费这个接口。">
 
 
 
@@ -374,12 +374,24 @@
                 
               
 
-              <time title="创建时间：2019-04-20 19:13:38 / 修改时间：20:35:27" itemprop="dateCreated datePublished" datetime="2019-04-20T19:13:38+08:00">2019-04-20</time>
+              <time title="创建时间：2019-04-20 19:13:38" itemprop="dateCreated datePublished" datetime="2019-04-20T19:13:38+08:00">2019-04-20</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-21 18:26:27" itemprop="dateModified" datetime="2019-04-21T18:26:27+08:00">2019-04-21</time>
               
             
           </span>
@@ -433,14 +445,15 @@
       
         <p><code>ES6</code>借鉴了<code>C++</code>、<code>Java</code>等语言，引入了for…of循环，作为<strong>遍历所有数据结构</strong>的统一方法。</p>
 <p>要被遍历的数据结构必须部署<code>Symbol.iterator</code>属性，即<code>iterator</code>接口。</p>
+<p><code>for...of</code>可以消费这个接口。</p>
 <a id="more"></a>
 <h2 id="ECMAScript6"><a href="#ECMAScript6" class="headerlink" title="ECMAScript6"></a>ECMAScript6</h2><p><code>ECMAScript 6</code>是<code>JavaScript</code>语言的下一代标准，于2015年6月正式发布，它是一个泛称，涵盖了ES2015、ES2016、ES2017等。</p>
 <p>自1996年11月<code>JavaScript</code>被提交到国际标准化组织<code>ECMA</code>、并于1997年发表<code>ECMA-262</code>号标准文件，即浏览器脚本语言的标准<code>ECMAScript 1.0</code>后，已经过去23年了。</p>
 <p><code>ES6</code>带来了一系列新的特性：<code>let</code>命令、<code>const</code>命令实现了块级作用域，字符串支持了<code>Unicode</code>表示，实现了函数的默认参数，箭头函数解决了一部分<code>this</code>的问题，新的基础数据类型<code>Symbol</code>，以及新的数据结构<code>Set</code>与<code>Map</code>，更为重要的是<code>Promise</code>、<code>Generator</code>、<code>async</code>使得原生异步编程成为了可能。</p>
 <p>当然，上述提到的仅仅是这些崭新特性的一瞥，如需了解<code>ES6</code>的全部特性，请关注<a href="https://github.com/tc39/ecma262" target="_blank" rel="noopener">ES6的最新进展</a>、<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ES6入门</a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" rel="noopener">MDN</a>。</p>
 <h2 id="Symbol概述"><a href="#Symbol概述" class="headerlink" title="Symbol概述"></a>Symbol概述</h2><p>因为与本篇文章有关，所以不得不首先了解一下<code>Symbol</code>。</p>
-<p><code>ES5</code>的对象属性名都是字符串，这容易造成属性名的冲突。这是候你可能回想，如果能够保证每个属性的名字独一无二就好了。而这就是<code>ES6</code>引入<code>Symbol</code>的原因。</p>
-<p><code>ES6</code>引入了<code>Symbol</code>，作为第七种原始数据类型，用于表示独一无二的值。</p>
+<p><code>ES5</code>的对象属性名都是字符串，这容易造成属性名的冲突。这是候你可能会想，如果能够保证每个属性的名字独一无二就好了。而这就是<code>ES6</code>引入<code>Symbol</code>的原因。</p>
+<p><code>ES6</code>引入了<code>Symbol</code>，作为<strong>第七种原始数据类型</strong>，用于<strong>表示独一无二的值</strong>。</p>
 <blockquote>
 <p><strong>原始数据类型：</strong></p>
 <p><code>undefined</code>、<code>null</code></p>
@@ -461,6 +474,68 @@
 <p><code>Symbol</code>值<strong>不能与除布尔值以外其它类型的值进行运算</strong>，否则会报错。但是，<code>Symbol</code>值<strong>可以显式转为字符串</strong>，也<strong>可以转为布尔值</strong>，但是<strong>不能转为数字</strong>。就像这样：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="built_in">Symbol</span>(<span class="string">'123'</span>);</span><br><span class="line"><span class="string">''</span> + a;  <span class="comment">//can't convert symbol to string</span></span><br><span class="line"><span class="built_in">String</span>(a);  <span class="comment">//"Symbol(123)"</span></span><br><span class="line"></span><br><span class="line"><span class="literal">true</span> &amp;&amp; a;  <span class="comment">//Symbol(123)</span></span><br><span class="line">!a;  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Boolean</span>(a);  <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">+ a;  <span class="comment">//can't convert symbol to number</span></span><br><span class="line"><span class="built_in">Number</span>(a);  <span class="comment">//can't convert symbol to number</span></span><br></pre></td></tr></table></figure>
 <p>需要注意的是，<code>Symbol</code>值作为对象属性名使用时不能使用<code>.</code>运算符，只能将<code>Symbol</code>值放在方括号中。</p>
+<h2 id="强大的Iterator"><a href="#强大的Iterator" class="headerlink" title="强大的Iterator"></a>强大的Iterator</h2><p>由于<code>ES6</code>引入了新的数据结构：<code>Map</code>、<code>Set</code>。继续使用<code>for...in</code>或者<code>Array.forEach()</code>已经不太够用了，我们希望用一种统一的方式来遍历不同类型的数据结构，在这种情况下，<code>Iterator</code>应运而生，它有以下几种作用：</p>
+<ul>
+<li>为各种数据结构提供统一的访问接口</li>
+<li>控制数据结构成员的访问顺序</li>
+<li>配合<code>for...of</code>进行遍历</li>
+</ul>
+<p><code>ES6</code>规定：默认的<code>Iterator</code>接口将是某一数据结构的<code>Symbol.iterator</code>属性。换句话说，一个数据结构只要有这个属性，就能够被遍历。</p>
+<h3 id="拥有Iterator的"><a href="#拥有Iterator的" class="headerlink" title="拥有Iterator的"></a>拥有Iterator的</h3><p>原生具备<code>Iterator</code>接口的数据结构如下所述：</p>
+<ul>
+<li><strong>String</strong></li>
+<li><strong>Array</strong></li>
+<li><strong>函数的arguments对象</strong></li>
+<li><strong>NodeList对象</strong></li>
+<li><strong>Set</strong></li>
+<li><strong>Map</strong></li>
+<li><strong>TypedArray</strong></li>
+</ul>
+<p>除此之外，其它数据结构，多数指<code>Object</code>，的<code>Iterator</code>接口都需要我们自己去添加。</p>
+<blockquote>
+<p><strong>Object默认没有Iterator：</strong></p>
+<p>我们使用Object来作为数据结构使用，主要是因为它<strong>是键值对的实现</strong>，而ES6已经有了Map，我们就没有必要使用Object了。</p>
+</blockquote>
+<h3 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h3><ul>
+<li><code>next()</code></li>
+</ul>
+<p>我们通过调用<code>Iterator</code>函数返回的指针，及其<code>.next()</code>方法对数据结构进行遍历：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="string">'abc'</span>;</span><br><span class="line"><span class="keyword">let</span> it = s[<span class="built_in">Symbol</span>.iterator]();</span><br><span class="line">it;  <span class="comment">//String Iterator &#123;  &#125;</span></span><br><span class="line">it.next();  <span class="comment">//Object &#123; value: "a", done: false &#125;</span></span><br><span class="line">it.next();  <span class="comment">//Object &#123; value: "b", done: false &#125;</span></span><br><span class="line">it.next();  <span class="comment">//Object &#123; value: "c", done: false &#125;</span></span><br><span class="line">it.next();  <span class="comment">//Object &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是，在最开始的时候，指针指向字符串的开始位置。</p>
+<p>而调用<code>next()</code>返回的是一个对象：<code>value</code>表示当前位置的值、<code>done</code>表示遍历是否结束。</p>
+<ul>
+<li><code>return()</code></li>
+</ul>
+<p><code>next()</code>方法是必须的，而<code>return()</code>和<code>throw()</code>则是可选的。</p>
+<p>如果<code>for...of</code>循环提前因为某种原因而终结，则会调用<code>return()</code>，该函数的<strong>返回结果必须是一个对象</strong>。</p>
+<ul>
+<li><code>throw()</code></li>
+</ul>
+<p>主要配合<code>Generator</code>函数使用，暂时不表。</p>
+<h2 id="for-of循环"><a href="#for-of循环" class="headerlink" title="for...of循环"></a><code>for...of</code>循环</h2><p>只要一个数据结构有<code>Iterator</code>接口，就可以用<code>for...of</code>循环遍历他的成员。</p>
+<p>比如，我们为一个对象添加<code>Iterator</code>接口，<del>不过并不建议</del>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  data: [ <span class="string">'hello'</span>, <span class="string">'world'</span> ],</span><br><span class="line">  [<span class="built_in">Symbol</span>.iterator]() &#123;</span><br><span class="line">    <span class="keyword">const</span> self = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      next() &#123;</span><br><span class="line">        <span class="keyword">if</span> (index &lt; self.data.length) &#123;</span><br><span class="line">          <span class="keyword">return</span> &#123;</span><br><span class="line">            value: self.data[index++],</span><br><span class="line">            done: <span class="literal">false</span></span><br><span class="line">          &#125;;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> &#123; <span class="attr">value</span>: <span class="literal">undefined</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//hello</span></span><br><span class="line"><span class="comment">//world</span></span><br></pre></td></tr></table></figure>
+<h2 id="对比for-in"><a href="#对比for-in" class="headerlink" title="对比for...in"></a>对比<code>for...in</code></h2><p>想一想，我们之前在哪里使用了<code>for...in</code>呢？</p>
+<p>在遍历对象属性时使用了：该方法会遍历某一对象的所有可枚举的属性。</p>
+<p>虽然<strong>系统创建的属性不可枚举，而用户创建的属性可以枚举</strong>。但是还是不建议使用。</p>
+<p><code>for...in</code>有如下缺点：</p>
+<ul>
+<li>由于<code>for...in</code><strong>遍历键名</strong>，但在遍历数组时，本应为<strong>数字的键名却被转换为字符串</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> a)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">typeof</span> i);</span><br><span class="line">    <span class="built_in">console</span>.log(a[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//string * 3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>会遍历某一对象的原型链上所有可枚举属性</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty( <span class="built_in">Object</span>.prototype, <span class="string">'_can'</span>, &#123;</span><br><span class="line">    value : <span class="string">'nihao'</span>,</span><br><span class="line">    enumerable : <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">let</span> o = &#123; <span class="attr">name</span> : <span class="string">'hello'</span> &#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> o)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//name</span></span><br><span class="line"><span class="comment">//can</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>它会以任意顺序遍历键名</li>
+</ul>
+<p><code>for...of</code>的显著优点：</p>
+<ul>
+<li>没有<code>for...in</code>的那些缺点</li>
+<li>不同于<code>forEach</code>，它可以与<code>break</code>、<code>continue</code>、<code>return</code>一起使用，因为<code>forEach</code>无法中途跳出循环</li>
+</ul>
+<p>所以，呃，用键名时用<code>for...in</code>，其它情况还是多使用<code>for...of</code>吧。</p>
 
       
     </div>
@@ -508,10 +583,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/20/我不知道的Iterator与遍历/" rel="prev" title="我不知道的Symbol.Iterator与遍历">
-                我不知道的Symbol.Iterator与遍历 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,7 +658,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -712,7 +783,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript6"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol概述"><span class="nav-number">2.</span> <span class="nav-text">Symbol概述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript6"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol概述"><span class="nav-number">2.</span> <span class="nav-text">Symbol概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强大的Iterator"><span class="nav-number">3.</span> <span class="nav-text">强大的Iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拥有Iterator的"><span class="nav-number">3.1.</span> <span class="nav-text">拥有Iterator的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用例"><span class="nav-number">3.2.</span> <span class="nav-text">用例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-of循环"><span class="nav-number">4.</span> <span class="nav-text">for...of循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对比for-in"><span class="nav-number">5.</span> <span class="nav-text">对比for...in</span></a></li></ol></div>
             
 
           </div>
