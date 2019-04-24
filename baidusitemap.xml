@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.club/2019/04/22/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%E4%B8%8E%E5%AE%9E%E7%8E%B0%E5%B0%BE%E9%80%92%E5%BD%92/</loc>
+    <lastmod>2019-04-24</lastmod>
+  </url>  <url>
+    <loc>http://seefun.club/2019/03/30/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Number/</loc>
+    <lastmod>2019-04-22</lastmod>
+  </url>  <url>
     <loc>http://seefun.club/2019/04/20/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Symbol.Iterator%E4%B8%8E%E9%81%8D%E5%8E%86/</loc>
     <lastmod>2019-04-21</lastmod>
   </url>  <url>
@@ -33,9 +39,6 @@
   </url>  <url>
     <loc>http://seefun.club/2018/09/11/first-blog/</loc>
     <lastmod>2019-04-07</lastmod>
-  </url>  <url>
-    <loc>http://seefun.club/2019/03/30/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Number/</loc>
-    <lastmod>2019-04-06</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/04/02/Palindrome-Number/</loc>
     <lastmod>2019-04-02</lastmod>
