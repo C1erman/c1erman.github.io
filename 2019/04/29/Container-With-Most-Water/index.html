@@ -104,24 +104,28 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="前端工人">
-<meta name="keywords" content="Blog,博客,前端博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归人1337">
-<meta property="og:url" content="http://seefun.club/archives/2019/04/page/2/index.html">
+  <meta name="description" content="题目给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且 n 的值至少为 2。">
+<meta name="keywords" content="-JavaScript,-LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode之计算矩形面积——“盛最多水的容器”">
+<meta property="og:url" content="http://seefun.club/2019/04/29/Container-With-Most-Water/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="前端工人">
+<meta property="og:description" content="题目给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且 n 的值至少为 2。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p11-about-rect.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p11-caculate.png">
+<meta property="og:updated_time" content="2019-04-29T06:26:20.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归人1337">
-<meta name="twitter:description" content="前端工人">
+<meta name="twitter:title" content="LeetCode之计算矩形面积——“盛最多水的容器”">
+<meta name="twitter:description" content="题目给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且 n 的值至少为 2。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p11-about-rect.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/archives/2019/04/page/2/">
+  <link rel="canonical" href="http://seefun.club/2019/04/29/Container-With-Most-Water/">
 
 
 
@@ -131,7 +135,7 @@
   };
 </script>
 
-  <title>归档 | 归人1337</title>
+  <title>LeetCode之计算矩形面积——“盛最多水的容器” | 归人1337</title>
   
 
 
@@ -179,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,7 +272,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -289,25 +293,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -333,152 +318,233 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/29/Container-With-Most-Water/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张可携">
+      <meta itemprop="description" content="前端工人">
+      <meta itemprop="image" content="/images/profilePhoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="归人1337">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">LeetCode之计算矩形面积——“盛最多水的容器”
+
+              
+            
+          </h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-29 14:24:04 / 修改时间：14:26:20" itemprop="dateCreated datePublished" datetime="2019-04-29T14:24:04+08:00">2019-04-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 30 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">-算法</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/我不知道的==运算符/" itemprop="url">
+          
             
-              <span itemprop="name">我不知道的==运算符</span>
             
-          </a>
-        
-      </h3>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T11:23:14+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/02/Palindrome-Number/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之判断是否为“回文数”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-02T16:22:50+08:00" content="2019-04-02">
-          04-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/01/String-to-Integer/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之“字符串转为整数”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-01T21:15:15+08:00" content="2019-04-01">
-          04-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定 <em>n</em> 个非负整数 <em>a</em>1，<em>a</em>2，…，<em>a</em>n，每个数代表坐标中的一个点 (<em>i</em>, <em>ai</em>) 。在坐标内画 <em>n</em> 条垂直线，垂直线 <em>i</em> 的两个端点分别为 (<em>i</em>, <em>ai</em>) 和 (<em>i</em>, 0)。找出其中的两条线，使得它们与 <em>x</em> 轴共同构成的容器可以容纳最多的水。</p>
+<p><strong>说明：</strong>你不能倾斜容器，且 <em>n</em> 的值至少为 2。</p>
+<a id="more"></a>
+<p>Given <em>n</em> non-negative integers <em>a1</em>, <em>a2</em>, …, <em>an</em> , where each represents a point at coordinate (<em>i</em>, <em>ai</em>). <em>n</em> vertical lines are drawn such that the two endpoints of line <em>i</em> is at (<em>i</em>, <em>ai</em>) and (<em>i</em>, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p>
+<p><strong>Note:</strong> You may not slant the container and <em>n</em> is at least 2.</p>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [<span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">7</span>]</span><br><span class="line">Output: <span class="number">49</span></span><br></pre></td></tr></table></figure>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>什么，暴力法？不不不，都9102年了谁还想用暴力法来解题。</p>
+<p>这道题的关键是，影响矩形面积的关键因素。</p>
+<p>对长和宽来说，<strong>最小的那个值对矩形的面积影响最大</strong>。就像这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p11-about-rect.png" alt="影响矩形面积的最大因素"></p>
+<p>那么，只要我们尽可能的将短的线段换成长的线段，就能保证矩形面积向着最大改变。</p>
+<p>可能有人不理解，因为在潜意识中，我们认为矩形的面积是长、宽两因素的作用结果，而我们得到的一般规律是针对一个因素改变下的情况。因此，我们需要做的就是将两因素控制为一因素。</p>
+<p>于是，我们就可以这么做：</p>
+<p>用两个指针，指向给定数组的开头与末尾，即指向两条线段，计算当前的矩形面积。</p>
+<p>当左指针小于右指针时：</p>
+<ul>
+<li>如果左指针指向的线段长度小于右指针指向的线段长度，那么左指针向右移动一个单位</li>
+<li>反之，右指针向左移动一个单位</li>
+</ul>
+<p>就像这样：</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20LeetCode/p11-caculate.png" alt="解题过程"></p>
+<p>最开始的时候，我们保证了矩形的宽——也就是左、右指针之间的长度差，有最大值。试想，按照我们之间所寻找到的规律，此时矩形的长——左、右指针指向的线段中的最短那根，是影响矩形面积的关键，因为矩形的宽无法继续增加，因此符合单因素条件。</p>
+<p>每次减小宽的一个单位，均换取到了单因素情况下矩形面积的最大影响——使矩形的长发生改变。</p>
+<p>显然，我们朝着最大矩形面积这条路上走去。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; height</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> maxArea = <span class="function"><span class="keyword">function</span>(<span class="params">height</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> max = <span class="number">0</span>, l = <span class="number">0</span>, r = height.length <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">        max = <span class="built_in">Math</span>.max(max, <span class="built_in">Math</span>.min(height[l], height[r])*(r -l));</span><br><span class="line">        height[l] &lt; height[r] ? l++:r--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>Runtime:  <strong>76 ms</strong></p>
+<p>Memory Usage: <strong>35.6 MB</strong></p>
+<p>Status:  <strong>Accepted</strong></p>
+<p>faster than <strong>61.31%</strong> of JavaScript online submissions</p>
+<p>less than <strong>39.58%</strong> of JavaScript online submissions</p>
+<h2 id="改良"><a href="#改良" class="headerlink" title="改良"></a>改良</h2><p>总感觉循环的最后几次是多余的——矩形长的增量已经无法弥补矩形宽的缺失，但对这个边界值的判断暂时还无法准确的掌握，姑且放到下一轮再看吧。</p>
+<p>就跟不甘心。</p>
 
       
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
+          
+            <a href="/tags/LeetCode/" rel="tag"># -LeetCode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/28/JSON与JSONP/" rel="next" title="JSON与JSONP">
+                <i class="fa fa-chevron-left"></i> JSON与JSONP
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/04/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2019/04/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDAyNy8xNjU1NA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -498,8 +564,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -630,6 +705,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩"><span class="nav-number">4.</span> <span class="nav-text">成绩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改良"><span class="nav-number">5.</span> <span class="nav-text">改良</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -762,6 +854,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -772,6 +868,23 @@
   
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/04/29/Container-With-Most-Water/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
