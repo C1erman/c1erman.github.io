@@ -114,7 +114,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/blog-number-in-js-2.png">
-<meta property="og:updated_time" content="2019-04-22T09:57:51.191Z">
+<meta property="og:updated_time" content="2019-05-02T07:46:50.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的Number">
 <meta name="twitter:description" content="10.1 + 0.2 = 0.30000000000000004 Why ? 19007199254740992 + 1 = 9007199254740992 Why !">
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-22 17:57:51" itemprop="dateModified" datetime="2019-04-22T17:57:51+08:00">2019-04-22</time>
+                <time title="修改时间：2019-05-02 15:46:50" itemprop="dateModified" datetime="2019-05-02T15:46:50+08:00">2019-05-02</time>
               
             
           </span>
@@ -568,18 +568,18 @@
 <tr>
 <td>1位</td>
 <td>0</td>
-<td>%0 × 2^0</td>
+<td><code>%0 × 2^0</code></td>
 </tr>
 <tr>
 <td>1位</td>
 <td>1</td>
-<td>%1 × 2^0</td>
+<td><code>%1 × 2^0</code></td>
 </tr>
 <tr>
 <td>2位</td>
 <td>2–3</td>
-<td>%1.0 × 2^1 \</td>
-<td>%1.1 × 2^1</td>
+<td>`%1.0 × 2^1 \</td>
+<td>%1.1 × 2^1`</td>
 </tr>
 <tr>
 <td></td>
@@ -637,9 +637,9 @@
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x | <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>移位操作符<code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&gt;&gt;&gt;</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt;&lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>移位操作符<code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&gt;&gt;&gt;</code></li>
 </ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt;&lt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入的x最好为正数，否则符号位也将参与计算</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toUnSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="3">
