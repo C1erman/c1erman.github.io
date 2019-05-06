@@ -104,29 +104,25 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="掌握业务逻辑，弄清实现方式的一个好方法就是查看源代码。 本篇文章仅作记录，如何利用jadclipse插件在myEclipse上查看到已经被编译过的.class文件的源代码。">
-<meta name="keywords" content="-myEclipse">
+  <meta name="description" content="别再使用componentWillMount() 是时候停止使用componentWillMount()了。">
+<meta name="keywords" content="-JavaScript,-React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MyEclipse 10安装反编译插件">
-<meta property="og:url" content="http://seefun.club/2018/09/22/myEclipse-install-jad/index.html">
+<meta property="og:title" content="React组件的生命周期">
+<meta property="og:url" content="http://seefun.club/2019/05/06/React组件的生命周期/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="掌握业务逻辑，弄清实现方式的一个好方法就是查看源代码。 本篇文章仅作记录，如何利用jadclipse插件在myEclipse上查看到已经被编译过的.class文件的源代码。">
+<meta property="og:description" content="别再使用componentWillMount() 是时候停止使用componentWillMount()了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/3rd/threejad%E8%AE%BE%E7%BD%AE.PNG">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/3rd/three%E9%BB%98%E8%AE%A4%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F.PNG">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/3rd/three%E6%88%90%E5%8A%9F%E6%89%93%E5%BC%80.PNG">
-<meta property="og:updated_time" content="2019-01-28T12:04:29.332Z">
+<meta property="og:updated_time" content="2019-05-06T04:49:31.420Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MyEclipse 10安装反编译插件">
-<meta name="twitter:description" content="掌握业务逻辑，弄清实现方式的一个好方法就是查看源代码。 本篇文章仅作记录，如何利用jadclipse插件在myEclipse上查看到已经被编译过的.class文件的源代码。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/3rd/threejad%E8%AE%BE%E7%BD%AE.PNG">
+<meta name="twitter:title" content="React组件的生命周期">
+<meta name="twitter:description" content="别再使用componentWillMount() 是时候停止使用componentWillMount()了。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2018/09/22/myEclipse-install-jad/">
+  <link rel="canonical" href="http://seefun.club/2019/05/06/React组件的生命周期/">
 
 
 
@@ -136,7 +132,7 @@
   };
 </script>
 
-  <title>MyEclipse 10安装反编译插件 | 归人1337</title>
+  <title>React组件的生命周期 | 归人1337</title>
   
 
 
@@ -335,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2018/09/22/myEclipse-install-jad/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/05/06/React组件的生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -352,7 +348,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">MyEclipse 10安装反编译插件
+          <h2 class="post-title" itemprop="name headline">React组件的生命周期
 
               
             
@@ -378,24 +374,12 @@
                 
               
 
-              <time title="创建时间：2018-09-22 10:26:47" itemprop="dateCreated datePublished" datetime="2018-09-22T10:26:47+08:00">2018-09-22</time>
+              <time title="创建时间：2019-05-06 10:31:44 / 修改时间：12:49:31" itemprop="dateCreated datePublished" datetime="2019-05-06T10:31:44+08:00">2019-05-06</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-28 20:04:29" itemprop="dateModified" datetime="2019-01-28T20:04:29+08:00">2019-01-28</time>
               
             
           </span>
@@ -412,7 +396,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaWeb/" itemprop="url" rel="index"><span itemprop="name">-JavaWeb</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端框架/" itemprop="url" rel="index"><span itemprop="name">-前端框架</span></a></span>
 
                 
                 
@@ -447,45 +431,79 @@
       
 
       
-        <p>掌握业务逻辑，弄清实现方式的一个好方法就是<strong>查看源代码</strong>。</p>
-<p>本篇文章仅作记录，如何利用<code>jadclipse</code>插件在myEclipse上查看到已经被编译过的<code>.class</code>文件的源代码。</p>
+        <p>别再使用componentWillMount()</p>
+<p>是时候停止使用<code>componentWillMount()</code>了。</p>
 <a id="more"></a>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>关于”轮子哥“的事迹及衍生事物，我也有所耳闻。只懂如何使用轮子是否可行，这个问题在暂且不表。</p>
-<p>但是，知道轮子的制造方法是很重要的。</p>
-<p>”拿来主义“用的久了，有一天手没了怎么办。</p>
-<p>回到本篇文章本身上，有需要查看一些<code>jar</code>包的时候，但是直接在myEclipse中是打不开的，这些<code>.class</code>是经过编译的。直接打开，只会看到很多乱码。</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><a href="https://varaneckas.com/jad/jad158g.win.zip" target="_blank" rel="noopener">jad.exe</a></p>
-<p><a href="http://prdownloads.sourceforge.net/jadclipse/net.sf.jadclipse_3.3.0.jar?download" target="_blank" rel="noopener">net.sf.jadclipse_3.3.0.jar</a></p>
-<h3 id="存放"><a href="#存放" class="headerlink" title="存放"></a>存放</h3><ul>
-<li><p>jad.exe</p>
-<p>将此文件放在<code>jdk/bin</code>文件夹下，如若不记得自己正在使用哪一个jdk，右键点击<strong>我的电脑</strong>，选择<strong>高级系统设置</strong>，打开<strong>环境变量</strong>查看jdk文件夹位置。</p>
-</li>
-<li><p>jadclipse.jar</p>
-<p>将此文件放在<code>myEclipse/dropins</code>文件夹下。</p>
-</li>
-</ul>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
-<li><p>设置jadClipse</p>
-<p>打开myEclipse，依次点击</p>
-<p>Windows=&gt;Preferences=&gt;Java=&gt;JadClipse=&gt;Path to decompiler</p>
-<p>在本框中输入jad.exe文件的绝对位置即可。</p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/3rd/threejad%E8%AE%BE%E7%BD%AE.PNG" alt="img"></p>
+<h2 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h2><p>对一个<code>React</code>组件进行剖析，可以将其生命周期划分为这几个阶段：</p>
+<ol>
+<li>组件<strong>挂载</strong></li>
+<li>组件<strong>更新</strong></li>
+<li>组件<strong>卸载</strong></li>
+<li><strong>异常处理</strong></li>
+</ol>
+<p>想要速览常用的生命周期函数，请查看<a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="noopener">官方生命周期速查表</a>。</p>
+<p>下述介绍中，常用的生命周期函数将会被加粗显示，而各函数的详细解释将被放在本文章的最后介绍。</p>
+<h3 id="组件挂载"><a href="#组件挂载" class="headerlink" title="组件挂载"></a>组件挂载</h3><p>组件挂载阶段调用的生命周期函数顺序如下：</p>
+<ol>
+<li><strong>constructor()</strong></li>
+<li>static getDerivedStateFromProps()</li>
+<li><strong>render()</strong></li>
+<li><strong>componentDidMount()</strong></li>
+</ol>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p><code>componentWillMount()</code>方法即将过时，在新代码中应该避免使用。</p>
+</blockquote>
+<h3 id="组件更新"><a href="#组件更新" class="headerlink" title="组件更新"></a>组件更新</h3><p>当组件的<code>props</code>或<code>state</code>发生变化时会触发更新，这时调用的生命周期函数顺序如下：</p>
+<ol>
+<li>static getDerivedStateFromProps()</li>
+<li><strong>shouldComponentUpdate()</strong></li>
+<li><strong>render()</strong></li>
+<li>getSnapshotBeforeUpdate()</li>
+<li><strong>componentDidUpate()</strong></li>
+</ol>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p><code>componentWillUpdate()</code></p>
+<p><code>componentWillReceiveProps()</code>方法即将过时，在新代码中应该避免使用。</p>
+</blockquote>
+<h3 id="组件卸载"><a href="#组件卸载" class="headerlink" title="组件卸载"></a>组件卸载</h3><p>当组件从DOM中移除时，会按照以下顺序调用生命周期函数：</p>
+<ol>
+<li><strong>componentWillUnmount()</strong></li>
+</ol>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>当组件的渲染过程、生命周期函数、子组件的构造函数中抛出错误时，会按照顺序调用下述生命周期函数：</p>
+<ol>
+<li>static getDerivedStateFromError()</li>
+<li>componentDidCatch()</li>
+</ol>
+<h2 id="函数详解"><a href="#函数详解" class="headerlink" title="函数详解"></a>函数详解</h2><h3 id="constructor-props"><a href="#constructor-props" class="headerlink" title="constructor(props)"></a>constructor(props)</h3><p><strong>如果不需要初始化state或不为组件添加事件处理函数，则无需实现构造函数。</strong></p>
+<p>为解决<code>this.props</code>未定义的<strong>BUG</strong>，<strong>应该首先调用super(props)</strong>。</p>
+<p>在构造函数中，你<strong>应该做的只有两件事</strong>：</p>
+<ol>
+<li>给<code>this.state</code>赋值以初始化<code>state</code></li>
+<li>为组件的事件处理函数绑定<code>this</code></li>
+</ol>
+<p>也就是说，下述操作是<strong>被禁止的</strong>：</p>
 <ul>
-<li><p>设置使用jad查看<code>.class</code>文件</p>
-<p>依次点击</p>
-<p>Windows=&gt;General=&gt;Editors=&gt;File Associations</p>
-<p>设置<code>.class</code>文件和<code>.class without source</code>文件的默认（<code>Default</code>）为<code>JadClipse Class File Viewer</code>，如果没有就自己添加。</p>
-</li>
+<li>在构造函数中调用<code>this.setState()</code>方法：</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/3rd/three%E9%BB%98%E8%AE%A4%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F.PNG" alt="img"></p>
-<h2 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h2><p>完成以后，点击自己想了解的<code>.class</code>文件即可看到正确的<code>java</code>代码。</p>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/3rd/three%E6%88%90%E5%8A%9F%E6%89%93%E5%BC%80.PNG" alt="img"></p>
-<h2 id="警惕"><a href="#警惕" class="headerlink" title="警惕"></a>警惕</h2><h3 id="没有出现JadClipse窗口"><a href="#没有出现JadClipse窗口" class="headerlink" title="没有出现JadClipse窗口"></a>没有出现JadClipse窗口</h3><p>按以下文件路径查看<code>bundle.info</code>文件，推荐使用<code>Notepad++</code>。</p>
-<p>myEclipse=&gt;configuration=&gt;org.eclipse.equinox.simpleconfigurator=&gt;bundles.info</p>
-<p>找到<code>net.sf.jadclipse,3.3.0,dropins/net.sf.jadclipse_3.3.0.jar,4,false</code>一行，看自己这一行的内容是否类似（即能准确定位到<code>jadclipse.jar</code>）。</p>
-<p>例如，因为我的<code>jadclipse.jar</code>放在<code>dropins</code>文件夹里，所以上述代码行中<code>dropins/net.sf.jadclipse_3.3.0.jar</code>正确的反应出了jar包的位置。</p>
+<h3 id="render"><a href="#render" class="headerlink" title="render()"></a>render()</h3><p><code>render()</code>方法是<strong>class组件</strong>中<strong>唯一必须实现</strong>的方法。</p>
+<p><code>render()</code>被调用时，会检查<code>this.props</code>和<code>this.state</code>的变化，并返回以下类型之一：</p>
+<ul>
+<li><strong>React元素</strong>：使用<code>JSX</code>语法描述的DOM节点或自定义组件，比如<code>&lt;div /&gt;</code>和<code>&lt;myComponent /&gt;</code>均为React元素。</li>
+<li><strong>数组</strong>或<strong>fragments</strong>：即包含了多个React元素的数组或包含了多个兄弟节点的组件。</li>
+<li><strong>Portals</strong>：可以渲染子节点到不同的DOM子树中。</li>
+<li><strong>字符串</strong>或<strong>数值类型</strong>：会被渲染为文本节点。</li>
+<li><strong>布尔类型</strong>或<strong>null</strong>：什么都不渲染。</li>
+</ul>
+<p><code>render()</code>应该是个纯函数，它<strong>不应该与浏览器进行交互</strong>，换句话说，<code>UI=render(data)</code>。</p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>如果<code>shouldComponentUpdate()</code>返回false，则不会调用<strong><code>render()</code></strong>。</p>
+</blockquote>
+<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount()"></a>componentDidMount()</h3><p>该函数会在组件完成挂载，即渲染并插入到DOM树，之后调用。</p>
+<p>一般我们将<strong>通过网络请求数据的操作</strong>放在这里进行。</p>
+<p>在该函数中，你可以使用<code>this.setState()</code>，但不推荐，因为会导致性能问题。如果你的渲染依赖于DOM节点，使用这个方式也未尝不可。</p>
 
       
     </div>
@@ -509,7 +527,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/myEclipse/" rel="tag"># -myEclipse</a>
+            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
+          
+            <a href="/tags/React/" rel="tag"># -React</a>
           
         </div>
       
@@ -522,8 +542,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/19/struts2-get-parameter/" rel="next" title="Struts2中接收参数的方法">
-                <i class="fa fa-chevron-left"></i> Struts2中接收参数的方法
+              <a href="/2019/05/05/我不知道的Position/" rel="next" title="我不知道的Position">
+                <i class="fa fa-chevron-left"></i> 我不知道的Position
               </a>
             
           </div>
@@ -531,10 +551,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/27/struts2-use-validate/" rel="prev" title="JSP表单验证">
-                JSP表单验证 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -743,7 +759,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">2.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存放"><span class="nav-number">2.2.</span> <span class="nav-text">存放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.3.</span> <span class="nav-text">配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看"><span class="nav-number">3.</span> <span class="nav-text">查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警惕"><span class="nav-number">4.</span> <span class="nav-text">警惕</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#没有出现JadClipse窗口"><span class="nav-number">4.1.</span> <span class="nav-text">没有出现JadClipse窗口</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件的生命周期"><span class="nav-number">1.</span> <span class="nav-text">组件的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件挂载"><span class="nav-number">1.1.</span> <span class="nav-text">组件挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件更新"><span class="nav-number">1.2.</span> <span class="nav-text">组件更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件卸载"><span class="nav-number">1.3.</span> <span class="nav-text">组件卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误处理"><span class="nav-number">1.4.</span> <span class="nav-text">错误处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数详解"><span class="nav-number">2.</span> <span class="nav-text">函数详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-props"><span class="nav-number">2.1.</span> <span class="nav-text">constructor(props)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#render"><span class="nav-number">2.2.</span> <span class="nav-text">render()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidMount"><span class="nav-number">2.3.</span> <span class="nav-text">componentDidMount()</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -899,7 +915,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2018/09/22/myEclipse-install-jad/'
+    refer: '2019/05/06/React组件的生命周期/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
