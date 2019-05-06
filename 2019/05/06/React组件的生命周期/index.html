@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="别再使用componentWillMount() 是时候停止使用componentWillMount()了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-06T04:49:31.420Z">
+<meta property="og:updated_time" content="2019-05-06T11:09:05.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React组件的生命周期">
 <meta name="twitter:description" content="别再使用componentWillMount() 是时候停止使用componentWillMount()了。">
@@ -374,7 +374,7 @@
                 
               
 
-              <time title="创建时间：2019-05-06 10:31:44 / 修改时间：12:49:31" itemprop="dateCreated datePublished" datetime="2019-05-06T10:31:44+08:00">2019-05-06</time>
+              <time title="创建时间：2019-05-06 10:31:44 / 修改时间：19:09:05" itemprop="dateCreated datePublished" datetime="2019-05-06T10:31:44+08:00">2019-05-06</time>
             
 
             
@@ -471,12 +471,12 @@
 <ol>
 <li><strong>componentWillUnmount()</strong></li>
 </ol>
-<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>当组件的渲染过程、生命周期函数、子组件的构造函数中抛出错误时，会按照顺序调用下述生命周期函数：</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>当组件的<strong>渲染过程</strong>、<strong>生命周期函数</strong>、<strong>子组件的构造函数</strong>中<strong>抛出错误</strong>时，会按照顺序调用下述生命周期函数：</p>
 <ol>
 <li>static getDerivedStateFromError()</li>
 <li>componentDidCatch()</li>
 </ol>
-<h2 id="函数详解"><a href="#函数详解" class="headerlink" title="函数详解"></a>函数详解</h2><h3 id="constructor-props"><a href="#constructor-props" class="headerlink" title="constructor(props)"></a>constructor(props)</h3><p><strong>如果不需要初始化state或不为组件添加事件处理函数，则无需实现构造函数。</strong></p>
+<h2 id="常用函数详解"><a href="#常用函数详解" class="headerlink" title="常用函数详解"></a>常用函数详解</h2><h3 id="constructor-props"><a href="#constructor-props" class="headerlink" title="constructor(props)"></a>constructor(props)</h3><p><strong>如果不需要初始化state或不为组件添加事件处理函数，则无需实现构造函数。</strong></p>
 <p>为解决<code>this.props</code>未定义的<strong>BUG</strong>，<strong>应该首先调用super(props)</strong>。</p>
 <p>在构造函数中，你<strong>应该做的只有两件事</strong>：</p>
 <ol>
@@ -504,7 +504,15 @@
 <h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount()"></a>componentDidMount()</h3><p>该函数会在组件完成挂载，即渲染并插入到DOM树，之后调用。</p>
 <p>一般我们将<strong>通过网络请求数据的操作</strong>放在这里进行。</p>
 <p>在该函数中，你可以使用<code>this.setState()</code>，但不推荐，因为会导致性能问题。如果你的渲染依赖于DOM节点，使用这个方式也未尝不可。</p>
-
+<h3 id="shouldComponentUpdate-nextProps-nextState"><a href="#shouldComponentUpdate-nextProps-nextState" class="headerlink" title="shouldComponentUpdate(nextProps, nextState)"></a>shouldComponentUpdate(nextProps, nextState)</h3><p>该函数被称为优化性能的关键——如果一个组件没有渲染的必要，那就干脆不渲染。</p>
+<p>默认情况是<code>state</code>每次发生变化时都会重新渲染，该函数的返回值默认为<code>true</code>。在组件的首次渲染或使用<code>forceUpate()</code>时不会调用该方法。</p>
+<p>通常都是通过手动比较<code>this.props</code>与<code>nextProps</code>、<code>this.state</code>与<code>nextState</code>，返回<code>false</code>告诉React跳过对该组件的更新。</p>
+<h3 id="componentDidUpate-prevProps-prevState-snapshot"><a href="#componentDidUpate-prevProps-prevState-snapshot" class="headerlink" title="componentDidUpate(prevProps, prevState, snapshot)"></a>componentDidUpate(prevProps, prevState, snapshot)</h3><p>该函数会在更新后立即调用，<strong>首次渲染不会执行该方法</strong>。</p>
+<p>同<code>componentDidMount()</code>一样，<strong>此时可以安全地使用DOM节点</strong>。</p>
+<p>在该函数中，你可以使用<code>this.setState()</code>，但你必须保证该语句被包裹在一个条件语句中——总不能让它无限循环吧。</p>
+<h3 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount()"></a>componentWillUnmount()</h3><p>该函数会在组件卸载及销毁之前调用。一些垃圾处理应该放在该函数中进行。</p>
+<p>在该函数中<strong>不应使用</strong><code>this.setState()</code>——卸载组件后，永远不会再渲染它。</p>
+<h2 id="其它函数详解"><a href="#其它函数详解" class="headerlink" title="其它函数详解"></a>其它函数详解</h2><h3 id="setState-updater-callback"><a href="#setState-updater-callback" class="headerlink" title="setState(updater[, callback])"></a>setState(updater[, callback])</h3><h3 id="forceUpdate"><a href="#forceUpdate" class="headerlink" title="forceUpdate()"></a>forceUpdate()</h3>
       
     </div>
 
@@ -759,7 +767,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件的生命周期"><span class="nav-number">1.</span> <span class="nav-text">组件的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件挂载"><span class="nav-number">1.1.</span> <span class="nav-text">组件挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件更新"><span class="nav-number">1.2.</span> <span class="nav-text">组件更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件卸载"><span class="nav-number">1.3.</span> <span class="nav-text">组件卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误处理"><span class="nav-number">1.4.</span> <span class="nav-text">错误处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数详解"><span class="nav-number">2.</span> <span class="nav-text">函数详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-props"><span class="nav-number">2.1.</span> <span class="nav-text">constructor(props)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#render"><span class="nav-number">2.2.</span> <span class="nav-text">render()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidMount"><span class="nav-number">2.3.</span> <span class="nav-text">componentDidMount()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件的生命周期"><span class="nav-number">1.</span> <span class="nav-text">组件的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件挂载"><span class="nav-number">1.1.</span> <span class="nav-text">组件挂载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件更新"><span class="nav-number">1.2.</span> <span class="nav-text">组件更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件卸载"><span class="nav-number">1.3.</span> <span class="nav-text">组件卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常处理"><span class="nav-number">1.4.</span> <span class="nav-text">异常处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用函数详解"><span class="nav-number">2.</span> <span class="nav-text">常用函数详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-props"><span class="nav-number">2.1.</span> <span class="nav-text">constructor(props)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#render"><span class="nav-number">2.2.</span> <span class="nav-text">render()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidMount"><span class="nav-number">2.3.</span> <span class="nav-text">componentDidMount()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shouldComponentUpdate-nextProps-nextState"><span class="nav-number">2.4.</span> <span class="nav-text">shouldComponentUpdate(nextProps, nextState)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidUpate-prevProps-prevState-snapshot"><span class="nav-number">2.5.</span> <span class="nav-text">componentDidUpate(prevProps, prevState, snapshot)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentWillUnmount"><span class="nav-number">2.6.</span> <span class="nav-text">componentWillUnmount()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其它函数详解"><span class="nav-number">3.</span> <span class="nav-text">其它函数详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setState-updater-callback"><span class="nav-number">3.1.</span> <span class="nav-text">setState(updater[, callback])</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forceUpdate"><span class="nav-number">3.2.</span> <span class="nav-text">forceUpdate()</span></a></li></ol></li></ol></div>
             
 
           </div>
