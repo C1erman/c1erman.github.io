@@ -104,25 +104,25 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="position属性，说简单也简单：因为默认就几个取值，说难也难：就position展开的知识点一抓一大把。 CSS远比你想象的要复杂。 欢迎阅读CSS规范。">
+  <meta name="description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow includes">
 <meta name="keywords" content="-CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我不知道的Position">
-<meta property="og:url" content="http://seefun.club/2019/05/05/我不知道的Position/index.html">
+<meta property="og:title" content="我不知道的普通流">
+<meta property="og:url" content="http://seefun.club/2019/05/09/我不知道的普通流/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="position属性，说简单也简单：因为默认就几个取值，说难也难：就position展开的知识点一抓一大把。 CSS远比你想象的要复杂。 欢迎阅读CSS规范。">
+<meta property="og:description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow includes">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-09T04:32:47.556Z">
+<meta property="og:updated_time" content="2019-05-09T13:32:34.187Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我不知道的Position">
-<meta name="twitter:description" content="position属性，说简单也简单：因为默认就几个取值，说难也难：就position展开的知识点一抓一大把。 CSS远比你想象的要复杂。 欢迎阅读CSS规范。">
+<meta name="twitter:title" content="我不知道的普通流">
+<meta name="twitter:description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow includes">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/05/05/我不知道的Position/">
+  <link rel="canonical" href="http://seefun.club/2019/05/09/我不知道的普通流/">
 
 
 
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>我不知道的Position | 归人1337</title>
+  <title>我不知道的普通流 | 归人1337</title>
   
 
 
@@ -331,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/05/05/我不知道的Position/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/05/09/我不知道的普通流/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -348,7 +348,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">我不知道的Position
+          <h2 class="post-title" itemprop="name headline">我不知道的普通流
 
               
             
@@ -374,24 +374,12 @@
                 
               
 
-              <time title="创建时间：2019-05-05 12:56:10" itemprop="dateCreated datePublished" datetime="2019-05-05T12:56:10+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-09 11:16:12 / 修改时间：21:32:34" itemprop="dateCreated datePublished" datetime="2019-05-09T11:16:12+08:00">2019-05-09</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-09 12:32:47" itemprop="dateModified" datetime="2019-05-09T12:32:47+08:00">2019-05-09</time>
               
             
           </span>
@@ -443,49 +431,48 @@
       
 
       
-        <p><code>position</code>属性，说简单也简单：因为默认就几个取值，说难也难：就<code>position</code>展开的知识点一抓一大把。</p>
-<p><code>CSS</code>远比你想象的要复杂。</p>
-<p>欢迎阅读<a href="https://www.w3.org/TR/" target="_blank" rel="noopener">CSS规范</a>。</p>
+        <p>查看规范，是解决模糊定义的最直接手段。</p>
+<p>普通流，即<strong>Normal Flow</strong>，是CSS的鼎鼎大名的定位机制之一，其它两个定位机制为：<strong>浮动</strong>、<strong>绝对定位</strong>。</p>
+<p>普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在<strong>块级元素</strong>：<code>Block Boxes</code>或<strong>行内元素</strong>：<code>Inline Boxes</code>中被Formatted。</p>
+<blockquote>
+<p><strong>Normal Flow</strong>：</p>
+<p>In CSS 2.1, normal flow includes <a href="https://www.w3.org/TR/CSS2/visuren.html#block-formatting" target="_blank" rel="noopener">block formatting</a> of block-level boxes, <a href="https://www.w3.org/TR/CSS2/visuren.html#inline-formatting" target="_blank" rel="noopener">inline formatting</a> of inline-level boxes, and <a href="https://www.w3.org/TR/CSS2/visuren.html#relative-positioning" target="_blank" rel="noopener">relative positioning</a> of block-level and inline-level boxes.</p>
+</blockquote>
 <a id="more"></a>
-<h2 id="为什么是position"><a href="#为什么是position" class="headerlink" title="为什么是position"></a>为什么是<code>position</code></h2><p><code>position</code>和<code>float</code>是两个重要的属性：它们的取值决定了使用<strong>CSS 2.1</strong>下哪一个计算方法计算<a href>盒子</a>的位置。</p>
-<h2 id="position的取值"><a href="#position的取值" class="headerlink" title="position的取值"></a><code>position</code>的取值</h2><p>根据规范：<code>position</code>的取值可为<code>static</code>、<code>relative</code>、<code>absolute</code>、<code>fixed</code>、<code>inherit</code>中的一种，而默认值为<code>static</code>，<code>inherit</code>则表示与其父元素相同。</p>
-<ul>
-<li><strong>static</strong></li>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>正如我们在文章一开始就提到的那样：</p>
+<p>任何被渲染的元素都有一个盒子模型，这个盒子模型或者是<code>Block</code>级的，或者是<code>Inline</code>级的，但不可能同时属于两者。</p>
+<h2 id="块格式化上下文：Block-Formatting-Contexts"><a href="#块格式化上下文：Block-Formatting-Contexts" class="headerlink" title="块格式化上下文：Block Formatting Contexts"></a>块格式化上下文：<code>Block Formatting Contexts</code></h2><p><code>Block</code>级的盒子模型将在块格式化上下文中被Formatted。</p>
+<h3 id="块格式化上下文的作用"><a href="#块格式化上下文的作用" class="headerlink" title="块格式化上下文的作用"></a>块格式化上下文的作用</h3><ul>
+<li>在一个块格式化上下文中，各盒子模型将被一个接一个的<strong>垂直排列</strong>，两个兄弟框之间的垂直距离由<code>margin</code>属性决定，但相邻的<strong>块级盒子</strong>之间的垂直<code>margin</code><strong>将会被重叠</strong>。就像这样：</li>
 </ul>
-<p>当元素的<code>position</code>的取值为<code>static</code>时，它就是一个<strong>未定位元素</strong>—&gt;<em>Not Positioned</em>，盒子位置将按照<strong>普通流</strong>来计算：—&gt;<em>Normal Flow</em>。</p>
-<p>此时，元素的<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>将不起作用。</p>
-<p>就像这样：</p>
-<div style="width:300px;height:200px;background-color:rgba(247,172,188,0.8);position:static;left:-400px;bottom:-300px;color:white;font-size:20px"><br>    我是一个static盒子<br></div>
+<div style="width:100px;height:100px;background:#ea66a6;margin:20px 0"></div><div style="width:100px;height:100px;background:#ffc20e;margin-top:10px"></div>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.static&#123;</span><br><span class="line">  width : 300px;</span><br><span class="line">  height : 200px;</span><br><span class="line">  background-color : rgba(247,172,188,0.8);</span><br><span class="line">  color : white;</span><br><span class="line">  font-size : 20px;</span><br><span class="line">  //left和bottom均不起作用</span><br><span class="line">  position : static;</span><br><span class="line">  left : -400px;</span><br><span class="line">  bottom : -300px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'static'</span>&gt;</span></span><br><span class="line">    我是一个static盒子</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.div-1&#123;</span><br><span class="line">	width :100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	background-color: #ea66a6;</span><br><span class="line">	margin: 20px 0;</span><br><span class="line">&#125;</span><br><span class="line">.div-2&#123;</span><br><span class="line">	width : 100px;</span><br><span class="line">	height :100px;</span><br><span class="line">	background-color: #ffc20e;</span><br><span class="line">	margin-top: 10px: </span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>relative</strong></li>
+<li><p>在块格式化上下文中，除非创建一个新的块格式化上下文，否则即使存在浮动，<strong>每个盒子的左边缘也还紧密接触包含盒子的左边缘</strong>。换句话说，除非创建一个新的块格式化上下，否则块级元素的宽度不受<code>content</code>中浮动元素的影响。就像这样：</p>
+<p>未创建块格式化上下文，<strong>父元素直接不见了</strong>：</p>
+</li>
 </ul>
-<p>当<code>position</code>取值为<code>relative</code>时，盒子位置将会按照<strong>普通流</strong>被计算，如果不加其它属性，<code>position : relative</code>将会表现的和<code>position : static</code>一样，而属性<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>将按照盒子原本的位置起作用。</p>
-<p>就像这样：</p>
-<div style="position:relative;width:200px;height:200px;background-color:rgba(237,25,65,0.8);color:white">我是第一个relative盒子</div><br><div style="position:relative;width:200px;height:200px;background-color:rgba(51,163,220,0.8);left:100px;top:-100px;color:white">我是第二个relative盒子</div>
+<div style="background:#f69c9f;"><div style="width:100px;height:50px;background:#7fb80e;float:left"></div><div style="width:200px;height:100px;background:#ef4136;float:left"></div></div>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.relative&#123;</span><br><span class="line">  width : 200px;</span><br><span class="line">  height : 200px;</span><br><span class="line">  //注意下面的left、top</span><br><span class="line">  position : relative;</span><br><span class="line">&#125;</span><br><span class="line">.one&#123;</span><br><span class="line">  background-color : rgba(237,25,65,0.8);</span><br><span class="line">&#125;</span><br><span class="line">.two&#123;</span><br><span class="line">  background-color : rgba(51,163,220,0.8);</span><br><span class="line">  //left、top相对于其原本的位置起作用</span><br><span class="line">  left : 100px;</span><br><span class="line">  top : -100px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'relative one'</span>&gt;</span>我是第一个relative盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'relative two'</span>&gt;</span>我是第二个relative盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.div&#123;</span><br><span class="line">	background: #f69c9f;</span><br><span class="line">&#125;</span><br><span class="line">.div-1&#123;</span><br><span class="line">	width :100px;</span><br><span class="line">	height: 50px;</span><br><span class="line">	background-color: #7fb80e;</span><br><span class="line">    float : left;</span><br><span class="line">&#125;</span><br><span class="line">.div-2&#123;</span><br><span class="line">	width : 200px;</span><br><span class="line">	height : 100px;</span><br><span class="line">	background-color: #ef4136;</span><br><span class="line">	float : left; </span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​       创建了块格式化上下文：</p>
+<div style="background:#f69c9f;float:left"><div style="width:100px;height:50px;background:#7fb80e;float:left"></div><div style="width:200px;height:100px;background:#ef4136;float:left"></div></div>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.div&#123;</span><br><span class="line">	background: #f69c9f;</span><br><span class="line">    //通过float创建了块格式化上下文</span><br><span class="line">    float : left;</span><br><span class="line">&#125;</span><br><span class="line">.div-1&#123;</span><br><span class="line">	width :100px;</span><br><span class="line">	height: 50px;</span><br><span class="line">	background-color: #7fb80e;</span><br><span class="line">    float : left;</span><br><span class="line">&#125;</span><br><span class="line">.div-2&#123;</span><br><span class="line">	width : 200px;</span><br><span class="line">	height : 100px;</span><br><span class="line">	background-color: #ef4136;</span><br><span class="line">	float : left; </span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建块格式化上下文"><a href="#创建块格式化上下文" class="headerlink" title="创建块格式化上下文"></a>创建块格式化上下文</h3><p>元素为以下情况时，会<strong>为元素的contents</strong>建立新的块格式化上下文：</p>
 <ul>
-<li><strong>absolute</strong></li>
+<li>根元素</li>
+<li>浮动元素</li>
+<li>绝对定位元素</li>
+<li>不是块元素的块级容器<ul>
+<li><code>inline-block</code>元素</li>
+<li><code>table-cell</code>元素</li>
+<li><code>table-caption</code>元素</li>
 </ul>
-<p>一个<code>absolute</code>元素，将脱离<strong>普通流</strong>，依靠属性<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>，以<strong>最近被定位祖先</strong>为基准进行定位—&gt;<em>Nearest Positioned Ancestor</em>。</p>
-<p>一个<strong>被定位元素</strong>，就是其<code>position</code>属性取值为<code>static</code><strong>以外</strong>的元素。</p>
-<p>就像这样：</p>
-<div style="position:absolute;width:300px;height:200px;background-color:rgba(12,85,12,0.5);left:100px;top:2300px;color:white;font-size:20px;z-index:-1">我是一个absolute盒子</div>
-
-<p>哦，这该死的<code>absolute</code>可太影响我们的阅读了。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.absolute&#123;</span><br><span class="line">  width : 300px;</span><br><span class="line">  height : 200px;</span><br><span class="line">  background-color : rgba(12,85,12,0.5);</span><br><span class="line">  color : white;</span><br><span class="line">  font : 20px;</span><br><span class="line">  //依据top、right、bottom、left进行定位</span><br><span class="line">  position : absolute;</span><br><span class="line">  left : 100px;</span><br><span class="line">  top : -100px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'absolute'</span>&gt;</span></span><br><span class="line">    我是一个absolute盒子</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>需要注意的是：<code>absolute</code>盒子的<code>margin</code>将不会与其它盒子的<code>margin</code>发生<strong>塌陷</strong>。</p>
-<ul>
-<li><strong>fixed</strong></li>
+</li>
+<li><code>overflow</code>的值不为<code>visible</code>的元素</li>
 </ul>
-<p>一个<code>fixed</code>元素将<strong>相对于视口定位</strong>，也就是说，即是页面滑动，该元素的位置也不会改变。该元素同时也依靠属性<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>来定位。</p>
-<p>就像这样：</p>
-<div style="width:300px;height:200px;font-size:20px;background-color:rgba(255,194,14,0.8);position:fixed;right:0px;bottom:0px;color:white;z-index:999">我是一个fixed盒子</div>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.fixed&#123;</span><br><span class="line">  width : 300px;</span><br><span class="line">  height : 200px;</span><br><span class="line">  color : white;</span><br><span class="line">  font-size : 20px;</span><br><span class="line">  //依据top、right、bottom、left进行定位</span><br><span class="line">  position : fixed;</span><br><span class="line">  right : 0px;</span><br><span class="line">  bottom : 0px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>需要注意的是：<code>fixed</code>盒子的<code>margin</code>将不会与其它盒子的<code>margin</code>发生<strong>塌陷</strong>。</p>
 
       
     </div>
@@ -522,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/29/Container-With-Most-Water/" rel="next" title="LeetCode之计算矩形面积——“盛最多水的容器”">
-                <i class="fa fa-chevron-left"></i> LeetCode之计算矩形面积——“盛最多水的容器”
+              <a href="/2019/05/06/我不知道的数组Array/" rel="next" title="我不知道的数组Array">
+                <i class="fa fa-chevron-left"></i> 我不知道的数组Array
               </a>
             
           </div>
@@ -531,10 +518,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/06/React组件的生命周期/" rel="prev" title="React组件的生命周期">
-                React组件的生命周期 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -743,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么是position"><span class="nav-number">1.</span> <span class="nav-text">为什么是position</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position的取值"><span class="nav-number">2.</span> <span class="nav-text">position的取值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块格式化上下文：Block-Formatting-Contexts"><span class="nav-number">2.</span> <span class="nav-text">块格式化上下文：Block Formatting Contexts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文的作用"><span class="nav-number">2.1.</span> <span class="nav-text">块格式化上下文的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建块格式化上下文"><span class="nav-number">2.2.</span> <span class="nav-text">创建块格式化上下文</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -899,7 +882,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/05/我不知道的Position/'
+    refer: '2019/05/09/我不知道的普通流/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

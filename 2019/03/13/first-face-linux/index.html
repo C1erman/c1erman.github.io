@@ -114,7 +114,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-2.png">
-<meta property="og:updated_time" content="2019-05-08T03:08:11.932Z">
+<meta property="og:updated_time" content="2019-05-09T11:59:21.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Linux">
 <meta name="twitter:description" content="作为一名程序员，不懂点Linux知识怎么说的过去？ 本文将会随着学习的升入不断更新，介绍常用的指令及相关的知识。">
@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-08 11:08:11" itemprop="dateModified" datetime="2019-05-08T11:08:11+08:00">2019-05-08</time>
+                <time title="修改时间：2019-05-09 19:59:21" itemprop="dateModified" datetime="2019-05-09T19:59:21+08:00">2019-05-09</time>
               
             
           </span>
@@ -648,13 +648,13 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <h4 id="top命令"><a href="#top命令" class="headerlink" title="top命令"></a>top命令</h4><p>top命令用于动态地监视进程活动与系统负载等信息，其格式为：<code>top</code>。</p>
 <p>top命令相当强大，能够动态地查看系统运维状态，完全将它看作Linux中的“强化版的Windows任务管理器”。</p>
 <h4 id="pidof命令"><a href="#pidof命令" class="headerlink" title="pidof命令"></a>pidof命令</h4><p>pidof命令用于查询有个指定服务进程的PID值，格式为：<code>pidof [参数] [服务名称]</code>。</p>
-<h4 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h4><p>kill命令用于终止某个指定PID的服务进程，格式为：<code>kill [参数] [进程PID]</code>。</p>
-<h4 id="killall命令"><a href="#killall命令" class="headerlink" title="killall命令"></a>killall命令</h4><p>killall命令用于终止某个指定名称的服务所对应的全部进程，格式为：<code>killall [参数] [进程名称]</code>。</p>
+<h4 id="kill命令"><a href="#kill命令" class="headerlink" title="kill命令"></a>kill命令</h4><p>kill命令用于终止<strong>某个指定PID</strong>的服务进程，格式为：<code>kill [参数] [进程PID]</code>。</p>
+<h4 id="killall命令"><a href="#killall命令" class="headerlink" title="killall命令"></a>killall命令</h4><p>killall命令用于终止<strong>某个指定名称</strong>的服务所对应的全部进程，格式为：<code>killall [参数] [进程名称]</code>。</p>
 <h3 id="2-3系统状态检测命令"><a href="#2-3系统状态检测命令" class="headerlink" title="2.3系统状态检测命令"></a>2.3系统状态检测命令</h3><p>想要更快地、更好地了解Linux服务器，必须具备快速查看Linux系统运行状态的能力。</p>
 <h4 id="ifconfig命令"><a href="#ifconfig命令" class="headerlink" title="ifconfig命令"></a>ifconfig命令</h4><p>ifconfig命令用于获取网卡配置与网络状态等信息，格式为：<code>ifconfig [网络设备] [参数]</code>。</p>
 <p>主要使用该命令查看网卡名称、inet后面的IP地址、ether参数后面的网卡物理地址（又称为MAC地址）。</p>
-<h4 id="uname命令"><a href="#uname命令" class="headerlink" title="uname命令"></a>uname命令</h4><p>uname命令用于查看系统内核与系统版本等信息，格式为：<code>uname [-a]</code>。</p>
-<p>一般会固定搭配上<code>-a</code>参数来完整地查看当前系统的内核名称、主机名、内核发行版本、节点名、系统时间、硬件名称、硬件平台、处理器类型以及操作系统名称等信息。</p>
+<h4 id="uname命令"><a href="#uname命令" class="headerlink" title="uname命令"></a>uname命令</h4><p>uname命令用于查看系统内核与系统版本等信息，格式为：<code>uname [-a | -n]</code>。</p>
+<p>一般会固定搭配上<code>-a</code>参数<strong>来完整地查看</strong>当前系统的内核名称、主机名、内核发行版本、节点名、系统时间、硬件名称、硬件平台、处理器类型以及操作系统名称等信息。或直接使用<code>-n</code>参数<strong>只查看当前系统主机名</strong>。</p>
 <h4 id="uptime命令"><a href="#uptime命令" class="headerlink" title="uptime命令"></a>uptime命令</h4><p>uptime用于查看系统的<strong>负载信息</strong>，格式为：<code>uptime</code>。</p>
 <p>该条指令的输出格式为：<code>系统时间 系统已运行时间 连接数 1、5、15分钟内的系统平均负载</code>。就像这样：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20:41:02 up 39 min,  1 user,  load average: 0.38, 1.43, 1.17</span><br></pre></td></tr></table></figure>
@@ -826,18 +826,18 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <table>
 <thead>
 <tr>
-<th>参数</th>
-<th>作用</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>-f</td>
-<td>需要看的列数，如-f1：第一列</td>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">需要看的列数，如<code>-f1</code>：第一列</td>
 </tr>
 <tr>
-<td>-d</td>
-<td>设置间隔符号，如-d:：以冒号（：）为间隔</td>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">设置间隔符号，如<code>-d:</code>：以冒号（：）为间隔</td>
 </tr>
 </tbody>
 </table>
@@ -934,18 +934,22 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <table>
 <thead>
 <tr>
-<th>参数</th>
-<th>作用</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>-f</td>
-<td>强制删除，跳过确认信息</td>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">强制删除，跳过确认信息</td>
 </tr>
 <tr>
-<td>-r</td>
-<td>删除一个目录</td>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">删除一个目录</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:center">提示信息确定用户是否真的删除</td>
 </tr>
 </tbody>
 </table>
@@ -1105,7 +1109,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 </tr>
 </tbody>
 </table>
-<h4 id="read命令"><a href="#read命令" class="headerlink" title="read命令"></a>read命令</h4><p>read命令接收标准输入——即键盘的输入，或者其它文件描述符的输入，并将输入存在一个标准变量中。格式为：<code>read &#39;message&#39; varible</code>。</p>
+<h4 id="read命令"><a href="#read命令" class="headerlink" title="read命令"></a>read命令</h4><p>read命令接收标准输入——即键盘的输入，或者其它文件描述符的输入，并将输入存在一个标准变量中。格式为：<code>read -p &#39;message&#39; varible</code>。</p>
 <p>常用的参数如下：</p>
 <table>
 <thead>
@@ -1170,8 +1174,54 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <p>通过<code>su - root</code>获得超级管理员的权限之后，就会出现由于权限过大而管理混乱的情况。因此，<code>sudo</code>的好处就是：把某些超级权限有针对性的下放，并且不需要普通用户知道<code>root</code>的密码。这是一种受限制的<code>su</code>，显然<strong>更加安全</strong>。</p>
 <p><code>sudo</code>需要配置<code>/etc/sudoers</code>来进行授权。</p>
 </blockquote>
+<h4 id="fdisk命令"><a href="#fdisk命令" class="headerlink" title="fdisk命令"></a>fdisk命令</h4><p>fdisk命令用于管理磁盘分区，格式为：<code>fdisk [交互以外的参数] [磁盘名称]</code>。</p>
+<p>与前面讲述的命令参数不同，这条命令的某些<strong>参数是交互的</strong>，可以根据需求动态调整。</p>
+<p>常用的<strong>交互参数</strong>如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>m</td>
+<td>查看全部可用参数</td>
+</tr>
+<tr>
+<td>n</td>
+<td>添加新的分区</td>
+</tr>
+<tr>
+<td>d</td>
+<td>删除某个分区信息</td>
+</tr>
+<tr>
+<td>l</td>
+<td>列出所有可用的分区类型</td>
+</tr>
+<tr>
+<td>t</td>
+<td>改变某个分区的类型</td>
+</tr>
+<tr>
+<td>p</td>
+<td>查看分区信息</td>
+</tr>
+<tr>
+<td>w</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td>q</td>
+<td>不保存直接退出</td>
+</tr>
+</tbody>
+</table>
+<h4 id="df命令"><a href="#df命令" class="headerlink" title="df命令"></a>df命令</h4><p>df命令用于统计磁盘空间或文件系统的使用情况。格式为：<code>df</code>。</p>
 <h2 id="3-管道符、重定向与环境变量"><a href="#3-管道符、重定向与环境变量" class="headerlink" title="3.管道符、重定向与环境变量"></a>3.管道符、重定向与环境变量</h2><p>注意了注意了，本章所提及知识点的应用范围非常广。</p>
-<h3 id="3-1输入输出重定向"><a href="#3-1输入输出重定向" class="headerlink" title="3.1输入输出重定向"></a>3.1输入输出重定向</h3><p>简而言之，<strong>输入重定向是指把文件导入到命令中，而输出重定向则是把原本要输出到屏幕的信息写到指定文件中</strong>。</p>
+<h3 id="3-1输入输出重定向"><a href="#3-1输入输出重定向" class="headerlink" title="3.1输入输出重定向"></a>3.1输入输出重定向</h3><p>简而言之，<strong>输入重定向是指把文件导入到命令中</strong>，而<strong>输出重定向则是把原本要输出到屏幕的信息写到指定文件中</strong>。</p>
 <p>对重定向的默认方式为以下三种：<span id="file_desc"></span></p>
 <ul>
 <li>标准输入重定向<code>STDIN，文件描述符为0</code>：默认从键盘输入，也可从其它文件或命令中输入。</li>
@@ -1777,7 +1827,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <li>对<strong>普通文件</strong>：<strong>可读</strong>表示能够读取文件的实际内容，<strong>可写</strong>表示能够编辑、新增、修改、删除文件的实际内容，<strong>可执行</strong>则表示能够运行一个脚本程序</li>
 <li>对<strong>目录文件</strong>：<strong>可读</strong>表示能够读取目录内的文件列表，<strong>可写</strong>表示能够在目录内新增、删除、重命名文件，<strong>可执行</strong>则表示能够进入目录</li>
 </ul>
-<p>文件的读、写、执行权限可以简写为<code>r</code>、<code>w</code>、<code>x</code>，亦可以分别用数字<code>4</code>、<code>2</code>、<code>1</code>来表示。</p>
+<p>文件的<strong>读</strong>、<strong>写</strong>、<strong>执行</strong>权限可以简写为<code>r</code>、<code>w</code>、<code>x</code>，亦可以分别用数字<code>4</code>、<code>2</code>、<code>1</code>来表示。</p>
 <p>即：</p>
 <p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/linux-2.png" alt="文件权限"></p>
 <p>使用<code>ls -l</code>便可以看到一个文件的权限。</p>
@@ -1787,34 +1837,38 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <table>
 <thead>
 <tr>
-<th>目录名称</th>
-<th>逻辑上应放置的内容</th>
+<th style="text-align:left">目录名称</th>
+<th style="text-align:left">逻辑上应放置的内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>/boot</td>
-<td>开机所需文件：内核、开机菜单以及所需配置文件等</td>
+<td style="text-align:left">/boot</td>
+<td style="text-align:left">开机所需文件：内核、开机菜单以及所需配置文件等</td>
 </tr>
 <tr>
-<td>/dev</td>
-<td>以文件形式存放任何设备和接口</td>
+<td style="text-align:left">/dev</td>
+<td style="text-align:left">以文件形式存放任何设备和接口</td>
 </tr>
 <tr>
-<td>/etc</td>
-<td>系统配置文件</td>
+<td style="text-align:left">/etc</td>
+<td style="text-align:left">系统配置文件</td>
 </tr>
 <tr>
-<td>/root</td>
-<td>系统管理员的家目录</td>
+<td style="text-align:left">/root</td>
+<td style="text-align:left">系统管理员的家目录</td>
 </tr>
 <tr>
-<td>/home</td>
-<td>用户家目录</td>
+<td style="text-align:left">/home</td>
+<td style="text-align:left">用户家目录</td>
 </tr>
 <tr>
-<td>/lib</td>
-<td>开机时用到的函数库，以及/bin与/sbin下面的命令要调用的函数</td>
+<td style="text-align:left">/lib</td>
+<td style="text-align:left">开机时用到的函数库，以及/bin与/sbin下面的命令要调用的函数</td>
+</tr>
+<tr>
+<td style="text-align:left">/bin</td>
+<td style="text-align:left">存放单用户模式下还可以操作的命令，即Linux的基本命令</td>
 </tr>
 </tbody>
 </table>
@@ -1835,7 +1889,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <p>分区表中需要<strong>16字节</strong>来记录一个分区，因此最多记录4个分区。</p>
 <p>我们通常使用<code>3主分区+1扩展分区</code>、<code>扩展分区划分为多个逻辑分区</code>的方式创建多个分区，这时，扩展分区就成为了<strong>指向其它分区的指针</strong>，为单向链表结构。</p>
 </blockquote>
-<h2 id="RAID与LVM"><a href="#RAID与LVM" class="headerlink" title="RAID与LVM"></a>RAID与LVM</h2><h3 id="独立冗余磁盘阵列のRAID"><a href="#独立冗余磁盘阵列のRAID" class="headerlink" title="独立冗余磁盘阵列のRAID"></a>独立冗余磁盘阵列のRAID</h3><p>RAID通过把多个硬盘设备组合成一个容量更大、安全性更好的磁盘阵列，并把数据分割成多个区段后分别存放在各个不同的物理硬盘设备上，同时使用了分散读写技术来提升硬盘阵列整体的性能。</p>
+<h2 id="7-RAID与LVM"><a href="#7-RAID与LVM" class="headerlink" title="7.RAID与LVM"></a>7.RAID与LVM</h2><h3 id="7-1独立冗余磁盘阵列のRAID"><a href="#7-1独立冗余磁盘阵列のRAID" class="headerlink" title="7.1独立冗余磁盘阵列のRAID"></a>7.1独立冗余磁盘阵列のRAID</h3><p>RAID通过把多个硬盘设备组合成一个容量更大、安全性更好的磁盘阵列，并把数据分割成多个区段后分别存放在各个不同的物理硬盘设备上，同时使用了分散读写技术来提升硬盘阵列整体的性能。</p>
 <ul>
 <li><code>RAID 0</code>：提升硬盘设备的读写速度</li>
 </ul>
@@ -1857,11 +1911,11 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 </ul>
 <p>该技术至少需要4块硬盘来组建，其中先分别两i昂制作成RAID 1磁盘阵列，以保证数据的安全性；然后再对两个RAID 1磁盘阵列实施RAID 0技术，进一步提高硬盘设备的读写速度。</p>
 <p>在不考虑成本的情况下，RAID 10的<strong>各方面都超过了</strong>RAID 5。</p>
-<h3 id="逻辑卷管理器のLVM"><a href="#逻辑卷管理器のLVM" class="headerlink" title="逻辑卷管理器のLVM"></a>逻辑卷管理器のLVM</h3><h2 id="7-操作"><a href="#7-操作" class="headerlink" title="7.操作"></a>7.操作</h2><h3 id="7-1判断用户输入的成绩"><a href="#7-1判断用户输入的成绩" class="headerlink" title="7.1判断用户输入的成绩"></a>7.1判断用户输入的成绩</h3><p><span id="grep_used"></span></p>
+<h3 id="7-2逻辑卷管理器のLVM"><a href="#7-2逻辑卷管理器のLVM" class="headerlink" title="7.2逻辑卷管理器のLVM"></a>7.2逻辑卷管理器のLVM</h3><h2 id="8-操作"><a href="#8-操作" class="headerlink" title="8.操作"></a>8.操作</h2><h3 id="8-1判断用户输入的成绩"><a href="#8-1判断用户输入的成绩" class="headerlink" title="8.1判断用户输入的成绩"></a>8.1判断用户输入的成绩</h3><p><span id="grep_used"></span></p>
 <p>编写一个Shell脚本，使得能够接收用户输入的成绩，判断用户的输入是否合法，并给出相应的提示。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line">read -p "请输入你的成绩，并按下ENTER：" GRADE</span><br><span class="line">grade=`echo "$GRADE" | grep '[0-9]\&#123;0,3\&#125;'`</span><br><span class="line">minus=`echo "$GRADE" | grep '^-'`</span><br><span class="line">if [ -z $grade ];then</span><br><span class="line">echo "你输入了数字以外的字符"</span><br><span class="line">else if [ ! -z $grade ] &amp;&amp; [ ! -z $minus ];then</span><br><span class="line">echo "你输入了负数"</span><br><span class="line">elif [ $grade -ge 101 ];then</span><br><span class="line">echo "你的输入大于100"</span><br><span class="line">elif [ $grade -ge 85 ] &amp;&amp; [ $grade -le 100 ];then</span><br><span class="line">echo "你很棒"</span><br><span class="line">elif [ $grade -ge 60 ] &amp;&amp; [ $grade -le 84 ];then</span><br><span class="line">echo "你合格了"</span><br><span class="line">elif [ $grade -le 59 ];then</span><br><span class="line">echo "你不合格"</span><br><span class="line">fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
 <p>值得注意的是<code>read</code>命令的使用、管道命令符<code>|</code>的使用、Linux中的正则表达式。</p>
-<h3 id="7-2切换网卡信息"><a href="#7-2切换网卡信息" class="headerlink" title="7.2切换网卡信息"></a>7.2切换网卡信息</h3><p>编写一个Shell脚本，接收用户输入的参数，使之能够切换网络配置。</p>
+<h3 id="8-2切换网卡信息"><a href="#8-2切换网卡信息" class="headerlink" title="8.2切换网卡信息"></a>8.2切换网卡信息</h3><p>编写一个Shell脚本，接收用户输入的参数，使之能够切换网络配置。</p>
 <p>嗯，用Win用惯了的我居然想不到存在Linux不同版本的适配问题：我用的是<code>Ubuntu</code>，而教学用的是<code>Red Hat</code>。两个系统的文件结构存在一定的差异，当然<code>CentOS</code>自然也有不同。</p>
 <p>Ubuntu下并没有<code>/etc/sysconfig/*</code>，对于下面的文件夹需要到各个服务的存放位置分别寻找，如本实例用到的<code>/etc/sysconfig/network</code>对应Ubuntu中的<code>/etc/network/interfaces</code>文件。而CentOS虽然存在着这个文件夹，但是文件名称由<code>ifcfg-eno16777736</code>变成了较早之前的<code>ifcfg-eth0</code>。</p>
 <p>在下面的脚本中，我只考虑了Ubuntu和Ret Hat的差别，没有考虑CentOS。</p>
@@ -2003,7 +2057,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2136,7 +2190,7 @@ eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么要学习Linux"><span class="nav-number">1.</span> <span class="nav-text">1.为什么要学习Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-新手必须掌握的Linux命令"><span class="nav-number">2.</span> <span class="nav-text">2.新手必须掌握的Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1查看帮助命令"><span class="nav-number">2.1.</span> <span class="nav-text">2.1查看帮助命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2常用的系统工作命令"><span class="nav-number">2.2.</span> <span class="nav-text">2.2常用的系统工作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo命令"><span class="nav-number">2.2.1.</span> <span class="nav-text">echo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date命令"><span class="nav-number">2.2.2.</span> <span class="nav-text">date命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reboot命令"><span class="nav-number">2.2.3.</span> <span class="nav-text">reboot命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#poweroff命令"><span class="nav-number">2.2.4.</span> <span class="nav-text">poweroff命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wget命令"><span class="nav-number">2.2.5.</span> <span class="nav-text">wget命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ps命令"><span class="nav-number">2.2.6.</span> <span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top命令"><span class="nav-number">2.2.7.</span> <span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pidof命令"><span class="nav-number">2.2.8.</span> <span class="nav-text">pidof命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kill命令"><span class="nav-number">2.2.9.</span> <span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#killall命令"><span class="nav-number">2.2.10.</span> <span class="nav-text">killall命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3系统状态检测命令"><span class="nav-number">2.3.</span> <span class="nav-text">2.3系统状态检测命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ifconfig命令"><span class="nav-number">2.3.1.</span> <span class="nav-text">ifconfig命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uname命令"><span class="nav-number">2.3.2.</span> <span class="nav-text">uname命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">2.3.3.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free命令"><span class="nav-number">2.3.4.</span> <span class="nav-text">free命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#who命令"><span class="nav-number">2.3.5.</span> <span class="nav-text">who命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#last命令"><span class="nav-number">2.3.6.</span> <span class="nav-text">last命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#history命令"><span class="nav-number">2.3.7.</span> <span class="nav-text">history命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sosreport命令"><span class="nav-number">2.3.8.</span> <span class="nav-text">sosreport命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4工作目录切换命令"><span class="nav-number">2.4.</span> <span class="nav-text">2.4工作目录切换命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd命令"><span class="nav-number">2.4.1.</span> <span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd命令"><span class="nav-number">2.4.2.</span> <span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ls命令"><span class="nav-number">2.4.3.</span> <span class="nav-text">ls命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5文本文件编辑命令"><span class="nav-number">2.5.</span> <span class="nav-text">2.5文本文件编辑命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令"><span class="nav-number">2.5.1.</span> <span class="nav-text">cat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">2.5.2.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head命令"><span class="nav-number">2.5.3.</span> <span class="nav-text">head命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tail命令"><span class="nav-number">2.5.4.</span> <span class="nav-text">tail命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tr命令"><span class="nav-number">2.5.5.</span> <span class="nav-text">tr命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc命令"><span class="nav-number">2.5.6.</span> <span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stat命令"><span class="nav-number">2.5.7.</span> <span class="nav-text">stat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cut命令"><span class="nav-number">2.5.8.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#diff命令"><span class="nav-number">2.5.9.</span> <span class="nav-text">diff命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6文件目录管理命令"><span class="nav-number">2.6.</span> <span class="nav-text">2.6文件目录管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#touch命令"><span class="nav-number">2.6.1.</span> <span class="nav-text">touch命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir命令"><span class="nav-number">2.6.2.</span> <span class="nav-text">mkdir命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp命令"><span class="nav-number">2.6.3.</span> <span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv命令"><span class="nav-number">2.6.4.</span> <span class="nav-text">mv命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm命令"><span class="nav-number">2.6.5.</span> <span class="nav-text">rm命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dd命令"><span class="nav-number">2.6.6.</span> <span class="nav-text">dd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file命令"><span class="nav-number">2.6.7.</span> <span class="nav-text">file命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7打包压缩与搜索命令"><span class="nav-number">2.7.</span> <span class="nav-text">2.7打包压缩与搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tar命令"><span class="nav-number">2.7.1.</span> <span class="nav-text">tar命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep命令"><span class="nav-number">2.7.2.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find命令"><span class="nav-number">2.7.3.</span> <span class="nav-text">find命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8其它常用命令"><span class="nav-number">2.8.</span> <span class="nav-text">2.8其它常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ping命令"><span class="nav-number">2.8.1.</span> <span class="nav-text">ping命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#read命令"><span class="nav-number">2.8.2.</span> <span class="nav-text">read命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#su命令"><span class="nav-number">2.8.3.</span> <span class="nav-text">su命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-管道符、重定向与环境变量"><span class="nav-number">3.</span> <span class="nav-text">3.管道符、重定向与环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1输入输出重定向"><span class="nav-number">3.1.</span> <span class="nav-text">3.1输入输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入重定向"><span class="nav-number">3.1.1.</span> <span class="nav-text">输入重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出重定向"><span class="nav-number">3.1.2.</span> <span class="nav-text">输出重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2管道命令符"><span class="nav-number">3.2.</span> <span class="nav-text">3.2管道命令符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3命令行的通配符"><span class="nav-number">3.3.</span> <span class="nav-text">3.3命令行的通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4常见且有用的转义字符"><span class="nav-number">3.4.</span> <span class="nav-text">3.4常见且有用的转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5重要的环境变量"><span class="nav-number">3.5.</span> <span class="nav-text">3.5重要的环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Vim编辑器与Shell命令脚本"><span class="nav-number">4.</span> <span class="nav-text">4.Vim编辑器与Shell命令脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1Vim编辑器"><span class="nav-number">4.1.</span> <span class="nav-text">4.1Vim编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#练习：配置主机名称、hostname命令"><span class="nav-number">4.1.1.</span> <span class="nav-text">练习：配置主机名称、hostname命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2编写Shell脚本"><span class="nav-number">4.2.</span> <span class="nav-text">4.2编写Shell脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3Shell脚本的执行"><span class="nav-number">4.3.</span> <span class="nav-text">4.3Shell脚本的执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4高级Shell脚本"><span class="nav-number">4.4.</span> <span class="nav-text">4.4高级Shell脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接收用户输入的参数"><span class="nav-number">4.4.1.</span> <span class="nav-text">接收用户输入的参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断用户输入的参数"><span class="nav-number">4.4.2.</span> <span class="nav-text">判断用户输入的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#文件测试"><span class="nav-number">4.4.2.1.</span> <span class="nav-text">文件测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数值比较"><span class="nav-number">4.4.2.2.</span> <span class="nav-text">数值比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串比较"><span class="nav-number">4.4.2.3.</span> <span class="nav-text">字符串比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5流程控制语句"><span class="nav-number">4.5.</span> <span class="nav-text">4.5流程控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if条件测试语句"><span class="nav-number">4.5.1.</span> <span class="nav-text">if条件测试语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for条件循环语句"><span class="nav-number">4.5.2.</span> <span class="nav-text">for条件循环语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while条件循环语句"><span class="nav-number">4.5.3.</span> <span class="nav-text">while条件循环语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#case条件测试语句"><span class="nav-number">4.5.4.</span> <span class="nav-text">case条件测试语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-用户身份与文件权限"><span class="nav-number">5.</span> <span class="nav-text">5.用户身份与文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1用户身份与能力"><span class="nav-number">5.1.</span> <span class="nav-text">5.1用户身份与能力</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#useradd命令"><span class="nav-number">5.1.1.</span> <span class="nav-text">useradd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#groupadd命令"><span class="nav-number">5.1.2.</span> <span class="nav-text">groupadd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usermod命令"><span class="nav-number">5.1.3.</span> <span class="nav-text">usermod命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#passwd命令"><span class="nav-number">5.1.4.</span> <span class="nav-text">passwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#userdel命令"><span class="nav-number">5.1.5.</span> <span class="nav-text">userdel命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2文件权限与归属"><span class="nav-number">5.2.</span> <span class="nav-text">5.2文件权限与归属</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chmod命令"><span class="nav-number">5.2.1.</span> <span class="nav-text">chmod命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-存储结构与硬盘划分"><span class="nav-number">6.</span> <span class="nav-text">6.存储结构与硬盘划分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的目录划分"><span class="nav-number">6.1.</span> <span class="nav-text">常见的目录划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬盘的命名与分区"><span class="nav-number">6.2.</span> <span class="nav-text">硬盘的命名与分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RAID与LVM"><span class="nav-number">7.</span> <span class="nav-text">RAID与LVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#独立冗余磁盘阵列のRAID"><span class="nav-number">7.1.</span> <span class="nav-text">独立冗余磁盘阵列のRAID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑卷管理器のLVM"><span class="nav-number">7.2.</span> <span class="nav-text">逻辑卷管理器のLVM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-操作"><span class="nav-number">8.</span> <span class="nav-text">7.操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1判断用户输入的成绩"><span class="nav-number">8.1.</span> <span class="nav-text">7.1判断用户输入的成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2切换网卡信息"><span class="nav-number">8.2.</span> <span class="nav-text">7.2切换网卡信息</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么要学习Linux"><span class="nav-number">1.</span> <span class="nav-text">1.为什么要学习Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-新手必须掌握的Linux命令"><span class="nav-number">2.</span> <span class="nav-text">2.新手必须掌握的Linux命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1查看帮助命令"><span class="nav-number">2.1.</span> <span class="nav-text">2.1查看帮助命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2常用的系统工作命令"><span class="nav-number">2.2.</span> <span class="nav-text">2.2常用的系统工作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo命令"><span class="nav-number">2.2.1.</span> <span class="nav-text">echo命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date命令"><span class="nav-number">2.2.2.</span> <span class="nav-text">date命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reboot命令"><span class="nav-number">2.2.3.</span> <span class="nav-text">reboot命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#poweroff命令"><span class="nav-number">2.2.4.</span> <span class="nav-text">poweroff命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wget命令"><span class="nav-number">2.2.5.</span> <span class="nav-text">wget命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ps命令"><span class="nav-number">2.2.6.</span> <span class="nav-text">ps命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#top命令"><span class="nav-number">2.2.7.</span> <span class="nav-text">top命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pidof命令"><span class="nav-number">2.2.8.</span> <span class="nav-text">pidof命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kill命令"><span class="nav-number">2.2.9.</span> <span class="nav-text">kill命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#killall命令"><span class="nav-number">2.2.10.</span> <span class="nav-text">killall命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3系统状态检测命令"><span class="nav-number">2.3.</span> <span class="nav-text">2.3系统状态检测命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ifconfig命令"><span class="nav-number">2.3.1.</span> <span class="nav-text">ifconfig命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uname命令"><span class="nav-number">2.3.2.</span> <span class="nav-text">uname命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uptime命令"><span class="nav-number">2.3.3.</span> <span class="nav-text">uptime命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free命令"><span class="nav-number">2.3.4.</span> <span class="nav-text">free命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#who命令"><span class="nav-number">2.3.5.</span> <span class="nav-text">who命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#last命令"><span class="nav-number">2.3.6.</span> <span class="nav-text">last命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#history命令"><span class="nav-number">2.3.7.</span> <span class="nav-text">history命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sosreport命令"><span class="nav-number">2.3.8.</span> <span class="nav-text">sosreport命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4工作目录切换命令"><span class="nav-number">2.4.</span> <span class="nav-text">2.4工作目录切换命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd命令"><span class="nav-number">2.4.1.</span> <span class="nav-text">pwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd命令"><span class="nav-number">2.4.2.</span> <span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ls命令"><span class="nav-number">2.4.3.</span> <span class="nav-text">ls命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5文本文件编辑命令"><span class="nav-number">2.5.</span> <span class="nav-text">2.5文本文件编辑命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat命令"><span class="nav-number">2.5.1.</span> <span class="nav-text">cat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more命令"><span class="nav-number">2.5.2.</span> <span class="nav-text">more命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head命令"><span class="nav-number">2.5.3.</span> <span class="nav-text">head命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tail命令"><span class="nav-number">2.5.4.</span> <span class="nav-text">tail命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tr命令"><span class="nav-number">2.5.5.</span> <span class="nav-text">tr命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc命令"><span class="nav-number">2.5.6.</span> <span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stat命令"><span class="nav-number">2.5.7.</span> <span class="nav-text">stat命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cut命令"><span class="nav-number">2.5.8.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#diff命令"><span class="nav-number">2.5.9.</span> <span class="nav-text">diff命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6文件目录管理命令"><span class="nav-number">2.6.</span> <span class="nav-text">2.6文件目录管理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#touch命令"><span class="nav-number">2.6.1.</span> <span class="nav-text">touch命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir命令"><span class="nav-number">2.6.2.</span> <span class="nav-text">mkdir命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp命令"><span class="nav-number">2.6.3.</span> <span class="nav-text">cp命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv命令"><span class="nav-number">2.6.4.</span> <span class="nav-text">mv命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm命令"><span class="nav-number">2.6.5.</span> <span class="nav-text">rm命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dd命令"><span class="nav-number">2.6.6.</span> <span class="nav-text">dd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#file命令"><span class="nav-number">2.6.7.</span> <span class="nav-text">file命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7打包压缩与搜索命令"><span class="nav-number">2.7.</span> <span class="nav-text">2.7打包压缩与搜索命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tar命令"><span class="nav-number">2.7.1.</span> <span class="nav-text">tar命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep命令"><span class="nav-number">2.7.2.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find命令"><span class="nav-number">2.7.3.</span> <span class="nav-text">find命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8其它常用命令"><span class="nav-number">2.8.</span> <span class="nav-text">2.8其它常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ping命令"><span class="nav-number">2.8.1.</span> <span class="nav-text">ping命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#read命令"><span class="nav-number">2.8.2.</span> <span class="nav-text">read命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#su命令"><span class="nav-number">2.8.3.</span> <span class="nav-text">su命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fdisk命令"><span class="nav-number">2.8.4.</span> <span class="nav-text">fdisk命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#df命令"><span class="nav-number">2.8.5.</span> <span class="nav-text">df命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-管道符、重定向与环境变量"><span class="nav-number">3.</span> <span class="nav-text">3.管道符、重定向与环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1输入输出重定向"><span class="nav-number">3.1.</span> <span class="nav-text">3.1输入输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入重定向"><span class="nav-number">3.1.1.</span> <span class="nav-text">输入重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出重定向"><span class="nav-number">3.1.2.</span> <span class="nav-text">输出重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2管道命令符"><span class="nav-number">3.2.</span> <span class="nav-text">3.2管道命令符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3命令行的通配符"><span class="nav-number">3.3.</span> <span class="nav-text">3.3命令行的通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4常见且有用的转义字符"><span class="nav-number">3.4.</span> <span class="nav-text">3.4常见且有用的转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5重要的环境变量"><span class="nav-number">3.5.</span> <span class="nav-text">3.5重要的环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Vim编辑器与Shell命令脚本"><span class="nav-number">4.</span> <span class="nav-text">4.Vim编辑器与Shell命令脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1Vim编辑器"><span class="nav-number">4.1.</span> <span class="nav-text">4.1Vim编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#练习：配置主机名称、hostname命令"><span class="nav-number">4.1.1.</span> <span class="nav-text">练习：配置主机名称、hostname命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2编写Shell脚本"><span class="nav-number">4.2.</span> <span class="nav-text">4.2编写Shell脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3Shell脚本的执行"><span class="nav-number">4.3.</span> <span class="nav-text">4.3Shell脚本的执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4高级Shell脚本"><span class="nav-number">4.4.</span> <span class="nav-text">4.4高级Shell脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接收用户输入的参数"><span class="nav-number">4.4.1.</span> <span class="nav-text">接收用户输入的参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断用户输入的参数"><span class="nav-number">4.4.2.</span> <span class="nav-text">判断用户输入的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#文件测试"><span class="nav-number">4.4.2.1.</span> <span class="nav-text">文件测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数值比较"><span class="nav-number">4.4.2.2.</span> <span class="nav-text">数值比较</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串比较"><span class="nav-number">4.4.2.3.</span> <span class="nav-text">字符串比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5流程控制语句"><span class="nav-number">4.5.</span> <span class="nav-text">4.5流程控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if条件测试语句"><span class="nav-number">4.5.1.</span> <span class="nav-text">if条件测试语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for条件循环语句"><span class="nav-number">4.5.2.</span> <span class="nav-text">for条件循环语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while条件循环语句"><span class="nav-number">4.5.3.</span> <span class="nav-text">while条件循环语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#case条件测试语句"><span class="nav-number">4.5.4.</span> <span class="nav-text">case条件测试语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-用户身份与文件权限"><span class="nav-number">5.</span> <span class="nav-text">5.用户身份与文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1用户身份与能力"><span class="nav-number">5.1.</span> <span class="nav-text">5.1用户身份与能力</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#useradd命令"><span class="nav-number">5.1.1.</span> <span class="nav-text">useradd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#groupadd命令"><span class="nav-number">5.1.2.</span> <span class="nav-text">groupadd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usermod命令"><span class="nav-number">5.1.3.</span> <span class="nav-text">usermod命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#passwd命令"><span class="nav-number">5.1.4.</span> <span class="nav-text">passwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#userdel命令"><span class="nav-number">5.1.5.</span> <span class="nav-text">userdel命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2文件权限与归属"><span class="nav-number">5.2.</span> <span class="nav-text">5.2文件权限与归属</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#chmod命令"><span class="nav-number">5.2.1.</span> <span class="nav-text">chmod命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-存储结构与硬盘划分"><span class="nav-number">6.</span> <span class="nav-text">6.存储结构与硬盘划分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的目录划分"><span class="nav-number">6.1.</span> <span class="nav-text">常见的目录划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬盘的命名与分区"><span class="nav-number">6.2.</span> <span class="nav-text">硬盘的命名与分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-RAID与LVM"><span class="nav-number">7.</span> <span class="nav-text">7.RAID与LVM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1独立冗余磁盘阵列のRAID"><span class="nav-number">7.1.</span> <span class="nav-text">7.1独立冗余磁盘阵列のRAID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2逻辑卷管理器のLVM"><span class="nav-number">7.2.</span> <span class="nav-text">7.2逻辑卷管理器のLVM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-操作"><span class="nav-number">8.</span> <span class="nav-text">8.操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1判断用户输入的成绩"><span class="nav-number">8.1.</span> <span class="nav-text">8.1判断用户输入的成绩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2切换网卡信息"><span class="nav-number">8.2.</span> <span class="nav-text">8.2切换网卡信息</span></a></li></ol></li></ol></div>
             
 
           </div>
