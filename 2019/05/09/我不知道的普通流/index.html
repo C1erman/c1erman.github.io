@@ -104,18 +104,18 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow includes">
+  <meta name="description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS 2.1的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow inclu">
 <meta name="keywords" content="-CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我不知道的普通流">
 <meta property="og:url" content="http://seefun.club/2019/05/09/我不知道的普通流/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow includes">
+<meta property="og:description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS 2.1的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow inclu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-09T13:32:34.187Z">
+<meta property="og:updated_time" content="2019-05-10T12:04:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的普通流">
-<meta name="twitter:description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow includes">
+<meta name="twitter:description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS 2.1的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow inclu">
 
 
 
@@ -374,12 +374,24 @@
                 
               
 
-              <time title="创建时间：2019-05-09 11:16:12 / 修改时间：21:32:34" itemprop="dateCreated datePublished" datetime="2019-05-09T11:16:12+08:00">2019-05-09</time>
+              <time title="创建时间：2019-05-09 11:16:12" itemprop="dateCreated datePublished" datetime="2019-05-09T11:16:12+08:00">2019-05-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-10 20:04:30" itemprop="dateModified" datetime="2019-05-10T20:04:30+08:00">2019-05-10</time>
               
             
           </span>
@@ -431,8 +443,8 @@
       
 
       
-        <p>查看规范，是解决模糊定义的最直接手段。</p>
-<p>普通流，即<strong>Normal Flow</strong>，是CSS的鼎鼎大名的定位机制之一，其它两个定位机制为：<strong>浮动</strong>、<strong>绝对定位</strong>。</p>
+        <p>查看<a href="https://www.w3.org/TR/CSS2/visuren.html#normal-flow" target="_blank" rel="noopener">规范</a>，是解决模糊定义的最直接手段。</p>
+<p>普通流，即<strong>Normal Flow</strong>，是CSS 2.1的鼎鼎大名的定位机制之一，其它两个定位机制为：<strong>浮动</strong>、<strong>绝对定位</strong>。</p>
 <p>普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在<strong>块级元素</strong>：<code>Block Boxes</code>或<strong>行内元素</strong>：<code>Inline Boxes</code>中被Formatted。</p>
 <blockquote>
 <p><strong>Normal Flow</strong>：</p>
@@ -441,6 +453,11 @@
 <a id="more"></a>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>正如我们在文章一开始就提到的那样：</p>
 <p>任何被渲染的元素都有一个盒子模型，这个盒子模型或者是<code>Block</code>级的，或者是<code>Inline</code>级的，但不可能同时属于两者。</p>
+<p>而对两种盒子来说：</p>
+<ul>
+<li><code>block</code>元素的宽、高均可设置，如果不设置，宽默认为<code>content</code>的宽，高默认为<code>parent</code>的高</li>
+<li><code>inline</code>元素宽、高均不能设置，由<code>content</code>的宽、高决定</li>
+</ul>
 <h2 id="块格式化上下文：Block-Formatting-Contexts"><a href="#块格式化上下文：Block-Formatting-Contexts" class="headerlink" title="块格式化上下文：Block Formatting Contexts"></a>块格式化上下文：<code>Block Formatting Contexts</code></h2><p><code>Block</code>级的盒子模型将在块格式化上下文中被Formatted。</p>
 <h3 id="块格式化上下文的作用"><a href="#块格式化上下文的作用" class="headerlink" title="块格式化上下文的作用"></a>块格式化上下文的作用</h3><ul>
 <li>在一个块格式化上下文中，各盒子模型将被一个接一个的<strong>垂直排列</strong>，两个兄弟框之间的垂直距离由<code>margin</code>属性决定，但相邻的<strong>块级盒子</strong>之间的垂直<code>margin</code><strong>将会被重叠</strong>。就像这样：</li>
@@ -449,17 +466,17 @@
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.div-1&#123;</span><br><span class="line">	width :100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">	background-color: #ea66a6;</span><br><span class="line">	margin: 20px 0;</span><br><span class="line">&#125;</span><br><span class="line">.div-2&#123;</span><br><span class="line">	width : 100px;</span><br><span class="line">	height :100px;</span><br><span class="line">	background-color: #ffc20e;</span><br><span class="line">	margin-top: 10px: </span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>在块格式化上下文中，除非创建一个新的块格式化上下文，否则即使存在浮动，<strong>每个盒子的左边缘也还紧密接触包含盒子的左边缘</strong>。换句话说，除非创建一个新的块格式化上下，否则块级元素的宽度不受<code>content</code>中浮动元素的影响。就像这样：</p>
-<p>未创建块格式化上下文，<strong>父元素直接不见了</strong>：</p>
+<li><p>在块格式化上下文中，除非创建一个新的块格式化上下文，否则即使存在浮动，<strong>每个盒子的左边缘也还紧密接触包含自身的盒子的左边缘</strong>。换句话说，除非创建一个新的块格式化上下文，否则块级元素的宽度不受周围浮动元素的影响。就像这样：</p>
+<p>div-2未创建块格式化上下文，<strong>div-2排列不受div-1的浮动影响</strong>：</p>
 </li>
 </ul>
-<div style="background:#f69c9f;"><div style="width:100px;height:50px;background:#7fb80e;float:left"></div><div style="width:200px;height:100px;background:#ef4136;float:left"></div></div>
+<div style="background:#f69c9f;height:100px;width:250px;overflow:auto"><div style="background:#ea66a6;float:left;margin-top:10px;">DIV-1</div><div style="background:#ffc20e;">DIV-2</div></div>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.div&#123;</span><br><span class="line">	background: #f69c9f;</span><br><span class="line">&#125;</span><br><span class="line">.div-1&#123;</span><br><span class="line">	width :100px;</span><br><span class="line">	height: 50px;</span><br><span class="line">	background-color: #7fb80e;</span><br><span class="line">    float : left;</span><br><span class="line">&#125;</span><br><span class="line">.div-2&#123;</span><br><span class="line">	width : 200px;</span><br><span class="line">	height : 100px;</span><br><span class="line">	background-color: #ef4136;</span><br><span class="line">	float : left; </span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>​       创建了块格式化上下文：</p>
-<div style="background:#f69c9f;float:left"><div style="width:100px;height:50px;background:#7fb80e;float:left"></div><div style="width:200px;height:100px;background:#ef4136;float:left"></div></div>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.div&#123;</span><br><span class="line">	background: #f69c9f;</span><br><span class="line">	height : 100px;</span><br><span class="line">	width : 250px;</span><br><span class="line">    //通过overflow建立块格式化上下文</span><br><span class="line">	overflow : auto;</span><br><span class="line">&#125;</span><br><span class="line">.div-1&#123;</span><br><span class="line">	background-color: #ea66a6;</span><br><span class="line">    float : left;</span><br><span class="line">&#125;</span><br><span class="line">.div-2&#123;</span><br><span class="line">	background-color: #ffc20e; </span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​       div-2创建了块格式化上下文：</p>
+<div style="background:#f69c9f;height:100px;width:250px;overflow:auto"><div style="background:#ea66a6;float:left;margin-top:10px;">DIV-1</div><div style="background:#ffc20e;overflow:auto">DIV-2</div></div>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.div&#123;</span><br><span class="line">	background: #f69c9f;</span><br><span class="line">    //通过float创建了块格式化上下文</span><br><span class="line">    float : left;</span><br><span class="line">&#125;</span><br><span class="line">.div-1&#123;</span><br><span class="line">	width :100px;</span><br><span class="line">	height: 50px;</span><br><span class="line">	background-color: #7fb80e;</span><br><span class="line">    float : left;</span><br><span class="line">&#125;</span><br><span class="line">.div-2&#123;</span><br><span class="line">	width : 200px;</span><br><span class="line">	height : 100px;</span><br><span class="line">	background-color: #ef4136;</span><br><span class="line">	float : left; </span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.div&#123;</span><br><span class="line">	background: #f69c9f;</span><br><span class="line">	height : 100px;</span><br><span class="line">	width : 250px;</span><br><span class="line">    //通过overflow建立块格式化上下文</span><br><span class="line">	overflow : auto;</span><br><span class="line">&#125;</span><br><span class="line">.div-1&#123;</span><br><span class="line">	background-color: #ea66a6;</span><br><span class="line">    float : left;</span><br><span class="line">&#125;</span><br><span class="line">.div-2&#123;</span><br><span class="line">	background-color: #ffc20e; </span><br><span class="line">	//通过overflow建立块格式化上下文</span><br><span class="line">	overflow : auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'div-2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="创建块格式化上下文"><a href="#创建块格式化上下文" class="headerlink" title="创建块格式化上下文"></a>创建块格式化上下文</h3><p>元素为以下情况时，会<strong>为元素的contents</strong>建立新的块格式化上下文：</p>
 <ul>
 <li>根元素</li>
@@ -472,6 +489,21 @@
 </ul>
 </li>
 <li><code>overflow</code>的值不为<code>visible</code>的元素</li>
+</ul>
+<h2 id="内联格式化上下文：Inline-formatting-contexts"><a href="#内联格式化上下文：Inline-formatting-contexts" class="headerlink" title="内联格式化上下文：Inline formatting contexts"></a>内联格式化上下文：<code>Inline formatting contexts</code></h2><p><code>Inline</code>级的盒子模型将在内联格式化上下文中被Formatted。</p>
+<h3 id="内联格式化上下文的作用"><a href="#内联格式化上下文的作用" class="headerlink" title="内联格式化上下文的作用"></a>内联格式化上下文的作用</h3><ul>
+<li>在内联格式化上下文中，各盒子模型将从容器的顶端开始，一个接一个的水平排列。水平<code>margin</code>、<code>border</code>、<code>padding</code>对各盒子模型起作用：</li>
+</ul>
+<p><span style="background:#00ae9d;padding-right:50px">U ARE CUTE</span><span style="background:#f36c21;margin-left:20px">YES</span></p>
+<ul>
+<li>盒子可以以不同的方式进行垂直对齐：顶部对齐、底部对齐、<code>content</code>内文本基线对齐等：</li>
+</ul>
+<p><span style="background:#f15a22;vertical-align:bottom">AM I CUTE ?</span></p>
+<ul>
+<li>一个水平行中的所有<code>inline</code>盒子组成了名为<code>line box</code>的矩形区域，<code>line box</code>的宽度由所有包含的块、浮动元素决定，<code>line box</code>的高度始终包裹的下所有的<code>inline</code>盒子，<code>line box</code>堆叠时从不重叠。</li>
+<li>通常，<code>line box</code>的左边缘紧密接触其包含盒子的左边缘，<code>line box</code>的右边缘紧密接触其包含盒子的右边缘——除非有浮动元素缩小了可用空间。</li>
+<li>当<code>line box</code>的宽度小于容器的宽度时，<code>text-align</code>属性将决定<code>line box</code>内的水平分布。</li>
+<li>当<code>line box</code>里面的<code>inline</code>盒子超出<code>line box</code>的宽度时，将会被拆分未为多个<code>line box</code>，如果使用了<code>white-space : nowrap</code>等不允许<code>inline</code>盒子发生中断时，<code>inline</code>盒子将溢出容器。</li>
 </ul>
 
       
@@ -726,7 +758,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块格式化上下文：Block-Formatting-Contexts"><span class="nav-number">2.</span> <span class="nav-text">块格式化上下文：Block Formatting Contexts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文的作用"><span class="nav-number">2.1.</span> <span class="nav-text">块格式化上下文的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建块格式化上下文"><span class="nav-number">2.2.</span> <span class="nav-text">创建块格式化上下文</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块格式化上下文：Block-Formatting-Contexts"><span class="nav-number">2.</span> <span class="nav-text">块格式化上下文：Block Formatting Contexts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文的作用"><span class="nav-number">2.1.</span> <span class="nav-text">块格式化上下文的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建块格式化上下文"><span class="nav-number">2.2.</span> <span class="nav-text">创建块格式化上下文</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联格式化上下文：Inline-formatting-contexts"><span class="nav-number">3.</span> <span class="nav-text">内联格式化上下文：Inline formatting contexts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联格式化上下文的作用"><span class="nav-number">3.1.</span> <span class="nav-text">内联格式化上下文的作用</span></a></li></ol></li></ol></div>
             
 
           </div>
