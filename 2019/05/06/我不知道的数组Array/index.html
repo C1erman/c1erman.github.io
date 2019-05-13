@@ -104,18 +104,18 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除。">
+  <meta name="description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除，那些操作破坏数组也要搞清。">
 <meta name="keywords" content="-JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我不知道的数组Array">
 <meta property="og:url" content="http://seefun.club/2019/05/06/我不知道的数组Array/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除。">
+<meta property="og:description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除，那些操作破坏数组也要搞清。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-08T12:02:27.121Z">
+<meta property="og:updated_time" content="2019-05-13T13:01:58.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的数组Array">
-<meta name="twitter:description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除。">
+<meta name="twitter:description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除，那些操作破坏数组也要搞清。">
 
 
 
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-08 20:02:27" itemprop="dateModified" datetime="2019-05-08T20:02:27+08:00">2019-05-08</time>
+                <time title="修改时间：2019-05-13 21:01:58" itemprop="dateModified" datetime="2019-05-13T21:01:58+08:00">2019-05-13</time>
               
             
           </span>
@@ -445,7 +445,7 @@
       
         <p><code>Array</code>的遍历方法怎么那么多。</p>
 <p>且不说部署了<code>iterator</code>遍历器的<code>Array</code>能够使用<code>for...of</code>语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。</p>
-<p>而数组中含有的空缺也要想办法清除。</p>
+<p>而数组中含有的空缺也要想办法清除，那些操作破坏数组也要搞清。</p>
 <a id="more"></a>
 <h2 id="遍历的划分"><a href="#遍历的划分" class="headerlink" title="遍历的划分"></a>遍历的划分</h2><p>我们可以将数组原型提供的遍历方法分为三种：</p>
 <ul>
@@ -496,7 +496,63 @@
 <li><code>Array.prototype.reduceRight(accumlator, currentValue, currentIndex, sourceArray), initialValue?)</code></li>
 </ul>
 <p>与<code>reduce()</code>不同的是，该函数<strong>从右到左</strong>进行遍历。</p>
-<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><h3 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h3><p>给定长度的数组中只有空缺：</p>
+<h2 id="数组原型方法备忘录"><a href="#数组原型方法备忘录" class="headerlink" title="数组原型方法备忘录"></a>数组原型方法备忘录</h2><h3 id="添加和删除元素：破坏性地"><a href="#添加和删除元素：破坏性地" class="headerlink" title="添加和删除元素：破坏性地"></a>添加和删除元素：破坏性地</h3><ul>
+<li><code>Array.prototype.shift()</code></li>
+</ul>
+<p>移除并返回<code>index</code>为<code>0</code>的数组元素，之后数组长度减一。</p>
+<ul>
+<li><code>Array.prototype.unshift(ele1?, array1?, ...)</code></li>
+</ul>
+<p>在数组最前面增加<strong>数组或多个元素</strong>，返回新的数组长度。</p>
+<ul>
+<li><code>Array.prototype.pop()</code></li>
+</ul>
+<p>移除并返回数组最后的元素，之后数组长度减一。</p>
+<ul>
+<li><code>Array.prototype.push(ele1?, array1?, ...)</code></li>
+</ul>
+<p>在数组最后面增加数组或多个元素，返回新的数组长度。</p>
+<blockquote>
+<p><code>apply()</code>实现ES6的<code>rest</code>参数：</p>
+<p><code>Array.prototype.push.apply(array1, array2)</code>从功能上来看等于<code>[...array1, ...array2]</code></p>
+</blockquote>
+<ul>
+<li><code>Array.prototype.splice(start, deleteCount?, ele1?, ele2?, ...)</code></li>
+</ul>
+<p>从<code>index</code>为<code>start</code>开始，移除<code>deleteCount</code>个元素，插入给定的元素们，该方法<strong>返回被移除的元素</strong>。</p>
+<p><code>start</code>可为负值，但负数的绝对值大于数组长度时则为<code>0</code>，如果<code>deleteCount</code>被省略了，那么就会删除<code>start</code>之后的所有元素。</p>
+<h3 id="排序和颠倒元素顺序：破坏性地"><a href="#排序和颠倒元素顺序：破坏性地" class="headerlink" title="排序和颠倒元素顺序：破坏性地"></a>排序和颠倒元素顺序：破坏性地</h3><ul>
+<li><code>Array.prototype.reverse()</code></li>
+</ul>
+<p>颠倒数组中的元素，并返回该数组。</p>
+<ul>
+<li><code>Array.prototype.sort(givenFunction(firstEle, secondEle)?)</code></li>
+</ul>
+<p>依据依靠Unicode排序的默认的函数或给定的函数进行数组排序，返回排序后的数组。</p>
+<h3 id="合并、切分和连接：非破坏性地"><a href="#合并、切分和连接：非破坏性地" class="headerlink" title="合并、切分和连接：非破坏性地"></a>合并、切分和连接：非破坏性地</h3><ul>
+<li><code>Array.prototype.concat(ele1?, array1?, array2?, ...)</code></li>
+</ul>
+<p><strong>创建一个新数组</strong>，该数组合并了参数中的所有元素，包括数组和单个元素，该方法返回新数组。</p>
+<ul>
+<li><code>Array.prototype.slice(start?, end?)</code></li>
+</ul>
+<p>创建一个新数组，把本数组从<code>begin</code>开始到<code>end-1</code>的元素复制到新数组中，并返回新数组。</p>
+<p><code>start</code>默认值为<code>0</code>，<code>end</code>默认值为<code>Array.length</code>。</p>
+<ul>
+<li><code>Array.prototype.join(separator?)</code></li>
+</ul>
+<p>对所有数组元素使用<code>toString()</code>，并用<code>separator</code>连接字符串并返回这个字符串，<code>separator</code>默认值为<code>&#39;,&#39;</code>。</p>
+<h3 id="值的查找：非破坏性地"><a href="#值的查找：非破坏性地" class="headerlink" title="值的查找：非破坏性地"></a>值的查找：非破坏性地</h3><ul>
+<li><code>Array.prototype.indexOf(searchValue, startIndex?)</code></li>
+</ul>
+<p>从数组的<code>startIndex</code>开始查找<code>searchValue</code>，返回第一次出现<code>searchValue</code>的<code>index</code>，如果没有找到则返回<code>-1</code>。</p>
+<p>查找时使用严格相等<code>===</code>进行比较，注意<code>NaN!==NaN</code>，<code>startIndex</code>默认为<code>0</code>。</p>
+<ul>
+<li><code>Array.prototype.lastIndexOf(searchValue, startIndex?)</code></li>
+</ul>
+<p>从数组的<code>startIndex</code>开始<strong>反向</strong>查找<code>searchValue</code>，返回第一次出现<code>searchValue</code>的<code>index</code>，如果没有找到则返回<code>-1</code>。</p>
+<p><code>startIndex</code>默认为<code>Array.length</code>。</p>
+<h3 id="所有的遍历方法：非破坏性地"><a href="#所有的遍历方法：非破坏性地" class="headerlink" title="所有的遍历方法：非破坏性地"></a>所有的遍历方法：非破坏性地</h3><h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><h3 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h3><p>给定长度的数组中只有空缺：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</span><br><span class="line">a.toString();  <span class="comment">//',,'</span></span><br></pre></td></tr></table></figure>
 <p>因此推荐使用字面量来声明数组。</p>
 <h3 id="数组的空缺"><a href="#数组的空缺" class="headerlink" title="数组的空缺"></a>数组的空缺</h3><p>有些操作会涉及到空缺，而另一些操作则不会：</p>
@@ -782,7 +838,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历的划分"><span class="nav-number">1.</span> <span class="nav-text">遍历的划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测方法"><span class="nav-number">2.</span> <span class="nav-text">检测方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换方法"><span class="nav-number">3.</span> <span class="nav-text">转换方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规约方法"><span class="nav-number">4.</span> <span class="nav-text">规约方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话"><span class="nav-number">5.</span> <span class="nav-text">题外话</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的声明"><span class="nav-number">5.1.</span> <span class="nav-text">数组的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的空缺"><span class="nav-number">5.2.</span> <span class="nav-text">数组的空缺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除数组中的空缺"><span class="nav-number">5.3.</span> <span class="nav-text">移除数组中的空缺</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历的划分"><span class="nav-number">1.</span> <span class="nav-text">遍历的划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测方法"><span class="nav-number">2.</span> <span class="nav-text">检测方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换方法"><span class="nav-number">3.</span> <span class="nav-text">转换方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规约方法"><span class="nav-number">4.</span> <span class="nav-text">规约方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组原型方法备忘录"><span class="nav-number">5.</span> <span class="nav-text">数组原型方法备忘录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加和删除元素：破坏性地"><span class="nav-number">5.1.</span> <span class="nav-text">添加和删除元素：破坏性地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序和颠倒元素顺序：破坏性地"><span class="nav-number">5.2.</span> <span class="nav-text">排序和颠倒元素顺序：破坏性地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并、切分和连接：非破坏性地"><span class="nav-number">5.3.</span> <span class="nav-text">合并、切分和连接：非破坏性地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值的查找：非破坏性地"><span class="nav-number">5.4.</span> <span class="nav-text">值的查找：非破坏性地</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#所有的遍历方法：非破坏性地"><span class="nav-number">5.5.</span> <span class="nav-text">所有的遍历方法：非破坏性地</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题外话"><span class="nav-number">6.</span> <span class="nav-text">题外话</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的声明"><span class="nav-number">6.1.</span> <span class="nav-text">数组的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的空缺"><span class="nav-number">6.2.</span> <span class="nav-text">数组的空缺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除数组中的空缺"><span class="nav-number">6.3.</span> <span class="nav-text">移除数组中的空缺</span></a></li></ol></li></ol></div>
             
 
           </div>

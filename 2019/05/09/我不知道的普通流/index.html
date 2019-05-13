@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS 2.1的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow inclu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-10T12:04:30.000Z">
+<meta property="og:updated_time" content="2019-05-13T13:39:48.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的普通流">
 <meta name="twitter:description" content="查看规范，是解决模糊定义的最直接手段。 普通流，即Normal Flow，是CSS 2.1的鼎鼎大名的定位机制之一，其它两个定位机制为：浮动、绝对定位。 普通流就是在多数情况下呈现WEB页面的方式，所有的HTML元素都在块级元素：Block Boxes或行内元素：Inline Boxes中被Formatted。  Normal Flow： In CSS 2.1, normal flow inclu">
@@ -391,7 +391,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-10 20:04:30" itemprop="dateModified" datetime="2019-05-10T20:04:30+08:00">2019-05-10</time>
+                <time title="修改时间：2019-05-13 21:39:48" itemprop="dateModified" datetime="2019-05-13T21:39:48+08:00">2019-05-13</time>
               
             
           </span>
@@ -498,10 +498,15 @@
 <ul>
 <li>盒子可以以不同的方式进行垂直对齐：顶部对齐、底部对齐、<code>content</code>内文本基线对齐等：</li>
 </ul>
-<p><span style="background:#f15a22;vertical-align:bottom">AM I CUTE ?</span></p>
+<div style="display:inline-block;width:200px;height:50px;text-align:center;vertical-align:center"><span style="background:#f15a22;text-align:center">AM I CUTE ?</span></div>
+
 <ul>
 <li>一个水平行中的所有<code>inline</code>盒子组成了名为<code>line box</code>的矩形区域，<code>line box</code>的宽度由所有包含的块、浮动元素决定，<code>line box</code>的高度始终包裹的下所有的<code>inline</code>盒子，<code>line box</code>堆叠时从不重叠。</li>
-<li>通常，<code>line box</code>的左边缘紧密接触其包含盒子的左边缘，<code>line box</code>的右边缘紧密接触其包含盒子的右边缘——除非有浮动元素缩小了可用空间。</li>
+<li>通常，<code>line box</code>的左边缘紧密接触其包含盒子的左边缘，<code>line box</code>的右边缘紧密接触其包含盒子的右边缘——除非有浮动元素缩小了可用空间：</li>
+</ul>
+<div style="width:100px;height:50px;margin:0;"><p style="margin-left:10px;margin-top:0"><span style="background:#00ae9d;">HELLO</span><span style="background:#f15a22;">I AM A LONG TEXT</span><span style="float:left;margin-top:50px;background:#f58f98;margin-left:20px;">I AM FLOATTING WITH MARGIN</span></p></div>
+
+<ul>
 <li>当<code>line box</code>的宽度小于容器的宽度时，<code>text-align</code>属性将决定<code>line box</code>内的水平分布。</li>
 <li>当<code>line box</code>里面的<code>inline</code>盒子超出<code>line box</code>的宽度时，将会被拆分未为多个<code>line box</code>，如果使用了<code>white-space : nowrap</code>等不允许<code>inline</code>盒子发生中断时，<code>inline</code>盒子将溢出容器。</li>
 </ul>
