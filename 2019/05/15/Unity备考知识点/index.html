@@ -108,11 +108,11 @@
 <meta name="keywords" content="-Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity备考知识点">
-<meta property="og:url" content="http://seefun.club/2019/03/17/Unity备考知识点/index.html">
+<meta property="og:url" content="http://seefun.club/2019/05/15/Unity备考知识点/index.html">
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="嗯，选了这门课就要好好准备考试啊。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-15T13:00:57.153Z">
+<meta property="og:updated_time" content="2019-05-16T08:53:03.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity备考知识点">
 <meta name="twitter:description" content="嗯，选了这门课就要好好准备考试啊。">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/03/17/Unity备考知识点/">
+  <link rel="canonical" href="http://seefun.club/2019/05/15/Unity备考知识点/">
 
 
 
@@ -348,7 +348,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/03/17/Unity备考知识点/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/05/15/Unity备考知识点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -391,7 +391,7 @@
                 
               
 
-              <time title="创建时间：2019-03-17 18:05:06" itemprop="dateCreated datePublished" datetime="2019-03-17T18:05:06+08:00">2019-03-17</time>
+              <time title="创建时间：2019-05-15 18:05:06" itemprop="dateCreated datePublished" datetime="2019-05-15T18:05:06+08:00">2019-05-15</time>
             
 
             
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-15 21:00:57" itemprop="dateModified" datetime="2019-05-15T21:00:57+08:00">2019-05-15</time>
+                <time title="修改时间：2019-05-16 16:53:03" itemprop="dateModified" datetime="2019-05-16T16:53:03+08:00">2019-05-16</time>
               
             
           </span>
@@ -538,16 +538,19 @@
 </ul>
 <p>使用<code>GetComponent&lt;name&gt;()</code>或<code>GetComponents&lt;name&gt;()</code>得到对象的组件或组件列表。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Transform tr = GetComponent&lt;Transform&gt;();</span><br><span class="line">Script[] script = GetComponents&lt;Script&gt;();</span><br></pre></td></tr></table></figure>
-<p>调用该函数比较耗时，应放在<code>start()</code>中。</p>
+<p>调用该类函数比较耗时，应放在<code>start()</code>中。</p>
 <h3 id="Prefabs：预设体"><a href="#Prefabs：预设体" class="headerlink" title="Prefabs：预设体"></a>Prefabs：预设体</h3><ul>
 <li>定义</li>
 </ul>
 <p>一个游戏对象及其组件的集合与抽象。</p>
 <ul>
-<li>作用</li>
+<li>优点</li>
+</ul>
+<p>使游戏对象及资源能够被重复利用，节约资源、提高开发的效率。</p>
+<ul>
+<li>缺点</li>
 </ul>
 <p>对预设体进行更改，实例也将同步修改。</p>
-<p>使游戏对象及资源能够被重复利用，节约资源、提高开发的效率。</p>
 <h3 id="预设体的实例化"><a href="#预设体的实例化" class="headerlink" title="预设体的实例化"></a>预设体的实例化</h3><p>可通过静态、动态两种方式完成预设体的实例化。</p>
 <ul>
 <li>静态</li>
@@ -559,7 +562,50 @@
 <p>即通过脚本的方式进行预设体实例化，核心函数Instantiate有5个重载，常用的函数签名为<code>Instantiate(Object original, Vector3 position, Quaternion rotation)</code>。</p>
 <p>函数的三个参数分别为：用来做复制的源对象<code>original</code>、实例对象的位置坐标<code>position</code>、实例对象的<strong>四元数</strong>旋转坐标<code>rotation</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">private Vector3 position = new Vector3(0, 0 ,0);//坐标</span><br><span class="line">public GameObject prefab;//预设体</span><br><span class="line">//实例化预设体</span><br><span class="line">Instantiate(prefab, position, Quaternion.identity);</span><br></pre></td></tr></table></figure>
-<h2 id="第十一章：动画系统"><a href="#第十一章：动画系统" class="headerlink" title="第十一章：动画系统"></a>第十一章：动画系统</h2><h2 id="第十二章：物理系统"><a href="#第十二章：物理系统" class="headerlink" title="第十二章：物理系统"></a>第十二章：物理系统</h2><h2 id="第十五章：导航网格寻路"><a href="#第十五章：导航网格寻路" class="headerlink" title="第十五章：导航网格寻路"></a>第十五章：导航网格寻路</h2><h2 id="第十八章：坐标系"><a href="#第十八章：坐标系" class="headerlink" title="第十八章：坐标系"></a>第十八章：坐标系</h2><h2 id="第十九章：脚本"><a href="#第十九章：脚本" class="headerlink" title="第十九章：脚本"></a>第十九章：脚本</h2><h2 id="第二十五章：脚本优化"><a href="#第二十五章：脚本优化" class="headerlink" title="第二十五章：脚本优化"></a>第二十五章：脚本优化</h2><h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2>
+<h2 id="第十一章：动画系统"><a href="#第十一章：动画系统" class="headerlink" title="第十一章：动画系统"></a>第十一章：动画系统</h2><h3 id="Humanoid"><a href="#Humanoid" class="headerlink" title="Humanoid"></a>Humanoid</h3><p>Humanoid：人形，通过骨骼映射，去识别其它动画，使之能应用到本身模型上。</p>
+<ul>
+<li><p>可以使用<strong>动画重定向</strong>功能：即一个人物模型的动画，可以供多个共同骨骼的模型使用。</p>
+</li>
+<li><p>只通过动画便可以控制人物模型运动。</p>
+</li>
+</ul>
+<h3 id="Avatar"><a href="#Avatar" class="headerlink" title="Avatar"></a>Avatar</h3><p>使用Avatar来实现动画的重定向，即动画的复用。</p>
+<p>在Rig标签页选择Humanoid后，Avatar Definition常用两种选项</p>
+<ul>
+<li><p>Create From This Model：由本模型创建一个Avatar，供自己与其它相同Humanoid的骨骼来共同使用。</p>
+</li>
+<li><p>Copy From Other Avatar：使用其它模型的Avatar。 </p>
+</li>
+</ul>
+<h3 id="动画状态机"><a href="#动画状态机" class="headerlink" title="动画状态机"></a>动画状态机</h3><p>create一个Animation Controller，将已经制作好的各个动画片段拖入状态机中，形成一个个状态，通过Make Transition来设置状态变换的条件。</p>
+<p>最后，将该状态机拖到人物模型身上即可。</p>
+<h2 id="第十二章：物理系统"><a href="#第十二章：物理系统" class="headerlink" title="第十二章：物理系统"></a>第十二章：物理系统</h2><h3 id="Rigidbody：刚体组件"><a href="#Rigidbody：刚体组件" class="headerlink" title="Rigidbody：刚体组件"></a>Rigidbody：刚体组件</h3><p>为游戏对象添加Rigidbody组件，实现该对象在场景当中的物理交互。</p>
+<p>Rigidbody组件的常用参数如下：</p>
+<ul>
+<li>Mass：用于设置游戏对象的质量。</li>
+<li>Drag：设置游戏对象受力运动时的空气阻力。</li>
+<li>Use Gravity：游戏对象是否使用重力。</li>
+</ul>
+<h3 id="Collider：碰撞体组件"><a href="#Collider：碰撞体组件" class="headerlink" title="Collider：碰撞体组件"></a>Collider：碰撞体组件</h3><p>选中一个游戏对象，为其添加不同类型的physics组件。</p>
+<p>碰撞体组件的常用参数如下：</p>
+<ul>
+<li>Is Trigger：触发器，选中该项则该碰撞体会忽略物理碰撞，用于触发碰撞事件。</li>
+</ul>
+<h3 id="碰撞检测的条件"><a href="#碰撞检测的条件" class="headerlink" title="碰撞检测的条件"></a>碰撞检测的条件</h3><p>两个游戏物体都有Collider组件，主动碰撞的游戏物体必须有Rigidbody组件（涉及到Character Controller组件）。</p>
+<h3 id="碰撞检测回调函数"><a href="#碰撞检测回调函数" class="headerlink" title="碰撞检测回调函数"></a>碰撞检测回调函数</h3><p>未选择触发器时，发生真实物理碰撞，回调函数为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//请注意这个 MonoBehaviour 的命名空间</span><br><span class="line">//回调函数的参数 Collision collision 是指 被 碰撞游戏物体的碰撞体组件</span><br><span class="line">public class example : MonoBehaviour&#123;</span><br><span class="line">    OnCollisionEnter(Collision collision);  //碰撞开始</span><br><span class="line">    OnCollisionExit(Collision collision);  //碰撞结束</span><br><span class="line">    OnCollisionStay(Collision collision);  //碰撞过程中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>选择触发器时（无论是单方选中、还是双方都选中），不发生真实物理碰撞，碰撞双方将会直接穿过，回调函数为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//请注意这个 MonoBehaviour 的命名空间</span><br><span class="line">//回调函数的参数 Collision collision 是指 被 碰撞游戏物体的碰撞体组件</span><br><span class="line">public class example : MonoBehaviour&#123;</span><br><span class="line">    OnTriggerEnter(Collider collider);  //碰撞开始</span><br><span class="line">    OnTriggerExit(Collision collision);  //碰撞结束</span><br><span class="line">    OnTriggerStay(Collision collision);  //碰撞过程中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第十四章：光照"><a href="#第十四章：光照" class="headerlink" title="第十四章：光照"></a>第十四章：光照</h2><h2 id="第十五章：导航网格寻路"><a href="#第十五章：导航网格寻路" class="headerlink" title="第十五章：导航网格寻路"></a>第十五章：导航网格寻路</h2><h3 id="导航网格寻路步骤"><a href="#导航网格寻路步骤" class="headerlink" title="导航网格寻路步骤"></a>导航网格寻路步骤</h3><ol>
+<li>选中可行走平面，在static选项下选中Navigation Static。</li>
+<li>在Window下选中Navigation，在其视图中点击Bake，对可行走平面进行烘培。</li>
+<li>为运动物体添加Navigation组件下的Nav Mesh Agent，即添加导航网格代理。</li>
+<li>编写脚本，拖动到运动物体身上即可。</li>
+<li>如果希望运动物体能够直接从顶部跳下，则需要选择该物体Navigation下Object中的Generate OffMeshLinks。</li>
+</ol>
+<p>参考代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public Transform Target;  //Transform类型，这里直接拖动游戏物体获取</span><br><span class="line">void start()&#123;</span><br><span class="line">    if(Target != null)&#123;</span><br><span class="line">        GetComponent&lt;NavMeshAgent&gt;().destination = Target.position;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第十八章：坐标系"><a href="#第十八章：坐标系" class="headerlink" title="第十八章：坐标系"></a>第十八章：坐标系</h2><h2 id="第十九章：脚本"><a href="#第十九章：脚本" class="headerlink" title="第十九章：脚本"></a>第十九章：脚本</h2><h2 id="第二十五章：脚本优化"><a href="#第二十五章：脚本优化" class="headerlink" title="第二十五章：脚本优化"></a>第二十五章：脚本优化</h2><h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2>
       
     </div>
 
@@ -595,8 +641,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/17/我不知道的DOCTYPE/" rel="next" title="我不知道的&lt;!DOCCTYPE html&gt;">
-                <i class="fa fa-chevron-left"></i> 我不知道的&lt;!DOCCTYPE html&gt;
+              <a href="/2019/05/14/Roman-to-Integer/" rel="next" title="LeetCode之将“罗马数字转为整数”">
+                <i class="fa fa-chevron-left"></i> LeetCode之将“罗马数字转为整数”
               </a>
             
           </div>
@@ -604,10 +650,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/17/escape-character-of-markdown/" rel="prev" title="Markdown转义符">
-                Markdown转义符 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -820,7 +862,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章：Unity简介"><span class="nav-number">1.</span> <span class="nav-text">第一章：Unity简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面板与视图"><span class="nav-number">1.2.</span> <span class="nav-text">面板与视图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九章：游戏对象、组件和Prefabs"><span class="nav-number">2.</span> <span class="nav-text">第九章：游戏对象、组件和Prefabs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问游戏对象"><span class="nav-number">2.1.</span> <span class="nav-text">访问游戏对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">2.2.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件的访问"><span class="nav-number">2.3.</span> <span class="nav-text">组件的访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prefabs：预设体"><span class="nav-number">2.4.</span> <span class="nav-text">Prefabs：预设体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预设体的实例化"><span class="nav-number">2.5.</span> <span class="nav-text">预设体的实例化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十一章：动画系统"><span class="nav-number">3.</span> <span class="nav-text">第十一章：动画系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十二章：物理系统"><span class="nav-number">4.</span> <span class="nav-text">第十二章：物理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十五章：导航网格寻路"><span class="nav-number">5.</span> <span class="nav-text">第十五章：导航网格寻路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十八章：坐标系"><span class="nav-number">6.</span> <span class="nav-text">第十八章：坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十九章：脚本"><span class="nav-number">7.</span> <span class="nav-text">第十九章：脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二十五章：脚本优化"><span class="nav-number">8.</span> <span class="nav-text">第二十五章：脚本优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序"><span class="nav-number">9.</span> <span class="nav-text">程序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章：Unity简介"><span class="nav-number">1.</span> <span class="nav-text">第一章：Unity简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面板与视图"><span class="nav-number">1.2.</span> <span class="nav-text">面板与视图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九章：游戏对象、组件和Prefabs"><span class="nav-number">2.</span> <span class="nav-text">第九章：游戏对象、组件和Prefabs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问游戏对象"><span class="nav-number">2.1.</span> <span class="nav-text">访问游戏对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">2.2.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件的访问"><span class="nav-number">2.3.</span> <span class="nav-text">组件的访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prefabs：预设体"><span class="nav-number">2.4.</span> <span class="nav-text">Prefabs：预设体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预设体的实例化"><span class="nav-number">2.5.</span> <span class="nav-text">预设体的实例化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十一章：动画系统"><span class="nav-number">3.</span> <span class="nav-text">第十一章：动画系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Humanoid"><span class="nav-number">3.1.</span> <span class="nav-text">Humanoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Avatar"><span class="nav-number">3.2.</span> <span class="nav-text">Avatar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画状态机"><span class="nav-number">3.3.</span> <span class="nav-text">动画状态机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十二章：物理系统"><span class="nav-number">4.</span> <span class="nav-text">第十二章：物理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rigidbody：刚体组件"><span class="nav-number">4.1.</span> <span class="nav-text">Rigidbody：刚体组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collider：碰撞体组件"><span class="nav-number">4.2.</span> <span class="nav-text">Collider：碰撞体组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#碰撞检测的条件"><span class="nav-number">4.3.</span> <span class="nav-text">碰撞检测的条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#碰撞检测回调函数"><span class="nav-number">4.4.</span> <span class="nav-text">碰撞检测回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十四章：光照"><span class="nav-number">5.</span> <span class="nav-text">第十四章：光照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十五章：导航网格寻路"><span class="nav-number">6.</span> <span class="nav-text">第十五章：导航网格寻路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导航网格寻路步骤"><span class="nav-number">6.1.</span> <span class="nav-text">导航网格寻路步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十八章：坐标系"><span class="nav-number">7.</span> <span class="nav-text">第十八章：坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十九章：脚本"><span class="nav-number">8.</span> <span class="nav-text">第十九章：脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二十五章：脚本优化"><span class="nav-number">9.</span> <span class="nav-text">第二十五章：脚本优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序"><span class="nav-number">10.</span> <span class="nav-text">程序</span></a></li></ol></div>
             
 
           </div>
@@ -976,7 +1018,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/03/17/Unity备考知识点/'
+    refer: '2019/05/15/Unity备考知识点/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
