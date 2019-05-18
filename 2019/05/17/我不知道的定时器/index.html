@@ -104,19 +104,19 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="如果setInterval计时器的回调函数需要3秒，而计时器时间间隔为2秒会发生什么？ 12345678let count = 0;setInterval(function()&amp;#123;    let start = window.performance.now();    console.log(`Hello for the $&amp;#123;count&amp;#125; time at $&amp;#123;">
+  <meta name="description" content="如果setInterval计时器的回调函数需要3秒，而计时器时间间隔为2秒会发生什么？ 换句话说，你认为下述代码会输出什么呢？ 12345678let count = 0;setInterval(function()&amp;#123;    let start = window.performance.now();    console.log(`Hello for the $&amp;#123;count&amp;#">
 <meta name="keywords" content="-JavaScript,-面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我不知道的定时器">
 <meta property="og:url" content="http://seefun.club/2019/05/17/我不知道的定时器/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="如果setInterval计时器的回调函数需要3秒，而计时器时间间隔为2秒会发生什么？ 12345678let count = 0;setInterval(function()&amp;#123;    let start = window.performance.now();    console.log(`Hello for the $&amp;#123;count&amp;#125; time at $&amp;#123;">
+<meta property="og:description" content="如果setInterval计时器的回调函数需要3秒，而计时器时间间隔为2秒会发生什么？ 换句话说，你认为下述代码会输出什么呢？ 12345678let count = 0;setInterval(function()&amp;#123;    let start = window.performance.now();    console.log(`Hello for the $&amp;#123;count&amp;#">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/setInterval.PNG">
-<meta property="og:updated_time" content="2019-05-17T12:23:25.762Z">
+<meta property="og:updated_time" content="2019-05-17T12:30:54.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的定时器">
-<meta name="twitter:description" content="如果setInterval计时器的回调函数需要3秒，而计时器时间间隔为2秒会发生什么？ 12345678let count = 0;setInterval(function()&amp;#123;    let start = window.performance.now();    console.log(`Hello for the $&amp;#123;count&amp;#125; time at $&amp;#123;">
+<meta name="twitter:description" content="如果setInterval计时器的回调函数需要3秒，而计时器时间间隔为2秒会发生什么？ 换句话说，你认为下述代码会输出什么呢？ 12345678let count = 0;setInterval(function()&amp;#123;    let start = window.performance.now();    console.log(`Hello for the $&amp;#123;count&amp;#">
 <meta name="twitter:image" content="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/setInterval.PNG">
 
 
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-05-17 16:49:26 / 修改时间：20:23:25" itemprop="dateCreated datePublished" datetime="2019-05-17T16:49:26+08:00">2019-05-17</time>
+              <time title="创建时间：2019-05-17 16:49:26 / 修改时间：20:30:54" itemprop="dateCreated datePublished" datetime="2019-05-17T16:49:26+08:00">2019-05-17</time>
             
 
             
@@ -451,6 +451,7 @@
 
       
         <p>如果<code>setInterval</code>计时器的回调函数需要3秒，而计时器时间间隔为2秒会发生什么？</p>
+<p>换句话说，你认为下述代码会输出什么呢？</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> start = <span class="built_in">window</span>.performance.now();</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Hello for the <span class="subst">$&#123;count&#125;</span> time at <span class="subst">$&#123;<span class="built_in">window</span>.performance.now()&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">window</span>.performance.now() - start &lt; <span class="number">3000</span>)&#123;&#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`Bey for the <span class="subst">$&#123;count&#125;</span> time at <span class="subst">$&#123;<span class="built_in">window</span>.performance.now()&#125;</span>`</span>);</span><br><span class="line">    count++;</span><br><span class="line">&#125;,<span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="setTimeOut-与setInterval"><a href="#setTimeOut-与setInterval" class="headerlink" title="setTimeOut()与setInterval()"></a>setTimeOut()与setInterval()</h2><p>正如我们在<a href="www.seefun.club/2019/04/07/我不知道的EventLoop/">我不知道的EventLoop</a>中所说的那样：除了JavaScript<strong>执行栈</strong>之外，还有一个需要在执行栈为空（即进程下一次空闲）时执行的<strong>任务队列</strong>。</p>
