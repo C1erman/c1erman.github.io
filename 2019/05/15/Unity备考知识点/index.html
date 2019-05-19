@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="嗯，选了这门课就要好好准备考试啊。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-19T03:30:53.871Z">
+<meta property="og:updated_time" content="2019-05-19T09:33:03.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity备考知识点">
 <meta name="twitter:description" content="嗯，选了这门课就要好好准备考试啊。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-19 11:30:53" itemprop="dateModified" datetime="2019-05-19T11:30:53+08:00">2019-05-19</time>
+                <time title="修改时间：2019-05-19 17:33:03" itemprop="dateModified" datetime="2019-05-19T17:33:03+08:00">2019-05-19</time>
               
             
           </span>
@@ -618,7 +618,10 @@
 <p>在Unity场景中创建的物体都是以全局坐标系中的坐标原点<code>(0, 0, 0)</code>来确定各自位置的。</p>
 <h3 id="局部坐标系"><a href="#局部坐标系" class="headerlink" title="局部坐标系"></a>局部坐标系</h3><p>每个物体都有其独立的局部坐标系，它随物体进行相同的移动或旋转。</p>
 <p>如果将物体B拖到物体A身上，则物体A就是物体B的父物体，子物体B会以父物体A的坐标点为坐标原点。</p>
-<h3 id="相机坐标系"><a href="#相机坐标系" class="headerlink" title="相机坐标系"></a>相机坐标系</h3><p>根据观察位置和方向建立的坐标系，使用此坐标系来做射线检测。</p>
+<h3 id="视口坐标系"><a href="#视口坐标系" class="headerlink" title="视口坐标系"></a>视口坐标系</h3><p>视口坐标已经被归一化，并且它是相对相机的。相机的左下角是<code>(0,0)</code>，右上角是<code>(1,1)</code>，<code>Z</code>轴则取决于相机的位置。</p>
+<blockquote>
+<p>Viewport space is normalized and relative to the camera. The bottom-left of the camera is<br>(0,0); the top-right is (1,1). The z position is in world units from the camera.</p>
+</blockquote>
 <h3 id="屏幕坐标系"><a href="#屏幕坐标系" class="headerlink" title="屏幕坐标系"></a>屏幕坐标系</h3><p>建立在屏幕（游戏运行载体的屏幕）上的<strong>二维坐标系</strong>，用以描述像素在屏幕上的位置。</p>
 <h3 id="坐标转换"><a href="#坐标转换" class="headerlink" title="坐标转换"></a>坐标转换</h3><ul>
 <li>Transform.TransformPoint()</li>
@@ -636,6 +639,22 @@
 <li>Transform.InverseTransformDirection()</li>
 </ul>
 <p>将向量从全局坐标系转换为局部坐标系。</p>
+<ul>
+<li>Camera.WorldToScreenPoint(Vector3 position)</li>
+</ul>
+<p>将向量从世界坐标系转换为屏幕坐标系。</p>
+<ul>
+<li>Camera.ScreenToViewportPoint(Vector3 position)</li>
+</ul>
+<p>将向量从屏幕坐标系转换为相机坐标系。</p>
+<ul>
+<li>Camera.ViewportToScreenPoint(Vector3 position)</li>
+</ul>
+<p>将向量从视口坐标系转换为屏幕坐标系。</p>
+<ul>
+<li>Camera.ViewportToWorldPoint(Vector3 position)</li>
+</ul>
+<p>将向量从视口坐标系转换为全局坐标系。</p>
 <h2 id="第十九章：脚本"><a href="#第十九章：脚本" class="headerlink" title="第十九章：脚本"></a>第十九章：脚本</h2><h3 id="必然事件"><a href="#必然事件" class="headerlink" title="必然事件"></a>必然事件</h3><table>
 <thead>
 <tr>
@@ -748,6 +767,10 @@
 <li>用途</li>
 </ul>
 <p>用以实现让一段程序等待一段时间后继续运行的效果。</p>
+<blockquote>
+<p>用更普通的话来说，就是：</p>
+<p>注册一个每帧都连贯执行的函数，且每次都到<code>yield</code>处暂停处理。</p>
+</blockquote>
 <ul>
 <li>API</li>
 </ul>
@@ -786,7 +809,68 @@
 <li>注意</li>
 </ul>
 <p>在C#中，协同程序的返回类型<strong>必须为</strong><code>IEnumerator</code>，返回时必须要写<code>yield return</code>。</p>
-<h2 id="第二十章：输入控制"><a href="#第二十章：输入控制" class="headerlink" title="第二十章：输入控制"></a>第二十章：输入控制</h2><h3 id="鼠标输入"><a href="#鼠标输入" class="headerlink" title="鼠标输入"></a>鼠标输入</h3><h3 id="键盘输入"><a href="#键盘输入" class="headerlink" title="键盘输入"></a>键盘输入</h3><h2 id="第二十五章：脚本优化"><a href="#第二十五章：脚本优化" class="headerlink" title="第二十五章：脚本优化"></a>第二十五章：脚本优化</h2><ul>
+<p>如果想通过函数名称来终止协程，在一开始启动协程的时候，必须传入函数名称字符串，即：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StartCoroutine(&quot;a_ienumerator&quot;);</span><br><span class="line">StopCoroutine(&quot;a_ienumerator&quot;);</span><br></pre></td></tr></table></figure>
+<h2 id="第二十章：输入控制"><a href="#第二十章：输入控制" class="headerlink" title="第二十章：输入控制"></a>第二十章：输入控制</h2><p><code>Input</code>类是处理输入的接口。</p>
+<h3 id="鼠标输入"><a href="#鼠标输入" class="headerlink" title="鼠标输入"></a>鼠标输入</h3><p>在Input类中和鼠标输入有关的方法和变量如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>方法和变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mousePosition</td>
+<td>得到当前鼠标位置，为Vector3格式</td>
+</tr>
+<tr>
+<td>GetMouseButtonDown(Click)</td>
+<td>鼠标按键按下的第一帧返回true，0：左键、1：右键、2：中键</td>
+</tr>
+<tr>
+<td>GetAxis(“Mouse X”)</td>
+<td>得到一帧内鼠标在水平方向上的移动距离</td>
+</tr>
+<tr>
+<td>GetAxis(“Mouse Y”)</td>
+<td>得到一帧内鼠标在垂直方向上的移动距离</td>
+</tr>
+</tbody>
+</table>
+<h3 id="键盘输入"><a href="#键盘输入" class="headerlink" title="键盘输入"></a>键盘输入</h3><p>在Input类中和键盘输入有关的方法和变量如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>输入方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetKey(Key)</td>
+<td>按键按下期间一直返回true</td>
+</tr>
+<tr>
+<td>GetKeyDown(Key)</td>
+<td>按键按下的第一帧返回true</td>
+</tr>
+<tr>
+<td>GetKeyUp(Key)</td>
+<td>按键松开的第一帧返回true</td>
+</tr>
+<tr>
+<td>GetAxis(“Horizontal”)和GetAxis(“Vertical”)</td>
+<td>用方向键或W、A、S、D键来模拟-1到1的平滑输入</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>KeyCode：</strong></p>
+<p>鼠标按键对应着不同的KeyCode，如字母键A–&gt;A。</p>
+</blockquote>
+<h2 id="第二十五章：脚本优化"><a href="#第二十五章：脚本优化" class="headerlink" title="第二十五章：脚本优化"></a>第二十五章：脚本优化</h2><ul>
 <li>在使用<code>FixedUpdate()</code>函数时，在方法内不要写太多无须重复调用的代码。</li>
 <li>删除没有使用的<code>Update()</code>函数，将耗时操作放在<code>start()</code>函数中。</li>
 <li>在类中定义游戏对象的组件与逻辑，函数中直接引用即可。</li>
@@ -797,7 +881,7 @@
 <h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2><h3 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void Update()&#123;</span><br><span class="line">    float speed = 1.5f;</span><br><span class="line">    transfrom.Translate(Vector3.forward * Time.deltaTime * speed);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void Update()&#123;</span><br><span class="line">    float speed = 1.5f;</span><br><span class="line">    //相对于自身坐标系Y轴旋转</span><br><span class="line">    transfrom.Rotate(Vector3.up * Time.deltaTime * speed);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void Update()&#123;</span><br><span class="line">    float speed = 1.5f;</span><br><span class="line">    //相对于世界坐标系Y轴旋转</span><br><span class="line">    //public void RotateAround(Vector3 point, Vector3 around, float angle)</span><br><span class="line">    //point-要围绕的点 around-要围绕的轴 angle-旋转的角度</span><br><span class="line">    transfrom.RotateAround(Vector3.zero, Vector3.up, speed * Time.deltaTime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="协程的单例与人物的回血"><a href="#协程的单例与人物的回血" class="headerlink" title="协程的单例与人物的回血"></a>协程的单例与人物的回血</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="协程与人物的回血"><a href="#协程与人物的回血" class="headerlink" title="协程与人物的回血"></a>协程与人物的回血</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">public class _getHP : MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    private int HP;</span><br><span class="line">    void Start()</span><br><span class="line">    &#123;</span><br><span class="line">        HP = 0;</span><br><span class="line">        StartCoroutine(&quot;getHP&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    void Update()</span><br><span class="line">    &#123;</span><br><span class="line">        if(HP &gt;= 100)&#123;</span><br><span class="line">            StopCoroutine(&quot;getHP&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    IEnumerator getHP() &#123;</span><br><span class="line">        while (true) &#123;</span><br><span class="line">            yield return new WaitForSeconds(1f);</span><br><span class="line">            HP += 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="不自转的公转"><a href="#不自转的公转" class="headerlink" title="不自转的公转"></a>不自转的公转</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">public class _LookAt : MonoBehaviour &#123;</span><br><span class="line">    public Transform target;</span><br><span class="line">    private float speed = 10.0f;</span><br><span class="line">    void Start()&#123;</span><br><span class="line">        target = GameObject.Find(&quot;target&quot;).transfrom;</span><br><span class="line">    &#125;</span><br><span class="line">    void Update()&#123;</span><br><span class="line">        //方法一：LookRotation(Vector3 v)函数的参数是一个向量，作用是将物体的Z轴和该向量重合</span><br><span class="line">        transform.rotation = Quaternion.LookRotation(target.position - transform.position);</span><br><span class="line">        //方法二：LookAt(Transform p | Vector3 p)函数的参数是一个点，作用是将物体的z轴指向该点</span><br><span class="line">        transform.LookAt(target.position);</span><br><span class="line">        //两种方法都可以实现题目要求</span><br><span class="line">        transfrom.RotateAround(target.position, Vector3.up, speed * Time.deltaTime);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="随鼠标或按键旋转"><a href="#随鼠标或按键旋转" class="headerlink" title="随鼠标或按键旋转"></a>随鼠标或按键旋转</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">public class _Rotate : MonoBehavior &#123;</span><br><span class="line">    float h_speed = 6.0f;</span><br><span class="line">    float v_speed = 6.5f;</span><br><span class="line">    void Update()&#123;</span><br><span class="line">        //鼠标移动</span><br><span class="line">        float h = h_speed * Input.GetAxis(&quot;Mouse X&quot;);</span><br><span class="line">        float v = v_speed * Input.GetAxis(&quot;Mouse Y&quot;);</span><br><span class="line">        //键盘按键</span><br><span class="line">        float h_ = h_speed * Input.GetAxis(&quot;Horizontal&quot;);</span><br><span class="line">        float v_ = v_speed * Input.GetAxis(&quot;Vertical&quot;);</span><br><span class="line">        transform.Rotate(h, v, 0);</span><br><span class="line">        //transform.Rotate(h_, v_, 0);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -1057,7 +1141,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章：Unity简介"><span class="nav-number">1.</span> <span class="nav-text">第一章：Unity简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面板与视图"><span class="nav-number">1.2.</span> <span class="nav-text">面板与视图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九章：游戏对象、组件和Prefabs"><span class="nav-number">2.</span> <span class="nav-text">第九章：游戏对象、组件和Prefabs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问游戏对象"><span class="nav-number">2.1.</span> <span class="nav-text">访问游戏对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">2.2.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件的访问"><span class="nav-number">2.3.</span> <span class="nav-text">组件的访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prefabs：预设体"><span class="nav-number">2.4.</span> <span class="nav-text">Prefabs：预设体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预设体的实例化"><span class="nav-number">2.5.</span> <span class="nav-text">预设体的实例化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十一章：动画系统"><span class="nav-number">3.</span> <span class="nav-text">第十一章：动画系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Humanoid"><span class="nav-number">3.1.</span> <span class="nav-text">Humanoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Avatar"><span class="nav-number">3.2.</span> <span class="nav-text">Avatar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画状态机"><span class="nav-number">3.3.</span> <span class="nav-text">动画状态机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十二章：物理系统"><span class="nav-number">4.</span> <span class="nav-text">第十二章：物理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rigidbody：刚体组件"><span class="nav-number">4.1.</span> <span class="nav-text">Rigidbody：刚体组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collider：碰撞体组件"><span class="nav-number">4.2.</span> <span class="nav-text">Collider：碰撞体组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#碰撞检测的条件"><span class="nav-number">4.3.</span> <span class="nav-text">碰撞检测的条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#碰撞检测回调函数"><span class="nav-number">4.4.</span> <span class="nav-text">碰撞检测回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十四章：光照"><span class="nav-number">5.</span> <span class="nav-text">第十四章：光照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十五章：导航网格寻路"><span class="nav-number">6.</span> <span class="nav-text">第十五章：导航网格寻路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导航网格寻路步骤"><span class="nav-number">6.1.</span> <span class="nav-text">导航网格寻路步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十八章：坐标系"><span class="nav-number">7.</span> <span class="nav-text">第十八章：坐标系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">7.1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局坐标系"><span class="nav-number">7.2.</span> <span class="nav-text">全局坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部坐标系"><span class="nav-number">7.3.</span> <span class="nav-text">局部坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相机坐标系"><span class="nav-number">7.4.</span> <span class="nav-text">相机坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕坐标系"><span class="nav-number">7.5.</span> <span class="nav-text">屏幕坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标转换"><span class="nav-number">7.6.</span> <span class="nav-text">坐标转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十九章：脚本"><span class="nav-number">8.</span> <span class="nav-text">第十九章：脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#必然事件"><span class="nav-number">8.1.</span> <span class="nav-text">必然事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transform组件"><span class="nav-number">8.2.</span> <span class="nav-text">Transform组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time类"><span class="nav-number">8.3.</span> <span class="nav-text">Time类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Coroutine：协程"><span class="nav-number">8.4.</span> <span class="nav-text">Coroutine：协程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二十章：输入控制"><span class="nav-number">9.</span> <span class="nav-text">第二十章：输入控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标输入"><span class="nav-number">9.1.</span> <span class="nav-text">鼠标输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键盘输入"><span class="nav-number">9.2.</span> <span class="nav-text">键盘输入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二十五章：脚本优化"><span class="nav-number">10.</span> <span class="nav-text">第二十五章：脚本优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序"><span class="nav-number">11.</span> <span class="nav-text">程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平移"><span class="nav-number">11.1.</span> <span class="nav-text">平移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转"><span class="nav-number">11.2.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协程的单例与人物的回血"><span class="nav-number">11.3.</span> <span class="nav-text">协程的单例与人物的回血</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不自转的公转"><span class="nav-number">11.4.</span> <span class="nav-text">不自转的公转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随鼠标或按键旋转"><span class="nav-number">11.5.</span> <span class="nav-text">随鼠标或按键旋转</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一章：Unity简介"><span class="nav-number">1.</span> <span class="nav-text">第一章：Unity简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面板与视图"><span class="nav-number">1.2.</span> <span class="nav-text">面板与视图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九章：游戏对象、组件和Prefabs"><span class="nav-number">2.</span> <span class="nav-text">第九章：游戏对象、组件和Prefabs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问游戏对象"><span class="nav-number">2.1.</span> <span class="nav-text">访问游戏对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">2.2.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件的访问"><span class="nav-number">2.3.</span> <span class="nav-text">组件的访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prefabs：预设体"><span class="nav-number">2.4.</span> <span class="nav-text">Prefabs：预设体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预设体的实例化"><span class="nav-number">2.5.</span> <span class="nav-text">预设体的实例化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十一章：动画系统"><span class="nav-number">3.</span> <span class="nav-text">第十一章：动画系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Humanoid"><span class="nav-number">3.1.</span> <span class="nav-text">Humanoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Avatar"><span class="nav-number">3.2.</span> <span class="nav-text">Avatar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动画状态机"><span class="nav-number">3.3.</span> <span class="nav-text">动画状态机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十二章：物理系统"><span class="nav-number">4.</span> <span class="nav-text">第十二章：物理系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rigidbody：刚体组件"><span class="nav-number">4.1.</span> <span class="nav-text">Rigidbody：刚体组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Collider：碰撞体组件"><span class="nav-number">4.2.</span> <span class="nav-text">Collider：碰撞体组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#碰撞检测的条件"><span class="nav-number">4.3.</span> <span class="nav-text">碰撞检测的条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#碰撞检测回调函数"><span class="nav-number">4.4.</span> <span class="nav-text">碰撞检测回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十四章：光照"><span class="nav-number">5.</span> <span class="nav-text">第十四章：光照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十五章：导航网格寻路"><span class="nav-number">6.</span> <span class="nav-text">第十五章：导航网格寻路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导航网格寻路步骤"><span class="nav-number">6.1.</span> <span class="nav-text">导航网格寻路步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十八章：坐标系"><span class="nav-number">7.</span> <span class="nav-text">第十八章：坐标系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">7.1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局坐标系"><span class="nav-number">7.2.</span> <span class="nav-text">全局坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部坐标系"><span class="nav-number">7.3.</span> <span class="nav-text">局部坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#视口坐标系"><span class="nav-number">7.4.</span> <span class="nav-text">视口坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕坐标系"><span class="nav-number">7.5.</span> <span class="nav-text">屏幕坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标转换"><span class="nav-number">7.6.</span> <span class="nav-text">坐标转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十九章：脚本"><span class="nav-number">8.</span> <span class="nav-text">第十九章：脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#必然事件"><span class="nav-number">8.1.</span> <span class="nav-text">必然事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transform组件"><span class="nav-number">8.2.</span> <span class="nav-text">Transform组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Time类"><span class="nav-number">8.3.</span> <span class="nav-text">Time类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Coroutine：协程"><span class="nav-number">8.4.</span> <span class="nav-text">Coroutine：协程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二十章：输入控制"><span class="nav-number">9.</span> <span class="nav-text">第二十章：输入控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标输入"><span class="nav-number">9.1.</span> <span class="nav-text">鼠标输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键盘输入"><span class="nav-number">9.2.</span> <span class="nav-text">键盘输入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二十五章：脚本优化"><span class="nav-number">10.</span> <span class="nav-text">第二十五章：脚本优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序"><span class="nav-number">11.</span> <span class="nav-text">程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平移"><span class="nav-number">11.1.</span> <span class="nav-text">平移</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转"><span class="nav-number">11.2.</span> <span class="nav-text">旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协程与人物的回血"><span class="nav-number">11.3.</span> <span class="nav-text">协程与人物的回血</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不自转的公转"><span class="nav-number">11.4.</span> <span class="nav-text">不自转的公转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随鼠标或按键旋转"><span class="nav-number">11.5.</span> <span class="nav-text">随鼠标或按键旋转</span></a></li></ol></li></ol></div>
             
 
           </div>
