@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="position属性，说简单也简单：因为默认就几个取值，说难也难：就position展开的知识点一抓一大把。 CSS远比你想象的要复杂。 欢迎阅读CSS规范。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-09T04:32:47.556Z">
+<meta property="og:updated_time" content="2019-05-20T03:19:37.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的Position">
 <meta name="twitter:description" content="position属性，说简单也简单：因为默认就几个取值，说难也难：就position展开的知识点一抓一大把。 CSS远比你想象的要复杂。 欢迎阅读CSS规范。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-09 12:32:47" itemprop="dateModified" datetime="2019-05-09T12:32:47+08:00">2019-05-09</time>
+                <time title="修改时间：2019-05-20 11:19:37" itemprop="dateModified" datetime="2019-05-20T11:19:37+08:00">2019-05-20</time>
               
             
           </span>
@@ -503,6 +503,79 @@
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.fixed&#123;</span><br><span class="line">  width : 300px;</span><br><span class="line">  height : 200px;</span><br><span class="line">  color : white;</span><br><span class="line">  font-size : 20px;</span><br><span class="line">  //依据top、right、bottom、left进行定位</span><br><span class="line">  position : fixed;</span><br><span class="line">  right : 0px;</span><br><span class="line">  bottom : 0px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>需要注意的是：<code>fixed</code>盒子的<code>margin</code>将不会与其它盒子的<code>margin</code>发生<strong>塌陷</strong>。</p>
+<h2 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h2><p>说起<code>z-index</code>，不免让人想起<code>css 2.0</code>盒模型在<code>Z</code>轴上的属性重叠顺序。</p>
+<p><code>background-color</code>、<code>background-image</code>、<code>padding</code>与<code>content</code>这四者<strong>从下到上</strong>构成了<code>Z</code>轴上的层叠关系。</p>
+<p>而<code>margin</code>、<code>padding</code>与<code>border</code>这三者之间是平面上的并级关系，不是层叠关系。</p>
+<ul>
+<li>作用于</li>
+</ul>
+<p><code>z-index</code>属性作用于定位元素，即<strong>非static</strong>元素。</p>
+<ul>
+<li>值</li>
+</ul>
+<p>AUTO = 0 | 整数</p>
+<ul>
+<li>作用方式</li>
+</ul>
+<p>每个元素仅能属于一个层叠上下文。</p>
+<p>在同一个层叠上下文中，<code>z-index</code>较大的会覆盖在较小的元素上方，相同的则会按照文档流中的顺序被覆盖。</p>
+<p>不同层叠上下文中，元素的显示顺序取决于祖先的<code>z-index</code>，与自身的的无关。</p>
+<h2 id="定位盒子的偏移"><a href="#定位盒子的偏移" class="headerlink" title="定位盒子的偏移"></a>定位盒子的偏移</h2><ul>
+<li><p>TOP</p>
+</li>
+<li><ul>
+<li>值</li>
+</ul>
+<p>当<code>position</code>为<code>static</code>时，计算值为<code>auto</code>。</p>
+<p>为<code>relative</code>时，如果TOP和BOTTOM都为<code>auto</code>，计算值为<code>0</code>。</p>
+<p>TOP和BOTTOM其中一个为<code>auto</code>时，TOP = - BOTTOM。</p>
+<p>TOP和BOTTOM都不为<code>auto</code>时，忽略BOTTOM。</p>
+<ul>
+<li>相对物</li>
+</ul>
+<p><code>relative</code>元素的相对物是自身盒子上边缘。</p>
+<p><code>absolute</code>元素的相对物是包含自身的块的<code>padding-top</code>。</p>
+</li>
+<li><p>RIGHT</p>
+</li>
+<li><ul>
+<li>值</li>
+</ul>
+<p>当<code>position</code>为<code>static</code>时，计算值为<code>auto</code>。</p>
+<p>为<code>relative</code>时，如果RIGHT和LEFT都为<code>auto</code>，计算值为<code>0</code>。</p>
+<p>RIGHT和LEFT其中一个为<code>auto</code>时，RIGHT= - LEFT。</p>
+<p>RIGHT和LEFT都不为<code>auto</code>时，忽略RIGHT。</p>
+<ul>
+<li>相对物</li>
+</ul>
+<p><code>relative</code>元素的相对物是自身盒子右边缘。</p>
+<p><code>absolute</code>元素的相对物是包含自身的块的右边缘。</p>
+</li>
+<li><p>BOTTOM</p>
+</li>
+<li><ul>
+<li>值</li>
+</ul>
+<p>查看TOP的计算方式。</p>
+<ul>
+<li>相对物</li>
+</ul>
+<p><code>relative</code>元素的相对物是自身盒子下边缘。</p>
+<p><code>absolute</code>元素的相对物是包含自身的块的<code>padding-bottom</code>。</p>
+</li>
+<li><p>LEFT</p>
+</li>
+<li><ul>
+<li>值</li>
+</ul>
+<p>查看RIGHT的计算方式。</p>
+<ul>
+<li>相对物</li>
+</ul>
+<p><code>relative</code>元素的相对物是自身盒子左边缘。</p>
+<p><code>absolute</code>元素的相对物是包含自身的块的左边缘。</p>
+</li>
+</ul>
 
       
     </div>
@@ -760,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么是position"><span class="nav-number">1.</span> <span class="nav-text">为什么是position</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position的取值"><span class="nav-number">2.</span> <span class="nav-text">position的取值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么是position"><span class="nav-number">1.</span> <span class="nav-text">为什么是position</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position的取值"><span class="nav-number">2.</span> <span class="nav-text">position的取值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#z-index"><span class="nav-number">3.</span> <span class="nav-text">z-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定位盒子的偏移"><span class="nav-number">4.</span> <span class="nav-text">定位盒子的偏移</span></a></li></ol></div>
             
 
           </div>
