@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="题目编写一个函数来查找字符串数组中的最长公共前缀。 如果不存在公共前缀，返回空字符串 &amp;quot;&amp;quot;。 所有输入只包含小写字母 a-z 。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T14:55:41.589Z">
+<meta property="og:updated_time" content="2019-05-23T09:06:12.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode之在字符串数组中找出“最长公共前缀”">
 <meta name="twitter:description" content="题目编写一个函数来查找字符串数组中的最长公共前缀。 如果不存在公共前缀，返回空字符串 &amp;quot;&amp;quot;。 所有输入只包含小写字母 a-z 。">
@@ -391,12 +391,24 @@
                 
               
 
-              <time title="创建时间：2019-05-22 22:53:36 / 修改时间：22:55:41" itemprop="dateCreated datePublished" datetime="2019-05-22T22:53:36+08:00">2019-05-22</time>
+              <time title="创建时间：2019-05-22 22:53:36" itemprop="dateCreated datePublished" datetime="2019-05-22T22:53:36+08:00">2019-05-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-23 17:06:12" itemprop="dateModified" datetime="2019-05-23T17:06:12+08:00">2019-05-23</time>
               
             
           </span>
@@ -461,7 +473,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]</span><br><span class="line">Output: &quot;&quot;</span><br><span class="line">Explanation: There is no common prefix among the input strings.</span><br></pre></td></tr></table></figure>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>既然是找一个字符串数组的最长公共前缀，那么——在最长公共前缀存在的前提下——该字符串数组中长度最短的字符串，必然是这个公共前缀的超集。</p>
 <p>在判断一个字符串<code>X</code>是否是最长公共前缀这一点上，我们可以使用正则表达式，针对给定数组的每一项，测试是否以<code>X</code>打头，如果是，则证明<code>X</code>是最长公共前缀的子集。</p>
-<p>该算法的时间复杂度为<code>O(Log(n))</code>。</p>
+<p>该算法的时间复杂度为<code>O(N)</code>。</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string[]&#125; strs</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestCommonPrefix = <span class="function"><span class="keyword">function</span>(<span class="params">strs</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(strs.length === <span class="number">0</span>) <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">let</span> min = strs[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">of</span> strs)&#123;</span><br><span class="line">        i.length &lt; min.length ? min = i : <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(min.length === <span class="number">0</span>) <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">let</span> ans;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; min.length; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">`^<span class="subst">$&#123;min.slice(<span class="number">0</span>,i+<span class="number">1</span>)&#125;</span>`</span>);</span><br><span class="line">        <span class="keyword">let</span> res = strs.every(<span class="function"><span class="params">v</span>=&gt;</span>reg.test(v));</span><br><span class="line">        <span class="keyword">if</span>(!res)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = min.slice(<span class="number">0</span>,i+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans || <span class="string">''</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><p>Runtime:  <strong>60 ms</strong></p>
 <p>Memory Usage: <strong>34.9 MB</strong></p>
@@ -469,6 +481,26 @@
 <p>faster than <strong>91.71 %</strong> of JavaScript online submissions</p>
 <p>less than <strong>62.75 %</strong> of JavaScript online submissions</p>
 <h2 id="改良"><a href="#改良" class="headerlink" title="改良"></a>改良</h2><p>本题可以使用很多典型的算法来解决。</p>
+<h3 id="水平扫描法"><a href="#水平扫描法" class="headerlink" title="水平扫描法"></a>水平扫描法</h3><p>该方法利用了<code>String.protptype.indexOf()</code>来实现了一个字符串是否包含了另一个字符串。</p>
+<p>正如该方法的名字那样，水平扫描相邻的两个字符串。以前两个字符串开始，查找这两个字符串之间相同的部分，并拿着这个相同的部分与之后的再进行比较。</p>
+<p>在得到两个字符串相同部分这一过程中，总是不断减小期望的长度，直至为<code>0</code>，这时将返回<code>&#39;&#39;</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string[]&#125; strs</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestCommonPrefix = <span class="function"><span class="keyword">function</span>(<span class="params">strs</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(strs.length === <span class="number">0</span>) <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">let</span> prefix = strs[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>;i &lt; strs.length; i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(strs[i].indexOf(prefix) !== <span class="number">0</span>)&#123;</span><br><span class="line">            prefix = prefix.substring(<span class="number">0</span>, prefix.length <span class="number">-1</span>);</span><br><span class="line">            <span class="keyword">if</span>(prefix.length === <span class="number">0</span>) <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> prefix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Runtime:  <strong>56 ms</strong></p>
+<p>Memory Usage: <strong>34 MB</strong></p>
+<p>Status:  <strong>Accepted</strong></p>
+<p>faster than <strong>96.22 %</strong> of JavaScript online submissions</p>
+<p>less than <strong>84.00 %</strong> of JavaScript online submissions</p>
+<h3 id="水平列扫描法"><a href="#水平列扫描法" class="headerlink" title="水平列扫描法"></a>水平列扫描法</h3><p>emmmmmm。</p>
+<p>其实这个方法和我的大致上没有什么区别，我是在一开始就找到长度最短的那个字符串，而该方法是在查找过程中避免对超过最短长度的比较。</p>
+<p>观察上述水平扫描法，便可以发现有多余的部分——正如我一开始提到的那样——长度最短的字符串，必然是这个公共前缀的超集。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string[]&#125; strs</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestCommonPrefix = <span class="function"><span class="keyword">function</span>(<span class="params">strs</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (strs.length === <span class="number">0</span> || strs === <span class="literal">null</span>) <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; strs[<span class="number">0</span>].length; i++)&#123;</span><br><span class="line">        str = strs[<span class="number">0</span>].charAt(i);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>;j &lt; strs.length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i === strs[j].length || strs[j].charAt(i) !== str)&#123;</span><br><span class="line">                <span class="keyword">return</span> strs[<span class="number">0</span>].substring(<span class="number">0</span>, i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> strs[<span class="number">0</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Runtime:  <strong>64 ms</strong></p>
+<p>Memory Usage: <strong>35 MB</strong></p>
+<p>Status:  <strong>Accepted</strong></p>
+<p>faster than <strong>69.36 %</strong> of JavaScript online submissions</p>
+<p>less than <strong>61.88 %</strong> of JavaScript online submissions</p>
+<p>当然，除了这些方法，我们还可以通过<strong>分治算法</strong>、<strong>二分查找法</strong>来解决本题，由于精力有限，就放在下一轮进行研究吧。</p>
+<p><del>说白了就是懒。</del></p>
 
       
     </div>
@@ -724,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩"><span class="nav-number">4.</span> <span class="nav-text">成绩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改良"><span class="nav-number">5.</span> <span class="nav-text">改良</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成绩"><span class="nav-number">4.</span> <span class="nav-text">成绩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改良"><span class="nav-number">5.</span> <span class="nav-text">改良</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平扫描法"><span class="nav-number">5.1.</span> <span class="nav-text">水平扫描法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平列扫描法"><span class="nav-number">5.2.</span> <span class="nav-text">水平列扫描法</span></a></li></ol></li></ol></div>
             
 
           </div>
