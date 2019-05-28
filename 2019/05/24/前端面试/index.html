@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="偉いね。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-24T13:24:02.445Z">
+<meta property="og:updated_time" content="2019-05-28T09:17:22.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试">
 <meta name="twitter:description" content="偉いね。">
@@ -391,12 +391,24 @@
                 
               
 
-              <time title="创建时间：2019-05-24 20:34:07 / 修改时间：21:24:02" itemprop="dateCreated datePublished" datetime="2019-05-24T20:34:07+08:00">2019-05-24</time>
+              <time title="创建时间：2019-05-24 20:34:07" itemprop="dateCreated datePublished" datetime="2019-05-24T20:34:07+08:00">2019-05-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-28 17:17:22" itemprop="dateModified" datetime="2019-05-28T17:17:22+08:00">2019-05-28</time>
               
             
           </span>
@@ -460,15 +472,38 @@
 </ul>
 <p><code>src</code>：即<code>source</code>，暂停其它资源的下载和处理，知道该资源加载、执行完毕。</p>
 <p><code>href</code>：不会停止对当前文档的处理。</p>
+<ul>
+<li>&lt;A /&gt;标签的<code>target</code>属性的取值与作用。</li>
+</ul>
+<p><code>_blank</code>：在新窗口打开资源链接。</p>
+<p><code>_self</code>：在当前页面加载资源链接，默认值。</p>
+<p><code>_parent</code>：加载响应到父框架或当前浏览上下文的父浏览上下文。</p>
+<p><code>_top</code>：加载响应进入顶层浏览上下文中，会删除所有的frame，如果没有parent框架或者浏览上下文，则该行为与<code>_self</code>一致。</p>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
 <li>页面导入样式时，使用<code>link</code>和<code>@import</code>有什么区别？</li>
 </ul>
 <p><strong>导入顺序无差别！</strong>：无论是<code>link</code>还是<code>@import</code>，浏览器在确定了各CSS文件索引之后，均会按照从上往下的规则进行渲染。</p>
 <p><strong>作用差别</strong>：<code>link</code>除了用于引入CSS文件，还可以<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types" target="_blank" rel="noopener">用来做其他事</a>；而<code>@import</code>只能用于导入CSS文件。</p>
+<ul>
+<li>在页面上隐藏元素的方法有哪些？</li>
+</ul>
+<p><code>display : none</code>：不占用页面空间。</p>
+<p><code>visibility : hidden</code>：仍旧占页面空间。</p>
+<p>均可以使用DOM API来获取到。</p>
+<ul>
+<li>用CSS创建一个三角形，并阐述原理。</li>
+</ul>
+<div style="display:inline-block;margin-right:20px;width:100px;height:100px;background:#ef5b9c;border-top:40px solid #d71345;border-right:40px solid #fcaf17;border-bottom:40px solid #65c294;border-left:40px solid #f15a22"></div><div style="display:inline-block;margin-right:20px;width:100px;height:100px;background:#ef5b9c;border-top:50px solid #d71345;border-right:50px solid #fcaf17;border-bottom:50px solid #65c294;border-left:50px solid #f15a22"></div><div style="display:inline-block;margin-right:20px;background:#ef5b9c;border-top:50px solid #d71345;border-right:50px solid #fcaf17;border-bottom:50px solid #65c294;border-left:50px solid #f15a22"></div><div style="display:inline-block;margin-right:20px;width:100px;height:100px;background:#ef5b9c;border-top:50px solid #d71345;border-right:50px solid transparent;border-bottom:50px solid transparent;border-left:50px solid transparent"></div><div style="display:inline-block;margin-right:20px;border-top:50px solid #d71345;border-right:50px solid transparent;border-bottom:50px solid transparent;border-left:50px solid transparent"></div><div style="display:inline-block;margin-right:20px;width:100px;height:100px;border-top:50px solid transparent;border-right:50px solid transparent;border-bottom:50px solid #65c294;border-left:50px solid transparent"></div>
+
+<p>使用的是四个Border的宽度、有无、是否透明来实现该三角形。</p>
 <h2 id="JAVASCRIPT"><a href="#JAVASCRIPT" class="headerlink" title="JAVASCRIPT"></a>JAVASCRIPT</h2><ul>
 <li>实现<code>String.prototype.trim()</code>方法</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@_trim_all 去除字符串中所有空白</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_trim_all</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str === <span class="literal">null</span> ? <span class="string">''</span> : str.replace(<span class="regexp">/\s/g</span>, <span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//@_trim 去除字符串前、后端的空白</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_trim</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str === <span class="literal">null</span> ? <span class="string">''</span> : str.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@ trim_all 去除字符串中所有空白</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trim_all</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str === <span class="literal">null</span> ? <span class="string">''</span> : str.replace(<span class="regexp">/\s/g</span>, <span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//@ trim 去除字符串前、后端的空白</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trim</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str === <span class="literal">null</span> ? <span class="string">''</span> : str.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实现把<strong>下划线命名</strong>与<strong>驼峰式命名</strong>之间的转换</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@ toCamel 将下划线命名转为驼峰式命名</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toCamel</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/([^_])(?:_([^_]))/g</span>, (metch, p1, p2, p3, offset, string)=&gt;&#123;</span><br><span class="line">       <span class="keyword">return</span> p1 + p2.toUpperCase(); </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//@ toUnderline 将驼峰式命名转为下划线命名</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toUnderline</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/([A-Z])/g</span>, (match, p1)=&gt;&#123;</span><br><span class="line">        <span class="string">'_'</span> + p1.toLowerCase();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
