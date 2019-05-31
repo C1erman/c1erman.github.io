@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="嗯，选了这门课就要好好准备考试啊。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-30T12:33:00.919Z">
+<meta property="og:updated_time" content="2019-05-31T09:01:02.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python备考知识点">
 <meta name="twitter:description" content="嗯，选了这门课就要好好准备考试啊。">
@@ -391,12 +391,24 @@
                 
               
 
-              <time title="创建时间：2019-05-30 20:31:08 / 修改时间：20:33:00" itemprop="dateCreated datePublished" datetime="2019-05-30T20:31:08+08:00">2019-05-30</time>
+              <time title="创建时间：2019-05-30 20:31:08" itemprop="dateCreated datePublished" datetime="2019-05-30T20:31:08+08:00">2019-05-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-31 17:01:02" itemprop="dateModified" datetime="2019-05-31T17:01:02+08:00">2019-05-31</time>
               
             
           </span>
@@ -455,6 +467,7 @@
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>  <span class="comment"># int 整型</span></span><br><span class="line">b = <span class="number">1.0</span>  <span class="comment"># float 浮点型</span></span><br><span class="line">c = <span class="literal">True</span>  <span class="comment"># bool 布尔类型</span></span><br><span class="line">d = <span class="number">1</span> + <span class="number">2j</span>  <span class="comment">#complex 复数类型</span></span><br></pre></td></tr></table></figure>
 <p>Python 2中没有bool类型，而Python 3中添加了这一类型，但仍用数字表示，True为1，False为0，因此bool类型能够与数字做运算。</p>
+<p>复数的实部和虚部均为浮点数类型。</p>
 <ol start="2">
 <li>String：<strong>字符串</strong>类型</li>
 </ol>
@@ -462,6 +475,11 @@
 <p>使用格式：<code>string[start : end]</code>来左闭右开地截取字符串。</p>
 <p>索引值以0起始，-1为字符串末尾。</p>
 <p><code>+</code>运算连接字符串，<code>*</code>运算重复字符串。</p>
+<blockquote>
+<p><strong>Unicode：</strong></p>
+<p>Python 3中使用Unicode码来表示字符串，每位均为16进制，<code>&#39;A&#39;</code>的Unicode码为<code>00401</code>，<code>&#39;a&#39;</code>的为<code>00601</code>，0的为<code>00300</code>。</p>
+<p>字符串以<code>&#39;\0&#39;</code>结尾，对应的Unicode码为0。</p>
+</blockquote>
 <ol start="3">
 <li>List：<strong>列表</strong></li>
 </ol>
@@ -557,7 +575,118 @@
 <h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><p>貌似？Python的变量作用域同JavaScript一样，是函数级作用域，但不同的是，Python中的变量必须先声明后使用。</p>
 <p>当内部作用域想修改外部作用域的变量时，使用<code>global</code>关键字。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> num  <span class="comment">#num = 0</span></span><br><span class="line">    num = <span class="number">1</span></span><br><span class="line">    print(num)</span><br><span class="line">print(num)</span><br></pre></td></tr></table></figure>
-<h2 id="输入与输出"><a href="#输入与输出" class="headerlink" title="输入与输出"></a>输入与输出</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3>
+<h2 id="输入与输出"><a href="#输入与输出" class="headerlink" title="输入与输出"></a>输入与输出</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>使用函数<code>input(string)</code>，该函数返回用户输入的<strong>字符串</strong>。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>使用<code>print(something, end)</code>函数输出内容。</p>
+<p>end参数表明该输出结束之后以什么字符结尾，默认值为换行符<code>&#39;\n&#39;</code>，也常使用回车符<code>&#39;\r&#39;</code>实现输出覆盖。</p>
+<p>通常该函数与<code>string.format(number | string)</code>搭配使用，该函数会填充字符串中的每一个插槽<code>{}</code>，插槽下标从<code>0</code>开始。</p>
+<p>插槽内部的格式为：<code>{&lt;参数序号&gt;:&lt;格式化控制标记&gt;}</code>，其中，引号<code>:</code>为引导符号。</p>
+<p>格式化控制标记的其作用如下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">控制标记</th>
+<th>说明</th>
+<th>取值</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&lt;填充&gt;</td>
+<td>用于填充的单个字符</td>
+<td>默认值为<code>&#39; &#39;</code></td>
+<td><code>&#39;{0:x^10}&#39;.format(1)  //&#39;xxxx1xxxxx&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;对齐&gt;</td>
+<td>控制填充时字符对齐方式</td>
+<td><code>&lt;</code>左对齐、<code>&gt;</code>右对齐、<code>^</code>居中对齐</td>
+<td><code>&#39;{0:^10}&#39;.format(1)  //&#39;    1     &#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;宽度&gt;</td>
+<td>设置插槽的输出宽度</td>
+<td>整数</td>
+<td><code>&#39;{:^10}&#39;.format(1)  //&#39;    1     &#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;,&gt;</td>
+<td>是否显示数字的千分位分隔符</td>
+<td>默认不显示</td>
+<td><code>&#39;{:,}&#39;.format(1000)  //&#39;1,000&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;数字精度&gt;</td>
+<td>浮点数的小数精度</td>
+<td>整数</td>
+<td><code>&#39;{:.5f}&#39;.format(1)  //&#39;1.00000&#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;类型&gt;</td>
+<td>数字类型转换</td>
+<td><code>b</code>二进制、<code>f</code>浮点数、<code>e</code>科学计数法</td>
+<td><code>&#39;{:e}&#39;.format(3.1)  //&#39;3.100000e+00&#39;</code></td>
+</tr>
+</tbody>
+</table>
+<p>再次注意，<code>format()</code>函数既可以格式化字符串，又可以用来格式化数字。</p>
+<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>使用函数<code>open(filePath, mode)</code>以模式为mode的方法打开一个文件，并创建一个<code>file</code>对象。</p>
+<p>filePath为文件的绝对或相对路径，常见的mode如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>mode</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>t</strong></td>
+<td>文本模式，为默认值</td>
+</tr>
+<tr>
+<td>b</td>
+<td>以二进制模式打开文件</td>
+</tr>
+<tr>
+<td>w</td>
+<td>以只写方式打开文件，如果文件已存在则打开文件，并<strong>从头开始</strong>编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a</td>
+<td>打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="读"><a href="#读" class="headerlink" title="读"></a>读</h3><p>常用的<code>file</code>读API如下：</p>
+<ul>
+<li><code>file.read(size)</code></li>
+</ul>
+<p>从文件读取指定的字节数，未给定或为负时读取全部。</p>
+<ul>
+<li><code>file.readline(size)</code></li>
+</ul>
+<p>从文件读取整行，包括<code>&#39;\n&#39;</code>字符，size参数起相同的作用。</p>
+<ul>
+<li><code>file.readlines(lineSize)</code></li>
+</ul>
+<p>从文件读取lineSize的行，以<strong>列表</strong>形式返回这些行。</p>
+<h3 id="写"><a href="#写" class="headerlink" title="写"></a>写</h3><p>常用的<code>file</code>写API如下：</p>
+<ul>
+<li><code>file.write(string)</code></li>
+</ul>
+<p>向文件写入指定字符串。</p>
+<h3 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h3><p>使用函数<code>file.close()</code>关闭一个打开的文件。</p>
+<p>如果不关闭，该文件将被占用而无法再次打开。</p>
+
       
     </div>
 
@@ -814,7 +943,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本类型"><span class="nav-number">1.1.</span> <span class="nav-text">基本类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">1.2.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">3.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-elif-else"><span class="nav-number">3.1.</span> <span class="nav-text">if-elif-else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while"><span class="nav-number">3.2.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…in"><span class="nav-number">3.3.</span> <span class="nav-text">for…in</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数定义"><span class="nav-number">4.1.</span> <span class="nav-text">函数定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数传参"><span class="nav-number">4.2.</span> <span class="nav-text">函数传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">4.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量作用域"><span class="nav-number">5.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入与输出"><span class="nav-number">6.</span> <span class="nav-text">输入与输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">6.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">6.2.</span> <span class="nav-text">输出</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本类型"><span class="nav-number">1.1.</span> <span class="nav-text">基本类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">1.2.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">3.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-elif-else"><span class="nav-number">3.1.</span> <span class="nav-text">if-elif-else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while"><span class="nav-number">3.2.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…in"><span class="nav-number">3.3.</span> <span class="nav-text">for…in</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数定义"><span class="nav-number">4.1.</span> <span class="nav-text">函数定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数传参"><span class="nav-number">4.2.</span> <span class="nav-text">函数传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">4.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量作用域"><span class="nav-number">5.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入与输出"><span class="nav-number">6.</span> <span class="nav-text">输入与输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">6.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">6.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件读写"><span class="nav-number">7.</span> <span class="nav-text">文件读写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开文件"><span class="nav-number">7.1.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读"><span class="nav-number">7.2.</span> <span class="nav-text">读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写"><span class="nav-number">7.3.</span> <span class="nav-text">写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭文件"><span class="nav-number">7.4.</span> <span class="nav-text">关闭文件</span></a></li></ol></li></ol></div>
             
 
           </div>
