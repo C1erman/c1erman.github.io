@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="嗯，选了这门课就要好好准备考试啊。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-01T12:31:03.972Z">
+<meta property="og:updated_time" content="2019-06-02T03:32:16.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python备考知识点">
 <meta name="twitter:description" content="嗯，选了这门课就要好好准备考试啊。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-01 20:31:03" itemprop="dateModified" datetime="2019-06-01T20:31:03+08:00">2019-06-01</time>
+                <time title="修改时间：2019-06-02 11:32:16" itemprop="dateModified" datetime="2019-06-02T11:32:16+08:00">2019-06-02</time>
               
             
           </span>
@@ -468,6 +468,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>  <span class="comment"># int 整型</span></span><br><span class="line">b = <span class="number">1.0</span>  <span class="comment"># float 浮点型</span></span><br><span class="line">c = <span class="literal">True</span>  <span class="comment"># bool 布尔类型</span></span><br><span class="line">d = <span class="number">1</span> + <span class="number">2j</span>  <span class="comment">#complex 复数类型</span></span><br></pre></td></tr></table></figure>
 <p>Python 2中没有bool类型，而Python 3中添加了这一类型，但仍用数字表示，True为1，False为0，因此bool类型能够与数字做运算。</p>
 <p>复数的实部和虚部均为浮点数类型。</p>
+<p>大小在-10<sup>308</sup>到10<sup>308</sup>之间，精度数量级为10<sup>-16</sup>。</p>
+<p>此外，存在着四种进制的整数表示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>b  <span class="comment">#二进制表示</span></span><br><span class="line"><span class="number">0</span>o  <span class="comment">#八进制表示</span></span><br><span class="line"><span class="number">10</span>  <span class="comment">#十进制表示</span></span><br><span class="line"><span class="number">0</span>x  <span class="comment">#十六进制表示</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>String：<strong>字符串</strong>类型</li>
 </ol>
@@ -496,7 +499,7 @@
 <li>Set：集合</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="number">1</span>, <span class="string">'a'</span>, <span class="literal">True</span>&#125;</span><br><span class="line">b = set(<span class="string">'abcdabcd'</span>)  <span class="comment">#重复的元素将被去除</span></span><br><span class="line">c = set()  <span class="comment">#空集合</span></span><br></pre></td></tr></table></figure>
-<p>集合内不含重复的元素。</p>
+<p>集合内不含重复的元素，并且集合内只能存在不可变数据。</p>
 <p>可以利用<code>-</code>、<code>|</code>、<code>&amp;</code>、<code>^</code>来实现集合之间的差集、并集、交集和两集合中不同时存在的元素集。</p>
 <ol start="6">
 <li>Dictionary：字典</li>
@@ -530,7 +533,7 @@
 <ul>
 <li><code>eval(string)</code></li>
 </ul>
-<p>计算字符串中的有效Python表达式，并返回一个对象。</p>
+<p>计算字符串中的有效Python 3表达式，并返回一个对象。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = eval(<span class="string">'1 + 2'</span>)  <span class="comment">#3</span></span><br><span class="line">b = eval(input(<span class="string">'number'</span>))  <span class="comment">#the input number</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>tuple(s)</code></li>
@@ -553,7 +556,20 @@
 <p>创建一个字典，d必须是一个<code>key, value</code>格式的序列。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = dict(name = <span class="string">'s1mple'</span>, age = <span class="number">23</span>)  <span class="comment">#&#123;'age': 23, 'name': 's1mple'&#125;</span></span><br><span class="line">b = dict([(<span class="string">'name'</span>, <span class="string">'s1mple'</span>), (<span class="string">'age'</span>, <span class="number">23</span>)])  <span class="comment">#&#123;'age': 23, 'name': 's1mple'&#125;</span></span><br><span class="line">c = dict(((<span class="string">'name'</span>, <span class="string">'s1mple'</span>), (<span class="string">'age'</span>, <span class="number">23</span>)))  <span class="comment">#&#123;'age': 23, 'name': 's1mple'&#125;</span></span><br><span class="line">d = dict(([<span class="string">'name'</span>, <span class="string">'s1mple'</span>], [<span class="string">'age'</span>, <span class="number">23</span>]))  <span class="comment">#&#123;'age': 23, 'name': 's1mple'&#125;</span></span><br><span class="line">e = dict([[<span class="string">'name'</span>, <span class="string">'s1mple'</span>], [<span class="string">'age'</span>, <span class="number">23</span>]])  <span class="comment">#&#123;'age': 23, 'name': 's1mple'&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><p>Python中提供了一系列的操作符用于简化运算。</p>
-<h3 id="del"><a href="#del" class="headerlink" title="del"></a>del</h3><h3 id="is"><a href="#is" class="headerlink" title="is"></a>is</h3><h3 id="not"><a href="#not" class="headerlink" title="not"></a>not</h3><h3 id="or"><a href="#or" class="headerlink" title="| or"></a>| or</h3><h3 id="amp-and"><a href="#amp-and" class="headerlink" title="&amp; and"></a>&amp; and</h3><h3 id="not-1"><a href="#not-1" class="headerlink" title="! not"></a>! not</h3><h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="if-elif-else"><a href="#if-elif-else" class="headerlink" title="if-elif-else"></a>if-elif-else</h3><p>Python使用<code>elif</code>代替了<code>else-if</code>。</p>
+<h3 id="del"><a href="#del" class="headerlink" title="del"></a>del</h3><p>del操作符删除不再使用的<strong>可变数据</strong>或整个变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = &#123;<span class="number">1</span>: <span class="number">2</span>&#125;</span><br><span class="line">c = (<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">del</span> a[<span class="number">0</span>]  <span class="comment">#a=[2, 3]</span></span><br><span class="line"><span class="keyword">del</span> b[<span class="number">1</span>]  <span class="comment">#b=&#123;&#125;</span></span><br><span class="line"><span class="keyword">del</span> c  <span class="comment">#c is not define</span></span><br></pre></td></tr></table></figure>
+<h3 id="is"><a href="#is" class="headerlink" title="is"></a>is</h3><p>判断两个值是否相等。</p>
+<p>对于可变数据类型：按引用比较。</p>
+<p>对于不可变数据类型：按值比较。</p>
+<p><del>原来你是JavaScript。</del></p>
+<h3 id="in"><a href="#in" class="headerlink" title="in"></a>in</h3><p>判断一个值是否存在于序列、集合、字典中。</p>
+<h3 id="not"><a href="#not" class="headerlink" title="not"></a>not</h3><p>非。</p>
+<p>也可搭配in使用，将值取反。</p>
+<h3 id="or"><a href="#or" class="headerlink" title="| or"></a>| or</h3><p>或。</p>
+<p>也可用于集合的并集。</p>
+<h3 id="amp-and"><a href="#amp-and" class="headerlink" title="&amp; and"></a>&amp; and</h3><p>与。</p>
+<p>也可用于集合的交集。</p>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><h3 id="if-elif-else"><a href="#if-elif-else" class="headerlink" title="if-elif-else"></a>if-elif-else</h3><p>Python使用<code>elif</code>代替了<code>else-if</code>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition_1:</span><br><span class="line">    statement_1</span><br><span class="line"><span class="keyword">elif</span> condition_2:</span><br><span class="line">    statement_2</span><br><span class="line"><span class="keyword">else</span> condition_3:</span><br><span class="line">    statement_3</span><br></pre></td></tr></table></figure>
 <h3 id="while"><a href="#while" class="headerlink" title="while"></a>while</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> condition:</span><br><span class="line">    statement</span><br></pre></td></tr></table></figure>
 <h3 id="for…in"><a href="#for…in" class="headerlink" title="for…in"></a>for…in</h3><p>Python中的for循环可以遍历任何<strong>序列</strong>的项目。</p>
@@ -577,7 +593,9 @@
 <h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><p>貌似？Python的变量作用域同JavaScript一样，是函数级作用域，但不同的是，Python中的变量必须先声明后使用。</p>
 <p>当内部作用域想修改外部作用域的变量、或想临时定义全局变量时，使用<code>global</code>关键字。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> num  <span class="comment">#num = 0</span></span><br><span class="line">    <span class="keyword">global</span> var  <span class="comment">#create a global varible var</span></span><br><span class="line">    num = <span class="number">1</span></span><br><span class="line">    var = <span class="number">1</span></span><br><span class="line">    print(num)</span><br><span class="line">print(num)</span><br><span class="line">print(var)</span><br></pre></td></tr></table></figure>
-<h2 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h2><h2 id="输入与输出"><a href="#输入与输出" class="headerlink" title="输入与输出"></a>输入与输出</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>使用函数<code>input(string)</code>，该函数返回用户输入的<strong>字符串</strong>。</p>
+<h2 id="异常捕获"><a href="#异常捕获" class="headerlink" title="异常捕获"></a>异常捕获</h2><p>Python 3使用关键字<code>try</code>、<code>except</code>、<code>else</code>、<code>finally</code>进行异常捕获与处理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    something</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    some wrong thing</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    some right thing</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    do something <span class="keyword">finally</span></span><br></pre></td></tr></table></figure>
+<h2 id="输入与输出"><a href="#输入与输出" class="headerlink" title="输入与输出"></a>输入与输出</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>使用函数<code>input(string)</code>，该函数返回用户输入的<strong>字符串</strong>。</p>
 <h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>使用<code>print(something, end)</code>函数输出内容。</p>
 <p>end参数表明该输出结束之后以什么字符结尾，默认值为换行符<code>&#39;\n&#39;</code>，也常使用回车符<code>&#39;\r&#39;</code>实现输出覆盖。</p>
 <p>通常该函数与<code>string.format(number | string)</code>搭配使用，该函数会填充字符串中的每一个插槽<code>{}</code>，插槽下标从<code>0</code>开始。</p>
@@ -632,8 +650,16 @@
 </tbody>
 </table>
 <p>再次注意，<code>format()</code>函数既可以格式化字符串，又可以用来格式化数字。</p>
-<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>使用函数<code>open(filePath, mode)</code>以模式为mode的方法打开一个文件，并创建一个<code>file</code>对象。</p>
-<p>filePath为文件的绝对或相对路径，常见的mode如下表所示：</p>
+<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><h3 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h3><p>Python 3中，一般将文件分为<strong>文本文件</strong>与<strong>二进制文件</strong>。</p>
+<p>文本文件由单一的特定编码组成，常见后缀为<code>.txt</code>、<code>.js</code>、<code>.py</code>。</p>
+<p>二进制文件由0、1组成，常见后缀为<code>.png</code>、<code>.avi</code>、<code>.bmp</code>。</p>
+<h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>使用函数<code>open(filePath, mode)</code>以模式为mode的方法打开一个文件，并创建一个<code>file</code>对象。</p>
+<p>filePath为文件的绝对或相对路径。</p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>与其它语言的转换方式一样，绝对路径中的单反斜杠<code>\</code>要转为双斜杠<code>//</code>。</p>
+</blockquote>
+<p>常见的mode如下表所示：</p>
 <table>
 <thead>
 <tr>
@@ -649,6 +675,10 @@
 <tr>
 <td>b</td>
 <td>以二进制模式打开文件</td>
+</tr>
+<tr>
+<td>x</td>
+<td>以只写方式创建文件，如果文件已经存在则会报错。</td>
 </tr>
 <tr>
 <td>w</td>
@@ -668,11 +698,21 @@
 </tr>
 </tbody>
 </table>
+<h3 id="文件指针位置"><a href="#文件指针位置" class="headerlink" title="文件指针位置"></a>文件指针位置</h3><ul>
+<li><code>file.seek(offset[, whence])</code></li>
+</ul>
+<p>将文件读取指针移动到指定的位置。</p>
+<p>offset为偏移量，将要移动的<strong>字节</strong>数。</p>
+<p>whence为偏移量的参考点，<code>0</code>为默认值，代表从文件开头开始算起；<code>1</code>代表从当前位置开始算起；<code>2</code>代表从文件末尾开始算起。</p>
+<ul>
+<li><code>file.tell()</code></li>
+</ul>
+<p>返回文件当前指针位置。</p>
 <h3 id="读"><a href="#读" class="headerlink" title="读"></a>读</h3><p>常用的<code>file</code>读API如下：</p>
 <ul>
 <li><code>file.read(size)</code></li>
 </ul>
-<p>从文件读取指定的字节数，未给定或为负时读取全部。</p>
+<p>从文件读取指定的<strong>字符</strong>数，未给定或为负时读取全部。</p>
 <ul>
 <li><code>file.readline(size)</code></li>
 </ul>
@@ -686,6 +726,11 @@
 <li><code>file.write(string)</code></li>
 </ul>
 <p>向文件写入指定字符串。</p>
+<ul>
+<li><code>file.wirtelines(list)</code></li>
+</ul>
+<p>向文件写入由迭代对象产生的序列字符串。</p>
+<p>一般传入的参数为字符串列表。</p>
 <h3 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h3><p>使用函数<code>file.close()</code>关闭一个打开的文件。</p>
 <p>如果不关闭，该文件将被占用而无法再次打开。</p>
 
@@ -945,7 +990,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本类型"><span class="nav-number">1.1.</span> <span class="nav-text">基本类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">1.2.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">3.</span> <span class="nav-text">操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#del"><span class="nav-number">3.1.</span> <span class="nav-text">del</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#is"><span class="nav-number">3.2.</span> <span class="nav-text">is</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#not"><span class="nav-number">3.3.</span> <span class="nav-text">not</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#or"><span class="nav-number">3.4.</span> <span class="nav-text">| or</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-and"><span class="nav-number">3.5.</span> <span class="nav-text">&amp; and</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#not-1"><span class="nav-number">3.6.</span> <span class="nav-text">! not</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">4.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-elif-else"><span class="nav-number">4.1.</span> <span class="nav-text">if-elif-else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while"><span class="nav-number">4.2.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…in"><span class="nav-number">4.3.</span> <span class="nav-text">for…in</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">5.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数定义"><span class="nav-number">5.1.</span> <span class="nav-text">函数定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数传参"><span class="nav-number">5.2.</span> <span class="nav-text">函数传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">5.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量作用域"><span class="nav-number">6.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常捕获"><span class="nav-number">7.</span> <span class="nav-text">异常捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入与输出"><span class="nav-number">8.</span> <span class="nav-text">输入与输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">8.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">8.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件读写"><span class="nav-number">9.</span> <span class="nav-text">文件读写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开文件"><span class="nav-number">9.1.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读"><span class="nav-number">9.2.</span> <span class="nav-text">读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写"><span class="nav-number">9.3.</span> <span class="nav-text">写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭文件"><span class="nav-number">9.4.</span> <span class="nav-text">关闭文件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本类型"><span class="nav-number">1.1.</span> <span class="nav-text">基本类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">1.2.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作符"><span class="nav-number">3.</span> <span class="nav-text">操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#del"><span class="nav-number">3.1.</span> <span class="nav-text">del</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#is"><span class="nav-number">3.2.</span> <span class="nav-text">is</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#in"><span class="nav-number">3.3.</span> <span class="nav-text">in</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#not"><span class="nav-number">3.4.</span> <span class="nav-text">not</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#or"><span class="nav-number">3.5.</span> <span class="nav-text">| or</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-and"><span class="nav-number">3.6.</span> <span class="nav-text">&amp; and</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制"><span class="nav-number">4.</span> <span class="nav-text">流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-elif-else"><span class="nav-number">4.1.</span> <span class="nav-text">if-elif-else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while"><span class="nav-number">4.2.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…in"><span class="nav-number">4.3.</span> <span class="nav-text">for…in</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">5.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数定义"><span class="nav-number">5.1.</span> <span class="nav-text">函数定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数传参"><span class="nav-number">5.2.</span> <span class="nav-text">函数传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名函数"><span class="nav-number">5.3.</span> <span class="nav-text">匿名函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量作用域"><span class="nav-number">6.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常捕获"><span class="nav-number">7.</span> <span class="nav-text">异常捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入与输出"><span class="nav-number">8.</span> <span class="nav-text">输入与输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">8.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">8.2.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件读写"><span class="nav-number">9.</span> <span class="nav-text">文件读写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件类型"><span class="nav-number">9.1.</span> <span class="nav-text">文件类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打开文件"><span class="nav-number">9.2.</span> <span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件指针位置"><span class="nav-number">9.3.</span> <span class="nav-text">文件指针位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读"><span class="nav-number">9.4.</span> <span class="nav-text">读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写"><span class="nav-number">9.5.</span> <span class="nav-text">写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭文件"><span class="nav-number">9.6.</span> <span class="nav-text">关闭文件</span></a></li></ol></li></ol></div>
             
 
           </div>
