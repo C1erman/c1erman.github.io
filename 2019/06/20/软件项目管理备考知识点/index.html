@@ -104,27 +104,27 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="宽松比较，即==运算符，涉及到了JavaScript中的很多知识点。 这篇文章你绝对感兴趣。 毕竟：">
-<meta name="keywords" content="-JavaScript,-运算符">
+  <meta name="description" content="難しいね。">
+<meta name="keywords" content="-软件项目管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我不知道的==运算符">
-<meta property="og:url" content="http://seefun.club/2019/04/06/我不知道的==运算符/index.html">
+<meta property="og:title" content="软件项目管理备考知识点">
+<meta property="og:url" content="http://seefun.club/2019/06/20/软件项目管理备考知识点/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="宽松比较，即==运算符，涉及到了JavaScript中的很多知识点。 这篇文章你绝对感兴趣。 毕竟：">
+<meta property="og:description" content="難しいね。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/loose-equality-in-js.png">
-<meta property="og:updated_time" content="2019-06-12T13:27:53.748Z">
+<meta property="og:image" content="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/criticalPath.png">
+<meta property="og:updated_time" content="2019-06-20T02:45:54.783Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我不知道的==运算符">
-<meta name="twitter:description" content="宽松比较，即==运算符，涉及到了JavaScript中的很多知识点。 这篇文章你绝对感兴趣。 毕竟：">
-<meta name="twitter:image" content="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/loose-equality-in-js.png">
+<meta name="twitter:title" content="软件项目管理备考知识点">
+<meta name="twitter:description" content="難しいね。">
+<meta name="twitter:image" content="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/criticalPath.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/04/06/我不知道的==运算符/">
+  <link rel="canonical" href="http://seefun.club/2019/06/20/软件项目管理备考知识点/">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>我不知道的==运算符 | 归人1337</title>
+  <title>软件项目管理备考知识点 | 归人1337</title>
   
 
 
@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/04/06/我不知道的==运算符/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/06/20/软件项目管理备考知识点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -367,7 +367,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">我不知道的==运算符
+          <h2 class="post-title" itemprop="name headline">软件项目管理备考知识点
 
               
             
@@ -393,24 +393,12 @@
                 
               
 
-              <time title="创建时间：2019-04-06 11:23:14" itemprop="dateCreated datePublished" datetime="2019-04-06T11:23:14+08:00">2019-04-06</time>
+              <time title="创建时间：2019-06-20 10:42:11 / 修改时间：10:45:54" itemprop="dateCreated datePublished" datetime="2019-06-20T10:42:11+08:00">2019-06-20</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-12 21:27:53" itemprop="dateModified" datetime="2019-06-12T21:27:53+08:00">2019-06-12</time>
               
             
           </span>
@@ -427,7 +415,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/我不知道的JavaScript/" itemprop="url" rel="index"><span itemprop="name">-我不知道的JavaScript</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/备考/" itemprop="url" rel="index"><span itemprop="name">-备考</span></a></span>
 
                 
                 
@@ -462,180 +450,402 @@
       
 
       
-        <p>宽松比较，即<code>==</code>运算符，涉及到了<code>JavaScript</code>中的很多知识点。</p>
-<p>这篇文章你绝对感兴趣。</p>
-<p>毕竟：</p>
-<p><img src="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/loose-equality-in-js.png" alt="神一样的=="></p>
+        <p>難しいね。</p>
 <a id="more"></a>
-<h2 id="从数据类型开始"><a href="#从数据类型开始" class="headerlink" title="从数据类型开始"></a>从数据类型开始</h2><h3 id="原始数据类型とは"><a href="#原始数据类型とは" class="headerlink" title="原始数据类型とは"></a>原始数据类型とは</h3><p><strong>原始数据类型</strong>（primitive data type）多数人习惯叫做<strong>基本数据类型</strong>。</p>
-<p>按照<a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank" rel="noopener">MDN的解释</a>：</p>
-<blockquote>
-<p>In <a href="https://developer.mozilla.org/en-US/docs/Glossary/JavaScript" target="_blank" rel="noopener">JavaScript</a>, a <strong>primitive</strong> (primitive value, primitive data type) is data that is not an <a href="https://developer.mozilla.org/en-US/docs/Glossary/object" target="_blank" rel="noopener">object</a> and has no <a href="https://developer.mozilla.org/en-US/docs/Glossary/method" target="_blank" rel="noopener">methods</a>. There are 6 primitive data types: <a href="https://developer.mozilla.org/en-US/docs/Glossary/string" target="_blank" rel="noopener">string</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/number" target="_blank" rel="noopener">number</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/boolean" target="_blank" rel="noopener">boolean</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/null" target="_blank" rel="noopener">null</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/undefined" target="_blank" rel="noopener">undefined</a>, <a href="https://developer.mozilla.org/en-US/docs/Glossary/symbol" target="_blank" rel="noopener">symbol</a> (new in <a href="https://developer.mozilla.org/en-US/docs/Glossary/ECMAScript" target="_blank" rel="noopener">ECMAScript</a> 2015).</p>
-</blockquote>
-<p>需要注意的是：原始数据类型<strong>不是对象</strong>，并且自身<strong>不提供方法</strong>。</p>
-<p>原始数据类型如下所示：</p>
-<ul>
-<li><code>Undefined</code>、<code>Null</code></li>
-<li><code>Boolean</code>、<code>String</code>、<code>Number</code>、<code>Symbol</code></li>
+<h2 id="软件项目管理概念"><a href="#软件项目管理概念" class="headerlink" title="软件项目管理概念"></a>软件项目管理概念</h2><h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p>项目是为完成某一独特的产品或服务所做的一次性的、有限的努力。</p>
+<h3 id="项目的特征"><a href="#项目的特征" class="headerlink" title="项目的特征"></a>项目的特征</h3><ul>
+<li>目标性</li>
+<li>相关性</li>
+<li>周期性</li>
+<li>独特性</li>
+<li>约束性</li>
 </ul>
-<p>你可能会问：<code>Object</code>呢，它既然不是原始数据类型，那算是什么呢？</p>
-<p>我的回答是：<code>Object</code>算是一种<strong>数据类型</strong>，除了原始数据类型以外的<strong>类型</strong>都继承自<code>Object</code>，就像<code>Array</code>、<code>Function</code>等。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Object</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Function</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>实际上，我通常把<code>Array</code>这些叫做是一种<strong>引用类型</strong>。</p>
-<h3 id="原始值和对象"><a href="#原始值和对象" class="headerlink" title="原始值和对象"></a>原始值和对象</h3><p>那么，原始值（这里指原始数据类型）与对象的区别是什么呢？</p>
-<p>两者最主要的区别是：<strong>每个对象都有唯一的标识且只（严格地）等于自己</strong>，而对<strong>原始值只要编码值相同，则被认为相同</strong>。</p>
-<p>就像这样：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=&#123;&#125;,b=&#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a==b)  <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(a===b)  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=<span class="string">'😐'</span>,b=<span class="string">'😐'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a==b)  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(a===b)  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<h4 id="原始值"><a href="#原始值" class="headerlink" title="原始值"></a>原始值</h4><p>原始值具有以下特点：</p>
+<p>每一个项目的资源、成本、时间都是一定的。</p>
 <ul>
-<li>按<strong>值</strong>进行比较</li>
-<li>不可改变：其属性不能被改变、添加、移除</li>
+<li>不确定性</li>
 </ul>
-<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>对象具有以下特点：</p>
-<ul>
-<li>按<strong>引用</strong>进行比较</li>
-<li>默认可变：对象属性可以很自由的被改变、添加、移除</li>
-</ul>
-<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><p>有两种对值进行分类的操作符：<code>typeof</code>、<code>instanceof</code>。</p>
-<p>还有一个方法：<code>Object.prototype.toString.call(object)</code>。</p>
-<h4 id="typeof主要用于原始值"><a href="#typeof主要用于原始值" class="headerlink" title="typeof主要用于原始值"></a>typeof主要用于原始值</h4><p>注意<strong>主要</strong>这两个字，因为有<code>function</code>的存在。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">1</span>  <span class="comment">//"number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">""</span>  <span class="comment">//"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span>  <span class="comment">//"boolean"</span></span><br><span class="line"><span class="keyword">typeof</span> undifined  <span class="comment">//"undifined"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>  <span class="comment">//"object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;  <span class="comment">//"function"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;  <span class="comment">//"object"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>typeof null的历史</p>
-<p>第一代JavaScript引擎的值表示为32位的字符，<strong>最低的3位作为值的类型标识</strong>，表示该值是对象、浮点数或其他。</p>
-<p>对象的标识是000，而使用机器语言NULL指针的null，它的所有位均为0，这样一来，<strong>typeof检测值的标识位</strong>时，null便表示为object了。</p>
-</blockquote>
-<h4 id="instanceof用于对象"><a href="#instanceof用于对象" class="headerlink" title="instanceof用于对象"></a>instanceof用于对象</h4><p>查询一个值是否通过某个构造器<code>constructor</code>被创建出来。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a=&#123;&#125;</span><br><span class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br><span class="line">a <span class="keyword">instanceof</span> <span class="built_in">Object</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<h4 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString()"></a>Object.prototype.toString()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>)  <span class="comment">//"[object Number]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">false</span>)  <span class="comment">//"[object Boolean]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(&#123;&#125;)  <span class="comment">//"[object Object]"</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">''</span>)  <span class="comment">//"[object String]"</span></span><br></pre></td></tr></table></figure>
-<h2 id="深入类型转换"><a href="#深入类型转换" class="headerlink" title="深入类型转换"></a>深入类型转换</h2><h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><p>其他值到布尔值的转换如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>布尔值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>undefined</td>
-<td>false</td>
-</tr>
-<tr>
-<td>null</td>
-<td>false</td>
-</tr>
-<tr>
-<td>数字</td>
-<td><code></code>0 NaN`为false、其他为true</td>
-</tr>
-<tr>
-<td>字符串</td>
-<td><code>&#39;&#39;</code>为false、其他为true</td>
-</tr>
-<tr>
-<td>对象</td>
-<td>总为true</td>
-</tr>
-</tbody>
-</table>
-<p>手动转换为<code>boolean</code>的方法如下：</p>
-<ul>
-<li><code>Boolean(Value)</code></li>
-<li><code>Value ? true : false</code></li>
-<li><code>!!Value</code></li>
-</ul>
-<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>其他值到数字的转换如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>数字</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>undifined</td>
-<td>NaN</td>
-</tr>
-<tr>
-<td>null</td>
-<td>0</td>
-</tr>
-<tr>
-<td>布尔值</td>
-<td>true为1、false为0</td>
-</tr>
-<tr>
-<td>字符串</td>
-<td>空字符串为0、其它解析字符串中的数字，会忽略开头和结尾的空格、遇到非法字符就为NaN</td>
-</tr>
-<tr>
-<td>对象</td>
-<td>转换为原始类型</td>
-</tr>
-</tbody>
-</table>
-<p>手动转换为<code>Number</code>的方法如下：</p>
-<ul>
-<li><code>Number()</code></li>
-<li><code>parseFloat()</code></li>
-</ul>
-<p><code>parseFloat()</code>会将参数强制转换为字符串，效率较低，并且会将空字符串转换为<code>NaN</code>。它会一直解析到最后一个合法的字符，而<code>Number()</code>遇到非法字符会直接转为<code>NaN</code>。</p>
-<ul>
-<li><code>parseInt(string,radix)</code></li>
-</ul>
-<p>基数的范围为：大于等于2，且小于等于36。基数默认是10，除非要被解析的字符串以<code>0x</code>或者<code>0X</code>开头，此时为16进制。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;123#&apos;)  //NaN</span><br><span class="line">parseFloat(&apos;123#&apos;)  //123</span><br><span class="line">parseInt(&apos;123#&apos;)  //123</span><br></pre></td></tr></table></figure>
-<h2 id="使用-时发生了什么"><a href="#使用-时发生了什么" class="headerlink" title="使用==时发生了什么"></a>使用==时发生了什么</h2><h3 id="将值转换为原始值"><a href="#将值转换为原始值" class="headerlink" title="将值转换为原始值"></a>将值转换为原始值</h3><p><span id="function_ToPrimitive"></span></p>
-<p>要将任意值转换为<strong>数字</strong>或<strong>字符串</strong>，首先会被转换为任意的原始值，然后再转换为最终的结果。</p>
-<p>ECMAScript规范中有一个内部函数，<code>ToPrimitive()</code>，不能被访问到，但是它能帮助你理解<strong>对象是如何转换为数字和字符串的</strong>。</p>
-<p>该函数形如：<code>ToPrimitive(input,PreferredType?)</code>。</p>
-<p>可选参数<code>PreferredType</code>表明转换后的类型：它可以是<code>Number</code>或<code>String</code>，具体取决于当时的情况。</p>
-<blockquote>
-<p>如果<code>PreferredType</code>为<code>Number</code>，会执行以下步骤：</p>
-<ol>
-<li>如果input是原始值，则返回input</li>
-<li>如果input是对象，调用<code>input.valueOf()</code>，如果其结果是原始值就返回</li>
-<li>如果结果不是原始值，调用<code>input.toString()</code>，如果其结果是原始值就返回</li>
-<li>如果结果不是原始值，抛出<code>TypeError</code></li>
+<h3 id="项目管理的五个标准过程组"><a href="#项目管理的五个标准过程组" class="headerlink" title="项目管理的五个标准过程组"></a>项目管理的五个标准过程组</h3><ol>
+<li>启动过程组</li>
+<li>计划过程组</li>
+<li>执行过程组</li>
+<li>控制过程组</li>
+<li>收尾过程组</li>
 </ol>
-<p>而<code>PreferredType</code>为<code>String</code>时，只是更改第2、3步的执行顺序。</p>
+<h3 id="软件项目与一般项目的区别"><a href="#软件项目与一般项目的区别" class="headerlink" title="软件项目与一般项目的区别"></a>软件项目与一般项目的区别</h3><p>软件项目除了具备一般项目的基本特征之外，还具有以下特点：</p>
+<ol>
+<li>软件是一种逻辑实体，具有抽象性。</li>
+<li>软件开发的成本相当昂贵。</li>
+<li>软件没有机械硬件的磨损和老化问题。</li>
+</ol>
+<h3 id="软件项目管理"><a href="#软件项目管理" class="headerlink" title="软件项目管理"></a>软件项目管理</h3><p>为了使软件项目按照预定的成本、进度、质量顺利完成，而对成本、人员、进度进行分析和管理的活动。</p>
+<h2 id="软件项目立项准备"><a href="#软件项目立项准备" class="headerlink" title="软件项目立项准备"></a>软件项目立项准备</h2><h3 id="软件项目的解决方案"><a href="#软件项目的解决方案" class="headerlink" title="软件项目的解决方案"></a>软件项目的解决方案</h3><ol>
+<li>自主开发</li>
+<li>完全外包</li>
+<li>购买商用软件+自主开发</li>
+</ol>
+<h3 id="软件项目范围"><a href="#软件项目范围" class="headerlink" title="软件项目范围"></a>软件项目范围</h3><ol>
+<li>产品范围</li>
+</ol>
+<p>产品或服务所包含的特征或功能。</p>
+<ol start="2">
+<li>项目范围</li>
+</ol>
+<p>为交付具有规定特征和功能的产品所必须完成的工作。</p>
+<h3 id="可行性分析"><a href="#可行性分析" class="headerlink" title="可行性分析"></a>可行性分析</h3><ol>
+<li>技术可行性</li>
+<li>经济可行性</li>
+<li>社会可行性</li>
+<li>操作可行性</li>
+</ol>
+<h3 id="合同类型"><a href="#合同类型" class="headerlink" title="合同类型"></a>合同类型</h3><ol>
+<li>成本补偿合同</li>
+<li>功能计费点合同</li>
+<li>固定单价合同</li>
+<li>固定总价合同</li>
+</ol>
+<p>上述合同从上到下，对软件开发方的风险依此增大。</p>
+<h3 id="项目立项过程"><a href="#项目立项过程" class="headerlink" title="项目立项过程"></a>项目立项过程</h3><ol>
+<li>项目发起</li>
+<li>项目论证</li>
+<li>项目审核</li>
+<li>项目立项</li>
+</ol>
+<h2 id="软件项目计划"><a href="#软件项目计划" class="headerlink" title="软件项目计划"></a>软件项目计划</h2><h3 id="范围计划"><a href="#范围计划" class="headerlink" title="范围计划"></a>范围计划</h3><p>核心工作之一是编写项目范围说明书，并以此作为项目计划的基础。</p>
+<h3 id="风险计划"><a href="#风险计划" class="headerlink" title="风险计划"></a>风险计划</h3><ol>
+<li>风险识别</li>
+<li>风险评估</li>
+<li>编制风险应对策略</li>
+</ol>
+<h3 id="合同计划"><a href="#合同计划" class="headerlink" title="合同计划"></a>合同计划</h3><p>合同双方被称为合同当事人。</p>
+<h2 id="软件项目需求管理"><a href="#软件项目需求管理" class="headerlink" title="软件项目需求管理"></a>软件项目需求管理</h2><h3 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h3><p>用户对软件的功能和性能的要求，是一个系统或程序开发工作的说明，表现形式一般为文档形式。</p>
+<p>软件需求包括功能性需求和非功能性需求。</p>
+<p>功能性需求又可以分为三个层次：</p>
+<ol>
+<li>业务需求</li>
+<li>用户需求</li>
+<li>功能需求</li>
+</ol>
+<h3 id="需求开发"><a href="#需求开发" class="headerlink" title="需求开发"></a>需求开发</h3><ol>
+<li>需求获取</li>
+<li>需求分析</li>
+<li>需求规格编写</li>
+<li>需求验证</li>
+</ol>
+<p>这四个阶段不一定遵循线性顺序，它们是互相独立和反复的。</p>
+<h3 id="需求分析方法"><a href="#需求分析方法" class="headerlink" title="需求分析方法"></a>需求分析方法</h3><ol>
+<li>用例分析方法</li>
+</ol>
+<p>使用UML建模语言来描述用户的需求。</p>
+<p>其有两种组成——参与者、用例。</p>
+<p>两种组成之间的相互关系如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>关系类型</th>
+<th>说明</th>
+<th>图形符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关联</td>
+<td>参与者与用例之间的关系</td>
+<td>————</td>
+</tr>
+<tr>
+<td>泛化</td>
+<td>参与者之间、用例之间的关系</td>
+<td>————▷</td>
+</tr>
+<tr>
+<td>包含</td>
+<td>用例之间的关系</td>
+<td>–<sup>&lt;&lt;includes&gt;&gt;</sup>–&gt;</td>
+</tr>
+<tr>
+<td>扩展</td>
+<td>用例之间的关系</td>
+<td>–<sup>&lt;&lt;extends&gt;&gt;</sup>–&gt;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>泛化：</strong></p>
+<p>是一种继承关系，表示一般与特殊的区别。</p>
 </blockquote>
-<p>因此，一个对象重写了<code>valueOf()</code>或者<code>toString()</code>，就分别会影响<code>Number()</code>或<code>String()</code>。</p>
-<h3 id="宽松比较"><a href="#宽松比较" class="headerlink" title="宽松比较"></a>宽松比较</h3><p>如果两个运算数的类型相同，是六种规范类型Undefined、Null、Boolean、Number、Object时，使用严格相等比较它们。</p>
-<p>如果两个运算数的类型不同，则会触发以下操作：</p>
+<ol start="2">
+<li>原型分析方法</li>
+<li>结构化分析方法</li>
+</ol>
 <ul>
-<li><code>undefined</code>和<code>null</code>被认为是宽松相等的，而不严格相等</li>
+<li>数据流图</li>
+<li>数据字典</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">undiundefined == <span class="literal">null</span>  <span class="comment">//true</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">null</span>  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>常用的数据字典符号如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>定义</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>等价于</td>
+<td>=</td>
+</tr>
+<tr>
+<td>与，由哪两部分组成</td>
+<td>+</td>
+</tr>
+<tr>
+<td>或，两者取其一</td>
+<td>[a\</td>
+<td>b]或[a,b]</td>
+</tr>
+<tr>
+<td>重复，0次或多次</td>
+<td>{xxx}</td>
+</tr>
+<tr>
+<td>重复，至少M次，至多N次</td>
+<td>M{xxx}N</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>一个字符串和一个数字时，将字符串转换为一个数字，再使用严格相等比较两者</li>
+<li>E-R图</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span> == <span class="string">'123'</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>即实体-联系图，该图主要有以下四种要素：</p>
+<p><strong>实体</strong>：▭</p>
+<p>实体与实体之间的<strong>联系</strong>：◇</p>
+<p>实体或联系的<strong>属性</strong>：⬭</p>
+<p>连线：—</p>
+<h2 id="软件项目进度管理"><a href="#软件项目进度管理" class="headerlink" title="软件项目进度管理"></a>软件项目进度管理</h2><p>由<strong>进度计划</strong>与<strong>进度控制</strong>组成。</p>
+<h3 id="WBS：指定进度计划的基础"><a href="#WBS：指定进度计划的基础" class="headerlink" title="WBS：指定进度计划的基础"></a>WBS：指定进度计划的基础</h3><p>将一个复杂的开发系统分层逐步细化为一个个工作任务单元。</p>
 <ul>
-<li><p>一个布尔值和非布尔值，将布尔值转化为0或1，再进行宽松比较</p>
+<li>产品导向型</li>
+</ul>
+<p>以可交付产品作为划分依据。</p>
+<ul>
+<li>活动导向型</li>
+</ul>
+<p>以项目活动作为划分依据。</p>
+<h3 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h3><p>优点：清除的表明了项目的计划进度，能动态的反映当前开发紧张状况。</p>
+<p>缺点：不能表达出各任务之间复杂的逻辑关系。</p>
+<h3 id="网络图"><a href="#网络图" class="headerlink" title="网络图"></a>网络图</h3><p>展示项目之间的各个活动以及活动之间的逻辑关系。</p>
+<p>常用的网络图有PDM、ADM。</p>
+<p>每个节点必须有唯一的编号。</p>
+<h3 id="网络图：PDM"><a href="#网络图：PDM" class="headerlink" title="网络图：PDM"></a>网络图：PDM</h3><p>节点法。</p>
+<ul>
+<li><strong>节点</strong>表示活动。</li>
+<li><strong>箭头</strong>表示工作的先后顺序和相互关系。</li>
+</ul>
+<p>有四种逻辑关系：</p>
+<ul>
+<li>结束开始</li>
+<li>结束结束</li>
+<li>开始结束</li>
+<li>开始开始</li>
+</ul>
+<h3 id="网络图：ADM"><a href="#网络图：ADM" class="headerlink" title="网络图：ADM"></a>网络图：ADM</h3><p>箭线法。</p>
+<ul>
+<li><strong>节点</strong>表示事件。</li>
+<li><strong>箭头</strong>表示活动，活动的描述写在肩头上。</li>
+</ul>
+<blockquote>
+<p>紧前事件：箭头之前的事件。</p>
+<p>紧后事件：箭头之后的事件。</p>
+</blockquote>
+<p>只有一种逻辑关系：结束开始。</p>
+<p>使用<strong>虚活动</strong>来表明活动之间的逻辑关系，它既不消耗资源也不占用时间。</p>
+<h3 id="甘特图与网络图差异"><a href="#甘特图与网络图差异" class="headerlink" title="甘特图与网络图差异"></a>甘特图与网络图差异</h3><p>如下表所述：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>网络图</th>
+<th>甘特图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>活动之间的逻辑关系</td>
+<td>可以反应</td>
+<td>只能反应简单的逻辑关系</td>
+</tr>
+<tr>
+<td>项目的完整工作流程</td>
+<td>只有一个起点、一个终点，可以反应</td>
+<td>起点和终点不集中在一个点上，不容易从中看出完整的工作流程</td>
+</tr>
+<tr>
+<td>计划与组织项目工作</td>
+<td>能起较大作用</td>
+<td>作用不大</td>
+</tr>
+</tbody>
+</table>
+<h3 id="计划评审"><a href="#计划评审" class="headerlink" title="计划评审"></a>计划评审</h3><p>加权得到的平均期望值为：(最乐观期望值O+4*最可能期望值M+最悲观期望值P)/6。</p>
+<p>标准差为：(P-O)/6。</p>
+<h3 id="关键路径法"><a href="#关键路径法" class="headerlink" title="关键路径法"></a>关键路径法</h3><p>项目中总工期最长的那条线。</p>
+<ul>
+<li>最早开始时间：项目的第一个活动的最早开始时间为0，其余为紧前活动的最早结束时间。</li>
+<li>最早结束时间：本身的最早开始时间+活动历时。</li>
+<li>最晚结束时间：项目的最后一个活动的最晚结束时间为最早结束时间，其余为紧后活动的最晚开始时间。</li>
+</ul>
+<blockquote>
+<p>当有多个后置任务时，选取其中<strong>最小</strong>的最晚开始时间。</p>
+</blockquote>
+<ul>
+<li>最晚开始时间：本身的最晚结束时间-活动历时。</li>
+</ul>
+<p>项目中最早开始时间=最晚开始时间的活动，为关键活动，组成的路径即为关键路径。</p>
+<p>一般项目节点可以表示为以下组成：</p>
+<p><img src="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/criticalPath.png" alt="关键路径"></p>
+<h2 id="项目估算"><a href="#项目估算" class="headerlink" title="项目估算"></a>项目估算</h2><h3 id="成本估算方法"><a href="#成本估算方法" class="headerlink" title="成本估算方法"></a>成本估算方法</h3><ul>
+<li>基于分解技术的方法</li>
+</ul>
+<p>功能点估算法、代码行估算法。</p>
+<ul>
+<li>基于经验模型的方法</li>
+</ul>
+<p>COCOMO模型、IBM模型。</p>
+<h3 id="工期估算方法"><a href="#工期估算方法" class="headerlink" title="工期估算方法"></a>工期估算方法</h3><ul>
+<li>类比估算法</li>
+</ul>
+<p>将历史项目的实际成本作为当前项目的基础，根据当前项目的范围、规模来估算当前项目的成本。是自顶向下估算方法的一种类型。</p>
+<p>当<strong>项目信息足够时</strong>，使用类比估算法。</p>
+<ul>
+<li>德尔菲法</li>
+</ul>
+<p>由多位专家对项目进行估算，专家对项目理解的程度是该方法的关键点。</p>
+<p>当获得的<strong>项目信息有限时</strong>，使用德尔菲法。</p>
+<h2 id="质量管理"><a href="#质量管理" class="headerlink" title="质量管理"></a>质量管理</h2><h3 id="软件质量模型"><a href="#软件质量模型" class="headerlink" title="软件质量模型"></a>软件质量模型</h3><ul>
+<li>Boehm模型</li>
+</ul>
+<p>可移植性、可使用性、可维护性。</p>
+<ul>
+<li>McCall模型</li>
+</ul>
+<p>产品运行、产品修正、产品转移。</p>
+<ul>
+<li>ISO 9126</li>
+</ul>
+<p>内部质量模型、外部质量模型、使用中质量模型。</p>
+<h3 id="质量管理步骤"><a href="#质量管理步骤" class="headerlink" title="质量管理步骤"></a>质量管理步骤</h3><ul>
+<li>质量计划</li>
+</ul>
+<p>是决定如何满足质量标准的计划安排和方法。</p>
+<ul>
+<li>质量保证</li>
+</ul>
+<p>证明项目将会达到有关质量标准的工程活动，包括项目产品审计和项目执行过程审计。</p>
+<ul>
+<li>质量控制</li>
+</ul>
+<p>对阶段性的结果进行验证，为质量保证提供依据。</p>
+<h3 id="质量管理评审"><a href="#质量管理评审" class="headerlink" title="质量管理评审"></a>质量管理评审</h3><p>即使过程评审也是产品评审，对产品组件或文档进行技术分析，旨在发现设计或者代码中的详细错误。</p>
+<p>是质量管理过程中的最后一个阶段。</p>
+<h3 id="质量管理评审方法"><a href="#质量管理评审方法" class="headerlink" title="质量管理评审方法"></a>质量管理评审方法</h3><p>同行评审、走查、会议审查。</p>
+<h2 id="风险管理"><a href="#风险管理" class="headerlink" title="风险管理"></a>风险管理</h2><h3 id="风险管理-1"><a href="#风险管理-1" class="headerlink" title="风险管理"></a>风险管理</h3><ul>
+<li>风险识别</li>
+<li>风险评估</li>
+<li>风险处理</li>
+<li>风险监控</li>
+</ul>
+<h3 id="风险识别的依据"><a href="#风险识别的依据" class="headerlink" title="风险识别的依据"></a>风险识别的依据</h3><p>风险管理规划、项目规划、历史资料、风险种类、制约因素与假定条件。</p>
+<h3 id="风险管理的意义和作用"><a href="#风险管理的意义和作用" class="headerlink" title="风险管理的意义和作用"></a>风险管理的意义和作用</h3><p>作用：</p>
+<ul>
+<li>促进决策实施的科学化、合理化，降低决策的风险水平</li>
+<li>保障项目经营目标的顺利实现</li>
+</ul>
+<p>意义：</p>
+<ul>
+<li>有利于提高全社会的资金利用效率，促进产业结构的优化</li>
+<li>有利于社会主义市场经济的健康发展</li>
+</ul>
+<h2 id="人力资源和沟通管理"><a href="#人力资源和沟通管理" class="headerlink" title="人力资源和沟通管理"></a>人力资源和沟通管理</h2><h3 id="项目组织结构"><a href="#项目组织结构" class="headerlink" title="项目组织结构"></a>项目组织结构</h3><ul>
+<li>职能型</li>
+</ul>
+<p>是<strong>应用最广泛</strong>的组织结构。</p>
+<p>具有明确的等级划分。</p>
+<p>优点：资源利用灵活，成本较低，有利于整体协调。</p>
+<p>缺点：项目经理权力弱化，项目组成员责任淡化。</p>
+<p>适用于公司内部项目。</p>
+<ul>
+<li>项目型</li>
+</ul>
+<p>项目成员有项目完成后无家可归的担忧。</p>
+<p>项目的组织独立于公司的职能部门之外，以项目经理为首。</p>
+<p>优点：项目经理权力集中，有利于资源调动，结构简单，沟通效率高。</p>
+<p>缺点：资源无法共享，项目间缺少交流，阻碍技术水平提升。</p>
+<p>适用于大型项目。</p>
+<ul>
+<li>矩阵型</li>
+</ul>
+<p>是上述两者的混合体，每个职员有两个经理——项目经理和职能经理。</p>
+<p>项目经理负责整合公司资源完成项目目标。</p>
+<p>职能经理对高质量的完成所承担的产品任务负责。</p>
+<p>可分为以下三种。</p>
+<p><strong>弱矩阵型组织结构</strong>：保持了较多职能型组织结构的特征，适用于技术简单的项目。</p>
+<p><strong>平衡型矩阵组织结构</strong>：任命参与项目的一位职员为项目经理，有一定权力，适用于中等技术复杂程度的项目。</p>
+<p><strong>强矩阵型组织结构</strong>：具有较大权限的项目经理以及专职的项目管理人员，适用于技术复杂的项目。</p>
+<h3 id="项目经理的职权"><a href="#项目经理的职权" class="headerlink" title="项目经理的职权"></a>项目经理的职权</h3><ul>
+<li>独立决策权</li>
+<li>项目团队的组建权</li>
+<li>项目实施的控制权</li>
+<li>项目资金的控制权</li>
+</ul>
+<h2 id="项目收尾"><a href="#项目收尾" class="headerlink" title="项目收尾"></a>项目收尾</h2><p>包括合同收尾和管理收尾。</p>
+<ul>
+<li>合同收尾</li>
+</ul>
+<p>与客户比照合同，审核是否完成了所要求的内容。结束合同并理清账目。</p>
+<ul>
+<li>管理收尾</li>
+</ul>
+<p>对于项目组内部，把做好的项目文档、代码、与客户交流的文件等归档保存。</p>
+<h3 id="项目收尾的重要性"><a href="#项目收尾的重要性" class="headerlink" title="项目收尾的重要性"></a>项目收尾的重要性</h3><ul>
+<li><p>是项目管理的重要评审点</p>
 </li>
-<li><p>一个对象和一个数字或一个字符串，则将对象转为原始值，再进行宽松比较</p>
+<li><p>是沟通管理的契机</p>
+</li>
+<li><p>是项目收尾记录的基础</p>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> == <span class="number">1</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="项目验收"><a href="#项目验收" class="headerlink" title="项目验收"></a>项目验收</h3><p>对软件项目成果的检验和确认，是一个<strong>循序渐进</strong>的过程：准备验收材料、提交申请、初审、复审、验收合格、完成移交工作。</p>
+<p>包括：</p>
 <ul>
-<li>其它均为false</li>
+<li>软件系统验收</li>
+<li>质量验收</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[] == <span class="literal">false</span>  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<h3 id="补漏"><a href="#补漏" class="headerlink" title="补漏"></a>补漏</h3><ul>
-<li>特殊数字<code>NaN</code>和本身不相等：</li>
+<p>对软件系统的功能、性能、用户操作界面、可维护性等方面进行验收。</p>
+<ul>
+<li>资料验收</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NaN == NaN  <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<h2 id="我不知道的"><a href="#我不知道的" class="headerlink" title="我不知道的"></a>我不知道的</h2><p><code>JavaScript</code>真神奇！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[] == <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">	[] === <span class="number">0</span>  <span class="comment">//false</span></span><br><span class="line">	+[] === <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">	-[] === <span class="number">0</span>  <span class="comment">//true</span></span><br><span class="line">[] !== []  <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p><code>+</code>操作符<strong>转数字为字符串</strong>，<code>-</code>操作符<code>转字符串为数字</code>，并同时注意它们是二操作数的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo = <span class="string">'11'</span>+<span class="number">2</span>-<span class="string">'1'</span></span><br><span class="line"><span class="built_in">console</span>.log(foo)  <span class="comment">//111</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> foo)  <span class="comment">//"number"</span></span><br></pre></td></tr></table></figure>
-<p>十进制字面量可以以<code>0</code>作为开始，后面跟着其他十进制数，但是假如前导<code>0</code>之后的所有数字都小于<code>8</code>，那么这个数就会被解析为一个八进制的数，但<code>08</code>和<code>09</code>例外：它们会按十进制转化，同时给出提示<code>SyntaxError: 08/09 is not a legal ECMA-262 octal constant</code>。</p>
-<p>详情请参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Errors/Bad_octal?utm_source=mozilla&amp;utm_medium=firefox-console-errors&amp;utm_campaign=default" target="_blank" rel="noopener">这个文档</a>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span>+<span class="number">010</span>  <span class="comment">//"8"</span></span><br><span class="line"><span class="string">''</span>+<span class="number">0101</span>  <span class="comment">//"72"</span></span><br><span class="line"><span class="string">''</span>+<span class="number">08</span>  <span class="comment">//'8'</span></span><br><span class="line"><span class="string">''</span>+<span class="number">09</span>  <span class="comment">//"9"</span></span><br></pre></td></tr></table></figure>
+<p>对开发文档、管理文档、用户文档进行验收，检查<strong>项目资料的完整性</strong>、<strong>书写是否规范</strong>、<strong>内容是否一致</strong>。</p>
+<h3 id="项目评价的内容"><a href="#项目评价的内容" class="headerlink" title="项目评价的内容"></a>项目评价的内容</h3><ul>
+<li>项目计划</li>
+</ul>
+<p>根据项目目标的要求，对项目范围内的各项活动做出合理的安排。</p>
+<ul>
+<li>项目组织</li>
+</ul>
+<p>为了进行项目管理，完成预定的项目工作，而建立的管理结构。</p>
+<ul>
+<li>项目效益</li>
+</ul>
+<p>项目实施完成后对项目预期的近期经济效益和远期影响的评价。</p>
+<ul>
+<li>成本控制</li>
+</ul>
+<p>将此项目实际发生的费用与项目批准的实施费用预算进行对比和评价。</p>
+<ul>
+<li>进度控制</li>
+</ul>
+<p>以项目实际的进度与计划的进度进行对比和评价。</p>
+
       
     </div>
 
@@ -658,9 +868,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"># -JavaScript</a>
-          
-            <a href="/tags/运算符/" rel="tag"># -运算符</a>
+            <a href="/tags/软件项目管理/" rel="tag"># -软件项目管理</a>
           
         </div>
       
@@ -673,8 +881,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/02/Palindrome-Number/" rel="next" title="LeetCode之判断是否为“回文数”">
-                <i class="fa fa-chevron-left"></i> LeetCode之判断是否为“回文数”
+              <a href="/2019/06/10/软件测试技术备考知识点/" rel="next" title="软件测试技术备考">
+                <i class="fa fa-chevron-left"></i> 软件测试技术备考
               </a>
             
           </div>
@@ -682,10 +890,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/07/我不知道的EventLoop/" rel="prev" title="我不知道的EventLoop">
-                我不知道的EventLoop <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -902,7 +1106,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从数据类型开始"><span class="nav-number">1.</span> <span class="nav-text">从数据类型开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始数据类型とは"><span class="nav-number">1.1.</span> <span class="nav-text">原始数据类型とは</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原始值和对象"><span class="nav-number">1.2.</span> <span class="nav-text">原始值和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原始值"><span class="nav-number">1.2.1.</span> <span class="nav-text">原始值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">1.2.2.</span> <span class="nav-text">对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">1.3.</span> <span class="nav-text">类型检测</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof主要用于原始值"><span class="nav-number">1.3.1.</span> <span class="nav-text">typeof主要用于原始值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof用于对象"><span class="nav-number">1.3.2.</span> <span class="nav-text">instanceof用于对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">1.3.3.</span> <span class="nav-text">Object.prototype.toString()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入类型转换"><span class="nav-number">2.</span> <span class="nav-text">深入类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean"><span class="nav-number">2.1.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">2.2.</span> <span class="nav-text">Number</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-时发生了什么"><span class="nav-number">3.</span> <span class="nav-text">使用==时发生了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将值转换为原始值"><span class="nav-number">3.1.</span> <span class="nav-text">将值转换为原始值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宽松比较"><span class="nav-number">3.2.</span> <span class="nav-text">宽松比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补漏"><span class="nav-number">3.3.</span> <span class="nav-text">补漏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我不知道的"><span class="nav-number">4.</span> <span class="nav-text">我不知道的</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目管理概念"><span class="nav-number">1.</span> <span class="nav-text">软件项目管理概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目"><span class="nav-number">1.1.</span> <span class="nav-text">项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目的特征"><span class="nav-number">1.2.</span> <span class="nav-text">项目的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目管理的五个标准过程组"><span class="nav-number">1.3.</span> <span class="nav-text">项目管理的五个标准过程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件项目与一般项目的区别"><span class="nav-number">1.4.</span> <span class="nav-text">软件项目与一般项目的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件项目管理"><span class="nav-number">1.5.</span> <span class="nav-text">软件项目管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目立项准备"><span class="nav-number">2.</span> <span class="nav-text">软件项目立项准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件项目的解决方案"><span class="nav-number">2.1.</span> <span class="nav-text">软件项目的解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件项目范围"><span class="nav-number">2.2.</span> <span class="nav-text">软件项目范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可行性分析"><span class="nav-number">2.3.</span> <span class="nav-text">可行性分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合同类型"><span class="nav-number">2.4.</span> <span class="nav-text">合同类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目立项过程"><span class="nav-number">2.5.</span> <span class="nav-text">项目立项过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目计划"><span class="nav-number">3.</span> <span class="nav-text">软件项目计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#范围计划"><span class="nav-number">3.1.</span> <span class="nav-text">范围计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险计划"><span class="nav-number">3.2.</span> <span class="nav-text">风险计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合同计划"><span class="nav-number">3.3.</span> <span class="nav-text">合同计划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目需求管理"><span class="nav-number">4.</span> <span class="nav-text">软件项目需求管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件需求"><span class="nav-number">4.1.</span> <span class="nav-text">软件需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求开发"><span class="nav-number">4.2.</span> <span class="nav-text">需求开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求分析方法"><span class="nav-number">4.3.</span> <span class="nav-text">需求分析方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目进度管理"><span class="nav-number">5.</span> <span class="nav-text">软件项目进度管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WBS：指定进度计划的基础"><span class="nav-number">5.1.</span> <span class="nav-text">WBS：指定进度计划的基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#甘特图"><span class="nav-number">5.2.</span> <span class="nav-text">甘特图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络图"><span class="nav-number">5.3.</span> <span class="nav-text">网络图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络图：PDM"><span class="nav-number">5.4.</span> <span class="nav-text">网络图：PDM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络图：ADM"><span class="nav-number">5.5.</span> <span class="nav-text">网络图：ADM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#甘特图与网络图差异"><span class="nav-number">5.6.</span> <span class="nav-text">甘特图与网络图差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计划评审"><span class="nav-number">5.7.</span> <span class="nav-text">计划评审</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键路径法"><span class="nav-number">5.8.</span> <span class="nav-text">关键路径法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目估算"><span class="nav-number">6.</span> <span class="nav-text">项目估算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#成本估算方法"><span class="nav-number">6.1.</span> <span class="nav-text">成本估算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工期估算方法"><span class="nav-number">6.2.</span> <span class="nav-text">工期估算方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#质量管理"><span class="nav-number">7.</span> <span class="nav-text">质量管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件质量模型"><span class="nav-number">7.1.</span> <span class="nav-text">软件质量模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量管理步骤"><span class="nav-number">7.2.</span> <span class="nav-text">质量管理步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量管理评审"><span class="nav-number">7.3.</span> <span class="nav-text">质量管理评审</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量管理评审方法"><span class="nav-number">7.4.</span> <span class="nav-text">质量管理评审方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风险管理"><span class="nav-number">8.</span> <span class="nav-text">风险管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#风险管理-1"><span class="nav-number">8.1.</span> <span class="nav-text">风险管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险识别的依据"><span class="nav-number">8.2.</span> <span class="nav-text">风险识别的依据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险管理的意义和作用"><span class="nav-number">8.3.</span> <span class="nav-text">风险管理的意义和作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人力资源和沟通管理"><span class="nav-number">9.</span> <span class="nav-text">人力资源和沟通管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目组织结构"><span class="nav-number">9.1.</span> <span class="nav-text">项目组织结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目经理的职权"><span class="nav-number">9.2.</span> <span class="nav-text">项目经理的职权</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目收尾"><span class="nav-number">10.</span> <span class="nav-text">项目收尾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目收尾的重要性"><span class="nav-number">10.1.</span> <span class="nav-text">项目收尾的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目验收"><span class="nav-number">10.2.</span> <span class="nav-text">项目验收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目评价的内容"><span class="nav-number">10.3.</span> <span class="nav-text">项目评价的内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1058,7 +1262,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/04/06/我不知道的==运算符/'
+    refer: '2019/06/20/软件项目管理备考知识点/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
