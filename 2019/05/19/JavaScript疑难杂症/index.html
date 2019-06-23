@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="嗯，汇总了我碰到的JavaScript中奇奇怪怪或不常见的知识点。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-20T08:49:10.835Z">
+<meta property="og:updated_time" content="2019-06-23T12:49:23.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript疑难杂症">
 <meta name="twitter:description" content="嗯，汇总了我碰到的JavaScript中奇奇怪怪或不常见的知识点。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-20 16:49:10" itemprop="dateModified" datetime="2019-06-20T16:49:10+08:00">2019-06-20</time>
+                <time title="修改时间：2019-06-23 20:49:23" itemprop="dateModified" datetime="2019-06-23T20:49:23+08:00">2019-06-23</time>
               
             
           </span>
@@ -475,6 +475,9 @@
 <h2 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h2><p>有效防止事件在短时间内的多次重复触发。</p>
 <p>利用闭包去维护一个定时器句柄。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">+(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">Function</span>.prototype.throttle)&#123;</span><br><span class="line">        <span class="built_in">Function</span>.prototype.throttle = <span class="function"><span class="keyword">function</span> (<span class="params">method, seconds</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">let</span> timer = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="keyword">let</span> context = <span class="keyword">this</span>;</span><br><span class="line">                <span class="keyword">let</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">                clearInterval(timer);</span><br><span class="line">                timer = setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">                    method.apply(context, args);</span><br><span class="line">                &#125;, seconds);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h2 id="显示DOM"><a href="#显示DOM" class="headerlink" title="显示DOM"></a>显示DOM</h2><p>使用以下函数来显示页面中的DOM。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[].forEach.call($$(<span class="string">"*"</span>),<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123; a.style.outline=<span class="string">"1px solid #"</span>+(~~(<span class="built_in">Math</span>.random()*(<span class="number">1</span>&lt;&lt;<span class="number">24</span>))).toString(<span class="number">16</span>) &#125;);</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -739,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#g标识符与RegExp-test"><span class="nav-number">1.</span> <span class="nav-text">/g标识符与RegExp.test()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流"><span class="nav-number">2.</span> <span class="nav-text">函数节流</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#g标识符与RegExp-test"><span class="nav-number">1.</span> <span class="nav-text">/g标识符与RegExp.test()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流"><span class="nav-number">2.</span> <span class="nav-text">函数节流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#显示DOM"><span class="nav-number">3.</span> <span class="nav-text">显示DOM</span></a></li></ol></div>
             
 
           </div>
