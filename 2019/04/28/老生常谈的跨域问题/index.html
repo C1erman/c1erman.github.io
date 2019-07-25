@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人1337">
 <meta property="og:description" content="跨域问题，基本上每位前端开发人员都会遇到。 本篇文章将讲述什么是跨域，顺带提一提JSON与JSONP这两个并不相近的东西。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-24T14:57:09.846Z">
+<meta property="og:updated_time" content="2019-07-25T14:51:17.936Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域">
 <meta name="twitter:description" content="跨域问题，基本上每位前端开发人员都会遇到。 本篇文章将讲述什么是跨域，顺带提一提JSON与JSONP这两个并不相近的东西。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-24 22:57:09" itemprop="dateModified" datetime="2019-07-24T22:57:09+08:00">2019-07-24</time>
+                <time title="修改时间：2019-07-25 22:51:17" itemprop="dateModified" datetime="2019-07-25T22:51:17+08:00">2019-07-25</time>
               
             
           </span>
@@ -521,7 +521,7 @@
 <p>它允许某一页面向跨域服务器发送并接受请求。</p>
 <h3 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h3><p>某些请求并不会触发CORS预检请求，我们称这种请求为<strong>简单请求</strong>。</p>
 <blockquote>
-<p><strong>注意：</strong>简单请求并不是由规范定义的。</p>
+<p><strong>注意：</strong>简单请求并不是由<code>W3C</code>规范所定义的。</p>
 </blockquote>
 <p>若某个请求满足以下两个条件，则被称作简单请求。</p>
 <ul>
@@ -552,6 +552,29 @@
 <p>请求发送至服务器后，返回响应至浏览器，这时，如果浏览器发现响应头中，不包含<code>Access-Control-Allow-Origin</code>字段，则会拦截该响应，同时抛出错误。</p>
 <blockquote>
 <p>即：跨站请求正常发起了，但是响应结果被浏览器拦截了。</p>
+</blockquote>
+<p>如果<code>Origin</code>字段指定的源在服务器的许可范围内，服务器返回的响应头将会至多添加下述三个关联字段：</p>
+<ul>
+<li><code>Access-Control-Allow-Origin</code></li>
+</ul>
+<p>该字段指定了响应的资源是否被允许与指定的<code>Origin</code>共享。</p>
+<p>可取值为：所有<code>*</code>、给定域名<code>http:seefun.club</code>。</p>
+<ul>
+<li><code>Access-Control-Allow-Credentials</code></li>
+</ul>
+<p>该字段指定了是否可以将对请求的响应暴露给页面。</p>
+<p>可取值为：是<code>true</code>。</p>
+<p>比起将该字段的值设置为<code>false</code>，忽略对该字段的赋值更好。</p>
+<ul>
+<li><code>Access-Control-Expose-Headers</code></li>
+</ul>
+<p>该字段列出了哪些头部字段可以作为响应的一部分暴漏给外部。</p>
+<p>默认情况下，只有六种<strong>简单响应头部</strong>，即<code>simple response headers</code>，可以暴漏给外部。</p>
+<p>即<code>Cache-Control</code>、<code>Content-Language</code>、<code>Content-Type</code>、<code>Expires</code>、<code>Last-Modified</code>、<code>Pragma</code>。</p>
+<blockquote>
+<p><code>Expires</code>：包含一个<code>Http</code>时间戳，在此日期之后，响应过期。</p>
+<p><code>Last-Modified</code>：响应首部字段，包含源头服务器认定的资源做出修改的日期及时间。</p>
+<p><code>Pragme</code>：通用首部，效果依赖于不同的实现。</p>
 </blockquote>
 <h3 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h3><p>与<strong>简单请求</strong>不同，需预检的请求要去必须首先使用<code>OPTIONS</code>向服务器发送一个预检请求，已获知服务器是否允许该实际请求。</p>
 
