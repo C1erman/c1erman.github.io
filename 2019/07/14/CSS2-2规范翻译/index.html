@@ -104,27 +104,27 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="还是有点东西的，好难。">
-<meta name="keywords" content="-软件项目管理">
+  <meta name="description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
+<meta name="keywords" content="-CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件项目管理备考知识点">
-<meta property="og:url" content="http://seefun.club/2019/06/20/软件项目管理备考知识点/index.html">
+<meta property="og:title" content="CSS2.2规范">
+<meta property="og:url" content="http://seefun.club/2019/07/14/CSS2-2规范翻译/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="还是有点东西的，好难。">
+<meta property="og:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/criticalPath.png">
-<meta property="og:updated_time" content="2019-06-20T08:17:11.735Z">
+<meta property="og:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
+<meta property="og:updated_time" content="2019-08-05T07:49:47.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="软件项目管理备考知识点">
-<meta name="twitter:description" content="还是有点东西的，好难。">
-<meta name="twitter:image" content="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/criticalPath.png">
+<meta name="twitter:title" content="CSS2.2规范">
+<meta name="twitter:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
+<meta name="twitter:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/06/20/软件项目管理备考知识点/">
+  <link rel="canonical" href="http://seefun.club/2019/07/14/CSS2-2规范翻译/">
 
 
 
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>软件项目管理备考知识点 | 归人1337</title>
+  <title>CSS2.2规范 | 归人1337</title>
   
 
 
@@ -350,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/06/20/软件项目管理备考知识点/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/07/14/CSS2-2规范翻译/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -367,7 +367,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">软件项目管理备考知识点
+          <h2 class="post-title" itemprop="name headline">CSS2.2规范
 
               
             
@@ -393,12 +393,24 @@
                 
               
 
-              <time title="创建时间：2019-06-20 10:42:11 / 修改时间：16:17:11" itemprop="dateCreated datePublished" datetime="2019-06-20T10:42:11+08:00">2019-06-20</time>
+              <time title="创建时间：2019-07-14 21:27:02" itemprop="dateCreated datePublished" datetime="2019-07-14T21:27:02+08:00">2019-07-14</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-05 15:49:47" itemprop="dateModified" datetime="2019-08-05T15:49:47+08:00">2019-08-05</time>
               
             
           </span>
@@ -415,7 +427,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/备考/" itemprop="url" rel="index"><span itemprop="name">-备考</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端知识/" itemprop="url" rel="index"><span itemprop="name">-前端知识</span></a></span>
 
                 
                 
@@ -450,400 +462,189 @@
       
 
       
-        <p>还是有点东西的，<del>好难</del>。</p>
+        <p>CSS规范的重要性被大大低估了。</p>
+<p>本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。</p>
+<p>注意，请不要忽略CSS3。</p>
 <a id="more"></a>
-<h2 id="软件项目管理概念"><a href="#软件项目管理概念" class="headerlink" title="软件项目管理概念"></a>软件项目管理概念</h2><h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p>项目是为完成某一独特的产品或服务所做的一次性的、有限的努力。</p>
-<h3 id="项目的特征"><a href="#项目的特征" class="headerlink" title="项目的特征"></a>项目的特征</h3><ul>
-<li>目标性</li>
-<li>相关性</li>
-<li>周期性</li>
-<li>独特性</li>
-<li>约束性</li>
-</ul>
-<p>每一个项目的资源、成本、时间都是一定的。</p>
-<ul>
-<li>不确定性</li>
-</ul>
-<h3 id="项目管理的五个标准过程组"><a href="#项目管理的五个标准过程组" class="headerlink" title="项目管理的五个标准过程组"></a>项目管理的五个标准过程组</h3><ol>
-<li>启动过程组</li>
-<li>计划过程组</li>
-<li>执行过程组</li>
-<li>控制过程组</li>
-<li>收尾过程组</li>
-</ol>
-<h3 id="软件项目与一般项目的区别"><a href="#软件项目与一般项目的区别" class="headerlink" title="软件项目与一般项目的区别"></a>软件项目与一般项目的区别</h3><p>软件项目除了具备一般项目的基本特征之外，还具有以下特点：</p>
-<ol>
-<li>软件是一种逻辑实体，具有抽象性。</li>
-<li>软件开发的成本相当昂贵。</li>
-<li>软件没有机械硬件的磨损和老化问题。</li>
-</ol>
-<h3 id="软件项目管理"><a href="#软件项目管理" class="headerlink" title="软件项目管理"></a>软件项目管理</h3><p>为了使软件项目按照预定的成本、进度、质量顺利完成，而对成本、人员、进度进行分析和管理的活动。</p>
-<h2 id="软件项目立项准备"><a href="#软件项目立项准备" class="headerlink" title="软件项目立项准备"></a>软件项目立项准备</h2><h3 id="软件项目的解决方案"><a href="#软件项目的解决方案" class="headerlink" title="软件项目的解决方案"></a>软件项目的解决方案</h3><ol>
-<li>自主开发</li>
-<li>完全外包</li>
-<li>购买商用软件+自主开发</li>
-</ol>
-<h3 id="软件项目范围"><a href="#软件项目范围" class="headerlink" title="软件项目范围"></a>软件项目范围</h3><ol>
-<li>产品范围</li>
-</ol>
-<p>产品或服务所包含的特征或功能。</p>
-<ol start="2">
-<li>项目范围</li>
-</ol>
-<p>为交付具有规定特征和功能的产品所必须完成的工作。</p>
-<h3 id="可行性分析"><a href="#可行性分析" class="headerlink" title="可行性分析"></a>可行性分析</h3><ol>
-<li>技术可行性</li>
-<li>经济可行性</li>
-<li>社会可行性</li>
-<li>操作可行性</li>
-</ol>
-<h3 id="合同类型"><a href="#合同类型" class="headerlink" title="合同类型"></a>合同类型</h3><ol>
-<li>成本补偿合同</li>
-<li>功能计费点合同</li>
-<li>固定单价合同</li>
-<li>固定总价合同</li>
-</ol>
-<p>上述合同从上到下，对软件开发方的风险依此增大。</p>
-<h3 id="项目立项过程"><a href="#项目立项过程" class="headerlink" title="项目立项过程"></a>项目立项过程</h3><ol>
-<li>项目发起</li>
-<li>项目论证</li>
-<li>项目审核</li>
-<li>项目立项</li>
-</ol>
-<h2 id="软件项目计划"><a href="#软件项目计划" class="headerlink" title="软件项目计划"></a>软件项目计划</h2><h3 id="范围计划"><a href="#范围计划" class="headerlink" title="范围计划"></a>范围计划</h3><p>核心工作之一是编写项目范围说明书，并以此作为项目计划的基础。</p>
-<h3 id="风险计划"><a href="#风险计划" class="headerlink" title="风险计划"></a>风险计划</h3><ol>
-<li>风险识别</li>
-<li>风险评估</li>
-<li>编制风险应对策略</li>
-</ol>
-<h3 id="合同计划"><a href="#合同计划" class="headerlink" title="合同计划"></a>合同计划</h3><p>合同双方被称为合同当事人。</p>
-<h2 id="软件项目需求管理"><a href="#软件项目需求管理" class="headerlink" title="软件项目需求管理"></a>软件项目需求管理</h2><h3 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h3><p>用户对软件的功能和性能的要求，是一个系统或程序开发工作的说明，表现形式一般为文档形式。</p>
-<p>软件需求包括功能性需求和非功能性需求。</p>
-<p>功能性需求又可以分为三个层次：</p>
-<ol>
-<li>业务需求</li>
-<li>用户需求</li>
-<li>功能需求</li>
-</ol>
-<h3 id="需求开发"><a href="#需求开发" class="headerlink" title="需求开发"></a>需求开发</h3><ol>
-<li>需求获取</li>
-<li>需求分析</li>
-<li>需求规格编写</li>
-<li>需求验证</li>
-</ol>
-<p>这四个阶段不一定遵循线性顺序，它们是互相独立和反复的。</p>
-<h3 id="需求分析方法"><a href="#需求分析方法" class="headerlink" title="需求分析方法"></a>需求分析方法</h3><ol>
-<li>用例分析方法</li>
-</ol>
-<p>使用UML建模语言来描述用户的需求。</p>
-<p>其有两种组成——参与者、用例。</p>
-<p>两种组成之间的相互关系如下表所示：</p>
+<h2 id="章五：选择器"><a href="#章五：选择器" class="headerlink" title="章五：选择器"></a>章五：选择器</h2><h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p><a href="#parttern-matching">5.1 模式匹配</a></p>
+<h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p><span id="parttern-matching"></span></p>
+<p>在CSS中，<strong>模式匹配规则</strong>确定哪些样式规则适用于文档树中的元素。</p>
+<p>这些模式称为<strong>选择器</strong>，范围可以从简单的HTML元素到丰富的HTML上下文。如果模式中的所有条件对于某个元素都为真，则选择器匹配该元素。</p>
+<p>对于选择器，文档语言元素名称是否区分大小写取决于文档语言。例如，在HTML中，元素名称不区分大小写，但是在XML中，它们区分大小写。</p>
+<p>下表总结了CSS 2.2选择器语法：</p>
 <table>
 <thead>
 <tr>
-<th>关系类型</th>
-<th>说明</th>
-<th>图形符号</th>
+<th>模式</th>
+<th>含义</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>关联</td>
-<td>参与者与用例之间的关系</td>
-<td>————</td>
+<td>*</td>
+<td>匹配任意元素</td>
+<td><a href="#universal-selector">通用选择器</a></td>
 </tr>
 <tr>
-<td>泛化</td>
-<td>参与者之间、用例之间的关系</td>
-<td>————▷</td>
+<td>E</td>
+<td>匹配任意<code>E</code>元素</td>
+<td><a href="#type-selectors">类型选择器</a></td>
 </tr>
 <tr>
-<td>包含</td>
-<td>用例之间的关系</td>
-<td>–<sup>&lt;&lt;includes&gt;&gt;</sup>–&gt;</td>
+<td>E F</td>
+<td>匹配任意<code>E</code>元素的任意后代<code>F</code>元素</td>
+<td><a href="#descendant-selectors">后代选择器</a></td>
 </tr>
 <tr>
-<td>扩展</td>
-<td>用例之间的关系</td>
-<td>–<sup>&lt;&lt;extends&gt;&gt;</sup>–&gt;</td>
+<td>E&gt;F</td>
+<td>匹配任意<code>E</code>元素的直接子元素<code>F</code></td>
+<td><a href="#child-selectors">子类选择器</a></td>
+</tr>
+<tr>
+<td>E : first-child</td>
+<td>匹配一个元素<code>E</code>，当<code>E</code>是其父元素的第一个<code>E</code>元素</td>
+<td><a href="#first-child-pseudo-class">first-child伪类选择器</a></td>
+</tr>
+<tr>
+<td>E : link<br>E : visited</td>
+<td>匹配一个尚未访问或已访问的超链接<code>E</code></td>
+<td><a href="#link-pseudo-class">链接伪类选择器</a></td>
+</tr>
+<tr>
+<td>E : active<br>E : hover<br>E : focus</td>
+<td>匹配用户操作而影响的任意元素<code>E</code></td>
+<td><a href="dymic-pseudo-class">动态伪类选择器</a></td>
+</tr>
+<tr>
+<td>E : lang(c)</td>
+<td>匹配语言为<code>c</code>的一个元素<code>E</code></td>
+<td><a href="#lang-pseudo-class">lang伪类选择器</a></td>
+</tr>
+<tr>
+<td>E + F</td>
+<td>匹配任意紧跟在<code>E</code>之后的<code>F</code>元素</td>
+<td><a href="#adjacent-selectors">相邻选择器</a></td>
+</tr>
+<tr>
+<td>E[attr]</td>
+<td>匹配任意拥有<code>attr</code>属性的<code>E</code>元素</td>
+<td><a href="#attribute-selectors">属性选择器</a></td>
+</tr>
+<tr>
+<td>E[attr=”value”]</td>
+<td>匹配任意拥有<code>attr</code>属性，且值为<code>&quot;value&quot;</code>的<code>E</code>元素</td>
+<td><a href="#attribute-selectors">属性选择器</a></td>
+</tr>
+<tr>
+<td>E[attr~=”value”]</td>
+<td>匹配任意拥有<code>attr</code>属性，且值为一个<strong>含空格</strong>的列表，该列表中含有<code>&quot;value&quot;</code>的<code>E</code>元素</td>
+<td><a href="#attribute-selectors">属性选择器</a></td>
+</tr>
+<tr>
+<td>E[attr\</td>
+<td>=”value”]</td>
+<td>匹配任意拥有<code>attr</code>属性，且值包含指定值<code>&quot;value&quot;</code>的<code>E</code>元素</td>
+<td><a href="#attribute-selectors">属性选择器</a></td>
+</tr>
+<tr>
+<td>E.class</td>
+<td>匹配任意具有<code>class</code>类的元素</td>
+<td><a href="#class-selectors">类选择器</a></td>
+</tr>
+<tr>
+<td>E#id</td>
+<td>匹配任意具有id为<code>id</code>的元素</td>
+<td><a href="#id-selectors">ID选择器</a></td>
 </tr>
 </tbody>
 </table>
+<h2 id="章六：分配属性值、级联和继承"><a href="#章六：分配属性值、级联和继承" class="headerlink" title="章六：分配属性值、级联和继承"></a>章六：分配属性值、级联和继承</h2><h3 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h3><p><a href="#calculating-specificity">6.4.3 计算选择器的优先级</a></p>
+<h3 id="计算选择器的优先级"><a href="#计算选择器的优先级" class="headerlink" title="计算选择器的优先级"></a>计算选择器的优先级</h3><p><span id="calculating-specificity"></span></p>
 <blockquote>
-<p><strong>泛化：</strong></p>
-<p>是一种继承关系，表示一般与特殊的区别。</p>
+<p><strong>优先级：</strong></p>
+<p>原文为<code>specificity</code>，可翻译为特异性、明确性、具体性等。</p>
 </blockquote>
-<ol start="2">
-<li>原型分析方法</li>
-<li>结构化分析方法</li>
-</ol>
+<p>选择器的优先级计算规则如下：</p>
 <ul>
-<li>数据流图</li>
-<li>数据字典</li>
+<li><code>a</code>：如果是来自<code>style</code>属性的内联规则，则为<code>1</code>，否则为<code>0</code></li>
+<li><code>b</code>：计算选择器中<code>ID</code>属性的数量</li>
+<li><code>c</code>：计算选择器中其它属性和伪类的数量</li>
+<li><code>d</code>：计算选择器中元素名称和伪元素的数量</li>
 </ul>
-<p>常用的数据字典符号如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th>定义</th>
-<th>符号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>等价于</td>
-<td>=</td>
-</tr>
-<tr>
-<td>与，由哪两部分组成</td>
-<td>+</td>
-</tr>
-<tr>
-<td>或，两者取其一</td>
-<td>[a｜b]或[a,b]</td>
-</tr>
-<tr>
-<td>重复，0次或多次</td>
-<td>{xxx}</td>
-</tr>
-<tr>
-<td>重复，至少M次，至多N次</td>
-<td>M{xxx}N</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>E-R图</li>
-</ul>
-<p>即实体-联系图，该图主要有以下四种要素：</p>
-<p><strong>实体</strong>：▭</p>
-<p>实体与实体之间的<strong>联系</strong>：◇</p>
-<p>实体或联系的<strong>属性</strong>：⬭</p>
-<p>连线：—</p>
-<h2 id="软件项目进度管理"><a href="#软件项目进度管理" class="headerlink" title="软件项目进度管理"></a>软件项目进度管理</h2><p>由<strong>进度计划</strong>与<strong>进度控制</strong>组成。</p>
-<h3 id="WBS：制定进度计划的基础"><a href="#WBS：制定进度计划的基础" class="headerlink" title="WBS：制定进度计划的基础"></a>WBS：制定进度计划的基础</h3><p>将一个复杂的开发系统分层逐步细化为一个个工作任务单元。</p>
-<ul>
-<li>产品导向型</li>
-</ul>
-<p>以可交付产品作为划分依据。</p>
-<ul>
-<li>活动导向型</li>
-</ul>
-<p>以项目活动作为划分依据。</p>
-<h3 id="甘特图"><a href="#甘特图" class="headerlink" title="甘特图"></a>甘特图</h3><p>优点：清楚的表明了项目的计划进度，能动态的反映当前开发紧张状况。</p>
-<p>缺点：不能表达出各任务之间复杂的逻辑关系。</p>
-<h3 id="网络图"><a href="#网络图" class="headerlink" title="网络图"></a>网络图</h3><p>展示项目之间的各个活动以及活动之间的逻辑关系。</p>
-<p>常用的网络图有PDM、ADM。</p>
-<p>每个节点必须有唯一的编号。</p>
-<h3 id="网络图：PDM"><a href="#网络图：PDM" class="headerlink" title="网络图：PDM"></a>网络图：PDM</h3><p>节点法。</p>
-<ul>
-<li><strong>节点</strong>表示活动。</li>
-<li><strong>箭头</strong>表示工作的先后顺序和相互关系。</li>
-</ul>
-<p>有四种逻辑关系：</p>
-<ul>
-<li>结束开始</li>
-<li>结束结束</li>
-<li>开始结束</li>
-<li>开始开始</li>
-</ul>
-<h3 id="网络图：ADM"><a href="#网络图：ADM" class="headerlink" title="网络图：ADM"></a>网络图：ADM</h3><p>箭线法。</p>
-<ul>
-<li><strong>节点</strong>表示事件。</li>
-<li><strong>箭头</strong>表示活动，活动的描述写在箭头上。</li>
-</ul>
+<p>优先级的计算仅基于选择器的形式。</p>
 <blockquote>
-<p>紧前事件：箭头之前的事件。</p>
-<p>紧后事件：箭头之后的事件。</p>
+<p><strong>选择器的形式：</strong></p>
+<p><code>[id=&quot;id&quot;]</code>形式的选择器被记为<strong>属性选择器</strong>，而不是ID选择器，因此优先级规则为<code>a=0,b=0,c=1,d=0</code>。</p>
 </blockquote>
-<p>只有一种逻辑关系：结束开始。</p>
-<p>使用<strong>虚活动</strong>来表明活动之间的逻辑关系，它既不消耗资源也不占用时间，用虚线箭头表示。</p>
-<h3 id="甘特图与网络图差异"><a href="#甘特图与网络图差异" class="headerlink" title="甘特图与网络图差异"></a>甘特图与网络图差异</h3><p>如下表所述：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>网络图</th>
-<th>甘特图</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>活动之间的逻辑关系</td>
-<td>可以反应</td>
-<td>只能反应简单的逻辑关系</td>
-</tr>
-<tr>
-<td>项目的完整工作流程</td>
-<td>只有一个起点、一个终点，可以反应</td>
-<td>起点和终点不集中在一个点上，不容易从中看出完整的工作流程</td>
-</tr>
-<tr>
-<td>计划与组织项目工作</td>
-<td>能起较大作用</td>
-<td>作用不大</td>
-</tr>
-</tbody>
-</table>
-<h3 id="计划评审"><a href="#计划评审" class="headerlink" title="计划评审"></a>计划评审</h3><p>加权得到的平均期望值为：(最乐观期望值O+4*最可能期望值M+最悲观期望值P)/6。</p>
-<p>标准差为：(P-O)/6。</p>
-<h3 id="关键路径法"><a href="#关键路径法" class="headerlink" title="关键路径法"></a>关键路径法</h3><p>项目中总工期最长的那条线。</p>
-<ul>
-<li>最早开始时间：项目的第一个活动的最早开始时间为0，其余为紧前活动的最早结束时间。</li>
-<li>最早结束时间：本身的最早开始时间+活动历时。</li>
-<li>最晚结束时间：项目的最后一个活动的最晚结束时间为最早结束时间，其余为紧后活动的最晚开始时间。</li>
-</ul>
+<p>连接得到的四个数字<code>a-b-c-d</code>即可得到选择器的优先级。</p>
 <blockquote>
-<p>当有多个后置任务时，选取其中<strong>最小</strong>的最晚开始时间。</p>
+<p><strong>注意：</strong></p>
+<p>这四个数字的数字系统，即计算规则，为大基数数字系统，a具有最高的优先级，同优先级数字越大权重越高。</p>
 </blockquote>
+<p>下面是一些例子：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">li:first-line &#123;&#125;    优先级为：a=0, b=0, c=0, d=2    0-0-0-2</span><br><span class="line">li.class1.class2 &#123;&#125;    优先级为：a=0, b=0, c=2, d=1    0-0-2-1</span><br><span class="line">#id &#123;&#125;    优先级为：a=0, b=1, c=0, d=0    0-1-0-0</span><br><span class="line">style=""    优先级为：a=1, b=0, c=0, d=0    1-0-0-0</span><br></pre></td></tr></table></figure>
+<h2 id="章八：盒模型"><a href="#章八：盒模型" class="headerlink" title="章八：盒模型"></a>章八：盒模型</h2><h3 id="内容-2"><a href="#内容-2" class="headerlink" title="内容"></a>内容</h3><p><a href="#box-dimensions">8.1 盒子尺寸</a></p>
+<p><a href="#collapsing-borders">8.3.1 折叠边距</a></p>
+<h3 id="盒子尺寸"><a href="#盒子尺寸" class="headerlink" title="盒子尺寸"></a>盒子尺寸</h3><p><span id="box-dimensions"></span></p>
+<p>每个盒子具有内容区域<code>content</code>和可选择的周边填充<code>padding</code>、边框<code>border</code>以及边缘区域<code>margin</code>。每个区域的大小由下面定义的属性指定。</p>
+<p>下图显示了这些区域的关联方式，以及相关术语：</p>
+<p><img src="https://www.w3.org/TR/CSS22/images/boxdim.png" alt="盒子尺寸的组成"></p>
+<p>四个区域中的每一个的周长称为边缘，因此，每个框有四条边。</p>
+<p>每个边框的大小为<code>0</code>时均<strong>向内收缩</strong>，从内到外的边框组成的盒子依此被定义为：内容盒子<code>content box</code> 、填充盒子<code>padding box</code>、边框盒子<code>border box</code>以及边缘盒子<code>margin box</code>。</p>
+<blockquote>
+<p><strong>关于box：</strong>一般来说，将<code>content box</code>中的<code>box</code>翻译为<strong>框</strong>似乎更合常理，但由于<code>border</code>已经带有边框的意思，因此这里采用<strong>盒子</strong>来翻译<code>box</code>。</p>
+</blockquote>
+<p>内容盒子、填充盒子与边框盒子的背景样式由元素的<code>background</code>指定，边缘盒子的背景则<strong>总是透明</strong>的。</p>
+<h3 id="折叠边距"><a href="#折叠边距" class="headerlink" title="折叠边距"></a>折叠边距</h3><p><span id="collapsing-borders"></span></p>
+<blockquote>
+<p><strong>折叠与崩溃：</strong></p>
+<p>原文为<code>collapsing</code>或<code>collapse</code>，直译为崩溃、倒塌，在此意译为折叠，便于理解。</p>
+</blockquote>
+<p>在CSS中，两个或多个盒子：它们可能是也可能不是兄弟，的相邻边距可以组合形成单个边距。通过这种方式结合的而得到的边距被称为折叠边距。</p>
+<blockquote>
+<p><strong>不是兄弟的相邻边框：</strong>这里的相邻指的是渲染过后相邻，而不单单只是DOM节点的相邻。</p>
+</blockquote>
+<p><strong>水平边距永不折叠。</strong></p>
+<p>相邻的垂直边距将会折叠，除了以下情况：</p>
 <ul>
-<li>最晚开始时间：本身的最晚结束时间-活动历时。</li>
+<li>根元素框的边距不会折叠</li>
+<li>如果具有间隙的元素的顶部边距与底部边距相邻，则该元素的边距将与后续兄弟的边距折叠，但是这样所产生的边距将不会与父元素的下边距折叠</li>
+<li>如果一个具有非零<code>min-height</code>或高度为<code>auto</code>的盒子的上边距，与它最后一个流内子元素的下边距折叠，则该子元素的下边距不会与其父元素的下边距折叠</li>
 </ul>
-<p>项目中最早开始时间 == 最晚开始时间的活动，为关键活动，组成的路径即为关键路径。</p>
-<p>一般项目节点可以表示为以下组成：</p>
-<p><img src="https://github.com/C1erman/Graph-bed/raw/master/imgs/For%20Blog/criticalPath.png" alt="关键路径"></p>
-<h2 id="项目估算"><a href="#项目估算" class="headerlink" title="项目估算"></a>项目估算</h2><h3 id="成本估算方法"><a href="#成本估算方法" class="headerlink" title="成本估算方法"></a>成本估算方法</h3><ul>
-<li>基于分解技术的方法</li>
-</ul>
-<p>功能点估算法、代码行估算法。</p>
+<p>折叠边距的计算规则如下：</p>
 <ul>
-<li>基于经验模型的方法</li>
-</ul>
-<p>COCOMO模型、IBM模型。</p>
-<h3 id="工期估算方法"><a href="#工期估算方法" class="headerlink" title="工期估算方法"></a>工期估算方法</h3><ul>
-<li>类比估算法</li>
-</ul>
-<p>将历史项目的实际成本作为当前项目的基础，根据当前项目的范围、规模来估算当前项目的成本。是自顶向下估算方法的一种类型。</p>
-<p>当<strong>项目信息足够时</strong>，使用类比估算法。</p>
-<ul>
-<li>德尔菲法</li>
-</ul>
-<p>由多位专家对项目进行估算，专家对项目理解的程度是该方法的关键点。</p>
-<p>当获得的<strong>项目信息有限时</strong>，使用德尔菲法。</p>
-<h2 id="质量管理"><a href="#质量管理" class="headerlink" title="质量管理"></a>质量管理</h2><h3 id="软件质量模型"><a href="#软件质量模型" class="headerlink" title="软件质量模型"></a>软件质量模型</h3><ul>
-<li>Boehm模型</li>
-</ul>
-<p>可移植性、可使用性、可维护性。</p>
-<ul>
-<li>McCall模型</li>
-</ul>
-<p>产品运行、产品修正、产品转移。</p>
-<ul>
-<li>ISO 9126</li>
-</ul>
-<p>内部质量模型、外部质量模型、使用中质量模型。</p>
-<h3 id="质量管理步骤"><a href="#质量管理步骤" class="headerlink" title="质量管理步骤"></a>质量管理步骤</h3><ul>
-<li>质量计划</li>
-</ul>
-<p>是决定如何满足质量标准的计划安排和方法。</p>
-<ul>
-<li>质量保证</li>
-</ul>
-<p>证明项目将会达到有关质量标准的工程活动，包括项目产品审计和项目执行过程审计。</p>
-<ul>
-<li>质量控制</li>
-</ul>
-<p>对阶段性的结果进行验证，为质量保证提供依据。</p>
-<h3 id="质量管理评审"><a href="#质量管理评审" class="headerlink" title="质量管理评审"></a>质量管理评审</h3><p>即是过程评审也是产品评审，对产品组件或文档进行技术分析，旨在发现设计或者代码中的详细错误。</p>
-<p>是质量管理过程中的最后一个阶段。</p>
-<h3 id="质量管理评审方法"><a href="#质量管理评审方法" class="headerlink" title="质量管理评审方法"></a>质量管理评审方法</h3><p>同行评审、走查、会议审查。</p>
-<h2 id="风险管理"><a href="#风险管理" class="headerlink" title="风险管理"></a>风险管理</h2><h3 id="风险管理-1"><a href="#风险管理-1" class="headerlink" title="风险管理"></a>风险管理</h3><ul>
-<li>风险识别</li>
-<li>风险评估</li>
-<li>风险处理</li>
-<li>风险监控</li>
-</ul>
-<h3 id="风险识别的依据"><a href="#风险识别的依据" class="headerlink" title="风险识别的依据"></a>风险识别的依据</h3><p>风险管理规划、项目规划、历史资料、风险种类、制约因素与假定条件。</p>
-<h3 id="风险管理的意义和作用"><a href="#风险管理的意义和作用" class="headerlink" title="风险管理的意义和作用"></a>风险管理的意义和作用</h3><p>作用：</p>
-<ul>
-<li>促进决策实施的科学化、合理化，降低决策的风险水平</li>
-<li>保障项目经营目标的顺利实现</li>
-</ul>
-<p>意义：</p>
-<ul>
-<li>有利于提高全社会的资金利用效率，促进产业结构的优化</li>
-<li>有利于社会主义市场经济的健康发展</li>
-</ul>
-<h2 id="人力资源和沟通管理"><a href="#人力资源和沟通管理" class="headerlink" title="人力资源和沟通管理"></a>人力资源和沟通管理</h2><h3 id="项目组织结构"><a href="#项目组织结构" class="headerlink" title="项目组织结构"></a>项目组织结构</h3><ul>
-<li>职能型</li>
-</ul>
-<p>是<strong>应用最广泛</strong>的组织结构。</p>
-<p>具有明确的等级划分。</p>
-<p>优点：资源利用灵活，成本较低，有利于整体协调。</p>
-<p>缺点：项目经理权力弱化，项目组成员责任淡化。</p>
-<p>适用于公司内部项目。</p>
-<ul>
-<li>项目型</li>
-</ul>
-<p>项目成员有项目完成后无家可归的担忧。</p>
-<p>项目的组织独立于公司的职能部门之外，以项目经理为首。</p>
-<p>优点：项目经理权力集中，有利于资源调动，结构简单，沟通效率高。</p>
-<p>缺点：资源无法共享，项目间缺少交流，阻碍技术水平提升。</p>
-<p>适用于大型项目。</p>
-<ul>
-<li>矩阵型</li>
-</ul>
-<p>是上述两者的混合体，每个职员有两个经理——项目经理和职能经理。</p>
-<p>项目经理负责整合公司资源完成项目目标。</p>
-<p>职能经理对高质量的完成所承担的产品任务负责。</p>
-<p>可分为以下三种。</p>
-<p><strong>弱矩阵型组织结构</strong>：保持了较多职能型组织结构的特征，适用于技术简单的项目。</p>
-<p><strong>平衡型矩阵组织结构</strong>：任命参与项目的一位职员为项目经理，有一定权力，适用于中等技术复杂程度的项目。</p>
-<p><strong>强矩阵型组织结构</strong>：具有较大权限的项目经理以及专职的项目管理人员，适用于技术复杂的项目。</p>
-<h3 id="项目经理的职权"><a href="#项目经理的职权" class="headerlink" title="项目经理的职权"></a>项目经理的职权</h3><ul>
-<li>独立决策权</li>
-<li>项目团队的组建权</li>
-<li>项目实施的控制权</li>
-<li>项目资金的控制权</li>
-</ul>
-<h2 id="项目收尾"><a href="#项目收尾" class="headerlink" title="项目收尾"></a>项目收尾</h2><p>包括合同收尾和管理收尾。</p>
-<ul>
-<li>合同收尾</li>
-</ul>
-<p>与客户比照合同，审核是否完成了所要求的内容。结束合同并理清账目。</p>
-<ul>
-<li>管理收尾</li>
-</ul>
-<p>对于项目组内部，把做好的项目文档、代码、与客户交流的文件等归档保存。</p>
-<h3 id="项目收尾的重要性"><a href="#项目收尾的重要性" class="headerlink" title="项目收尾的重要性"></a>项目收尾的重要性</h3><ul>
-<li><p>是项目管理的重要评审点</p>
+<li><p>当两个或多个边距折叠时，生成的边距高度是参与折叠的边距高度的最大值</p>
 </li>
-<li><p>是沟通管理的契机</p>
+<li><p>在负边距的情况下，负邻接边距的绝对值的最大值将从正邻接边距的最大值中减去</p>
 </li>
-<li><p>是项目收尾记录的基础</p>
+<li><p>如果没有正边距，则用零减负邻接边距的绝对值的最大值</p>
 </li>
 </ul>
-<h3 id="项目验收"><a href="#项目验收" class="headerlink" title="项目验收"></a>项目验收</h3><p>对软件项目成果的检验和确认，是一个<strong>循序渐进</strong>的过程：准备验收材料、提交申请、初审、复审、验收合格、完成移交工作。</p>
-<p>包括：</p>
-<ul>
-<li>软件系统验收</li>
-<li>质量验收</li>
-</ul>
-<p>对软件系统的功能、性能、用户操作界面、可维护性等方面进行验收。</p>
-<ul>
-<li>资料验收</li>
-</ul>
-<p>对开发文档、管理文档、用户文档进行验收，检查<strong>项目资料的完整性</strong>、<strong>书写是否规范</strong>、<strong>内容是否一致</strong>。</p>
-<h3 id="项目评价的内容"><a href="#项目评价的内容" class="headerlink" title="项目评价的内容"></a>项目评价的内容</h3><ul>
-<li>项目计划</li>
-</ul>
-<p>根据项目目标的要求，对项目范围内的各项活动做出合理的安排。</p>
-<ul>
-<li>项目组织</li>
-</ul>
-<p>为了进行项目管理，完成预定的项目工作，而建立的管理结构。</p>
-<ul>
-<li>项目效益</li>
-</ul>
-<p>项目实施完成后对项目预期的近期经济效益和远期影响的评价。</p>
-<ul>
-<li>成本控制</li>
-</ul>
-<p>将此项目实际发生的费用与项目批准的实施费用预算进行对比和评价。</p>
-<ul>
-<li>进度控制</li>
-</ul>
-<p>以项目实际的进度与计划的进度进行对比和评价。</p>
+<p>如果盒子的顶部与底部边距相邻，即空白盒子，则边距可能会通过这个盒子进行折叠。</p>
+<blockquote>
+<p>了解更多关于折叠边距的知识：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="noopener">MDN</a></p>
+</blockquote>
+<h2 id="章九：视觉格式化模型"><a href="#章九：视觉格式化模型" class="headerlink" title="章九：视觉格式化模型"></a>章九：视觉格式化模型</h2><h3 id="内容-3"><a href="#内容-3" class="headerlink" title="内容"></a>内容</h3><p><a href="#normal-flow">9.4 普通流</a></p>
+<p><a href="#block-formatting-contexts">9.4.1 块格式化上下文</a></p>
+<p><a href="#inline-formatting-contexts">9.4.2 内联格式化上下文</a></p>
+<h3 id="包含块"><a href="#包含块" class="headerlink" title="包含块"></a>包含块</h3><h3 id="普通流"><a href="#普通流" class="headerlink" title="普通流"></a>普通流</h3><p><span id="normal-flow"></span></p>
+<p>普通流中的盒子属于格式化上下文，在CSS2.2中可以是表格格式化上下文<code>table</code>、块格式化上下文<code>block</code>或者内联格式化上下文<code>inline</code>。在未来级别的CSS中，将引入其他类型的格式化上下文。</p>
+<p>块级盒子参与块格式化上下文，内联盒子参与内联格式化上下文。</p>
+<h3 id="块格式化上下文"><a href="#块格式化上下文" class="headerlink" title="块格式化上下文"></a>块格式化上下文</h3><p><span id="block-formatting-contexts"></span></p>
+<p>浮动、绝对定位元素、不是块级元素的块级容器（如<code>inline-block</code>、<code>table-cell</code>和<code>table-caption</code>），以及<code>overflow</code>属性不是<code>visible</code>（除非该内容已传播到视口）的块级元素，将为其内容建立新的块格式化上下文。</p>
+<p>在块格式化上下文中，盒子将从包含块的顶部一个接一个的垂直排列，两个兄弟盒子之间的垂直距离由它们的<code>margin</code>属性决定，块格式化上下文中相邻块级盒子的垂直边距同样折叠。</p>
+<p>在块格式化上下文中，每个盒子的左外边缘紧接包含块的左边缘，除非盒子建立了新的块格式化上下文（这种情况下，盒子可能因浮动而变窄），否则即使存在浮动也同样如此（尽管盒子的线框可能因浮动而缩小）。</p>
+<h3 id="内联格式化上下文"><a href="#内联格式化上下文" class="headerlink" title="内联格式化上下文"></a>内联格式化上下文</h3><p><span id="inline-formatting-contexts"></span></p>
+<p>内联格式化上下文由不包含块级盒子的块级容器盒子建立。</p>
+<p>在内联格式化上下文中，盒子将从包含块的顶部一个接一个的水平排列，这些盒子之间会考虑水平边距<code>margin</code>、边框<code>border</code>和填充<code>padding</code>。盒子可以以不同的方式垂直对齐，它们的顶部或底部都可以对齐，或者它们内部的文本基线也可以对齐。而包含形成一条线的盒子的矩形区域称为线框。</p>
+<blockquote>
+<p><strong>线框：</strong></p>
+<p>最后一句原文为：<code>The rectangular area that contains the boxes that form a line is called a line box.</code></p>
+<p>可理解为内联格式化上下文中的，每一行文本所组成的矩形区域。</p>
+</blockquote>
+<p>线框的宽度由包含块和浮动元素的存在确定，线框的高度由线高<code>line-height</code>给出的规则得出。</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本篇文章源自<a href="https://www.w3.org/TR/CSS22/" target="_blank" rel="noopener">W3C官网</a>，由<a href="kexiezhang@gmail.com">c1er</a>翻译与润色。</p>
 
       
     </div>
@@ -867,7 +668,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/软件项目管理/" rel="tag"># -软件项目管理</a>
+            <a href="/tags/CSS/" rel="tag"># -CSS</a>
           
         </div>
       
@@ -880,8 +681,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/10/软件测试技术备考知识点/" rel="next" title="软件测试技术备考">
-                <i class="fa fa-chevron-left"></i> 软件测试技术备考
+              <a href="/2019/07/11/ゼロから習うTypeScript/" rel="next" title="ゼロから習うTypeScript">
+                <i class="fa fa-chevron-left"></i> ゼロから習うTypeScript
               </a>
             
           </div>
@@ -890,8 +691,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/11/ゼロから習うTypeScript/" rel="prev" title="ゼロから習うTypeScript">
-                ゼロから習うTypeScript <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/28/异步加载JavaScript脚本/" rel="prev" title="异步加载JavaScript脚本">
+                异步加载JavaScript脚本 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -984,6 +785,8 @@
                     
                   
                     
+                    
+                      
                     
                       
                     
@@ -1111,7 +914,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目管理概念"><span class="nav-number">1.</span> <span class="nav-text">软件项目管理概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目"><span class="nav-number">1.1.</span> <span class="nav-text">项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目的特征"><span class="nav-number">1.2.</span> <span class="nav-text">项目的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目管理的五个标准过程组"><span class="nav-number">1.3.</span> <span class="nav-text">项目管理的五个标准过程组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件项目与一般项目的区别"><span class="nav-number">1.4.</span> <span class="nav-text">软件项目与一般项目的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件项目管理"><span class="nav-number">1.5.</span> <span class="nav-text">软件项目管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目立项准备"><span class="nav-number">2.</span> <span class="nav-text">软件项目立项准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件项目的解决方案"><span class="nav-number">2.1.</span> <span class="nav-text">软件项目的解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软件项目范围"><span class="nav-number">2.2.</span> <span class="nav-text">软件项目范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可行性分析"><span class="nav-number">2.3.</span> <span class="nav-text">可行性分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合同类型"><span class="nav-number">2.4.</span> <span class="nav-text">合同类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目立项过程"><span class="nav-number">2.5.</span> <span class="nav-text">项目立项过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目计划"><span class="nav-number">3.</span> <span class="nav-text">软件项目计划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#范围计划"><span class="nav-number">3.1.</span> <span class="nav-text">范围计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险计划"><span class="nav-number">3.2.</span> <span class="nav-text">风险计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合同计划"><span class="nav-number">3.3.</span> <span class="nav-text">合同计划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目需求管理"><span class="nav-number">4.</span> <span class="nav-text">软件项目需求管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件需求"><span class="nav-number">4.1.</span> <span class="nav-text">软件需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求开发"><span class="nav-number">4.2.</span> <span class="nav-text">需求开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求分析方法"><span class="nav-number">4.3.</span> <span class="nav-text">需求分析方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件项目进度管理"><span class="nav-number">5.</span> <span class="nav-text">软件项目进度管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#WBS：制定进度计划的基础"><span class="nav-number">5.1.</span> <span class="nav-text">WBS：制定进度计划的基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#甘特图"><span class="nav-number">5.2.</span> <span class="nav-text">甘特图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络图"><span class="nav-number">5.3.</span> <span class="nav-text">网络图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络图：PDM"><span class="nav-number">5.4.</span> <span class="nav-text">网络图：PDM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络图：ADM"><span class="nav-number">5.5.</span> <span class="nav-text">网络图：ADM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#甘特图与网络图差异"><span class="nav-number">5.6.</span> <span class="nav-text">甘特图与网络图差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计划评审"><span class="nav-number">5.7.</span> <span class="nav-text">计划评审</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键路径法"><span class="nav-number">5.8.</span> <span class="nav-text">关键路径法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目估算"><span class="nav-number">6.</span> <span class="nav-text">项目估算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#成本估算方法"><span class="nav-number">6.1.</span> <span class="nav-text">成本估算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工期估算方法"><span class="nav-number">6.2.</span> <span class="nav-text">工期估算方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#质量管理"><span class="nav-number">7.</span> <span class="nav-text">质量管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#软件质量模型"><span class="nav-number">7.1.</span> <span class="nav-text">软件质量模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量管理步骤"><span class="nav-number">7.2.</span> <span class="nav-text">质量管理步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量管理评审"><span class="nav-number">7.3.</span> <span class="nav-text">质量管理评审</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量管理评审方法"><span class="nav-number">7.4.</span> <span class="nav-text">质量管理评审方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风险管理"><span class="nav-number">8.</span> <span class="nav-text">风险管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#风险管理-1"><span class="nav-number">8.1.</span> <span class="nav-text">风险管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险识别的依据"><span class="nav-number">8.2.</span> <span class="nav-text">风险识别的依据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#风险管理的意义和作用"><span class="nav-number">8.3.</span> <span class="nav-text">风险管理的意义和作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人力资源和沟通管理"><span class="nav-number">9.</span> <span class="nav-text">人力资源和沟通管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目组织结构"><span class="nav-number">9.1.</span> <span class="nav-text">项目组织结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目经理的职权"><span class="nav-number">9.2.</span> <span class="nav-text">项目经理的职权</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目收尾"><span class="nav-number">10.</span> <span class="nav-text">项目收尾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目收尾的重要性"><span class="nav-number">10.1.</span> <span class="nav-text">项目收尾的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目验收"><span class="nav-number">10.2.</span> <span class="nav-text">项目验收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目评价的内容"><span class="nav-number">10.3.</span> <span class="nav-text">项目评价的内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：选择器"><span class="nav-number">1.</span> <span class="nav-text">章五：选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模式匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章六：分配属性值、级联和继承"><span class="nav-number">2.</span> <span class="nav-text">章六：分配属性值、级联和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">2.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算选择器的优先级"><span class="nav-number">2.2.</span> <span class="nav-text">计算选择器的优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章八：盒模型"><span class="nav-number">3.</span> <span class="nav-text">章八：盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-2"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子尺寸"><span class="nav-number">3.2.</span> <span class="nav-text">盒子尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折叠边距"><span class="nav-number">3.3.</span> <span class="nav-text">折叠边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章九：视觉格式化模型"><span class="nav-number">4.</span> <span class="nav-text">章九：视觉格式化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-3"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块"><span class="nav-number">4.2.</span> <span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通流"><span class="nav-number">4.3.</span> <span class="nav-text">普通流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文"><span class="nav-number">4.4.</span> <span class="nav-text">块格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联格式化上下文"><span class="nav-number">4.5.</span> <span class="nav-text">内联格式化上下文</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">5.</span> <span class="nav-text">声明</span></a></li></ol></div>
             
 
           </div>
@@ -1267,7 +1070,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/06/20/软件项目管理备考知识点/'
+    refer: '2019/07/14/CSS2-2规范翻译/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

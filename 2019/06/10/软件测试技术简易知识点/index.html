@@ -104,25 +104,29 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="CSS规范的重要性被大大低估了。">
-<meta name="keywords" content="-CSS">
+  <meta name="description" content="作为软件工程的学生应该掌握的。">
+<meta name="keywords" content="-软件测试技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS2.1规范を中国語に通訳の計画">
-<meta property="og:url" content="http://seefun.club/2019/07/14/CSS2-1规范を中国語に通訳の計画/index.html">
+<meta property="og:title" content="软件测试技术简易知识点">
+<meta property="og:url" content="http://seefun.club/2019/06/10/软件测试技术简易知识点/index.html">
 <meta property="og:site_name" content="归人1337">
-<meta property="og:description" content="CSS规范的重要性被大大低估了。">
+<meta property="og:description" content="作为软件工程的学生应该掌握的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-21T14:46:56.081Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/V-model.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/W-model.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/rectangle-problem.png">
+<meta property="og:updated_time" content="2019-08-05T06:57:03.367Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS2.1规范を中国語に通訳の計画">
-<meta name="twitter:description" content="CSS规范的重要性被大大低估了。">
+<meta name="twitter:title" content="软件测试技术简易知识点">
+<meta name="twitter:description" content="作为软件工程的学生应该掌握的。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/V-model.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/2019/07/14/CSS2-1规范を中国語に通訳の計画/">
+  <link rel="canonical" href="http://seefun.club/2019/06/10/软件测试技术简易知识点/">
 
 
 
@@ -132,7 +136,7 @@
   };
 </script>
 
-  <title>CSS2.1规范を中国語に通訳の計画 | 归人1337</title>
+  <title>软件测试技术简易知识点 | 归人1337</title>
   
 
 
@@ -348,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/07/14/CSS2-1规范を中国語に通訳の計画/">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/06/10/软件测试技术简易知识点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
@@ -365,7 +369,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">CSS2.1规范を中国語に通訳の計画
+          <h2 class="post-title" itemprop="name headline">软件测试技术简易知识点
 
               
             
@@ -391,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-07-14 21:27:02" itemprop="dateCreated datePublished" datetime="2019-07-14T21:27:02+08:00">2019-07-14</time>
+              <time title="创建时间：2019-06-10 19:58:48" itemprop="dateCreated datePublished" datetime="2019-06-10T19:58:48+08:00">2019-06-10</time>
             
 
             
@@ -408,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-21 22:46:56" itemprop="dateModified" datetime="2019-07-21T22:46:56+08:00">2019-07-21</time>
+                <time title="修改时间：2019-08-05 14:57:03" itemprop="dateModified" datetime="2019-08-05T14:57:03+08:00">2019-08-05</time>
               
             
           </span>
@@ -425,7 +429,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端知识/" itemprop="url" rel="index"><span itemprop="name">-前端知识</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/烂笔头/" itemprop="url" rel="index"><span itemprop="name">-烂笔头</span></a></span>
 
                 
                 
@@ -460,101 +464,302 @@
       
 
       
-        <p>CSS规范的重要性被大大低估了。</p>
+        <p>作为软件工程的学生应该掌握的。</p>
 <a id="more"></a>
-<h2 id="章五：选择器"><a href="#章五：选择器" class="headerlink" title="章五：选择器"></a>章五：选择器</h2><h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p><a href="#parttern_matching">5.1模式匹配</a></p>
-<h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p><span id="parttern_matching"></span></p>
-<p>在CSS中，<strong>模式匹配规则</strong>确定哪些样式规则适用于文档树中的元素。</p>
-<p>这些模式称为<strong>选择器</strong>，范围可以从简单的HTML元素到丰富的HTML上下文。如果模式中的所有条件对于某个元素都为真，则选择器匹配该元素。</p>
-<p>对于选择器，文档语言元素名称是否区分大小写取决于文档语言。例如，在HTML中，元素名称不区分大小写，但是在XML中，它们区分大小写。</p>
-<p>下表总结了CSS 2.1选择器语法：</p>
+<h2 id="软件测试目的"><a href="#软件测试目的" class="headerlink" title="软件测试目的"></a>软件测试目的</h2><p>软件测试的目的是<strong>尽可能多的找出软件的缺陷</strong>。</p>
+<h2 id="软件测试生命周期"><a href="#软件测试生命周期" class="headerlink" title="软件测试生命周期"></a>软件测试生命周期</h2><p>软件测试模型主要有V模型、W模型、X模型等。</p>
+<p>通用的生命周期为：测试计划、测试设计、测试执行、缺陷跟踪、测试评估。</p>
+<h3 id="V模型"><a href="#V模型" class="headerlink" title="V模型"></a>V模型</h3><p>在该模型中，测试过程被加在开发过程的后半部分。</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/V-model.png" alt="V-model"></p>
+<h3 id="W模型"><a href="#W模型" class="headerlink" title="W模型"></a>W模型</h3><p>可看作由两个V构成，一个表示开发过程，另一个表示测试过程。</p>
+<p>对软件开发过程中各个阶段的可交付产品的验证和确认活动。</p>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/W-model.png" alt="W-model"></p>
+<h2 id="软件测试分类：软件开发角度"><a href="#软件测试分类：软件开发角度" class="headerlink" title="软件测试分类：软件开发角度"></a>软件测试分类：软件开发角度</h2><ol>
+<li><strong>单元测试</strong></li>
+</ol>
+<p>用于检查每个单元能否正确实现详细说明中的功能，发现单元内部可能出现的错误。</p>
+<p>是软件测试<strong>最基础的环节</strong>。</p>
+<ol start="2">
+<li><strong>集成测试</strong></li>
+</ol>
+<p>主要测试单元之间的接口关系。</p>
+<ol start="3">
+<li><strong>系统测试</strong></li>
+</ol>
+<p>在真实或模拟系统运行的环境下，为验证系统是否达到需求规格说明书的要求，而对集成系统进行的测试。</p>
+<ol start="4">
+<li><strong>验收测试</strong></li>
+</ol>
+<p>以最终用户为主，由测试部门实施的测试。</p>
+<h2 id="软件测试分类：测试组织角度"><a href="#软件测试分类：测试组织角度" class="headerlink" title="软件测试分类：测试组织角度"></a>软件测试分类：测试组织角度</h2><ol>
+<li><strong>α测试</strong></li>
+</ol>
+<p>即开发方测试，在软件开发环境下，验证软件的实现是否满足规定的需求。</p>
+<p>由用户代表参与，在开发环境下的测试。</p>
+<ol start="2">
+<li><strong>β测试</strong></li>
+</ol>
+<p>在实际应用环境下，目标用户免费使用软件以反馈是否符合用户的预期。</p>
+<h2 id="测试方法分类"><a href="#测试方法分类" class="headerlink" title="测试方法分类"></a>测试方法分类</h2><h3 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h3><p>黑盒测试是以用户的观点，完全不涉及到程序的内部结构。</p>
+<p>黑盒测试往往会造成测试用例之间可能存在严重的冗余问题，和未测试的功能漏洞。</p>
+<ul>
+<li>优点</li>
+</ul>
+<p>简单，不需要了解程序内部的代码实现，与软件的内部实现无关。</p>
+<p>从用户角度出发，易知用户的功能需求与面对的问题。</p>
+<ul>
+<li>缺点</li>
+</ul>
+<p>代码的覆盖率较低。</p>
+<p>自动化测试的复用性较低。</p>
+<h3 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h3><p>白盒测试只根据程序的内部结构进行测试，而不考虑外部特性。</p>
+<p>又称<strong>结构测试</strong>。</p>
+<ul>
+<li>优点</li>
+</ul>
+<p>增大代码的覆盖率，提高代码质量，发现代码中的隐藏问题。</p>
+<ul>
+<li>缺点</li>
+</ul>
+<p>不可能测试所有运行路径。</p>
+<p>只能测试开发是否正确，无法验证设计是否正确。</p>
+<h3 id="黑盒测试方法"><a href="#黑盒测试方法" class="headerlink" title="黑盒测试方法"></a>黑盒测试方法</h3><ol>
+<li><strong>边界值测试</strong></li>
+</ol>
+<p>使用输入变量的<strong>最小值</strong>、<strong>略大于最小值</strong>、<strong>正常值</strong>、<strong>略小于最大值</strong>、<strong>最大值</strong>来设计测试用例。</p>
+<p>对于有<strong>N</strong>个输入变量的程序，边界值分析会产生<strong>4N+1</strong>个测试用例。</p>
+<p>如果考虑了<strong>略小于最小值</strong>、<strong>略大于最大值</strong>，则称为健壮性边界值测试。</p>
+<ol start="2">
+<li><strong>等价类测试</strong></li>
+</ol>
+<p>根据是否对<strong>无效数据</strong>进行测试，可将等价类测试分为<strong>标准等价类</strong>、<strong>健壮等价类</strong>。</p>
+<ol start="3">
+<li><strong>判定表测试</strong></li>
+</ol>
+<p>基于判定表的测试能把复杂的问题按照各种可能的情况列出来，即N个条件产生2<sup>N</sup>条规则。</p>
+<p>是最为严格的黑盒测试方法。</p>
+<ol start="4">
+<li><strong>因果图测试</strong></li>
+</ol>
+<ul>
+<li><p>分析软件说明中哪些是原因，哪些是结果。</p>
+</li>
+<li><p>根据<strong>恒等</strong>、<strong>非</strong>、<strong>或</strong>、<strong>与</strong>这四种关系，画出因果图。</p>
+</li>
+<li><p>将因果图中的各原因作为判定表的条件项，因果图的各结果作为判定表的动作项。</p>
+</li>
+</ul>
+<p>下面给出三角形问题P75-12的因果图测试用例：</p>
+<blockquote>
+<p>原因</p>
+</blockquote>
+<p>1——a&lt;b+c、2——b&lt;a+c、3——c&lt;a+b、4——a=b、5——b=c、6——a=c</p>
+<blockquote>
+<p>结果</p>
+</blockquote>
+<p>A——不是三角形、B——一般三角形、C——等腰三角形、D——等边三角形</p>
+<blockquote>
+<p>因果图</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/For%20Blog/rectangle-problem.png" alt="因果图"></p>
+<blockquote>
+<p>判定表</p>
+</blockquote>
+<p><table><tr><td colspan="2">组合条件</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr><td rowspan="6">原因</td><td>1</td><td>0</td><td>-</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>2</td><td>-</td><td>-</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>3</td><td>-</td><td>-</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>4</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr><tr><td>5</td><td>-</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>6</td><td>-</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><td rowspan="4">结果</td><td>A</td><td>1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>B</td><td></td><td></td><td>1</td><td></td><td></td><td></td></tr><tr><td>C</td><td></td><td></td><td></td><td>1</td><td>1</td><td>1</td></tr><tr><td>D</td><td></td><td>1</td><td></td><td></td><td></td><td></td></tr></table></p>
+<blockquote>
+<p>把判定表的每一列写成一个测试用例</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>模式</th>
-<th>含义</th>
-<th>描述</th>
+<th>测试用例编号</th>
+<th>输入数据</th>
+<th>预期结果</th>
+<th>覆盖组合条件</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>*</td>
-<td>匹配任意元素</td>
-<td><a href="#universal_selector">通用选择器</a></td>
+<td>1</td>
+<td>5，2，3</td>
+<td>A</td>
+<td>1</td>
 </tr>
 <tr>
-<td>E</td>
-<td>匹配任意<code>E</code>元素</td>
-<td><a href="#type_selectors">类型选择器</a></td>
+<td>2</td>
+<td>5，5，5</td>
+<td>D</td>
+<td>2</td>
 </tr>
 <tr>
-<td>E F</td>
-<td>匹配任意<code>E</code>元素的任意后代<code>F</code>元素</td>
-<td><a href="#descendant_selectors">后代选择器</a></td>
+<td>3</td>
+<td>3，4，5</td>
+<td>B</td>
+<td>3</td>
 </tr>
 <tr>
-<td>E&gt;F</td>
-<td>匹配任意<code>E</code>元素的直接子元素<code>F</code></td>
-<td><a href="#child_selectors">子类选择器</a></td>
+<td>4</td>
+<td>3，3，4</td>
+<td>C</td>
+<td>4</td>
 </tr>
 <tr>
-<td>E : first-child</td>
-<td>匹配一个元素<code>E</code>，当<code>E</code>是</td>
-<td><a href="#first-child-pseudo-class">first-child伪类选择器</a></td>
+<td>5</td>
+<td>4，3，3</td>
+<td>C</td>
+<td>5</td>
 </tr>
 <tr>
-<td>E : link<br>E : visited</td>
-<td>匹配一个尚未访问或已访问的超链接<code>E</code></td>
-<td><a href="#link-pseudo-class">链接伪类选择器</a></td>
-</tr>
-<tr>
-<td>E : active<br>E : hover<br>E : focus</td>
-<td>匹配用户操作而影响的任意元素<code>E</code></td>
-<td><a href="dymic-pseudo-class">动态伪类选择器</a></td>
-</tr>
-<tr>
-<td>E : lang(c)</td>
-<td>匹配语言为<code>c</code>的一个元素<code>E</code></td>
-<td><a href="#lang-pseudo-class">lang伪类选择器</a></td>
-</tr>
-<tr>
-<td>E + F</td>
-<td>匹配任意紧跟在<code>E</code>之后的<code>F</code>元素</td>
-<td><a href="adjacent-selectors">相邻选择器</a></td>
-</tr>
-<tr>
-<td>E[attr]</td>
-<td>匹配任意拥有<code>attr</code>属性的<code>E</code>元素</td>
-<td><a href="attribute-selectors">属性选择器</a></td>
-</tr>
-<tr>
-<td>E[attr=”value”]</td>
-<td>匹配任意拥有<code>attr</code>属性，且值为<code>&quot;value&quot;</code>的<code>E</code>元素</td>
-<td><a href="attribute-selectors">属性选择器</a></td>
-</tr>
-<tr>
-<td>E[attr~=”value”]</td>
-<td>匹配任意拥有<code>attr</code>属性，且值为一个<strong>含空格</strong>的列表，其中含有<code>&quot;value&quot;</code>的<code>E</code>元素</td>
-<td><a href="attribute-selectors">属性选择器</a></td>
-</tr>
-<tr>
-<td>E[attr\</td>
-<td>=”value”]</td>
-<td>匹配任意拥有<code>attr</code>属性，且值包含指定值<code>&quot;value&quot;</code>的<code>E</code>元素</td>
-<td><a href="attribute-selectors">属性选择器</a></td>
-</tr>
-<tr>
-<td>E.class</td>
-<td>匹配任意具有<code>class</code>类的元素</td>
-<td>类选择器</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
+<td>6</td>
+<td>3，4，3</td>
+<td>C</td>
+<td>6</td>
 </tr>
 </tbody>
 </table>
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本篇文章源自<a href="https://www.w3.org/TR/CSS2/about.html" target="_blank" rel="noopener">W3C官网</a>，由<a href="https://www.w3.org/TR/CSS2/about.html" target="_blank" rel="noopener">c1er</a>翻译与润色。</p>
+<ol start="5">
+<li><strong>正交表测试</strong></li>
+</ol>
+<p>太难了。</p>
+<h3 id="白盒测试方法"><a href="#白盒测试方法" class="headerlink" title="白盒测试方法"></a>白盒测试方法</h3><ol>
+<li>逻辑覆盖测试</li>
+</ol>
+<p>逻辑覆盖测试是根据被测程序的逻辑结构设计测试用例。</p>
+<p>逻辑覆盖测试可<strong>由弱到强</strong>地区分为六种覆盖，如下所示：</p>
+<ul>
+<li><strong>语句覆盖</strong>：每条语句至少执行一次</li>
+<li><strong>判定覆盖</strong>：每个判定的每条分支至少执行一次</li>
+<li><strong>条件覆盖</strong>：每个判定的每个条件，分别按“真”、“假”至少各执行一次</li>
+<li><strong>判定-条件覆盖</strong>：同时满足判定覆盖、条件覆盖</li>
+<li><strong>条件组合覆盖</strong>：每个判定的所有可能条件取值的组合至少执行一次</li>
+</ul>
+<p>查错能力最强。</p>
+<ul>
+<li><strong>路径覆盖</strong>：每条可能的路径至少执行一次</li>
+</ul>
+<ol start="2">
+<li>路径测试</li>
+</ol>
+<p>把覆盖的路径数压缩到一定限度内，就成为基路径测试。</p>
+<p>它保证了程序中的每一条可执行语句至少要执行一次。</p>
+<ul>
+<li>画出控制流图</li>
+</ul>
+<p>控制流图是对程序流程图的简化，能更突出的表示程序控制流的结构。</p>
+<ul>
+<li>计算圈复杂度</li>
+</ul>
+<p>圈复杂度可由下述三种方法获得：</p>
+<p>一、边数-节点数+2</p>
+<p>二、判定节点数+1</p>
+<p>三、区域数</p>
+<blockquote>
+<p>控制流图的外面也要算做一个区域</p>
+</blockquote>
+<ul>
+<li>找出独立路径</li>
+</ul>
+<p>独立路径是指，包括一组以前没有处理的语句或条件的一条路径。</p>
+<ul>
+<li>依据独立路径导出测试用例</li>
+</ul>
+<ol start="3">
+<li>数据流测试</li>
+</ol>
+<h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>对软件中的最小可测试的单元或基本组成单元进行检查和验证。</p>
+<h3 id="单元测试环境"><a href="#单元测试环境" class="headerlink" title="单元测试环境"></a>单元测试环境</h3><ul>
+<li>驱动模块：所测模块的主程序</li>
+<li>桩模块：代替所测模块调用的子模块</li>
+</ul>
+<h3 id="单元测试内容"><a href="#单元测试内容" class="headerlink" title="单元测试内容"></a>单元测试内容</h3><ul>
+<li>模块接口测试</li>
+<li>模块局部数据结构测试</li>
+<li>模块边界条件测试</li>
+<li>模块独立执行通路测试</li>
+<li>模块的各条错误处理通路测试</li>
+</ul>
+<h3 id="单元测试策略"><a href="#单元测试策略" class="headerlink" title="单元测试策略"></a>单元测试策略</h3><p>分为<strong>静态代码分析</strong>、<strong>单元结构测试</strong>、<strong>单元功能测试</strong>。</p>
+<p>单元结构测试方法主要使用白盒测试。</p>
+<p>单元功能测试方法主要使用黑盒测试。</p>
+<p>单元测试主要由白盒测试组成。</p>
+<h2 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h2><p>在单元测试的基础上，将所有已通过单元测试的模块按照概要设计的要求组装为子系统或系统，进行集成测试。</p>
+<h3 id="基于功能分解的集成"><a href="#基于功能分解的集成" class="headerlink" title="基于功能分解的集成"></a>基于功能分解的集成</h3><ul>
+<li>自顶向下集成</li>
+</ul>
+<p>从最具控制力的主控模块开始，按照软件的控制层次结构，以深度优先或广度优先的策略，向系统中增加模块。</p>
+<p><strong>需要设计桩模块</strong>来模拟下层模块。</p>
+<ul>
+<li>自底向上集成</li>
+</ul>
+<p>从最底层的模块开始组装，按控制层次增强的顺序向系统中增加模块并测试。</p>
+<p><strong>需要设计驱动模块</strong>控制最底层模块的并行测试。</p>
+<ul>
+<li>三明治集成</li>
+</ul>
+<p>将自顶向下集成和自底向上集成两种方式结合起来进行集成和测试。</p>
+<h3 id="基于调用图的集成"><a href="#基于调用图的集成" class="headerlink" title="基于调用图的集成"></a>基于调用图的集成</h3><p>调用图是一种有向图，它反应了程序中模块之间的调用关系。</p>
+<ul>
+<li>成对集成</li>
+</ul>
+<p>为了尽可能的免除桩/驱动模块的开发而引入的。</p>
+<p>把调用图中的一对单元作为测试对象，仍会出现需要桩/驱动模块的情况。</p>
+<ul>
+<li>相邻集成</li>
+</ul>
+<p>为了进一步减少桩/驱动模块。</p>
+<p>把节点邻居作为测试对象，节点的邻居包括该节点的直接前驱和所有后继节点。</p>
+<h3 id="基于路径的集成"><a href="#基于路径的集成" class="headerlink" title="基于路径的集成"></a>基于路径的集成</h3><ul>
+<li>源节点</li>
+</ul>
+<p>程序执行的开始处或者重新开始处的语句。</p>
+<ul>
+<li>汇节点</li>
+</ul>
+<p>程序执行结束的语句。</p>
+<ul>
+<li>模块执行路径</li>
+</ul>
+<p>即<code>MEP(Model_name, index)</code>。</p>
+<p>以源节点开始，汇节点结束，中间不插入汇节点的一系列语句。</p>
+<ul>
+<li>消息</li>
+</ul>
+<p>将程序执行从一个模块转移到另一个模块。</p>
+<ul>
+<li>MM-路径</li>
+</ul>
+<p>由模块执行路径和消息组成的模块调用路径。</p>
+<ul>
+<li>MM-路径图</li>
+</ul>
+<p>以<strong>实线箭头</strong>表示消息，<strong>虚线箭头</strong>表示返回。</p>
+<p>将所有MEP，即模块执行路径，通过箭头连接在一起。</p>
+<blockquote>
+<p><strong>得到MEP</strong></p>
+<p>分析所有模块各自的源节点和汇节点，按照规则得到模块执行路径。</p>
+</blockquote>
+<h2 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>将已经集成好的软件系统作为整个计算机系统的一个元素，在实际使用环境下，对计算机系统进行的一系列测试活动。</p>
+<h3 id="系统测试内容"><a href="#系统测试内容" class="headerlink" title="系统测试内容"></a>系统测试内容</h3><ul>
+<li>功能测试</li>
+</ul>
+<p>在规定的时间内运行软件系统的所有功能，已验证有无严重错误。</p>
+<ul>
+<li>用户界面测试</li>
+<li>性能测试</li>
+</ul>
+<p>对软件的响应时间、连接速度、吞吐量、CPU利用率、内存使用率等进行测试。</p>
+<ul>
+<li>负载测试</li>
+</ul>
+<p>数据在超负荷环境中运行，测试软件系统是否能承担。</p>
+<ul>
+<li>压力测试</li>
+</ul>
+<p>对系统不断施加越来越大的负载的测试。</p>
+<ul>
+<li>兼容性测试</li>
+<li>安全性测试</li>
+</ul>
 
       
     </div>
@@ -578,7 +783,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># -CSS</a>
+            <a href="/tags/软件测试技术/" rel="tag"># -软件测试技术</a>
           
         </div>
       
@@ -591,8 +796,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/11/ゼロから習うTypeScript/" rel="next" title="ゼロから習うTypeScript">
-                <i class="fa fa-chevron-left"></i> ゼロから習うTypeScript
+              <a href="/2019/05/30/Python简易知识点/" rel="next" title="Python简易知识点">
+                <i class="fa fa-chevron-left"></i> Python简易知识点
               </a>
             
           </div>
@@ -601,8 +806,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/28/异步加载JavaScript脚本/" rel="prev" title="异步加载JavaScript脚本">
-                异步加载JavaScript脚本 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/20/软件项目管理简易知识点/" rel="prev" title="软件项目管理简易知识点">
+                软件项目管理简易知识点 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -695,6 +900,8 @@
                     
                   
                     
+                    
+                      
                     
                       
                     
@@ -822,7 +1029,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：选择器"><span class="nav-number">1.</span> <span class="nav-text">章五：选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模式匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">2.</span> <span class="nav-text">声明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试目的"><span class="nav-number">1.</span> <span class="nav-text">软件测试目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试生命周期"><span class="nav-number">2.</span> <span class="nav-text">软件测试生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#V模型"><span class="nav-number">2.1.</span> <span class="nav-text">V模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W模型"><span class="nav-number">2.2.</span> <span class="nav-text">W模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试分类：软件开发角度"><span class="nav-number">3.</span> <span class="nav-text">软件测试分类：软件开发角度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试分类：测试组织角度"><span class="nav-number">4.</span> <span class="nav-text">软件测试分类：测试组织角度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试方法分类"><span class="nav-number">5.</span> <span class="nav-text">测试方法分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#黑盒测试"><span class="nav-number">5.1.</span> <span class="nav-text">黑盒测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#白盒测试"><span class="nav-number">5.2.</span> <span class="nav-text">白盒测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#黑盒测试方法"><span class="nav-number">5.3.</span> <span class="nav-text">黑盒测试方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#白盒测试方法"><span class="nav-number">5.4.</span> <span class="nav-text">白盒测试方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单元测试"><span class="nav-number">6.</span> <span class="nav-text">单元测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单元测试环境"><span class="nav-number">6.1.</span> <span class="nav-text">单元测试环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单元测试内容"><span class="nav-number">6.2.</span> <span class="nav-text">单元测试内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单元测试策略"><span class="nav-number">6.3.</span> <span class="nav-text">单元测试策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集成测试"><span class="nav-number">7.</span> <span class="nav-text">集成测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于功能分解的集成"><span class="nav-number">7.1.</span> <span class="nav-text">基于功能分解的集成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于调用图的集成"><span class="nav-number">7.2.</span> <span class="nav-text">基于调用图的集成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于路径的集成"><span class="nav-number">7.3.</span> <span class="nav-text">基于路径的集成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统测试"><span class="nav-number">8.</span> <span class="nav-text">系统测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">8.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统测试内容"><span class="nav-number">8.2.</span> <span class="nav-text">系统测试内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -978,7 +1185,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/07/14/CSS2-1规范を中国語に通訳の計画/'
+    refer: '2019/06/10/软件测试技术简易知识点/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
