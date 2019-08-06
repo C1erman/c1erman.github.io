@@ -109,11 +109,11 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS2.2规范">
 <meta property="og:url" content="http://seefun.club/2019/07/14/CSS2-2规范翻译/index.html">
-<meta property="og:site_name" content="归人1337">
+<meta property="og:site_name" content="归人要读书">
 <meta property="og:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
-<meta property="og:updated_time" content="2019-08-05T07:49:47.293Z">
+<meta property="og:updated_time" content="2019-08-06T02:25:13.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS2.2规范">
 <meta name="twitter:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
@@ -134,7 +134,7 @@
   };
 </script>
 
-  <title>CSS2.2规范 | 归人1337</title>
+  <title>CSS2.2规范 | 归人要读书</title>
   
 
 
@@ -193,7 +193,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">归人1337</span>
+        <span class="site-title">归人要读书</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -354,12 +354,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="张可携">
-      <meta itemprop="description" content="前端工人">
+      <meta itemprop="description" content="每个人都会说谎">
       <meta itemprop="image" content="/images/profilePhoto.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="归人1337">
+      <meta itemprop="name" content="归人要读书">
     </span>
 
     
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-05 15:49:47" itemprop="dateModified" datetime="2019-08-05T15:49:47+08:00">2019-08-05</time>
+                <time title="修改时间：2019-08-06 10:25:13" itemprop="dateModified" datetime="2019-08-06T10:25:13+08:00">2019-08-06</time>
               
             
           </span>
@@ -606,7 +606,7 @@
 <p><strong>不是兄弟的相邻边框：</strong>这里的相邻指的是渲染过后相邻，而不单单只是DOM节点的相邻。</p>
 </blockquote>
 <p><strong>水平边距永不折叠。</strong></p>
-<p>相邻的垂直边距将会折叠，除了以下情况：</p>
+<p>相邻的<strong>垂直边距</strong>将会折叠，除了以下情况：</p>
 <ul>
 <li>根元素框的边距不会折叠</li>
 <li>如果具有间隙的元素的顶部边距与底部边距相邻，则该元素的边距将与后续兄弟的边距折叠，但是这样所产生的边距将不会与父元素的下边距折叠</li>
@@ -625,10 +625,15 @@
 <blockquote>
 <p>了解更多关于折叠边距的知识：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="noopener">MDN</a></p>
 </blockquote>
-<h2 id="章九：视觉格式化模型"><a href="#章九：视觉格式化模型" class="headerlink" title="章九：视觉格式化模型"></a>章九：视觉格式化模型</h2><h3 id="内容-3"><a href="#内容-3" class="headerlink" title="内容"></a>内容</h3><p><a href="#normal-flow">9.4 普通流</a></p>
+<h2 id="章九：视觉格式化模型"><a href="#章九：视觉格式化模型" class="headerlink" title="章九：视觉格式化模型"></a>章九：视觉格式化模型</h2><h3 id="内容-3"><a href="#内容-3" class="headerlink" title="内容"></a>内容</h3><p><a href="#containing-blocks">9.1.2 包含块</a></p>
+<p><a href="#normal-flow">9.4 普通流</a></p>
 <p><a href="#block-formatting-contexts">9.4.1 块格式化上下文</a></p>
 <p><a href="#inline-formatting-contexts">9.4.2 内联格式化上下文</a></p>
-<h3 id="包含块"><a href="#包含块" class="headerlink" title="包含块"></a>包含块</h3><h3 id="普通流"><a href="#普通流" class="headerlink" title="普通流"></a>普通流</h3><p><span id="normal-flow"></span></p>
+<p><a href="#relative-positioning">9.4.3 相对定位</a></p>
+<h3 id="包含块"><a href="#包含块" class="headerlink" title="包含块"></a>包含块</h3><p><span id="containing-blocks"></span></p>
+<p>在CSS2.2中，许多盒子的位置和大小是相对于被称为包含块的矩形框的边缘计算的。通常，生成的盒子用作一个块，去包含后代盒子。我们说一个盒子<em>建立</em>其后代的包含块。<em>一个盒子的包含块</em>指的是<em>这个盒子所在的包含块</em>，而不是这个盒子建立的包含块。</p>
+<p>每个盒子都有一个相对于其包含块的位置，但它不受这个包含块的限制，这个盒子可能会溢出包含块。</p>
+<h3 id="普通流"><a href="#普通流" class="headerlink" title="普通流"></a>普通流</h3><p><span id="normal-flow"></span></p>
 <p>普通流中的盒子属于格式化上下文，在CSS2.2中可以是表格格式化上下文<code>table</code>、块格式化上下文<code>block</code>或者内联格式化上下文<code>inline</code>。在未来级别的CSS中，将引入其他类型的格式化上下文。</p>
 <p>块级盒子参与块格式化上下文，内联盒子参与内联格式化上下文。</p>
 <h3 id="块格式化上下文"><a href="#块格式化上下文" class="headerlink" title="块格式化上下文"></a>块格式化上下文</h3><p><span id="block-formatting-contexts"></span></p>
@@ -637,13 +642,14 @@
 <p>在块格式化上下文中，每个盒子的左外边缘紧接包含块的左边缘，除非盒子建立了新的块格式化上下文（这种情况下，盒子可能因浮动而变窄），否则即使存在浮动也同样如此（尽管盒子的线框可能因浮动而缩小）。</p>
 <h3 id="内联格式化上下文"><a href="#内联格式化上下文" class="headerlink" title="内联格式化上下文"></a>内联格式化上下文</h3><p><span id="inline-formatting-contexts"></span></p>
 <p>内联格式化上下文由不包含块级盒子的块级容器盒子建立。</p>
-<p>在内联格式化上下文中，盒子将从包含块的顶部一个接一个的水平排列，这些盒子之间会考虑水平边距<code>margin</code>、边框<code>border</code>和填充<code>padding</code>。盒子可以以不同的方式垂直对齐，它们的顶部或底部都可以对齐，或者它们内部的文本基线也可以对齐。而包含形成一条线的盒子的矩形区域称为线框。</p>
+<p>在内联格式化上下文中，盒子将从包含块的顶部一个接一个的水平排列，这些盒子之间会考虑水平边距<code>margin</code>、边框<code>border</code>和填充<code>padding</code>。盒子可以以不同的方式垂直对齐，它们的顶部或底部都可以对齐，或者它们内部的文本基线也可以对齐。而包含形成一条线的盒子的矩形区域称为行框。</p>
 <blockquote>
-<p><strong>线框：</strong></p>
+<p><strong>行框：</strong></p>
 <p>最后一句原文为：<code>The rectangular area that contains the boxes that form a line is called a line box.</code></p>
 <p>可理解为内联格式化上下文中的，每一行文本所组成的矩形区域。</p>
 </blockquote>
-<p>线框的宽度由包含块和浮动元素的存在确定，线框的高度由线高<code>line-height</code>给出的规则得出。</p>
+<p>行框的宽度由包含块和浮动元素的存在确定，行框的高度由行高<code>line-height</code>给出的规则得出。</p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p><span id="relative-positioning"></span></p>
 <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本篇文章源自<a href="https://www.w3.org/TR/CSS22/" target="_blank" rel="noopener">W3C官网</a>，由<a href="kexiezhang@gmail.com">c1er</a>翻译与润色。</p>
 
       
@@ -759,7 +765,7 @@
               <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="张可携">
             
               <p class="site-author-name" itemprop="name">张可携</p>
-              <div class="site-description motion-element" itemprop="description">前端工人</div>
+              <div class="site-description motion-element" itemprop="description">每个人都会说谎</div>
           </div>
 
           
@@ -914,7 +920,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：选择器"><span class="nav-number">1.</span> <span class="nav-text">章五：选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模式匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章六：分配属性值、级联和继承"><span class="nav-number">2.</span> <span class="nav-text">章六：分配属性值、级联和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">2.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算选择器的优先级"><span class="nav-number">2.2.</span> <span class="nav-text">计算选择器的优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章八：盒模型"><span class="nav-number">3.</span> <span class="nav-text">章八：盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-2"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子尺寸"><span class="nav-number">3.2.</span> <span class="nav-text">盒子尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折叠边距"><span class="nav-number">3.3.</span> <span class="nav-text">折叠边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章九：视觉格式化模型"><span class="nav-number">4.</span> <span class="nav-text">章九：视觉格式化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-3"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块"><span class="nav-number">4.2.</span> <span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通流"><span class="nav-number">4.3.</span> <span class="nav-text">普通流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文"><span class="nav-number">4.4.</span> <span class="nav-text">块格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联格式化上下文"><span class="nav-number">4.5.</span> <span class="nav-text">内联格式化上下文</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">5.</span> <span class="nav-text">声明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：选择器"><span class="nav-number">1.</span> <span class="nav-text">章五：选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模式匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章六：分配属性值、级联和继承"><span class="nav-number">2.</span> <span class="nav-text">章六：分配属性值、级联和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">2.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算选择器的优先级"><span class="nav-number">2.2.</span> <span class="nav-text">计算选择器的优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章八：盒模型"><span class="nav-number">3.</span> <span class="nav-text">章八：盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-2"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子尺寸"><span class="nav-number">3.2.</span> <span class="nav-text">盒子尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折叠边距"><span class="nav-number">3.3.</span> <span class="nav-text">折叠边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章九：视觉格式化模型"><span class="nav-number">4.</span> <span class="nav-text">章九：视觉格式化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-3"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块"><span class="nav-number">4.2.</span> <span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通流"><span class="nav-number">4.3.</span> <span class="nav-text">普通流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文"><span class="nav-number">4.4.</span> <span class="nav-text">块格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联格式化上下文"><span class="nav-number">4.5.</span> <span class="nav-text">内联格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对定位"><span class="nav-number">4.6.</span> <span class="nav-text">相对定位</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">5.</span> <span class="nav-text">声明</span></a></li></ol></div>
             
 
           </div>
