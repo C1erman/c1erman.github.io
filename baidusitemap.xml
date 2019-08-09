@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.club/2019/04/06/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84==%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    <lastmod>2019-08-09</lastmod>
+  </url>  <url>
     <loc>http://seefun.club/2019/08/07/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Promise/</loc>
-    <lastmod>2019-08-07</lastmod>
+    <lastmod>2019-08-09</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/04/07/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84EventLoop/</loc>
     <lastmod>2019-08-06</lastmod>
@@ -57,9 +60,6 @@
   </url>  <url>
     <loc>http://seefun.club/2019/03/30/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Number/</loc>
     <lastmod>2019-06-20</lastmod>
-  </url>  <url>
-    <loc>http://seefun.club/2019/04/06/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84==%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
-    <lastmod>2019-06-12</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/05/22/Longest-Common-Prefix/</loc>
     <lastmod>2019-05-23</lastmod>
