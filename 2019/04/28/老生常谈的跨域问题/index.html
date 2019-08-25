@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人要读书">
 <meta property="og:description" content="跨域问题，基本上每位前端开发人员都会遇到。 本篇文章将讲述什么是跨域，顺带提一提JSON与JSONP这两个并不相近的东西。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T07:00:54.001Z">
+<meta property="og:updated_time" content="2019-08-25T09:11:41.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域">
 <meta name="twitter:description" content="跨域问题，基本上每位前端开发人员都会遇到。 本篇文章将讲述什么是跨域，顺带提一提JSON与JSONP这两个并不相近的东西。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-05 15:00:54" itemprop="dateModified" datetime="2019-08-05T15:00:54+08:00">2019-08-05</time>
+                <time title="修改时间：2019-08-25 17:11:41" itemprop="dateModified" datetime="2019-08-25T17:11:41+08:00">2019-08-25</time>
               
             
           </span>
@@ -579,7 +579,28 @@
 <p><code>Last-Modified</code>：响应首部字段，包含源头服务器认定的资源做出修改的日期及时间。</p>
 <p><code>Pragme</code>：通用首部，效果依赖于不同的实现。</p>
 </blockquote>
+<p>以下是一个简单请求的请求报文、响应报文：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/resources/public-data/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: bar.other</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line"><span class="attribute">Accept-Language</span>: en-us,en;q=0.5</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip,deflate</span><br><span class="line"><span class="attribute">Accept-Charset</span>: ISO-8859-1,utf-8;q=0.7,*;q=0.7</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Referer</span>: http://foo.example/examples/access-control/simpleXSInvocation.html</span><br><span class="line"><span class="attribute">Origin</span>: http://foo.example</span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Date</span>: Mon, 01 Dec 2008 00:23:53 GMT</span><br><span class="line"><span class="attribute">Server</span>: Apache/2.0.61 </span><br><span class="line"><span class="attribute">Access-Control-Allow-Origin</span>: *</span><br><span class="line"><span class="attribute">Keep-Alive</span>: timeout=2, max=100</span><br><span class="line"><span class="attribute">Connection</span>: Keep-Alive</span><br><span class="line"><span class="attribute">Transfer-Encoding</span>: chunked</span><br><span class="line"><span class="attribute">Content-Type</span>: application/xml</span><br></pre></td></tr></table></figure>
+<p>可以看到，从服务器端发送过来的响应报文字段<code>Access-Control-Allow-Origin</code>被设置为了<code>*</code>。</p>
 <h3 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h3><p>与<strong>简单请求</strong>不同，需预检的请求要去必须首先使用<code>OPTIONS</code>向服务器发送一个预检请求，已获知服务器是否允许该实际请求。</p>
+<p>使用预检请求，可以避免跨域请求对服务器的用户数据产生预期外的影响。</p>
+<p>当请求满足下述任一条件时，会先发送预检请求：</p>
+<ul>
+<li>使用<code>PUT</code>、<code>DELETE</code>、<code>CONNECT</code>、<code>OPTIONS</code>、<code>TRACE</code>或<code>PATCH</code>HTTP方法之一</li>
+<li>人为设置了<em>对CORS安全的首部字段集合</em>之外的其它首部字段</li>
+<li><code>Content-Type</code>的值不属于<code>application/x-www-form-urlencoded</code>、<code>multipart/form-data</code>或<code>text/plain</code></li>
+<li>请求中的<code>XMLHttpRequestUpload</code>对象注册了多个事件监听器</li>
+<li>在请求中使用了<code>ReadableStream</code>对象</li>
+</ul>
+<p>下面是一个预检请求的请求报文、响应报文：</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">OPTIONS</span> <span class="string">/resources/post-here/</span> HTTP/1.1</span><br><span class="line"><span class="attribute">Host</span>: bar.other</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre</span><br><span class="line"><span class="attribute">Accept</span>: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line"><span class="attribute">Accept-Language</span>: en-us,en;q=0.5</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip,deflate</span><br><span class="line"><span class="attribute">Accept-Charset</span>: ISO-8859-1,utf-8;q=0.7,*;q=0.7</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">Origin</span>: http://foo.example</span><br><span class="line"><span class="attribute">Access-Control-Request-Method</span>: POST</span><br><span class="line"><span class="attribute">Access-Control-Request-Headers</span>: X-PINGOTHER, Content-Type</span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">200</span> OK</span><br><span class="line"><span class="attribute">Date</span>: Mon, 01 Dec 2008 01:15:39 GMT</span><br><span class="line"><span class="attribute">Server</span>: Apache/2.0.61 (Unix)</span><br><span class="line"><span class="attribute">Access-Control-Allow-Origin</span>: http://foo.example</span><br><span class="line"><span class="attribute">Access-Control-Allow-Methods</span>: POST, GET, OPTIONS</span><br><span class="line"><span class="attribute">Access-Control-Allow-Headers</span>: X-PINGOTHER, Content-Type</span><br><span class="line"><span class="attribute">Access-Control-Max-Age</span>: 86400</span><br><span class="line"><span class="attribute">Vary</span>: Accept-Encoding, Origin</span><br><span class="line"><span class="attribute">Content-Encoding</span>: gzip</span><br><span class="line"><span class="attribute">Content-Length</span>: 0</span><br><span class="line"><span class="attribute">Keep-Alive</span>: timeout=2, max=100</span><br><span class="line"><span class="attribute">Connection</span>: Keep-Alive</span><br><span class="line"><span class="attribute">Content-Type</span>: text/plain</span><br></pre></td></tr></table></figure>
+<p>注意预检请求的最后两个字段：<code>Access-Control-Request-Method</code>告诉服务器之后将使用<code>POST</code>方法发送实际请求，<code>Access-Control-Request-Headers</code>告诉服务器实际请求带有两个自定义请求首部字段。</p>
+<p>从服务器返回的响应中，我们通过<code>Access-Control-Allow-Methods</code>得知了实际请求被允许的HTTP方法，通过<code>Access-Control-Allow-Headers</code>得知实际请求允许的首部字段，通过<code>Access-Control-Max-Age</code>得知了此预检请求的有效时间。</p>
+<blockquote>
+<p><strong>请求的有效时间：</strong>多数浏览器自身维护了请求的有效时间，如果该字段的时间大于此时间，则不会生效。</p>
+</blockquote>
 
       
     </div>
