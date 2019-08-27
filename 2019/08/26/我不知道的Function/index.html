@@ -104,18 +104,18 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="函数是JavaScript中的重要组成部分。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
+  <meta name="description" content="函数是JavaScript中的第一类公民。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
 <meta name="keywords" content="-JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我不知道的Function">
 <meta property="og:url" content="http://seefun.club/2019/08/26/我不知道的Function/index.html">
 <meta property="og:site_name" content="归人要读书">
-<meta property="og:description" content="函数是JavaScript中的重要组成部分。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
+<meta property="og:description" content="函数是JavaScript中的第一类公民。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T12:25:31.390Z">
+<meta property="og:updated_time" content="2019-08-27T09:00:59.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的Function">
-<meta name="twitter:description" content="函数是JavaScript中的重要组成部分。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
+<meta name="twitter:description" content="函数是JavaScript中的第一类公民。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
 
 
 
@@ -391,12 +391,24 @@
                 
               
 
-              <time title="创建时间：2019-08-26 19:23:54 / 修改时间：20:25:31" itemprop="dateCreated datePublished" datetime="2019-08-26T19:23:54+08:00">2019-08-26</time>
+              <time title="创建时间：2019-08-26 19:23:54" itemprop="dateCreated datePublished" datetime="2019-08-26T19:23:54+08:00">2019-08-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-27 17:00:59" itemprop="dateModified" datetime="2019-08-27T17:00:59+08:00">2019-08-27</time>
               
             
           </span>
@@ -448,7 +460,7 @@
       
 
       
-        <p>函数是JavaScript中的重要组成部分。</p>
+        <p>函数是JavaScript中的第一类公民。</p>
 <p>闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。</p>
 <a id="more"></a>
 <h2 id="声明变量的一种方式"><a href="#声明变量的一种方式" class="headerlink" title="声明变量的一种方式"></a>声明变量的一种方式</h2><p><code>function</code>关键字是JavaScript中声明变量的一种方式，直至<code>ECMAScript 6</code>，声明变量的方式一共有六种：<code>var</code>、<code>let</code>、<code>const</code>、<code>function</code>、<code>class</code>和<code>import</code>。</p>
@@ -459,8 +471,83 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;  <span class="comment">//primitive data type</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">something</span>)</span>&#123;</span><br><span class="line">	something++;</span><br><span class="line">&#125;</span><br><span class="line">change(a);</span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> b = &#123;&#125;;  <span class="comment">//an object</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params">something</span>)</span>&#123;</span><br><span class="line">	something.name = <span class="string">'c1er'</span>;</span><br><span class="line">&#125;</span><br><span class="line">change(b);</span><br><span class="line"><span class="built_in">console</span>.log(b);  <span class="comment">//Object &#123; name: "c1er" &#125;</span></span><br></pre></td></tr></table></figure>
 <p>其实，从形参为函数级作用域这一点来说，相信你早已理解了<em>函数的参数是按值传递</em>这一点。</p>
-<h3 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h3><p>arguments对象是所有<strong>非箭头函数</strong>中都可以使用的局部变量</p>
-<h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2>
+<h3 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h3><p>arguments对象是所有<strong>非箭头函数</strong>中都可以使用的局部变量，正如你所知道的，它是一个<em>类数组</em>对象。</p>
+<p>该对象有数个值得关心的属性：</p>
+<ul>
+<li><code>arguments.callee</code></li>
+</ul>
+<p>指向当前正在执行的函数。</p>
+<p>在大多数情况下，我们会在匿名函数的递归调用中用到这一属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> v &gt; <span class="number">1</span> ? v * <span class="built_in">arguments</span>.callee(v - <span class="number">1</span>) : v</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在ES5的<em>严格模式</em>下，该属性被禁止。</p>
+<ul>
+<li><code>arguments.caller</code></li>
+</ul>
+<p>指向调用当前函数的函数。<span style="color:red">该属性已被废弃</span></p>
+<p>尽管该属性已被废弃，但你仍然可以使用<code>Function.caller</code>，换句话说是<code>arguments.callee.caller</code>，得到相同的指向。</p>
+<ul>
+<li><code>arguments.length</code></li>
+</ul>
+<p>代表传递给当前函数的参数数量。</p>
+<p>这一数量可能比函数的形参大，也可能比函数的形参小。</p>
+<blockquote>
+<p><strong>注意：</strong>rest参数会影响该值</p>
+</blockquote>
+<h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><p>正如在本文开始时提及的那样：函数是JavaScript的第一类公民，这意味着JavaScript可以进行函数式编程。</p>
+<h3 id="声明式编程与命令式编程"><a href="#声明式编程与命令式编程" class="headerlink" title="声明式编程与命令式编程"></a>声明式编程与命令式编程</h3><p>函数式编程是更广义编程范式的一部分：声明式编程。</p>
+<p>声明式编程的一个特点就是，<strong>对执行结果的描述远胜于执行过程</strong>。为了加深印象，我们将声明式编程与命令式编程做对比，命令式编程的特点为，<strong>重点关注于实现目标的具体过程</strong>。</p>
+<p>下面是两种编程范式的具体例子：</p>
+<ul>
+<li>声明式编程</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="string">'http://seefun.club?para1=xxx&amp;para2=xxx'</span>;</span><br><span class="line"><span class="keyword">let</span> paras = url.slice(url.indexOf(<span class="string">'?'</span>));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>命令式编程</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = <span class="string">'http://seefun.club?para1=xxx&amp;para2=xxx'</span>;</span><br><span class="line"><span class="keyword">let</span> paras = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">let</span> index;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; url.length; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(url[i] === <span class="string">'?'</span>)&#123;</span><br><span class="line">        index = i;</span><br><span class="line">        paras += url[i];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> index === <span class="string">'number'</span>)&#123;</span><br><span class="line">            paras += url[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>正如你所看到的，上述两段代码均实现了对URL的部分截取。但显然地：</p>
+<ul>
+<li><p>声明式编程，语法本身描述了将会发生什么，相关的执行细节被隐藏了</p>
+</li>
+<li><p>命令式编程，其代码重点关注于达成目标的具体过程</p>
+</li>
+</ul>
+<h3 id="何为函数式编程"><a href="#何为函数式编程" class="headerlink" title="何为函数式编程"></a>何为函数式编程</h3><p>简单的讲，我们能使用函数就像使用变量一样。</p>
+<blockquote>
+<p>这对JavaScript使用者可能是理所当然的，因为在JavaScript中函数就是变量。</p>
+</blockquote>
+<ul>
+<li>像使用变量一样，把函数做为其它函数的参数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> say = <span class="function"><span class="params">hello</span> =&gt;</span> hello(<span class="string">'hello c1er'</span>);</span><br><span class="line">say(<span class="function"><span class="params">say_by_c1er</span> =&gt;</span> <span class="built_in">console</span>.log(say_by_c1er));  <span class="comment">//hello c1er</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>像使用变量一样，作为函数的返回结果</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> say = <span class="function"><span class="params">hello</span> =&gt;</span> message =&gt; hello(message);</span><br><span class="line"><span class="keyword">let</span> c1er_say = say(<span class="function"><span class="params">hello_by_c1er</span> =&gt;</span> <span class="built_in">console</span>.log(hello_by_c1er));</span><br><span class="line">c1er_say(<span class="string">'hello c1er'</span>);  <span class="comment">//hello c1er</span></span><br></pre></td></tr></table></figure>
+<h3 id="核心：不可变性"><a href="#核心：不可变性" class="headerlink" title="核心：不可变性"></a>核心：不可变性</h3><p>在函数式编程中，输入的数据是不可变的，即函数不能有副作用。</p>
+<p>即使我们需要对输入的数据进行操作，那也是对原生数据的拷贝上进行操作，而不影响原生数据。</p>
+<blockquote>
+<p>不要忘记”从实参到形参“小节我们讲述的内容</p>
+</blockquote>
+<p>下面来看一个错误的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = &#123;</span><br><span class="line">    name : <span class="string">'c1er'</span>,</span><br><span class="line">    age : <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> changeAge = <span class="function">(<span class="params">data, age</span>) =&gt;</span> &#123;</span><br><span class="line">    data.age = age;</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line">changeAge(data, <span class="number">21</span>);</span><br><span class="line"><span class="built_in">console</span>.log(data.age);  <span class="comment">//21</span></span><br></pre></td></tr></table></figure>
+<p>对输入数据的操作影响了原生的数据，违背了不可变性。</p>
+<p>正确的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = &#123;</span><br><span class="line">    name : <span class="string">'c1er'</span>,</span><br><span class="line">    age : <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> changeAge = <span class="function">(<span class="params">data, age</span>) =&gt;</span> (&#123;</span><br><span class="line">	...data,</span><br><span class="line">    age</span><br><span class="line">&#125;);</span><br><span class="line">changeAge(data, <span class="number">21</span>);</span><br><span class="line"><span class="built_in">console</span>.log(data.age);  <span class="comment">//20</span></span><br></pre></td></tr></table></figure>
+<p>我们这里使用了ES7的语法，实现了对原生数据的保持。</p>
+<blockquote>
+<p>多使用诸如<code>Array.prototype.map()</code>、<code>Array.prototype.reduce()</code>不含有副作用的函数。</p>
+</blockquote>
+<h3 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h3><p>纯函数是一个返回结果只依赖于输入参数的函数，它至少有一个参数，并且总是返回一个值或一个函数。</p>
+<p>纯函数体现着<em>不可变性</em>。</p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>事实上，回调函数是从函数式编程中衍生出来的概念。这相当容易理解：回调函数即是将一个函数作为参数传递给另一个函数。</p>
+<h2 id="警惕"><a href="#警惕" class="headerlink" title="警惕"></a>警惕</h2><p>将函数作为参数进行传递太常见，以致于某些时候我们会犯错误：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(<span class="built_in">parseInt</span>);  <span class="comment">//[1, NaN, NaN]</span></span><br></pre></td></tr></table></figure>
+<p>如果我们详细观察函数签名，看似错误的结果其实很合理。上述代码中，我们使用到的两个函数的函数签名分别为：<code>Array.prototype.map((value, index, array), this?)</code>、<code>parseInt(string, radix?)</code>。</p>
+<p>于是，相当于执行了以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">3</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p><code>radix</code>取值为<code>2~36</code>之间的数字，当其取值为<code>0</code>或<code>undefined</code>时，该函数会观察<code>string</code>的进制类型。</p>
+
       
     </div>
 
@@ -723,7 +810,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量的一种方式"><span class="nav-number">1.</span> <span class="nav-text">声明变量的一种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从实参到形参"><span class="nav-number">2.</span> <span class="nav-text">从实参到形参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.1.</span> <span class="nav-text">arguments对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调函数"><span class="nav-number">3.</span> <span class="nav-text">回调函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量的一种方式"><span class="nav-number">1.</span> <span class="nav-text">声明变量的一种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从实参到形参"><span class="nav-number">2.</span> <span class="nav-text">从实参到形参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.1.</span> <span class="nav-text">arguments对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式编程"><span class="nav-number">3.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明式编程与命令式编程"><span class="nav-number">3.1.</span> <span class="nav-text">声明式编程与命令式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何为函数式编程"><span class="nav-number">3.2.</span> <span class="nav-text">何为函数式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心：不可变性"><span class="nav-number">3.3.</span> <span class="nav-text">核心：不可变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纯函数"><span class="nav-number">3.4.</span> <span class="nav-text">纯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回调函数"><span class="nav-number">3.5.</span> <span class="nav-text">回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警惕"><span class="nav-number">4.</span> <span class="nav-text">警惕</span></a></li></ol></div>
             
 
           </div>
