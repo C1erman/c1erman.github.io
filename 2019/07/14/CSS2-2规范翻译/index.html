@@ -113,7 +113,7 @@
 <meta property="og:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
-<meta property="og:updated_time" content="2019-08-28T09:16:41.799Z">
+<meta property="og:updated_time" content="2019-08-29T08:21:26.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS2.2规范">
 <meta name="twitter:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-28 17:16:41" itemprop="dateModified" datetime="2019-08-28T17:16:41+08:00">2019-08-28</time>
+                <time title="修改时间：2019-08-29 16:21:26" itemprop="dateModified" datetime="2019-08-29T16:21:26+08:00">2019-08-29</time>
               
             
           </span>
@@ -632,6 +632,11 @@
 <p><a href="#relative-positioning">9.4.3 相对定位</a></p>
 <p><a href="#floats">9.5 浮动</a></p>
 <p><a href="#float-property">9.5.1 定位浮动：float属性</a></p>
+<p><a href="#clear-property">9.5.2 控制浮动旁的流：clear属性</a></p>
+<p><a href="#absolute-positioning">9.6 绝对定位</a></p>
+<p><a href="#fixed-position">9.6.1 固定定位</a></p>
+<p><a href="#relationships-between-d-p-f">9.7 display、position与float之间的联系</a></p>
+<p><a href="#zIndex-property">9.9.1 指定堆栈级别：z-index属性</a></p>
 <h3 id="包含块"><a href="#包含块" class="headerlink" title="包含块"></a>包含块</h3><p><span id="containing-blocks"></span></p>
 <p>在CSS2.2中，许多盒子的位置和大小是相对于被称为包含块的矩形框的边缘计算的。通常，生成的盒子用作一个块，去包含后代盒子。我们说一个盒子<em>建立</em>其后代的包含块。<em>一个盒子的包含块</em>指的是<em>这个盒子所在的包含块</em>，而不是这个盒子建立的包含块。</p>
 <p>每个盒子都有一个相对于其包含块的位置，但它不受这个包含块的限制，这个盒子可能会溢出包含块。</p>
@@ -675,7 +680,8 @@
 <blockquote>
 <p><strong>边距盒子：</strong>原文为<code>margin box</code>。</p>
 </blockquote>
-<h3 id="定位浮动：float属性"><a href="#定位浮动：float属性" class="headerlink" title="定位浮动：float属性"></a>定位浮动：<code>float</code>属性</h3><p><code>float</code>属性指定盒子是否应该向左，向右或根本不浮动。该属性可以在任何元素上设置，但仅适用于该元素未被<code>absolute</code>定位。此属性的值具有以下含义：</p>
+<h3 id="定位浮动：float属性"><a href="#定位浮动：float属性" class="headerlink" title="定位浮动：float属性"></a>定位浮动：<code>float</code>属性</h3><p><span id="float-property"></span></p>
+<p><code>float</code>属性指定盒子是否应该向左，向右或根本不浮动。该属性可以在任何元素上设置，但仅适用于该元素未被<code>absolute</code>定位。此属性的值具有以下含义：</p>
 <ul>
 <li><code>left</code></li>
 </ul>
@@ -715,8 +721,165 @@
 <ol start="5">
 <li>浮动盒子的外顶部可能不会高于源文档中较早元素生成的任何块级盒子或浮动盒子的外顶部。</li>
 <li>一个元素的浮动盒子的外顶部可能不会高于源文档中较早元素生成的任何包含盒子的线框的顶部。</li>
-<li>左浮动盒子的左边有另一个左浮动盒子，当前浮动盒子的右边缘可能不会位于其包含块右边缘的右边。（在宽松情况下，）</li>
+<li>左浮动盒子的左边有另一个左浮动盒子，当前浮动盒子的右边缘可能不会位于其包含块右边缘的右边。（在宽松情况下，左边的浮动元素可能不会在其右边缘伸出，除非它已经尽可能的向左浮动）。同样的道理适用于右浮动盒子。</li>
+<li>浮动盒子必须尽可能高。</li>
+<li>左浮动盒子必须尽可能放置在左侧，右浮动盒子必须尽可能放置在右侧。<em>相对于更偏左或偏右的位置，倾向于选择较高的位置</em>。</li>
 </ol>
+<blockquote>
+<p><strong>注意：</strong>原文为<code>A higher position is preferred over one that is further to the left/right.</code>。</p>
+</blockquote>
+<p>但是在CSS2.2中，如果在块格式化上下文中，有一个流入的负垂直边距，使得浮动元素的位置高于它所处的位置，所有这类的边距将被设置为<code>0</code>，浮动元素的将是位置未被定义的。</p>
+<p>对这些规则中其它元素的引用，仅引用的是与浮动元素处于同一块格式化上下文中的元素。</p>
+<h3 id="控制浮动旁的流：clear属性"><a href="#控制浮动旁的流：clear属性" class="headerlink" title="控制浮动旁的流：clear属性"></a>控制浮动旁的流：<code>clear</code>属性</h3><p><span id="clear-property"></span></p>
+<p>本属性指示元素盒子的哪些边可能不与较早的浮动盒子相邻。<code>clear</code>属性不考虑元素内的浮动或其它块格式化上下文中的浮动。</p>
+<p>应用于非浮动<strong>块级元素</strong>时，该属性的值有以下含义：</p>
+<ul>
+<li><code>left</code></li>
+</ul>
+<p>要求盒子的顶部<em>边框边缘</em>位于源文档中较早元素生成的任何左浮动盒子的底部外边缘的下方。</p>
+<ul>
+<li><code>right</code></li>
+</ul>
+<p>要求盒子的顶部边框边缘位于源文档中较早元素生成的任何右浮动盒子的底部外边缘的下方。</p>
+<ul>
+<li><code>both</code></li>
+</ul>
+<p>要求盒子的顶部边框边缘位于源文档中较早元素生成的任何左、右浮动盒子的底部外边缘下方。</p>
+<ul>
+<li><code>none</code></li>
+</ul>
+<p>盒子相对于浮动元素的位置没有约束。</p>
+<p>除<code>none</code>之外的值可能会引入<em>间隙</em>，间隙抑制边距折叠，并作为元素<em>上边距</em>之上的空间。它用于将元素垂直地沿浮动元素推动。</p>
+<blockquote>
+<p><strong>间隙：</strong>原文为<code>clearance</code>，可翻译为净空，在此意译为间隙。</p>
+</blockquote>
+<blockquote>
+<p><strong>上边距：</strong>即<code>top margin</code>。</p>
+</blockquote>
+<p>通过首先确定元素顶部边框边缘的假想位置，计算设置<code>clear</code>属性的元素的间隙。如果元素的<code>clear</code>属性为<code>none</code>，则这个位置就是实际顶部边框边缘的位置。</p>
+<p>如果元素顶部边框边缘的假想位置没有超过相关的浮动元素，则引入间隙，折叠边距按照本文8.3.1中的规则发生。</p>
+<p>然后将间隙的值设置为以下值的较大值：</p>
+<ul>
+<li>放置块元素边框边缘的必要值，即使含有最低浮动元素底部外边缘要清除。</li>
+<li>放置块元素顶部边框边缘在其假想位置的必要值。</li>
+</ul>
+<p>或者，间隙精确地被设置为放置块级元素的边框边缘的必要值，即使要清除最低浮动元素的底部外边缘。</p>
+<blockquote>
+<p><strong>注意：</strong>间隙可以为负数或零。</p>
+</blockquote>
+<p>应用于浮动元素上时，会导致修改浮动元素定位规则。这导致了一个额外的约束#10：</p>
+<ol start="10">
+<li>浮动的顶部外边缘必须低于所有稍早左浮动盒子的底部外边缘（<code>clear</code>取值<code>left</code>），或右浮动盒子的，或两者兼有。</li>
+</ol>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p><span id="absolute-positioning"></span></p>
+<p>在绝对定位模型中，盒子相对与其包含块明确偏移。它完全从<em>普通流</em>中被移除（对其兄弟节点没有影响）。绝对定位盒子为普通流子项与绝对定位（但不是<code>fixed</code>）后代建立新的包含块。但是，绝对定位元素的内容不会围绕任何其它盒子流动。它们可能会遮挡另一个盒子的内容，或自身被遮挡，这取决于重叠盒子的堆栈级别。</p>
+<p>本文对绝对定位元素，或该元素的盒子，的引用意味着元素的<code>position</code>属性具有值<code>absolute</code>或<code>fixed</code>。</p>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p><span id="fixed-positioning"></span></p>
+<p>固定定位是绝对定位的子类别。唯一的区别是：对于固定定位的盒子，<em>包含块</em>由视口建立。</p>
+<p>对于<em>连续媒体</em>，滚动文档时固定盒子不会移动。在这方面，它们类似于固定的背景图片。</p>
+<blockquote>
+<p><strong>连续媒体：</strong>原文<code>continuous media</code>，即支持文档滚动的媒体介质。</p>
+</blockquote>
+<p>对于分页媒体，每页都会重复具有固定位置的盒子。例如，这对于在每个页面的底部放置签名很有用。如果固定定位的盒子的大小大于页面区域，它将会被剪切。在初始包含块中固定定位盒子的不可见部分将不会被打印。</p>
+<h3 id="display、position与float之间的联系"><a href="#display、position与float之间的联系" class="headerlink" title="display、position与float之间的联系"></a><code>display</code>、<code>position</code>与<code>float</code>之间的联系</h3><p><span id="relationships-between-d-p-f"></span></p>
+<p>影响盒子生成和布局的三个属性<code>display</code>、<code>position</code>与<code>float</code>的交互如下：</p>
+<ol>
+<li>如果<code>display</code>为<code>none</code>，则<code>position</code>与<code>float</code>不适用。在这种情况下，元素不生成盒子。</li>
+<li>否则，如果<code>position</code>的值为<code>absolute</code>或<code>fixed</code>，则该盒子绝对定位，<code>float</code>属性的计算值为<code>none</code>,并根据下表设置显示。盒子的位置将由<code>top</code>、<code>right</code>、<code>bottom</code>和<code>left</code>属性以及该盒子的包含块确定。</li>
+<li>否则，如果<code>float</code>的值不是<code>none</code>，该盒子将会浮动并且<code>display</code>属性将会按照下表设置。</li>
+<li>否则，如果该元素是根元素，则根据下表设置<code>display</code>属性，在CSS2.2中未被定义的值或者值为<code>list-item</code>将会被计算为<code>block</code>或<code>list-item</code>。</li>
+<li>否则，余下的<code>display</code>属性将被应用。</li>
+</ol>
+<p>表格如下：</p>
+<table>
+<thead>
+<tr>
+<th>给定值</th>
+<th>计算值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inline-table</td>
+<td>table</td>
+</tr>
+<tr>
+<td>inline、inline-block、table-row-group、table-column、table-column-group、table-header-group、table-footer-group、table-row、table-cell、table-caption</td>
+<td>block</td>
+</tr>
+<tr>
+<td>其它</td>
+<td>与给定值相同</td>
+</tr>
+</tbody>
+</table>
+<h3 id="指定堆栈级别：z-index属性"><a href="#指定堆栈级别：z-index属性" class="headerlink" title="指定堆栈级别：z-index属性"></a>指定堆栈级别：<code>z-index</code>属性</h3><p><span id="zIndex-property"></span></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>z-index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>auto、整数、inherit</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>定位元素</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>无</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>媒体</td>
+<td>visual</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>同给定值</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>对于<em>定位盒子</em>，<code>z-index</code>属性指定：</p>
+<ol>
+<li>当前堆叠上下文中盒子的堆栈级别</li>
+<li>盒子是否建立堆叠上下文</li>
+</ol>
+<blockquote>
+<p><strong>定位盒子：</strong>即定位元素，<code>position</code>属性取<code>static</code>以外的元素。</p>
+</blockquote>
+<p>值具有以下含义：</p>
+<ul>
+<li>整数</li>
+</ul>
+<p>此整数是当前堆叠上下文中生成盒子的堆栈级别。该盒子同时会建立新的堆叠上下文。</p>
+<ul>
+<li>auto</li>
+</ul>
+<p>当前堆叠上下文中生成盒子的堆栈级别为<code>0</code>。如果盒子具有<code>position : fixed</code>属性，或者它是根，则它会建立新的堆叠上下文。</p>
+<blockquote>
+<p><strong>注意：</strong>在本节中，表达 ”在…之前” 意味着当用户面向屏幕时更接近用户。</p>
+</blockquote>
+<p>在CSS2.2中，每个框都有三个维度的位置。除了它们的水平和垂直位置外，盒子们沿着Z轴排列并且一个在另一个上面格式化。当盒子们在视觉上重叠时，Z轴位置十分重要。本节讨论如何沿着Z轴对盒子进行定位。</p>
+<p>堆叠上下文描述了渲染树在画布上绘制的顺序。堆叠上下文可以包含更多的堆叠上下文。从父堆叠上下文的角度来看，堆叠上下文是原子的，其它堆叠上下文中的盒子可能不在当前堆叠上下文的任何盒子之间。</p>
+<p>每个盒子属于一个堆叠上下文。给定堆叠上下文中的每个定位盒子具有一个整数的堆栈级别值，这是其在Z轴上相对于同一堆叠上下文中的其它堆栈级别的位置。具有更高堆栈级别的盒子总是在具有较低堆栈级别的盒子前面格式化。盒子可能有负的堆栈级别。堆栈上下文中具有相同堆栈级别的盒子根据文档树顺序<em>从后到前</em>堆叠。</p>
+<blockquote>
+<p><strong>从后到前：</strong>浏览器解析从上到下地文档。</p>
+</blockquote>
 <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本篇文章源自<a href="https://www.w3.org/TR/CSS22/" target="_blank" rel="noopener">W3C官网</a>，由<a href="kexiezhang@gmail.com">c1er</a>翻译与润色。</p>
 
       
@@ -985,7 +1148,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：选择器"><span class="nav-number">1.</span> <span class="nav-text">章五：选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模式匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章六：分配属性值、级联和继承"><span class="nav-number">2.</span> <span class="nav-text">章六：分配属性值、级联和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">2.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算选择器的优先级"><span class="nav-number">2.2.</span> <span class="nav-text">计算选择器的优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章八：盒模型"><span class="nav-number">3.</span> <span class="nav-text">章八：盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-2"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子尺寸"><span class="nav-number">3.2.</span> <span class="nav-text">盒子尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折叠边距"><span class="nav-number">3.3.</span> <span class="nav-text">折叠边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章九：视觉格式化模型"><span class="nav-number">4.</span> <span class="nav-text">章九：视觉格式化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-3"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块"><span class="nav-number">4.2.</span> <span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通流"><span class="nav-number">4.3.</span> <span class="nav-text">普通流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文"><span class="nav-number">4.4.</span> <span class="nav-text">块格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联格式化上下文"><span class="nav-number">4.5.</span> <span class="nav-text">内联格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对定位"><span class="nav-number">4.6.</span> <span class="nav-text">相对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动"><span class="nav-number">4.7.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位浮动：float属性"><span class="nav-number">4.8.</span> <span class="nav-text">定位浮动：float属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">5.</span> <span class="nav-text">声明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：选择器"><span class="nav-number">1.</span> <span class="nav-text">章五：选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模式匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章六：分配属性值、级联和继承"><span class="nav-number">2.</span> <span class="nav-text">章六：分配属性值、级联和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">2.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算选择器的优先级"><span class="nav-number">2.2.</span> <span class="nav-text">计算选择器的优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章八：盒模型"><span class="nav-number">3.</span> <span class="nav-text">章八：盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-2"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子尺寸"><span class="nav-number">3.2.</span> <span class="nav-text">盒子尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折叠边距"><span class="nav-number">3.3.</span> <span class="nav-text">折叠边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章九：视觉格式化模型"><span class="nav-number">4.</span> <span class="nav-text">章九：视觉格式化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-3"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块"><span class="nav-number">4.2.</span> <span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通流"><span class="nav-number">4.3.</span> <span class="nav-text">普通流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文"><span class="nav-number">4.4.</span> <span class="nav-text">块格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联格式化上下文"><span class="nav-number">4.5.</span> <span class="nav-text">内联格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对定位"><span class="nav-number">4.6.</span> <span class="nav-text">相对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动"><span class="nav-number">4.7.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位浮动：float属性"><span class="nav-number">4.8.</span> <span class="nav-text">定位浮动：float属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制浮动旁的流：clear属性"><span class="nav-number">4.9.</span> <span class="nav-text">控制浮动旁的流：clear属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.10.</span> <span class="nav-text">绝对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定定位"><span class="nav-number">4.11.</span> <span class="nav-text">固定定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display、position与float之间的联系"><span class="nav-number">4.12.</span> <span class="nav-text">display、position与float之间的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定堆栈级别：z-index属性"><span class="nav-number">4.13.</span> <span class="nav-text">指定堆栈级别：z-index属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">5.</span> <span class="nav-text">声明</span></a></li></ol></div>
             
 
           </div>
