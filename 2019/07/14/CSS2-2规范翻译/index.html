@@ -113,7 +113,7 @@
 <meta property="og:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
-<meta property="og:updated_time" content="2019-09-05T09:30:09.289Z">
+<meta property="og:updated_time" content="2019-09-05T14:15:44.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS2.2规范">
 <meta name="twitter:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-05 17:30:09" itemprop="dateModified" datetime="2019-09-05T17:30:09+08:00">2019-09-05</time>
+                <time title="修改时间：2019-09-05 22:15:44" itemprop="dateModified" datetime="2019-09-05T22:15:44+08:00">2019-09-05</time>
               
             
           </span>
@@ -467,8 +467,8 @@
 <p>注意，请不要忽略CSS3。</p>
 <a id="more"></a>
 <h2 id="章五：选择器"><a href="#章五：选择器" class="headerlink" title="章五：选择器"></a>章五：选择器</h2><h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p><a href="#parttern-matching">5.1 模式匹配</a></p>
-<h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p><span id="parttern-matching"></span></p>
-<p>在CSS中，<strong>模式匹配规则</strong>确定哪些样式规则适用于文档树中的元素。</p>
+<p><span id="parttern-matching"></span></p>
+<h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p>在CSS中，<strong>模式匹配规则</strong>确定哪些样式规则适用于文档树中的元素。</p>
 <p>这些模式称为<strong>选择器</strong>，范围可以从简单的HTML元素到丰富的HTML上下文。如果模式中的所有条件对于某个元素都为真，则选择器匹配该元素。</p>
 <p>对于选择器，文档语言元素名称是否区分大小写取决于文档语言。例如，在HTML中，元素名称不区分大小写，但是在XML中，它们区分大小写。</p>
 <p>下表总结了CSS 2.2选择器语法：</p>
@@ -560,8 +560,8 @@
 </tbody>
 </table>
 <h2 id="章六：分配属性值、级联和继承"><a href="#章六：分配属性值、级联和继承" class="headerlink" title="章六：分配属性值、级联和继承"></a>章六：分配属性值、级联和继承</h2><h3 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h3><p><a href="#calculating-specificity">6.4.3 计算选择器的优先级</a></p>
-<h3 id="计算选择器的优先级"><a href="#计算选择器的优先级" class="headerlink" title="计算选择器的优先级"></a>计算选择器的优先级</h3><p><span id="calculating-specificity"></span></p>
-<blockquote>
+<p><span id="calculating-specificity"></span></p>
+<h3 id="计算选择器的优先级"><a href="#计算选择器的优先级" class="headerlink" title="计算选择器的优先级"></a>计算选择器的优先级</h3><blockquote>
 <p><strong>优先级：</strong></p>
 <p>原文为<code>specificity</code>，可翻译为特异性、明确性、具体性等。</p>
 </blockquote>
@@ -586,8 +586,8 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">li:first-line &#123;&#125;    优先级为：a=0, b=0, c=0, d=2    0-0-0-2</span><br><span class="line">li.class1.class2 &#123;&#125;    优先级为：a=0, b=0, c=2, d=1    0-0-2-1</span><br><span class="line">#id &#123;&#125;    优先级为：a=0, b=1, c=0, d=0    0-1-0-0</span><br><span class="line">style=""    优先级为：a=1, b=0, c=0, d=0    1-0-0-0</span><br></pre></td></tr></table></figure>
 <h2 id="章八：盒模型"><a href="#章八：盒模型" class="headerlink" title="章八：盒模型"></a>章八：盒模型</h2><h3 id="内容-2"><a href="#内容-2" class="headerlink" title="内容"></a>内容</h3><p><a href="#box-dimensions">8.1 盒子尺寸</a></p>
 <p><a href="#collapsing-borders">8.3.1 折叠边距</a></p>
-<h3 id="盒子尺寸"><a href="#盒子尺寸" class="headerlink" title="盒子尺寸"></a>盒子尺寸</h3><p><span id="box-dimensions"></span></p>
-<p>每个盒子具有内容区域<code>content</code>和可选择的周边填充<code>padding</code>、边框<code>border</code>以及边缘区域<code>margin</code>。每个区域的大小由下面定义的属性指定。</p>
+<p><span id="box-dimensions"></span></p>
+<h3 id="盒子尺寸"><a href="#盒子尺寸" class="headerlink" title="盒子尺寸"></a>盒子尺寸</h3><p>每个盒子具有内容区域<code>content</code>和可选择的周边填充<code>padding</code>、边框<code>border</code>以及边缘区域<code>margin</code>。每个区域的大小由下面定义的属性指定。</p>
 <p>下图显示了这些区域的关联方式，以及相关术语：</p>
 <p><img src="https://www.w3.org/TR/CSS22/images/boxdim.png" alt="盒子尺寸的组成"></p>
 <p>四个区域中的每一个的周长称为边缘，因此，每个框有四条边。</p>
@@ -596,8 +596,8 @@
 <p><strong>关于box：</strong>一般来说，将<code>content box</code>中的<code>box</code>翻译为<strong>框</strong>似乎更合常理，但由于<code>border</code>已经带有边框的意思，因此这里采用<strong>盒子</strong>来翻译<code>box</code>。</p>
 </blockquote>
 <p>内容盒子、填充盒子与边框盒子的背景样式由元素的<code>background</code>指定，边缘盒子的背景则<strong>总是透明</strong>的。</p>
-<h3 id="折叠边距"><a href="#折叠边距" class="headerlink" title="折叠边距"></a>折叠边距</h3><p><span id="collapsing-borders"></span></p>
-<blockquote>
+<p><span id="collapsing-borders"></span></p>
+<h3 id="折叠边距"><a href="#折叠边距" class="headerlink" title="折叠边距"></a>折叠边距</h3><blockquote>
 <p><strong>折叠与崩溃：</strong></p>
 <p>原文为<code>collapsing</code>或<code>collapse</code>，直译为崩溃、倒塌，在此意译为折叠，便于理解。</p>
 </blockquote>
@@ -625,7 +625,9 @@
 <blockquote>
 <p>了解更多关于折叠边距的知识：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="noopener">MDN</a></p>
 </blockquote>
-<h2 id="章九：视觉格式化模型"><a href="#章九：视觉格式化模型" class="headerlink" title="章九：视觉格式化模型"></a>章九：视觉格式化模型</h2><h3 id="内容-3"><a href="#内容-3" class="headerlink" title="内容"></a>内容</h3><p><a href="#containing-blocks">9.1.2 包含块</a></p>
+<h2 id="章九：可视格式化模型"><a href="#章九：可视格式化模型" class="headerlink" title="章九：可视格式化模型"></a>章九：可视格式化模型</h2><h3 id="内容-3"><a href="#内容-3" class="headerlink" title="内容"></a>内容</h3><p><a href="#containing-blocks">9.1.2 包含块</a></p>
+<p><a href="#controlling-box-generation">9.2 控制盒子生成</a></p>
+<p><a href="#block-level-elements">9.2.1 块级元素和块盒</a></p>
 <p><a href="#normal-flow">9.4 普通流</a></p>
 <p><a href="#block-formatting-contexts">9.4.1 块格式化上下文</a></p>
 <p><a href="#inline-formatting-contexts">9.4.2 内联格式化上下文</a></p>
@@ -637,18 +639,30 @@
 <p><a href="#fixed-position">9.6.1 固定定位</a></p>
 <p><a href="#relationships-between-d-p-f">9.7 display、position与float之间的联系</a></p>
 <p><a href="#zIndex-property">9.9.1 指定堆栈级别：z-index属性</a></p>
-<h3 id="包含块"><a href="#包含块" class="headerlink" title="包含块"></a>包含块</h3><p><span id="containing-blocks"></span></p>
-<p>在CSS2.2中，许多盒子的位置和大小是相对于被称为包含块的矩形框的边缘计算的。通常，生成的盒子用作一个块，去包含后代盒子。我们说一个盒子<em>建立</em>其后代的包含块。<em>一个盒子的包含块</em>指的是<em>这个盒子所在的包含块</em>，而不是这个盒子建立的包含块。</p>
+<p><span id="containing-blocks"></span></p>
+<h3 id="包含块"><a href="#包含块" class="headerlink" title="包含块"></a>包含块</h3><p>在CSS2.2中，许多盒子的位置和大小是相对于被称为包含块的矩形框的边缘计算的。通常，生成的盒子用作一个块，去包含后代盒子。我们说一个盒子<em>建立</em>其后代的包含块。<em>一个盒子的包含块</em>指的是<em>这个盒子所在的包含块</em>，而不是这个盒子建立的包含块。</p>
 <p>每个盒子都有一个相对于其包含块的位置，但它不受这个包含块的限制，这个盒子可能会溢出包含块。</p>
-<h3 id="普通流"><a href="#普通流" class="headerlink" title="普通流"></a>普通流</h3><p><span id="normal-flow"></span></p>
-<p>普通流中的盒子属于格式化上下文，在CSS2.2中可以是表格格式化上下文<code>table</code>、块格式化上下文<code>block</code>或者内联格式化上下文<code>inline</code>。在未来级别的CSS中，将引入其他类型的格式化上下文。</p>
+<p><span id="controlling-box-generation"></span></p>
+<h3 id="控制盒子生成"><a href="#控制盒子生成" class="headerlink" title="控制盒子生成"></a>控制盒子生成</h3><p>以下部分描述了可以在CSS2.2中生成的盒子的类型。盒子的类型部分地影响其在可视格式化模型中的行为。下面描述的<code>display</code>属性指定了一个盒子的类型。</p>
+<p><code>display</code>属性的某些值导致源文档中的一个元素生成一个<strong>主盒</strong>，主盒包含了后代盒子和生成内容，主盒同时也是任何定位方案中涉及的盒子。除了主盒之外，某些元素可能会生成额外的盒子附加于主盒，这些元素是<code>list-item</code>元素。这些附加盒子相对于主盒放置。</p>
+<p><span id="block-level-elements"></span></p>
+<h3 id="块级元素和块盒"><a href="#块级元素和块盒" class="headerlink" title="块级元素和块盒"></a>块级元素和块盒</h3><p><strong>块级元素</strong>——源文档中可是化为块（例如段落）的那些元素——是生成块级主盒的那些元素。使一个元素成为块级元素的<code>display</code>的取值包括<code>block</code>、<code>list-item</code>和<code>table</code>。<strong>块级盒子</strong>是参与块格式化上下文的盒子。</p>
+<p>在CSS2.2中，块级盒子也是块级容器盒子，除非它是表格盒子或者<em>替换元素</em>的主盒。<strong>块容器盒子</strong>要么只包含块级盒子、要么建立内联格式化上下文因此只包含内联级盒子。主盒是块容器盒子的元素是<strong>块容器元素</strong>。使未提换元素生成块容器的<code>display</code>的取值包括<code>block</code>、<code>list-item</code>和<code>inline-block</code>。并非所有的块容器盒子都是块级盒子：未替换的内联盒子和未提换的表格单元是块容器，但不是块级盒子（即块级元素）。块级盒子同样也是块容器的被称为<strong>块盒</strong>。</p>
+<blockquote>
+<p><strong>替换元素：</strong></p>
+<p>HTML中的元素可以分为替换元素<code>replaced element</code>与未替换元素<code>non-replace element</code>。诸如<code>&lt;p&gt;内容&lt;/p&gt;</code>、<code>&lt;div&gt;内容&lt;/div&gt;</code>之类，起始与闭合标签中间具有内容、内容真实地渲染出来的元素，叫未提换元素；而像<code>&lt;img src=&quot;img.jpg&quot;&gt;</code>、<code>&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</code>之类，没有闭合标签与内容、用属性设置如何展示的元素，叫替换元素——它们的内容<strong>被替换</strong>为额外的资源。</p>
+<p>下文有涉及时会再次重复该概念。</p>
+</blockquote>
+<p>三个术语“块级盒子”、“块容器盒子”与“块盒”有时明确地缩写为“块”。</p>
+<p><span id="normal-flow"></span></p>
+<h3 id="普通流"><a href="#普通流" class="headerlink" title="普通流"></a>普通流</h3><p>普通流中的盒子属于格式化上下文，在CSS2.2中可以是表格格式化上下文<code>table</code>、块格式化上下文<code>block</code>或者内联格式化上下文<code>inline</code>。在未来级别的CSS中，将引入其他类型的格式化上下文。</p>
 <p>块级盒子参与块格式化上下文，内联盒子参与内联格式化上下文。</p>
-<h3 id="块格式化上下文"><a href="#块格式化上下文" class="headerlink" title="块格式化上下文"></a>块格式化上下文</h3><p><span id="block-formatting-contexts"></span></p>
-<p>浮动、绝对定位元素、不是块级元素的块级容器（如<code>inline-block</code>、<code>table-cell</code>和<code>table-caption</code>），以及<code>overflow</code>属性不是<code>visible</code>（除非该内容已传播到视口）的块级元素，将为其内容建立新的块格式化上下文。</p>
+<p><span id="block-formatting-contexts"></span></p>
+<h3 id="块格式化上下文"><a href="#块格式化上下文" class="headerlink" title="块格式化上下文"></a>块格式化上下文</h3><p>浮动、绝对定位元素、不是块级元素的块级容器（如<code>inline-block</code>、<code>table-cell</code>和<code>table-caption</code>），以及<code>overflow</code>属性不是<code>visible</code>（除非该内容已传播到视口）的块级元素，将为其内容建立新的块格式化上下文。</p>
 <p>在块格式化上下文中，盒子将从包含块的顶部一个接一个的垂直排列，两个兄弟盒子之间的垂直距离由它们的<code>margin</code>属性决定，块格式化上下文中相邻块级盒子的垂直边距同样折叠。</p>
 <p>在块格式化上下文中，每个盒子的左外边缘紧接包含块的左边缘，除非盒子建立了新的块格式化上下文（这种情况下，盒子可能因浮动而变窄），否则即使存在浮动也同样如此（尽管盒子的线框可能因浮动而缩小）。</p>
-<h3 id="内联格式化上下文"><a href="#内联格式化上下文" class="headerlink" title="内联格式化上下文"></a>内联格式化上下文</h3><p><span id="inline-formatting-contexts"></span></p>
-<p>内联格式化上下文由不包含块级盒子的块级容器盒子建立。</p>
+<p><span id="inline-formatting-contexts"></span></p>
+<h3 id="内联格式化上下文"><a href="#内联格式化上下文" class="headerlink" title="内联格式化上下文"></a>内联格式化上下文</h3><p>内联格式化上下文由不包含块级盒子的块级容器盒子建立。</p>
 <p>在内联格式化上下文中，盒子将从包含块的顶部一个接一个的水平排列，这些盒子之间会考虑水平边距<code>margin</code>、边框<code>border</code>和填充<code>padding</code>。盒子可以以不同的方式垂直对齐，它们的顶部或底部都可以对齐，或者它们内部的文本基线也可以对齐。而包含形成一条线的盒子的矩形区域称为行框。</p>
 <blockquote>
 <p><strong>行框：</strong></p>
@@ -656,8 +670,8 @@
 <p>可理解为内联格式化上下文中的，每一行文本所组成的矩形区域。</p>
 </blockquote>
 <p>行框的宽度由包含块和浮动元素的存在确定，行框的高度由行高<code>line-height</code>给出的规则得出。</p>
-<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p><span id="relative-positioning"></span></p>
-<p>一旦一个盒子按照普通流或浮动被布局，它可以相对该位置移动，这被称之为相对定位。</p>
+<p><span id="relative-positioning"></span></p>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>一旦一个盒子按照普通流或浮动被布局，它可以相对该位置移动，这被称之为相对定位。</p>
 <p>以这种方式来偏移一个盒子<code>Box-1</code>对随后的框<code>Box-2</code>没有影响：<code>Box-2</code>的位置表现的和<code>Box-1</code>没有偏移一样，并且在<code>Box-1</code>偏移发生之后<code>Box-2</code>并不会重定位。这意味着相对定位可能导致盒子重叠，但是，如果相对定位导致了一个具有<code>overflow: auto</code>或<code>overflow: scroll</code>的盒子发生了内容溢出，则UA必须允许用户访问溢出的内容，这通常会创建滚动条，并影响到布局。</p>
 <p>相对定位的盒子保持了正常的<em>流尺寸</em>，包括换行符和最初为它保留的空间。本文<strong>包含块</strong>的部分说明了相对定位的盒子何时建立了新的包含块。</p>
 <p>对于相对定位的元素，<code>left</code>、<code>right</code>属性水平地移动盒子，而不改变相对定位元素的大小。<code>left</code>元素向右移动，<code>right</code>则相反。由于<code>left</code>和<code>right</code>不会分割或拉伸盒子，因此<em>生效的值</em>始终是：<code>left = -right</code>。</p>
@@ -671,8 +685,8 @@
 <li>如果<code>left</code>和<code>right</code>都不是<code>auto</code>，则其位置被过度约束，其中一个值必须忽略，如果包含块的<code>direction</code>属性为<code>ltr</code>，则<code>left</code>胜出且<code>right</code>的值为<code>-left</code>；如果是<code>rtl</code>则<code>right</code>胜出，<code>left</code>属性将被忽略</li>
 </ul>
 <p>类似的，<code>top</code>与<code>bottom</code>属性在不改变元素大小的情况下垂直的移动盒子，生效的值始终为<code>top = -bottom</code>。如果两者都是<code>auto</code>，则其生效的值均为<code>0</code>；如果其中一个是<code>auto</code>，则按照负值计算规则计算；如果两者都不是<code>auto</code>，则忽略<code>bottom</code>，即<code>bottom</code>生效的值将减去<code>top</code>的值。</p>
-<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p><span id="floats"></span></p>
-<p>浮动，是一个在当前行上，向左或向右移动的盒子。浮动最有趣的特性莫过于其内容可能沿其侧边流动，可以通过其<code>clear</code>属性来禁用这一特性。</p>
+<p><span id="floats"></span></p>
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>浮动，是一个在当前行上，向左或向右移动的盒子。浮动最有趣的特性莫过于其内容可能沿其侧边流动，可以通过其<code>clear</code>属性来禁用这一特性。</p>
 <p>内容沿左浮动框的右侧向下流动，沿右浮动框的左侧向下流动。下述内容描述了<em>浮动定位</em>与<em>内容流</em>。</p>
 <p>浮动的盒子向左或向右移动，直至其外边缘接触<em>包含块</em>边缘或另一个浮动元素的外边缘。如果存在<em>行框</em>，则浮动盒子的外部顶部与当前行框的顶部对齐。</p>
 <p>如果没有足够的<strong>水平空间</strong>用于浮动，它将会向下移动，直至适合或没有更多的浮动元素存在。</p>
@@ -680,8 +694,8 @@
 <blockquote>
 <p><strong>边距盒子：</strong>原文为<code>margin box</code>。</p>
 </blockquote>
-<h3 id="定位浮动：float属性"><a href="#定位浮动：float属性" class="headerlink" title="定位浮动：float属性"></a>定位浮动：<code>float</code>属性</h3><p><span id="float-property"></span></p>
-<table>
+<p><span id="float-property"></span></p>
+<h3 id="定位浮动：float属性"><a href="#定位浮动：float属性" class="headerlink" title="定位浮动：float属性"></a>定位浮动：<code>float</code>属性</h3><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -768,8 +782,8 @@
 </blockquote>
 <p>但是在CSS2.2中，如果在块格式化上下文中，有一个流入的负垂直边距，使得浮动元素的位置高于它所处的位置，所有这类的边距将被设置为<code>0</code>，浮动元素的将是位置未被定义的。</p>
 <p>对这些规则中其它元素的引用，仅引用的是与浮动元素处于同一块格式化上下文中的元素。</p>
-<h3 id="控制浮动旁的流：clear属性"><a href="#控制浮动旁的流：clear属性" class="headerlink" title="控制浮动旁的流：clear属性"></a>控制浮动旁的流：<code>clear</code>属性</h3><p><span id="clear-property"></span></p>
-<table>
+<p><span id="clear-property"></span></p>
+<h3 id="控制浮动旁的流：clear属性"><a href="#控制浮动旁的流：clear属性" class="headerlink" title="控制浮动旁的流：clear属性"></a>控制浮动旁的流：<code>clear</code>属性</h3><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -847,18 +861,18 @@
 <ol start="10">
 <li>浮动的顶部外边缘必须低于所有稍早左浮动盒子的底部外边缘（<code>clear</code>取值<code>left</code>），或右浮动盒子的，或两者兼有。</li>
 </ol>
-<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p><span id="absolute-positioning"></span></p>
-<p>在绝对定位模型中，盒子相对与其包含块明确偏移。它完全从<em>普通流</em>中被移除（对其兄弟节点没有影响）。绝对定位盒子为普通流子项与绝对定位（但不是<code>fixed</code>）后代建立新的包含块。但是，绝对定位元素的内容不会围绕任何其它盒子流动。它们可能会遮挡另一个盒子的内容，或自身被遮挡，这取决于重叠盒子的堆栈级别。</p>
+<p><span id="absolute-positioning"></span></p>
+<h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>在绝对定位模型中，盒子相对与其包含块明确偏移。它完全从<em>普通流</em>中被移除（对其兄弟节点没有影响）。绝对定位盒子为普通流子项与绝对定位（但不是<code>fixed</code>）后代建立新的包含块。但是，绝对定位元素的内容不会围绕任何其它盒子流动。它们可能会遮挡另一个盒子的内容，或自身被遮挡，这取决于重叠盒子的堆栈级别。</p>
 <p>本文对绝对定位元素，或该元素的盒子，的引用意味着元素的<code>position</code>属性具有值<code>absolute</code>或<code>fixed</code>。</p>
-<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p><span id="fixed-positioning"></span></p>
-<p>固定定位是绝对定位的子类别。唯一的区别是：对于固定定位的盒子，<em>包含块</em>由视口建立。</p>
+<p><span id="fixed-positioning"></span></p>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>固定定位是绝对定位的子类别。唯一的区别是：对于固定定位的盒子，<em>包含块</em>由视口建立。</p>
 <p>对于<em>连续媒体</em>，滚动文档时固定盒子不会移动。在这方面，它们类似于固定的背景图片。</p>
 <blockquote>
 <p><strong>连续媒体：</strong>原文<code>continuous media</code>，即支持文档滚动的媒体介质。</p>
 </blockquote>
 <p>对于分页媒体，每页都会重复具有固定位置的盒子。例如，这对于在每个页面的底部放置签名很有用。如果固定定位的盒子的大小大于页面区域，它将会被剪切。在初始包含块中固定定位盒子的不可见部分将不会被打印。</p>
-<h3 id="display、position与float之间的联系"><a href="#display、position与float之间的联系" class="headerlink" title="display、position与float之间的联系"></a><code>display</code>、<code>position</code>与<code>float</code>之间的联系</h3><p><span id="relationships-between-d-p-f"></span></p>
-<p>影响盒子生成和布局的三个属性<code>display</code>、<code>position</code>与<code>float</code>的交互如下：</p>
+<p><span id="relationships-between-d-p-f"></span></p>
+<h3 id="display、position与float之间的联系"><a href="#display、position与float之间的联系" class="headerlink" title="display、position与float之间的联系"></a><code>display</code>、<code>position</code>与<code>float</code>之间的联系</h3><p>影响盒子生成和布局的三个属性<code>display</code>、<code>position</code>与<code>float</code>的交互如下：</p>
 <ol>
 <li>如果<code>display</code>为<code>none</code>，则<code>position</code>与<code>float</code>不适用。在这种情况下，元素不生成盒子。</li>
 <li>否则，如果<code>position</code>的值为<code>absolute</code>或<code>fixed</code>，则该盒子绝对定位，<code>float</code>属性的计算值为<code>none</code>,并根据下表设置显示。盒子的位置将由<code>top</code>、<code>right</code>、<code>bottom</code>和<code>left</code>属性以及该盒子的包含块确定。</li>
@@ -889,8 +903,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="指定堆栈级别：z-index属性"><a href="#指定堆栈级别：z-index属性" class="headerlink" title="指定堆栈级别：z-index属性"></a>指定堆栈级别：<code>z-index</code>属性</h3><p><span id="zIndex-property"></span></p>
-<table>
+<p><span id="zIndex-property"></span></p>
+<h3 id="指定堆栈级别：z-index属性"><a href="#指定堆栈级别：z-index属性" class="headerlink" title="指定堆栈级别：z-index属性"></a>指定堆栈级别：<code>z-index</code>属性</h3><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -967,7 +981,7 @@
 </ol>
 <p>在每个堆叠上下文中，堆栈级别为0的定位元素（第6层），未定位浮动元素（第4层），<code>inline block</code>（第5层）和<code>inline table</code>（第5层）被绘制为好像这些元素本身生成了新堆叠上下文，除了它们的定位后代和任何可能的子堆叠上下文参与当前的堆叠上下文。</p>
 <p>此绘制顺序以递归的方式应用于每个堆叠上下文。</p>
-<h2 id="章十：视觉格式化上下文细节"><a href="#章十：视觉格式化上下文细节" class="headerlink" title="章十：视觉格式化上下文细节"></a>章十：视觉格式化上下文细节</h2><h3 id="内容-4"><a href="#内容-4" class="headerlink" title="内容"></a>内容</h3><h3 id="包含块的定义"><a href="#包含块的定义" class="headerlink" title="包含块的定义"></a>包含块的定义</h3><p>元素框的位置和大小有时候是相对于某个矩形计算的，这个矩形被称为元素的<strong>包含块</strong>。元素的包含块定义如下：</p>
+<h2 id="章十：可视格式化上下文细节"><a href="#章十：可视格式化上下文细节" class="headerlink" title="章十：可视格式化上下文细节"></a>章十：可视格式化上下文细节</h2><h3 id="内容-4"><a href="#内容-4" class="headerlink" title="内容"></a>内容</h3><h3 id="包含块的定义"><a href="#包含块的定义" class="headerlink" title="包含块的定义"></a>包含块的定义</h3><p>元素框的位置和大小有时候是相对于某个矩形计算的，这个矩形被称为元素的<strong>包含块</strong>。元素的包含块定义如下：</p>
 <ol>
 <li><p>根元素所在的包含块是一个被称为<strong>初始包含块</strong>的矩形。对于连续媒体，它具有视口的尺寸并锚定在渲染画布原点；它是分页媒体的页面区域。初始包含块的<code>direction</code>属性与根元素的<code>direction</code>属性相同。</p>
 </li>
@@ -1345,7 +1359,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：选择器"><span class="nav-number">1.</span> <span class="nav-text">章五：选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模式匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章六：分配属性值、级联和继承"><span class="nav-number">2.</span> <span class="nav-text">章六：分配属性值、级联和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">2.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算选择器的优先级"><span class="nav-number">2.2.</span> <span class="nav-text">计算选择器的优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章八：盒模型"><span class="nav-number">3.</span> <span class="nav-text">章八：盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-2"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子尺寸"><span class="nav-number">3.2.</span> <span class="nav-text">盒子尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折叠边距"><span class="nav-number">3.3.</span> <span class="nav-text">折叠边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章九：视觉格式化模型"><span class="nav-number">4.</span> <span class="nav-text">章九：视觉格式化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-3"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块"><span class="nav-number">4.2.</span> <span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通流"><span class="nav-number">4.3.</span> <span class="nav-text">普通流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文"><span class="nav-number">4.4.</span> <span class="nav-text">块格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联格式化上下文"><span class="nav-number">4.5.</span> <span class="nav-text">内联格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对定位"><span class="nav-number">4.6.</span> <span class="nav-text">相对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动"><span class="nav-number">4.7.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位浮动：float属性"><span class="nav-number">4.8.</span> <span class="nav-text">定位浮动：float属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制浮动旁的流：clear属性"><span class="nav-number">4.9.</span> <span class="nav-text">控制浮动旁的流：clear属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.10.</span> <span class="nav-text">绝对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定定位"><span class="nav-number">4.11.</span> <span class="nav-text">固定定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display、position与float之间的联系"><span class="nav-number">4.12.</span> <span class="nav-text">display、position与float之间的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定堆栈级别：z-index属性"><span class="nav-number">4.13.</span> <span class="nav-text">指定堆栈级别：z-index属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章十：视觉格式化上下文细节"><span class="nav-number">5.</span> <span class="nav-text">章十：视觉格式化上下文细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-4"><span class="nav-number">5.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块的定义"><span class="nav-number">5.2.</span> <span class="nav-text">包含块的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容宽度：width属性"><span class="nav-number">5.3.</span> <span class="nav-text">内容宽度：width属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算宽度和边距"><span class="nav-number">5.4.</span> <span class="nav-text">计算宽度和边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">6.</span> <span class="nav-text">声明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：选择器"><span class="nav-number">1.</span> <span class="nav-text">章五：选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模式匹配"><span class="nav-number">1.2.</span> <span class="nav-text">模式匹配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章六：分配属性值、级联和继承"><span class="nav-number">2.</span> <span class="nav-text">章六：分配属性值、级联和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">2.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算选择器的优先级"><span class="nav-number">2.2.</span> <span class="nav-text">计算选择器的优先级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章八：盒模型"><span class="nav-number">3.</span> <span class="nav-text">章八：盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-2"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒子尺寸"><span class="nav-number">3.2.</span> <span class="nav-text">盒子尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折叠边距"><span class="nav-number">3.3.</span> <span class="nav-text">折叠边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章九：可视格式化模型"><span class="nav-number">4.</span> <span class="nav-text">章九：可视格式化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-3"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块"><span class="nav-number">4.2.</span> <span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制盒子生成"><span class="nav-number">4.3.</span> <span class="nav-text">控制盒子生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级元素和块盒"><span class="nav-number">4.4.</span> <span class="nav-text">块级元素和块盒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通流"><span class="nav-number">4.5.</span> <span class="nav-text">普通流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块格式化上下文"><span class="nav-number">4.6.</span> <span class="nav-text">块格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联格式化上下文"><span class="nav-number">4.7.</span> <span class="nav-text">内联格式化上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对定位"><span class="nav-number">4.8.</span> <span class="nav-text">相对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动"><span class="nav-number">4.9.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定位浮动：float属性"><span class="nav-number">4.10.</span> <span class="nav-text">定位浮动：float属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制浮动旁的流：clear属性"><span class="nav-number">4.11.</span> <span class="nav-text">控制浮动旁的流：clear属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对定位"><span class="nav-number">4.12.</span> <span class="nav-text">绝对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定定位"><span class="nav-number">4.13.</span> <span class="nav-text">固定定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display、position与float之间的联系"><span class="nav-number">4.14.</span> <span class="nav-text">display、position与float之间的联系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定堆栈级别：z-index属性"><span class="nav-number">4.15.</span> <span class="nav-text">指定堆栈级别：z-index属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章十：可视格式化上下文细节"><span class="nav-number">5.</span> <span class="nav-text">章十：可视格式化上下文细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-4"><span class="nav-number">5.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包含块的定义"><span class="nav-number">5.2.</span> <span class="nav-text">包含块的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容宽度：width属性"><span class="nav-number">5.3.</span> <span class="nav-text">内容宽度：width属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算宽度和边距"><span class="nav-number">5.4.</span> <span class="nav-text">计算宽度和边距</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">6.</span> <span class="nav-text">声明</span></a></li></ol></div>
             
 
           </div>
