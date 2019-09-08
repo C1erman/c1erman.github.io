@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.club/2019/09/08/Webpack4%E6%90%AD%E9%85%8DBabel7%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-09-08</lastmod>
+  </url>  <url>
     <loc>http://seefun.club/2019/07/14/CSS2-2%E8%A7%84%E8%8C%83%E7%BF%BB%E8%AF%91/</loc>
+    <lastmod>2019-09-06</lastmod>
+  </url>  <url>
+    <loc>http://seefun.club/2019/04/08/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84HTTP%E4%B8%8EURL/</loc>
     <lastmod>2019-09-06</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/04/06/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84==%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
     <lastmod>2019-09-02</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/04/17/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%AF%B9%E8%B1%A1%E5%8E%9F%E5%9E%8B%E9%93%BE%E4%B8%8E%E7%BB%A7%E6%89%BF/</loc>
-    <lastmod>2019-09-02</lastmod>
-  </url>  <url>
-    <loc>http://seefun.club/2019/04/08/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84HTTP%E4%B8%8EURL/</loc>
     <lastmod>2019-09-02</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/08/07/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Promise/</loc>
