@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人要读书">
 <meta property="og:description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除，那些操作破坏数组也要搞清。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T12:14:21.454Z">
+<meta property="og:updated_time" content="2019-09-19T14:20:36.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的数组Array">
 <meta name="twitter:description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除，那些操作破坏数组也要搞清。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-26 20:14:21" itemprop="dateModified" datetime="2019-08-26T20:14:21+08:00">2019-08-26</time>
+                <time title="修改时间：2019-09-19 22:20:36" itemprop="dateModified" datetime="2019-09-19T22:20:36+08:00">2019-09-19</time>
               
             
           </span>
@@ -599,7 +599,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> [, , <span class="number">1</span>])</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line"><span class="comment">// undefined undefined 1</span></span><br></pre></td></tr></table></figure>
 <h3 id="移除数组中的空缺"><a href="#移除数组中的空缺" class="headerlink" title="移除数组中的空缺"></a>移除数组中的空缺</h3><p>利用<code>undefined==false</code>这个特性便可以轻松地移除空缺：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> b = a.filter(<span class="function">(<span class="params">v</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> v;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h3><p>类数组对象是那些</p>
+<h3 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h3><p>类数组对象是那些像数组一样能通过数字下标取到值，同时具有length属性的对象。熟知的类数组对象就是<code>arguments</code>对象。</p>
 
       
     </div>
@@ -724,7 +724,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">49</span>
+                    <span class="site-state-item-count">50</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

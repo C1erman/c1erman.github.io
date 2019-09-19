@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人要读书">
 <meta property="og:description" content="函数是JavaScript中的第一类公民。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-01T08:56:35.710Z">
+<meta property="og:updated_time" content="2019-09-19T13:32:14.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的Function">
 <meta name="twitter:description" content="函数是JavaScript中的第一类公民。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-01 16:56:35" itemprop="dateModified" datetime="2019-09-01T16:56:35+08:00">2019-09-01</time>
+                <time title="修改时间：2019-09-19 21:32:14" itemprop="dateModified" datetime="2019-09-19T21:32:14+08:00">2019-09-19</time>
               
             
           </span>
@@ -544,6 +544,26 @@
 <h3 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h3><p>纯函数是一个返回结果只依赖于输入参数的函数，它至少有一个参数，并且总是返回一个值或一个函数。</p>
 <p>纯函数体现着<em>不可变性</em>。</p>
 <h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><p>事实上，回调函数是从函数式编程中衍生出来的概念。这相当容易理解：回调函数即是将一个函数作为参数传递给另一个函数。</p>
+<h2 id="所有函数都有的"><a href="#所有函数都有的" class="headerlink" title="所有函数都有的"></a>所有函数都有的</h2><p>下面三个函数是改变函数调用对象的三剑客。</p>
+<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><p>函数签名为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.call(thisArg, [argsArray])</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>thisArg</code>：可选参数，表明函数运行时的this值。如果这个函数处于<strong>非严格模式</strong>下，则<code>thisArg</code>为null或者undefined时，该参数会自动替换为全局对象；<code>thisArg</code>为其它原始数据类型时，该参数即为其的包装。一言以蔽之：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thisArg = (!thisArg) ? </span><br><span class="line">    (<span class="keyword">typeof</span> thisArg === <span class="string">'string'</span> || <span class="string">'boolean'</span> || <span class="string">'number'</span> ? </span><br><span class="line">     <span class="built_in">String</span>(thisArg) || <span class="built_in">Boolean</span>(thisArg) || <span class="built_in">Number</span>(thisArg) : thisArg) </span><br><span class="line">: <span class="built_in">window</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><code>argsArray</code>：可选参数，一个数组或类数组对象，其中的数组元素将作为参数传给函数。</li>
+</ul>
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><p>函数签名为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.apply(thisArg, arg1, arg2, ...)</span><br></pre></td></tr></table></figure>
+<p>该函数与call类似，唯一不同的是第二类参数的类别。</p>
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><p>函数签名为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind(thisArg[, arg1[, arg2[, ...]]])</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>thisArg</code>：调用绑定函数时作为this参数传递给目标函数的值。如果使用new运算符构造绑定函数，则忽略该值。如果bind函数的参数列表为空，<strong>执行作用域</strong>的this将被视为新函数的thisArg。</li>
+<li><code>arg1, arg2 ...</code>：预先添加到绑定函数的参数列表中的参数。</li>
+</ul>
 <h2 id="警惕"><a href="#警惕" class="headerlink" title="警惕"></a>警惕</h2><p>将函数作为参数进行传递太常见，以致于某些时候我们会犯错误：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(<span class="built_in">parseInt</span>);  <span class="comment">//[1, NaN, NaN]</span></span><br></pre></td></tr></table></figure>
 <p>如果我们详细观察函数签名，看似错误的结果其实很合理。上述代码中，我们使用到的两个函数的函数签名分别为：<code>Array.prototype.map((value, index, array), this?)</code>、<code>parseInt(string, radix?)</code>。</p>
@@ -674,7 +694,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">49</span>
+                    <span class="site-state-item-count">50</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -821,7 +841,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量的一种方式"><span class="nav-number">1.</span> <span class="nav-text">声明变量的一种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从实参到形参"><span class="nav-number">2.</span> <span class="nav-text">从实参到形参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.1.</span> <span class="nav-text">arguments对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式编程"><span class="nav-number">3.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明式编程与命令式编程"><span class="nav-number">3.1.</span> <span class="nav-text">声明式编程与命令式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何为函数式编程"><span class="nav-number">3.2.</span> <span class="nav-text">何为函数式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心：不可变性"><span class="nav-number">3.3.</span> <span class="nav-text">核心：不可变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纯函数"><span class="nav-number">3.4.</span> <span class="nav-text">纯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回调函数"><span class="nav-number">3.5.</span> <span class="nav-text">回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警惕"><span class="nav-number">4.</span> <span class="nav-text">警惕</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量的一种方式"><span class="nav-number">1.</span> <span class="nav-text">声明变量的一种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从实参到形参"><span class="nav-number">2.</span> <span class="nav-text">从实参到形参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.1.</span> <span class="nav-text">arguments对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式编程"><span class="nav-number">3.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明式编程与命令式编程"><span class="nav-number">3.1.</span> <span class="nav-text">声明式编程与命令式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何为函数式编程"><span class="nav-number">3.2.</span> <span class="nav-text">何为函数式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心：不可变性"><span class="nav-number">3.3.</span> <span class="nav-text">核心：不可变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纯函数"><span class="nav-number">3.4.</span> <span class="nav-text">纯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回调函数"><span class="nav-number">3.5.</span> <span class="nav-text">回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所有函数都有的"><span class="nav-number">4.</span> <span class="nav-text">所有函数都有的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">4.1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">4.2.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">4.3.</span> <span class="nav-text">bind</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警惕"><span class="nav-number">5.</span> <span class="nav-text">警惕</span></a></li></ol></div>
             
 
           </div>
