@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人要读书">
 <meta property="og:description" content="跨域问题，基本上每位前端开发人员都会遇到。 本篇文章将讲述什么是跨域，以及其常用解决方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-01T08:39:10.267Z">
+<meta property="og:updated_time" content="2019-09-25T08:10:44.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域">
 <meta name="twitter:description" content="跨域问题，基本上每位前端开发人员都会遇到。 本篇文章将讲述什么是跨域，以及其常用解决方法。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-01 16:39:10" itemprop="dateModified" datetime="2019-09-01T16:39:10+08:00">2019-09-01</time>
+                <time title="修改时间：2019-09-25 16:10:44" itemprop="dateModified" datetime="2019-09-25T16:10:44+08:00">2019-09-25</time>
               
             
           </span>
@@ -472,7 +472,7 @@
 <p>使用<code>localhost</code>访问时不会解析成<code>ip</code>地址，因此不会占用网络资源。</p>
 </blockquote>
 <h3 id="同源策略限制内容"><a href="#同源策略限制内容" class="headerlink" title="同源策略限制内容"></a>同源策略限制内容</h3><ul>
-<li><code>Cookie</code>、<code>localStorage</code>、<code>IndexedDB</code>等存储性数据</li>
+<li><code>cookie</code>、<code>localStorage</code>、<code>IndexedDB</code>等存储性数据</li>
 <li><code>DOM</code>节点</li>
 <li>跨域<code>Ajax</code>请求</li>
 </ul>
@@ -493,11 +493,9 @@
 <p>有人发现：<code>HTML</code>页面上，凡是拥有<code>src</code>属性的标签，像<code>&lt;script /&gt;</code>、<code>&lt;img /&gt;</code>、<code>&lt;iframe /&gt;</code>等，<strong>都拥有跨域的能力</strong>。</p>
 <p>于是，客户端通过调用<code>JavaScript</code>脚本的方式，来调用服务器动态生成<code>JSON</code>文件，再交由客户端的特定函数处理以便获取数据，这样，通信便完成了。</p>
 <p>通过<strong>动态添加</strong><code>&lt;script /&gt;</code><strong>标签，并设置其<code>src</code>地址，来调用服务器指定的回调函数以得到数据传输</strong>，这就是<code>JSONP</code>。</p>
-<blockquote>
-<p>来看个例子：</p>
-</blockquote>
+<p>来看个例子。</p>
 <p>页面动态生成<code>script</code>标签，并设置其<code>src</code>：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(something)&#123;</span><br><span class="line">    <span class="keyword">let</span> scritp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.src = <span class="string">'http://localhost:8080/DEMO/DEMO?param1=xxx&amp;param2=xxx'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(<span class="string">'script'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//do somthing with the data</span></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(something)&#123;</span><br><span class="line">    <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.src = <span class="string">'http://localhost:8080/DEMO/DEMO?param1=xxx&amp;param2=xxx'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(<span class="string">'script'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//do somthing with the data</span></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.getWriter().append(<span class="string">"callback('这里是后端向前端发送的任意数据')"</span>);</span><br></pre></td></tr></table></figure>
 <p>实际上，<code>JQuery</code>所封装的功能无外乎是动态增删<code>script</code>标签，生成匿名回调函数罢了。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">    url: <span class="string">""</span>,  <span class="comment">//请求url</span></span><br><span class="line">    type: <span class="string">"GET"</span>,  <span class="comment">//JSONP请求方法只能为GET</span></span><br><span class="line">    dataType: <span class="string">"jsonp"</span>,  <span class="comment">//方式为JSONP</span></span><br><span class="line">    data: &#123;&#125;,  <span class="comment">//数据</span></span><br><span class="line">    timeout: <span class="number">5000</span>,  <span class="comment">//超时时延</span></span><br><span class="line">    success : <span class="function"><span class="keyword">function</span> (<span class="params">DATA</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//请求成功回调方法</span></span><br><span class="line">    &#125;,</span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">XMLHttpRequest, textStatus, errorThrown</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//请求错误回调方法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -548,7 +546,7 @@
 <li><code>Access-Control-Allow-Origin</code></li>
 </ul>
 <p>该字段指定了响应的资源是否被允许与指定的<code>Origin</code>共享。</p>
-<p>可取值为：所有<code>*</code>、给定域名<code>http:seefun.club</code>。</p>
+<p>可取值为：所有<code>*</code>、给定域名<code>http://seefun.club</code>。</p>
 <ul>
 <li><code>Access-Control-Allow-Credentials</code></li>
 </ul>
@@ -622,9 +620,10 @@
 <p>对预检请求的响应，表明了实际请求中允许携带哪些首部字段。</p>
 </li>
 </ul>
-<h2 id="document-domain"><a href="#document-domain" class="headerlink" title="document.domain"></a><code>document.domain</code></h2><p>火狐允许你把<code>document.domain</code>属性的值设置为它的上一级域。</p>
+<h2 id="DOMAIN"><a href="#DOMAIN" class="headerlink" title="DOMAIN"></a>DOMAIN</h2><p>火狐允许你把<code>document.domain</code>属性的值设置为它的上一级域。</p>
 <p>例如，在<code>some.seefun.club</code>域内，可以把<code>domain</code>设置为<code>seefun.club</code>但不能设置为<code>seefun.com</code>。</p>
 <p>这种方式用于主域名相同的不同子域名的跨域访问中。</p>
+<p>但是需要注意的是，端口号是由浏览器另行检查的。任何对<code>document.domain</code>的赋值操作，包括<code>document.domain = document.domain</code>都会导致端口号被重写为<code>null</code>。因此最佳实践为，将需要通信的父域与子域设置为同一<code>document.domain</code>。</p>
 
       
     </div>
@@ -749,7 +748,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">51</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -896,7 +895,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number">1.</span> <span class="nav-text">跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同源策略"><span class="nav-number">1.1.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同源策略限制内容"><span class="nav-number">1.2.</span> <span class="nav-text">同源策略限制内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.3.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP"><span class="nav-number">2.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CORS"><span class="nav-number">3.</span> <span class="nav-text">CORS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单请求"><span class="nav-number">3.1.</span> <span class="nav-text">简单请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单请求的基本流程"><span class="nav-number">3.2.</span> <span class="nav-text">简单请求的基本流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预检请求"><span class="nav-number">3.3.</span> <span class="nav-text">预检请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS首部字段一览"><span class="nav-number">3.4.</span> <span class="nav-text">CORS首部字段一览</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document-domain"><span class="nav-number">4.</span> <span class="nav-text">document.domain</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域"><span class="nav-number">1.</span> <span class="nav-text">跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同源策略"><span class="nav-number">1.1.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同源策略限制内容"><span class="nav-number">1.2.</span> <span class="nav-text">同源策略限制内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">1.3.</span> <span class="nav-text">解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONP"><span class="nav-number">2.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CORS"><span class="nav-number">3.</span> <span class="nav-text">CORS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单请求"><span class="nav-number">3.1.</span> <span class="nav-text">简单请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单请求的基本流程"><span class="nav-number">3.2.</span> <span class="nav-text">简单请求的基本流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预检请求"><span class="nav-number">3.3.</span> <span class="nav-text">预检请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS首部字段一览"><span class="nav-number">3.4.</span> <span class="nav-text">CORS首部字段一览</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOMAIN"><span class="nav-number">4.</span> <span class="nav-text">DOMAIN</span></a></li></ol></div>
             
 
           </div>

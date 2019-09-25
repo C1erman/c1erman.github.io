@@ -104,24 +104,25 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="每个人都会说谎">
+  <meta name="description" content="本文将详细梳理浏览器的进程分类，同时将会对其基本渲染原理与JavaScript线程进行讲述。">
 <meta name="keywords" content="Blog,博客,前端博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归人要读书">
-<meta property="og:url" content="http://seefun.club/tags/JavaScript/page/2/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器进程与JavaScript线程详解">
+<meta property="og:url" content="http://seefun.club/2019/09/20/浏览器进程与JavaScript线程详解/index.html">
 <meta property="og:site_name" content="归人要读书">
-<meta property="og:description" content="每个人都会说谎">
+<meta property="og:description" content="本文将详细梳理浏览器的进程分类，同时将会对其基本渲染原理与JavaScript线程进行讲述。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-25T13:45:22.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归人要读书">
-<meta name="twitter:description" content="每个人都会说谎">
+<meta name="twitter:title" content="浏览器进程与JavaScript线程详解">
+<meta name="twitter:description" content="本文将详细梳理浏览器的进程分类，同时将会对其基本渲染原理与JavaScript线程进行讲述。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/tags/JavaScript/page/2/">
+  <link rel="canonical" href="http://seefun.club/2019/09/20/浏览器进程与JavaScript线程详解/">
 
 
 
@@ -131,7 +132,7 @@
   };
 </script>
 
-  <title>标签: -JavaScript | 归人要读书</title>
+  <title>浏览器进程与JavaScript线程详解 | 归人要读书</title>
   
 
 
@@ -179,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -251,7 +252,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -307,28 +308,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -353,295 +332,269 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>-JavaScript<small>标签</small>
-        </h2>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/09/20/浏览器进程与JavaScript线程详解/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="张可携">
+      <meta itemprop="description" content="每个人都会说谎">
+      <meta itemprop="image" content="/images/profilePhoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="归人要读书">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/04/29/Container-With-Most-Water/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之计算矩形面积——“盛最多水的容器”</span>
-            
-          </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">浏览器进程与JavaScript线程详解
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-29T14:24:04+08:00" content="2019-04-29">
-          04-29
-        </time>
-      </div>
+              
+            
+          </h2>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-20 20:45:33" itemprop="dateCreated datePublished" datetime="2019-09-20T20:45:33+08:00">2019-09-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-25 21:45:22" itemprop="dateModified" datetime="2019-09-25T21:45:22+08:00">2019-09-25</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端知识/" itemprop="url" rel="index"><span itemprop="name">-前端知识</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/28/老生常谈的跨域问题/" itemprop="url">
-            
-              <span itemprop="name">跨域</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-28T12:44:38+08:00" content="2019-04-28">
-          04-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/22/我不知道的函数柯里化与实现尾递归/" itemprop="url">
-            
-              <span itemprop="name">我不知道的函数柯里化与实现尾递归</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-22T17:37:07+08:00" content="2019-04-22">
-          04-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/20/我不知道的Symbol.Iterator与遍历/" itemprop="url">
-            
-              <span itemprop="name">我不知道的Symbol.Iterator与遍历</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-20T19:13:38+08:00" content="2019-04-20">
-          04-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/17/我不知道的对象原型链与继承/" itemprop="url">
-            
-              <span itemprop="name">我不知道的对象原型链与继承</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-17T13:30:55+08:00" content="2019-04-17">
-          04-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/15/Regular-Expression-Matching/" itemprop="url">
-            
-              <span itemprop="name">LeetCode之实现“正则表达式匹配”</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-15T22:06:43+08:00" content="2019-04-15">
-          04-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/14/我不知道的运算符优先级与连等/" itemprop="url">
-            
-              <span itemprop="name">我不知道的运算符优先级与连等</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-14T10:04:04+08:00" content="2019-04-14">
-          04-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/12/我不知道的变量作用域与闭包/" itemprop="url">
-            
-              <span itemprop="name">我不知道的变量作用域与闭包</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-12T18:45:13+08:00" content="2019-04-12">
-          04-12
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/07/我不知道的EventLoop/" itemprop="url">
-            
-              <span itemprop="name">我不知道的EventLoop</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-07T16:45:07+08:00" content="2019-04-07">
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/我不知道的==运算符/" itemprop="url">
-            
-              <span itemprop="name">我不知道的==运算符</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T11:23:14+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>本文将详细梳理浏览器的进程分类，同时将会对其基本渲染原理与JavaScript线程进行讲述。</p>
+<a id="more"></a>
+<h2 id="浏览器都有哪些进程"><a href="#浏览器都有哪些进程" class="headerlink" title="浏览器都有哪些进程"></a>浏览器都有哪些进程</h2><p>一个浏览器的构建不亚于一个小型的操作系统。</p>
+<p>概括的来说，浏览器的进程可分为以下四种：</p>
+<ol>
+<li><p>浏览器主进程</p>
+<p>在浏览器启动时创建，单例，负责调控浏览器整体的运作，如各个页面的管理、网络资源的管理、其它进程的管理等。</p>
+</li>
+<li><p>GPU进程</p>
+<p>最多存在一个，用于WebGL或canvas元素的3D绘制。</p>
+</li>
+<li><p>第三方插件进程</p>
+<p>每种类型的插件对应一个进程，仅当使用插件时该进程才会创建。</p>
+</li>
+<li><p><strong>浏览器渲染进程</strong></p>
+<p>即Renderer进程，主要作用为页面渲染、脚本执行、事件处理等。</p>
+</li>
+</ol>
+<h3 id="警惕：一个页面不等于一个进程"><a href="#警惕：一个页面不等于一个进程" class="headerlink" title="警惕：一个页面不等于一个进程"></a>警惕：一个页面不等于一个进程</h3><p>在大多数情况下，在浏览器中打开一个网页相当于新申请了一个进程。但是，浏览器有时候会将多个进程合并。最常见的就是多个被打开的空白标签页共用一个进程。</p>
+<h2 id="页面渲染进程由多线程组成"><a href="#页面渲染进程由多线程组成" class="headerlink" title="页面渲染进程由多线程组成"></a>页面渲染进程由多线程组成</h2><p>该进程是最值得关注的进程之一，其由多个重要的线程组成：</p>
+<ol>
+<li><p>GUI渲染线程</p>
+<p>负责浏览器界面的渲染，即解析HTML文档，构建DOM树、CSS树，以完成布局和绘制。</p>
+<p>因此回流<code>reflow</code>与重绘<code>repaint</code>时该线程会被调用。</p>
+<p><span style="background:red;">注意</span>：GUI线程与JavaScript引擎线程的操作是互斥的。</p>
+</li>
+<li><p>JavaScript引擎线程</p>
+<p>众所周知的，JavaScript引擎是单线程的，它为我们的JavaScript代码提供了运行时。</p>
+<p><span style="background:red;">注意</span>：JavaScript引擎线程与GUI线程的操作是互斥的。</p>
+</li>
+<li><p>事件触发线程</p>
+<p>事件触发是异步的，EventLoop、执行栈与任务队列的概念就随之而生。</p>
+</li>
+<li><p>定时触发器线程</p>
+<p>浏览器的定时器并不是由JavaScript引擎线程提供计数的，而是由定时器触发线程提供。</p>
+<p><span style="background:red">注意</span>：W3C规定setTimeout的时间间隔不低于4ms。</p>
+</li>
+<li><p>异步HTTP请求线程</p>
+<p>网络请求需要浏览器单独开辟一个线程来处理。</p>
+</li>
+</ol>
+<h2 id="JavaScript引擎线程"><a href="#JavaScript引擎线程" class="headerlink" title="JavaScript引擎线程"></a>JavaScript引擎线程</h2><h3 id="再谈EventLoop"><a href="#再谈EventLoop" class="headerlink" title="再谈EventLoop"></a>再谈EventLoop</h3><p>结合浏览器的其它线程，我们会得到如此的理解：</p>
+<p>JavaScript引擎是单线程的，每当遇到异步任务时<strong>浏览器</strong>便开辟一个相应的线程来处理，如<code>setTimeout</code>就开辟定时触发器线程、发送<code>Ajax</code>请求就开辟异步HTTP请求线程。每当异步任务完成时，它将被添加进<strong>任务队列</strong>。每当<strong>执行栈</strong>为空时，JavaScript引擎将会从任务队列中取出任务，进入执行栈执行。</p>
+<h3 id="宏任务队列与微任务队列"><a href="#宏任务队列与微任务队列" class="headerlink" title="宏任务队列与微任务队列"></a>宏任务队列与微任务队列</h3><p>需要注意的是，<code>Promise</code>的出现引入了另外两个概念：微任务队列<code>macrotasks</code>、宏任务队列<code>microtasks</code>。</p>
+<blockquote>
+<p>这点并没有得到直接考证，但可以肯定的是，在普遍的共识中：<code>Promise</code>属于微任务。</p>
+</blockquote>
+<p>微任务队列中的任务优先级是<strong>大于</strong>宏任务队列中的任务的。</p>
+<p>因此，上述EventLoop机制就变成了：</p>
+<p>当<strong>执行栈</strong>为空时，取一个宏任务来执行，执行完毕后，从微任务队列中连续取微任务来执行，直至微任务队列为空，进行下一步操作。</p>
+<p>因此，下述代码的输出符合我们的描述。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="number">4</span>));</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">  resolve()</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//1 2 3 4</span></span><br></pre></td></tr></table></figure>
+<p>生成<strong>宏任务</strong>的操作有：</p>
+<ol>
+<li>全局任务</li>
+<li>I/O操作</li>
+<li><code>setTimeout</code></li>
+<li><code>setInterval</code></li>
+<li><code>requestAnimationFrame</code></li>
+<li><code>setImmediate</code>–&gt;node</li>
+</ol>
+<p>生成微任务的操作有：</p>
+<ol>
+<li><code>MutationObserver</code></li>
+<li><code>Promise</code>回调</li>
+<li><code>process.nextTick</code>–&gt;node</li>
+</ol>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/19/我不知道的对象拷贝/" rel="next" title="我不知道的对象拷贝">
+                <i class="fa fa-chevron-left"></i> 我不知道的对象拷贝
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/tags/JavaScript/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/tags/JavaScript/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/JavaScript/page/3/">3</a><a class="page-number" href="/tags/JavaScript/page/4/">4</a><a class="extend next" rel="next" href="/tags/JavaScript/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDAyNy8xNjU1NA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -661,8 +614,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -816,6 +778,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器都有哪些进程"><span class="nav-number">1.</span> <span class="nav-text">浏览器都有哪些进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#警惕：一个页面不等于一个进程"><span class="nav-number">1.1.</span> <span class="nav-text">警惕：一个页面不等于一个进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面渲染进程由多线程组成"><span class="nav-number">2.</span> <span class="nav-text">页面渲染进程由多线程组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript引擎线程"><span class="nav-number">3.</span> <span class="nav-text">JavaScript引擎线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#再谈EventLoop"><span class="nav-number">3.1.</span> <span class="nav-text">再谈EventLoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宏任务队列与微任务队列"><span class="nav-number">3.2.</span> <span class="nav-text">宏任务队列与微任务队列</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -947,6 +926,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -957,6 +940,23 @@
   
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/09/20/浏览器进程与JavaScript线程详解/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
