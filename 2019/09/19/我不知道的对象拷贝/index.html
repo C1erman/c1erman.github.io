@@ -109,10 +109,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="我不知道的对象拷贝">
 <meta property="og:url" content="http://seefun.club/2019/09/19/我不知道的对象拷贝/index.html">
-<meta property="og:site_name" content="归人要读书">
+<meta property="og:site_name" content="归人">
 <meta property="og:description" content="使用JSON实现的深拷贝都已经用烂了，换一换，换一换。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-20T01:28:05.307Z">
+<meta property="og:updated_time" content="2019-09-26T01:39:43.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的对象拷贝">
 <meta name="twitter:description" content="使用JSON实现的深拷贝都已经用烂了，换一换，换一换。">
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>我不知道的对象拷贝 | 归人要读书</title>
+  <title>我不知道的对象拷贝 | 归人</title>
   
 
 
@@ -191,7 +191,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">归人要读书</span>
+        <span class="site-title">归人</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -351,13 +351,13 @@
     <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/09/19/我不知道的对象拷贝/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张可携">
-      <meta itemprop="description" content="每个人都会说谎">
+      <meta itemprop="name" content="归人">
+      <meta itemprop="description" content="如果你感受到了，那么就说点漂亮话。">
       <meta itemprop="image" content="/images/profilePhoto.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="归人要读书">
+      <meta itemprop="name" content="归人">
     </span>
 
     
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-20 09:28:05" itemprop="dateModified" datetime="2019-09-20T09:28:05+08:00">2019-09-20</time>
+                <time title="修改时间：2019-09-26 09:39:43" itemprop="dateModified" datetime="2019-09-26T09:39:43+08:00">2019-09-26</time>
               
             
           </span>
@@ -482,14 +482,14 @@
 <blockquote>
 <p><strong>递归：</strong>递归函数的语义化更强，但在某些情况下显然比不得迭代，试试把这个递归函数改成迭代形式？</p>
 </blockquote>
-<p>只考虑可枚举时：</p>
+<p>只考虑可枚举属性时：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyObject</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> target === <span class="string">'object'</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> result = target <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> target)&#123;</span><br><span class="line">            result[key] = <span class="built_in">arguments</span>.callee(target[key])</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="循环引用"><a href="#循环引用" class="headerlink" title="循环引用"></a>循环引用</h2><p>我们的拷贝函数已经实现了深拷贝，这很好——但是还不够好，对于对象拷贝函数来说，一个最常见的问题就是循环引用，我们的拷贝函数也遇到了这个麻烦——当递归遇到循环引用，stackoverflow！</p>
 <p>为了避免这种情况，我们需要一个数据结构来存放这个指向本身的引用，Map、与WeakMap均可以胜任。实际上，WeakMap的弱引用效果更好一点，这会加速无用对象的回收。</p>
 <blockquote>
 <p><strong>注意：</strong>使用了函数默认参数时，该函数体内即为<em>严格模式</em>，无法再使用<code>arguments.callee</code></p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyObject</span>(<span class="params">target, map = new Map(</span>) || <span class="title">map</span> = <span class="title">new</span> <span class="title">WeakMap</span>(<span class="params"></span>))</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> target === <span class="string">'object'</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> result = target <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">        <span class="keyword">if</span>(map.get(target)) <span class="keyword">return</span> map.get(target);</span><br><span class="line">        map.set(target, result);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> target)&#123;</span><br><span class="line">            result[key] = copyObject(target[key], map);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyObject</span>(<span class="params">target, map = new Map(</span>) || <span class="title">map</span> = <span class="title">new</span> <span class="title">WeakMap</span>(<span class="params"></span>))</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> target === <span class="string">'object'</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map.get(target)) <span class="keyword">return</span> map.get(target);</span><br><span class="line">        <span class="keyword">let</span> result = target <span class="keyword">instanceof</span> <span class="built_in">Array</span> ? [] : &#123;&#125;;</span><br><span class="line">        map.set(target, result);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> target)&#123;</span><br><span class="line">            result[key] = copyObject(target[key], map);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>现在，我们的拷贝函数已经不再惧怕循环引用了。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">    name : <span class="string">'c1er'</span></span><br><span class="line">&#125;</span><br><span class="line">a.a = a;</span><br><span class="line"><span class="keyword">let</span> b = copyObject(a);  <span class="comment">//Object &#123; name: "c1er", a: &#123;…&#125; &#125;</span></span><br></pre></td></tr></table></figure>
       
@@ -602,10 +602,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="张可携">
+              <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="归人">
             
-              <p class="site-author-name" itemprop="name">张可携</p>
-              <div class="site-description motion-element" itemprop="description">每个人都会说谎</div>
+              <p class="site-author-name" itemprop="name">归人</p>
+              <div class="site-description motion-element" itemprop="description">如果你感受到了，那么就说点漂亮话。</div>
           </div>
 
           
@@ -807,7 +807,7 @@
 
 
 
-  <div class="footer-custom"><del>铁甲依然在</del></div>
+  <div class="footer-custom"><del>铁甲依然在你妹</del></div>
 
 
         

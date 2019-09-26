@@ -109,10 +109,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器进程与JavaScript线程详解">
 <meta property="og:url" content="http://seefun.club/2019/09/20/浏览器进程与JavaScript线程详解/index.html">
-<meta property="og:site_name" content="归人要读书">
+<meta property="og:site_name" content="归人">
 <meta property="og:description" content="本文将详细梳理浏览器的进程分类，同时将会对其基本渲染原理与JavaScript线程进行讲述。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-25T13:45:22.219Z">
+<meta property="og:updated_time" content="2019-09-26T01:30:56.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器进程与JavaScript线程详解">
 <meta name="twitter:description" content="本文将详细梳理浏览器的进程分类，同时将会对其基本渲染原理与JavaScript线程进行讲述。">
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>浏览器进程与JavaScript线程详解 | 归人要读书</title>
+  <title>浏览器进程与JavaScript线程详解 | 归人</title>
   
 
 
@@ -191,7 +191,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">归人要读书</span>
+        <span class="site-title">归人</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -351,13 +351,13 @@
     <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/09/20/浏览器进程与JavaScript线程详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="张可携">
-      <meta itemprop="description" content="每个人都会说谎">
+      <meta itemprop="name" content="归人">
+      <meta itemprop="description" content="如果你感受到了，那么就说点漂亮话。">
       <meta itemprop="image" content="/images/profilePhoto.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="归人要读书">
+      <meta itemprop="name" content="归人">
     </span>
 
     
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-25 21:45:22" itemprop="dateModified" datetime="2019-09-25T21:45:22+08:00">2019-09-25</time>
+                <time title="修改时间：2019-09-26 09:30:56" itemprop="dateModified" datetime="2019-09-26T09:30:56+08:00">2019-09-26</time>
               
             
           </span>
@@ -510,6 +510,9 @@
 <p>微任务队列中的任务优先级是<strong>大于</strong>宏任务队列中的任务的。</p>
 <p>因此，上述EventLoop机制就变成了：</p>
 <p>当<strong>执行栈</strong>为空时，取一个宏任务来执行，执行完毕后，从微任务队列中连续取微任务来执行，直至微任务队列为空，进行下一步操作。</p>
+<blockquote>
+<p>即开始下一轮EventLoop。</p>
+</blockquote>
 <p>因此，下述代码的输出符合我们的描述。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="number">4</span>));</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">  resolve()</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//1 2 3 4</span></span><br></pre></td></tr></table></figure>
 <p>生成<strong>宏任务</strong>的操作有：</p>
@@ -527,6 +530,7 @@
 <li><code>Promise</code>回调</li>
 <li><code>process.nextTick</code>–&gt;node</li>
 </ol>
+<p>所以，按照上述规律，适时区分某一任务是宏任务还是微任务，即可得到代码的执行流程。</p>
 
       
     </div>
@@ -628,10 +632,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="张可携">
+              <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="归人">
             
-              <p class="site-author-name" itemprop="name">张可携</p>
-              <div class="site-description motion-element" itemprop="description">每个人都会说谎</div>
+              <p class="site-author-name" itemprop="name">归人</p>
+              <div class="site-description motion-element" itemprop="description">如果你感受到了，那么就说点漂亮话。</div>
           </div>
 
           
@@ -833,7 +837,7 @@
 
 
 
-  <div class="footer-custom"><del>铁甲依然在</del></div>
+  <div class="footer-custom"><del>铁甲依然在你妹</del></div>
 
 
         
