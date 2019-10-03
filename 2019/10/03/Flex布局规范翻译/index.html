@@ -104,24 +104,27 @@
 </script>
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="如果你感受到了，那么就说点漂亮话。">
-<meta name="keywords" content="Blog,博客,前端博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归人">
-<meta property="og:url" content="http://seefun.club/categories/我不知道的CSS/index.html">
+  <meta name="description" content="本文简单翻译Flex布局规范中的部分章节。">
+<meta name="keywords" content="-CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flex布局规范翻译">
+<meta property="og:url" content="http://seefun.club/2019/10/03/Flex布局规范翻译/index.html">
 <meta property="og:site_name" content="归人">
-<meta property="og:description" content="如果你感受到了，那么就说点漂亮话。">
+<meta property="og:description" content="本文简单翻译Flex布局规范中的部分章节。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg">
+<meta property="og:updated_time" content="2019-10-03T09:31:48.590Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归人">
-<meta name="twitter:description" content="如果你感受到了，那么就说点漂亮话。">
+<meta name="twitter:title" content="Flex布局规范翻译">
+<meta name="twitter:description" content="本文简单翻译Flex布局规范中的部分章节。">
+<meta name="twitter:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://seefun.club/categories/我不知道的CSS/">
+  <link rel="canonical" href="http://seefun.club/2019/10/03/Flex布局规范翻译/">
 
 
 
@@ -131,7 +134,7 @@
   };
 </script>
 
-  <title>分类: -我不知道的CSS | 归人</title>
+  <title>Flex布局规范翻译 | 归人</title>
   
 
 
@@ -179,7 +182,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,7 +271,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -307,28 +310,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -353,83 +334,461 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>-我不知道的CSS<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://seefun.club/2019/10/03/Flex布局规范翻译/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="归人">
+      <meta itemprop="description" content="如果你感受到了，那么就说点漂亮话。">
+      <meta itemprop="image" content="/images/profilePhoto.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="归人">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/05/09/我不知道的普通流/" itemprop="url">
-            
-              <span itemprop="name">我不知道的普通流</span>
-            
-          </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Flex布局规范翻译
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-09T11:16:12+08:00" content="2019-05-09">
-          05-09
-        </time>
-      </div>
+              
+            
+          </h2>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-03 10:32:20 / 修改时间：17:31:48" itemprop="dateCreated datePublished" datetime="2019-10-03T10:32:20+08:00">2019-10-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端知识/" itemprop="url" rel="index"><span itemprop="name">-前端知识</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/05/我不知道的Position/" itemprop="url">
-            
-              <span itemprop="name">我不知道的Position</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-05T12:56:10+08:00" content="2019-05-05">
-          05-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <p>本文简单翻译<a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="noopener">Flex布局规范</a>中的部分章节。</p>
+<a id="more"></a>
+<h2 id="章二：Flex布局盒模型和术语"><a href="#章二：Flex布局盒模型和术语" class="headerlink" title="章二：Flex布局盒模型和术语"></a>章二：Flex布局盒模型和术语</h2><p>Flex容器是由元素生成的盒子，该元素的<code>display</code>属性被计算为<code>flex</code>或<code>inline-flex</code>。Flex容器的流内子元素被称为Flex项目，并使用Flex布局模型进行布局。</p>
+<p>与块和内联布局不同：其布局计算偏向于块和内联流向，而Flex布局偏向于Flex的方向。为了更轻松的讨论Flex布局，本节定义了一组与Flex Flow相关的术语。Flex Flow的值与书写方式确定这些术语如何映射到物理方向：顶部/右侧/底部/左侧，轴：水平/垂直，尺寸：宽度/高度。</p>
+<p><img src="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg" alt="Flex布局术语"></p>
+<ul>
+<li><p><span style="color:#b81414">主轴：main axis、主维度</span></p>
+<p>可伸缩容器的主轴是Flex项目沿其排列的轴线，它在主维度上延伸。</p>
+</li>
+<li><p><span style="color:#421ae6">主起点：main-start、主终点：main-end</span></p>
+<p>将Flex项目从主起点开始放置在容器中，朝着主终点方向延伸</p>
+</li>
+<li><p><span style="color:#0f8a0f">主尺寸：main size、主尺寸属性</span></p>
+<p>Flex容器或Flex项目的宽度或高度，以主维度为基准，是该盒子的主尺寸。因此，其主尺寸属性是<code>width</code>或<code>height</code>属性，无论是否在主维度上。类似的，其最小和最大尺寸属性是其<code>min-width</code>/<code>max-width</code>或<code>min-height</code>/<code>max-height</code>，以主维度为基准，并确定其最小/最大主尺寸。</p>
+</li>
+<li><p><span style="color:#b81414">交叉轴：cross axis、交叉维度</span></p>
+<p>垂直于主轴的轴称为交叉轴。它在交叉维度延伸。</p>
+</li>
+<li><p><span style="color:#421ae6">交叉起点：main-start、交叉终点：main-end</span></p>
+<p>Flex线被Flex项目填充，并且沿着交叉起点向着交叉终点被放置。</p>
+</li>
+<li><p><span style="color:#0f8a0f">交叉尺寸：axis size、交叉尺寸属性</span></p>
+<p>Flex容器或Flex项目的宽度或高度，以交叉维度为基准，是该盒子的交叉尺寸。因此，其交叉尺寸属性是其<code>width</code>或<code>height</code>属性，无论是否在交叉维度中。同样，其最小和最大交叉尺寸属性是其<code>min-width</code>/<code>max-width</code>或<code>min-height</code>/<code>max-height</code>属性，以交叉维度为基准，并确定其最小/最大交叉尺寸。</p>
+</li>
+</ul>
+<h2 id="章三：Flex容器：flex和inline-flexdisplay值"><a href="#章三：Flex容器：flex和inline-flexdisplay值" class="headerlink" title="章三：Flex容器：flex和inline-flexdisplay值"></a>章三：Flex容器：flex和inline-flex<code>display</code>值</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新值</td>
+<td>flex｜inline-flex</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>flex</p>
+<p>当放置在流布局中时，此值使元素生成一个块级的Flex容器。</p>
+</li>
+<li><p>inline-flex</p>
+<p>当放置在流布局中时，此值使元素生成一个内联级别的Flex容器。</p>
+</li>
+</ul>
+<p>一个Flex容器为其内容建立一个新的<strong>Flex格式化上下文</strong>。除了使用Flex布局而不是Block布局外，这与建立块格式化上下文相同。例如，浮动元素不会侵入Flex容器，并且Flex容器的margin不会与其内容的margin折叠。Flex容器就像块级容器一样，为其内容建立了一个包含块。<code>overflow</code>属性适用于Flex容器。</p>
+<p>Flex容器不是块级容器，因此某些以块布局为前提设计的属性不适用于Flex布局。尤其是：</p>
+<ol>
+<li><code>float</code>和<code>clear</code>不会为Flex项目产生浮动或间隙，也不会使其流出。</li>
+<li><code>vertical-align</code>属性对Flex项目没有影响。</li>
+<li><code>::first-line</code>和<code>::first-letter</code>伪元素不适用于Flex容器，并且Flex容器不向其祖先提供格式化第一行或第一字母。</li>
+</ol>
+<p>如果元素的<code>display</code>属性被显式设置为inline-flex，则在某些情况下其<code>display</code>属性被计算为flex：CSS 2.1/CSS 2.2第9.7节中的表格被修改为包含附加行，其中inline-flex位于<strong>指定值</strong>列，而flex位于<strong>计算值</strong>列。</p>
+<h2 id="章五：排列和方向"><a href="#章五：排列和方向" class="headerlink" title="章五：排列和方向"></a>章五：排列和方向</h2><p>Flex容器的内容可以按任意方向和顺序排列。这使得开发人员可以轻松实现以前需要复杂或不稳定方法达到的效果，例如使用<code>float</code>和<code>clear</code>属性进行hack。排列和方向通过属性<code>flex-direction</code>、<code>Flex-wrap</code>和<code>order</code>属性实现。</p>
+<h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p><a href="flex-flow-direction">5.1 Flex流向：flex-direction属性</a></p>
+<p><a href="#flex-line-warp">5.2 Flex行包裹：flex-warp属性</a></p>
+<p><a href="#flex-direction-and-warp">5.3 Flex方向和包裹：flex-flow速记属性</a></p>
+<p><a href="#display-order">5.4 显示顺序：order属性</a></p>
+<p><span id="#flex-flow-direction"></span></p>
+<h3 id="Flex流向：flex-direction属性"><a href="#Flex流向：flex-direction属性" class="headerlink" title="Flex流向：flex-direction属性"></a>Flex流向：<code>flex-direction</code>属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>flex-direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>row｜row-reverse｜column｜column-reverse</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>row</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex容器</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定的关键字</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>离散</td>
+</tr>
+</tbody>
+</table>
+<p><code>flex-direction</code>属性通过设置Flex容器主轴的方向来指定Flex项目在Flex容器中的放置方式。这确定了Flex项目的布局方向。</p>
+<ul>
+<li><p>row</p>
+<p>Flex容器的主轴与当前书写模式的嵌入式轴具有相同的方向。主起点方向和主终点方向分别等于当前写入模式的行内开始方向和行内结束方向。</p>
+</li>
+<li><p>row-reverse</p>
+<p>与row相同，只是交换了主起点和终点的方向。</p>
+</li>
+<li><p>column</p>
+<p>Flex容器的主轴与当前书写模式的块轴方向相同。主起点方向和主终点方向分别等于当前写入模式的块起点方向和块终点方向。</p>
+</li>
+<li><p>column-reverse</p>
+<p>与cloumn相同，只是交换了主起点和终点的方向。</p>
+</li>
+</ul>
+<p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>反向值不会反转盒顺序：像<code>writing-mode</code>和<code>direction</code>一样，它们仅改变流向。绘制顺序、播报顺序和顺序导航顺序不受影响。</p>
+<p><span id="flex-line-warp"></span></p>
+<h3 id="Flex行包裹：flex-warp属性"><a href="#Flex行包裹：flex-warp属性" class="headerlink" title="Flex行包裹：flex-warp属性"></a>Flex行包裹：<code>flex-warp</code>属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>flex-warp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>nowarp｜warp｜warp-reverse</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>nowarp</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex容器</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定的关键字</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>离散</td>
+</tr>
+</tbody>
+</table>
+<p><code>flex-warp</code>属性控制Flex容器是单行还是多行，交叉轴的方向决定了换行的堆叠方向。</p>
+<ul>
+<li><p>nowarp</p>
+<p>Flex容器是单行的。</p>
+</li>
+<li><p>warp</p>
+<p>Flex容器是多行的。</p>
+</li>
+<li><p>warp-reverse</p>
+<p>与warp相同。</p>
+</li>
+</ul>
+<p>对于不是warp-reverse的值，交叉起点方向登等于当前写入模式的行内起始或块起始方向，以交叉轴为基准。而交叉终点方向则与交叉起点方向相反。当<code>flex-warp</code>属性取值warp-reverse时，交叉起点与交叉终点方向会互换。</p>
+<p><span id="flex-direction-and-warp"></span></p>
+<h3 id="Flex方向和包裹：flex-flow速记属性"><a href="#Flex方向和包裹：flex-flow速记属性" class="headerlink" title="Flex方向和包裹：flex-flow速记属性"></a>Flex方向和包裹：<code>flex-flow</code>速记属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>flex-flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>&lt;flex-direction&gt;｜&lt;flex-warp&gt;</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>查看单个属性</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex容器</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>查看单个属性</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>查看单个属性</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>查看单个属性</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>离散</td>
+</tr>
+</tbody>
+</table>
+<p><code>flex-flow</code>属性是设置<code>flex-direction</code>和<code>flex-flow</code>属性的简写，它们共同定义了Flex容器的主轴和交叉轴。</p>
+<p><span id="display-order"></span></p>
+<h3 id="显示顺序：order属性"><a href="#显示顺序：order属性" class="headerlink" title="显示顺序：order属性"></a>显示顺序：<code>order</code>属性</h3><p>默认情况下，Flex项目的显示和布局方式与它们在源文档中的显示顺序相同。<code>order</code>属性可用于更改此顺序。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>整数</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex项目</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定整数</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>按计算值类型</td>
+</tr>
+</tbody>
+</table>
+<p><code>order</code>属性通过将Flex项目分配给顺序组来控制其在Flex容器中的显示顺序。它需要一个整数值，该值指定Flex项目所属的顺序组。</p>
+<p>Flex容器按顺序修改后的文档顺序排列其内容，从文档编号最低的顺序组开始，然后向上。具有相同顺序组的项目按它们在源文档中出现的顺序进行排列。这也影响绘制顺序，就像在源文档中重新排列了Flex项目一样。将Flex容器的绝对定位子元素视为具体属性<code>order : 0</code>以确定它们相对于Flex项目的绘制顺序。</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># -CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/20/浏览器进程与JavaScript线程详解/" rel="next" title="浏览器进程与JavaScript线程详解">
+                <i class="fa fa-chevron-left"></i> 浏览器进程与JavaScript线程详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDAyNy8xNjU1NA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -449,8 +808,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,6 +972,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章二：Flex布局盒模型和术语"><span class="nav-number">1.</span> <span class="nav-text">章二：Flex布局盒模型和术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章三：Flex容器：flex和inline-flexdisplay值"><span class="nav-number">2.</span> <span class="nav-text">章三：Flex容器：flex和inline-flexdisplay值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：排列和方向"><span class="nav-number">3.</span> <span class="nav-text">章五：排列和方向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex流向：flex-direction属性"><span class="nav-number">3.2.</span> <span class="nav-text">Flex流向：flex-direction属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex行包裹：flex-warp属性"><span class="nav-number">3.3.</span> <span class="nav-text">Flex行包裹：flex-warp属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex方向和包裹：flex-flow速记属性"><span class="nav-number">3.4.</span> <span class="nav-text">Flex方向和包裹：flex-flow速记属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示顺序：order属性"><span class="nav-number">3.5.</span> <span class="nav-text">显示顺序：order属性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -735,6 +1120,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -745,6 +1134,23 @@
   
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/10/03/Flex布局规范翻译/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
