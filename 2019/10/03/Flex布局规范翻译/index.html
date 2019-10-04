@@ -113,7 +113,8 @@
 <meta property="og:description" content="本文简单翻译Flex布局规范中的部分章节。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg">
-<meta property="og:updated_time" content="2019-10-03T09:31:48.590Z">
+<meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg">
+<meta property="og:updated_time" content="2019-10-04T07:45:38.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flex布局规范翻译">
 <meta name="twitter:description" content="本文简单翻译Flex布局规范中的部分章节。">
@@ -393,12 +394,24 @@
                 
               
 
-              <time title="创建时间：2019-10-03 10:32:20 / 修改时间：17:31:48" itemprop="dateCreated datePublished" datetime="2019-10-03T10:32:20+08:00">2019-10-03</time>
+              <time title="创建时间：2019-10-03 10:32:20" itemprop="dateCreated datePublished" datetime="2019-10-03T10:32:20+08:00">2019-10-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-04 15:45:38" itemprop="dateModified" datetime="2019-10-04T15:45:38+08:00">2019-10-04</time>
               
             
           </span>
@@ -624,7 +637,7 @@
 <p>与warp相同。</p>
 </li>
 </ul>
-<p>对于不是warp-reverse的值，交叉起点方向登等于当前写入模式的行内起始或块起始方向，以交叉轴为基准。而交叉终点方向则与交叉起点方向相反。当<code>flex-warp</code>属性取值warp-reverse时，交叉起点与交叉终点方向会互换。</p>
+<p>对于不是warp-reverse的值，交叉起点方向等于当前写入模式的行内起始或块起始方向，以交叉轴为基准。而交叉终点方向则与交叉起点方向相反。当<code>flex-warp</code>属性取值warp-reverse时，交叉起点与交叉终点方向会互换。</p>
 <p><span id="flex-direction-and-warp"></span></p>
 <h3 id="Flex方向和包裹：flex-flow速记属性"><a href="#Flex方向和包裹：flex-flow速记属性" class="headerlink" title="Flex方向和包裹：flex-flow速记属性"></a>Flex方向和包裹：<code>flex-flow</code>速记属性</h3><table>
 <thead>
@@ -636,7 +649,7 @@
 <tbody>
 <tr>
 <td>值</td>
-<td>&lt;flex-direction&gt;｜&lt;flex-warp&gt;</td>
+<td>&lt;’flex-direction’&gt;｜&lt;’flex-warp’&gt;</td>
 </tr>
 <tr>
 <td>初始值</td>
@@ -715,6 +728,242 @@
 </table>
 <p><code>order</code>属性通过将Flex项目分配给顺序组来控制其在Flex容器中的显示顺序。它需要一个整数值，该值指定Flex项目所属的顺序组。</p>
 <p>Flex容器按顺序修改后的文档顺序排列其内容，从文档编号最低的顺序组开始，然后向上。具有相同顺序组的项目按它们在源文档中出现的顺序进行排列。这也影响绘制顺序，就像在源文档中重新排列了Flex项目一样。将Flex容器的绝对定位子元素视为具体属性<code>order : 0</code>以确定它们相对于Flex项目的绘制顺序。</p>
+<h2 id="章七：伸缩性"><a href="#章七：伸缩性" class="headerlink" title="章七：伸缩性"></a>章七：伸缩性</h2><p>Flex布局在定义方面是使Flex项目Flex的能力，可以更改其<code>width</code>/<code>height</code>以填充<em>主维度</em>中的可用空间。这是通过<code>flex</code>属性完成的。Flex容器将自由空间分配给其Flex项目（与其<code>flex-grow</code>属性成比例）以填充容器，或者收缩它们（与其<code>flex-shrink</code>属性成比例）以防止溢出。</p>
+<p>如果Flex项目的<code>flex-grow</code>与<code>flex-shrink</code>的值均为零，则它是完全不变形的，否则为具有伸缩性的。</p>
+<h3 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h3><p><a href="#the-flex-shorthand">7.1 flex速记属性</a></p>
+<p><a href="#basic-value-of-flex">7.1.1 flex属性的基础值</a></p>
+<p><a href="#the-flex-grow">7.2.1 flex-grow属性</a></p>
+<p><a href="#the-flex-shrink">7.2.2 flex-shrink属性</a></p>
+<p><a href="#the-flex-basis">7.2.3 flex-basis属性</a></p>
+<p><span id="the-flex-shorthand"></span></p>
+<h3 id="flex速记属性"><a href="#flex速记属性" class="headerlink" title="flex速记属性"></a><code>flex</code>速记属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>flex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>none｜&lt;’flex-grow’&gt;&lt;’flex-shrink’&gt;?‖&lt;’flex-basis’&gt;</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>0 1 auto</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex项目</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>查看单个属性</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>查看单个属性</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>各个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>按计算值类型</td>
+</tr>
+</tbody>
+</table>
+<p><code>flex</code>属性指定伸缩长度的组成部分：伸缩系数（增长<code>grow</code>与收缩<code>shrink</code>）和伸缩基准<code>basis</code>。当盒子是Flex项目时，将使用<code>flex</code>而不是main size属性来确定盒子的主尺寸。如果盒子不是Flex项目，则<code>flex</code>属性无效。</p>
+<ul>
+<li><p>flex-grow</p>
+<p>这个使用数字取值的组成部分是<code>flex-grow</code>的完整写法，它指定了伸缩<strong>增长因子</strong>。该因子决定了正在分配<em>正的自由空间</em>时，Flex项目相对于Flex容器中的其余Flex项目将增长多少。省略时，它将被设置为1。</p>
+<p>0~1之间的<code>flex-grow</code>值有一些特殊的行为：当<em>行</em>上的<code>flex-grow</code>值的总和小于1时，它们将占用少于100%的可用空间。</p>
+</li>
+<li><p>flex-shrink</p>
+<p>这个使用数字取值的组成部分是<code>flex-shrink</code>的完整写法，它指定了伸缩收缩因子。该因子决定了正在分配<em>负的自由空间</em>时，Flex项目相对于Flex容器中的其余Flex项目将收缩多少。省略时，它将被设置为1。</p>
+<p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>在分配<em>负的自由空间</em>时，伸缩收缩因子乘以伸缩基准。这会与Flex项目能够收缩的程度成正比地分配负空间。例如，便于在大尺寸Flex项目明显变小之前，小尺寸Flex项目不会缩小为零。</p>
+</li>
+<li><p>flex-basis</p>
+<p><code>flex-basis</code>接收与<code>width</code>/<code>height</code>属性相同的值（除了对<code>auto</code>的区别对待）以及content关键字：</p>
+<ul>
+<li><p>auto</p>
+<p>在Flex项目上指定时，auto关键字将检索main size属性的值作为使用的<code>flex-basis</code>。如果main size的值本身是auto的，则使用的<code>flex-basis</code>则为content。</p>
+</li>
+<li><p>content</p>
+<p>指定基于Flex项目内容的自动尺寸。（它通常等效于最大内容大小，但要进行内容调整以处理纵横比、固有大小限制和直角流；关于这一点，请参阅章九：Flex布局中的算法详情。）</p>
+<p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>此值在Flexible Box Layout的初版中不存在，因此某些较早的实现不支持该值。通过将主尺寸（<code>width</code>/<code>height</code>）设置为auto可以达到相同的效果。</p>
+</li>
+<li><p>width</p>
+<p>对于所有其它值，<code>flex-basis</code>的解析方式与<code>width</code>/<code>height</code>属性相同。</p>
+</li>
+</ul>
+<p>当<code>flex-basis</code>属性从<code>flex</code>速记属性中省略时，其指定值为0。</p>
+</li>
+<li><p>none</p>
+<p>关键字none将被扩展为<code>0 0 auto</code>。</p>
+</li>
+</ul>
+<p><img src="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg" alt="flex速记属性例子"></p>
+<p>上图显示了<em>绝对增长</em>（以0为基准）和<em>相对增长</em>（以Flex项目内容的大小为基准）之间的差异。这三个Flex项目的伸缩增长因子分别为1、1、2；请注意，伸缩增长因子为2的Flex项目的自由空间占比为其它Flex项目的两倍。</p>
+<p><code>flex</code>属性的初始值为<code>0 1 auto</code>。</p>
+<p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>在<code>flex</code>速记属性中省略时，<code>flex-grow</code>和<code>flex-basis</code>的初始值与默认值不同。这样，<code>flex</code>速记属性可以更好的适应最常见的情况。</p>
+<p>必须将尚未包含两个增长/收缩因子的无单位0解释为增长/收缩因子。为避免误解或无效的声明，开发者必须为值为0的<code>flex-basis</code>部分指定一个单位，或在其前面加上两个增长/收缩因子。</p>
+<p><span id="basic-value-of-flex"></span></p>
+<h3 id="flex属性的基础值"><a href="#flex属性的基础值" class="headerlink" title="flex属性的基础值"></a><code>flex</code>属性的基础值</h3><p>下面的列表总结了代表最常见效果的四个<code>flex</code>属性的取值：</p>
+<ul>
+<li><p>initial</p>
+<p>等效于<code>flex : 0 1 auto</code>（就是<code>flex</code>属性的初始值）。根据Flex项目的<code>width</code>/<code>height</code>属性调整项目的大小。（如果该Flex项目的main size属性的计算值为auto，则将根据其内容调整Flex项目的大小。）当存在<em>正的自由空间</em>时使Flex项目无法增长，但在空间不足时允许其缩小至最小尺寸。对齐功能或者取值为auto的<code>margin</code>属性可用于沿主轴对齐Flex项目。</p>
+</li>
+<li><p>auto</p>
+<p>等效于<code>flex : 1 1 auto</code>。根据Flex项目的<code>width</code>/<code>height</code>属性调整项目的大小，但是使其拥有极其充分的灵活性，以便它们吸收主轴上的任何<em>自由空间</em>。如果所有Flex项目均为<code>flex : auto</code>、<code>flex : initial</code>或<code>flex : none</code>，则在调整大小后将任何正的可用空间平均分配给具有<code>flex : auto</code>的项目。</p>
+</li>
+<li><p>none</p>
+<p>等效于<code>flex : 0 0 auto</code>。此值根据Flex项目的<code>width</code>/<code>height</code>属性调整项目的大小，但是使Flex项目完全不伸缩。这类似于初始值，但是此值即使在溢出情况下也不允许收缩Flex项目。</p>
+</li>
+<li><p>正数</p>
+<p>等效于<code>flex : 正数 1 0</code>。使Flex项目具有伸缩性，并将伸缩基准设置为0，从而使该Flex项目接收Flex容器中指定比例的<em>自由空间</em>。如果Flex容器中的所有项目都使用此模式，则它们的大小将与指定的<code>flex</code>正数成比例。</p>
+</li>
+</ul>
+<p>默认情况下，Flex项目不会缩小到其最小内容大小（最长的单词或固定大小的元素的长度）以下。要更改此设置，请设置<code>min-width</code>或<code>min-height</code>属性。（请参阅章四第五节：弹性项目的自动最小大小。）</p>
+<p><span id="the-flex-grow"></span></p>
+<h3 id="flex-grow属性"><a href="#flex-grow属性" class="headerlink" title="flex-grow属性"></a><code>flex-grow</code>属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>flex-grow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>数字</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>0</td>
+</tr>
+<tr>
+<td>使用于</td>
+<td>Flex项目</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定数字</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>按计算值类型</td>
+</tr>
+</tbody>
+</table>
+<p>鼓励开发者使用<code>flex</code>速记属性来控制Flex项目的伸缩性，而不是直接通过<code>flex-grow</code>属性来控制伸缩性，因为速记属性会正确的重置任何未指定的组成属性以适用于常见的用途。</p>
+<p><code>flex-grow</code>属性将伸缩增长系数设置为提供的数字，<strong>负数无效</strong>。</p>
+<p><span id="the-flex-shrink"></span></p>
+<h3 id="flex-shrink属性"><a href="#flex-shrink属性" class="headerlink" title="flex-shrink属性"></a><code>flex-shrink</code>属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>flex-shrink</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>数字</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>1</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex项目</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定数字</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>数字</td>
+</tr>
+</tbody>
+</table>
+<p><code>flex-shrink</code>属性将伸缩收缩系数设置为提供的数字，<strong>负数无效</strong>。</p>
+<p><span id="the-flex-basis"></span></p>
+<h3 id="flex-basis属性"><a href="#flex-basis属性" class="headerlink" title="flex-basis属性"></a><code>flex-basis</code>属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>flex-basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>content｜&lt;’width’&gt;</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex项目</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>相对于Flex容器的内部主尺寸</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定的关键字或计算出的白分比长度值</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>按计算值类型</td>
+</tr>
+</tbody>
+</table>
+<p><code>flex-basis</code>属性设置伸缩基准。它接收与<code>width</code>和<code>height</code>属性相同的值，以及content关键字。</p>
+<p>对于auto与content以外的值，<code>flex-basis</code>的解析方式与水平书写模式中的<code>width</code>属性相同，不同之处在于，如果一个值对<code>width</code>属性来说解析为auto，它将对<code>flex-basis</code>属性解析为content。例如，根据Flex项目的包含块（即其Flex容器）解析得到的<code>flex-basis</code>的百分比值；并且如果包含块的大小不确定，则<code>flex-basis</code>的使用值为content。另外一个必然结果是，除非另有规定（例如通过<code>box-sizing</code>属性进行指定）否则<code>flex-basis</code>会确定大小为content box。</p>
 
       
     </div>
@@ -982,7 +1231,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章二：Flex布局盒模型和术语"><span class="nav-number">1.</span> <span class="nav-text">章二：Flex布局盒模型和术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章三：Flex容器：flex和inline-flexdisplay值"><span class="nav-number">2.</span> <span class="nav-text">章三：Flex容器：flex和inline-flexdisplay值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：排列和方向"><span class="nav-number">3.</span> <span class="nav-text">章五：排列和方向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex流向：flex-direction属性"><span class="nav-number">3.2.</span> <span class="nav-text">Flex流向：flex-direction属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex行包裹：flex-warp属性"><span class="nav-number">3.3.</span> <span class="nav-text">Flex行包裹：flex-warp属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex方向和包裹：flex-flow速记属性"><span class="nav-number">3.4.</span> <span class="nav-text">Flex方向和包裹：flex-flow速记属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示顺序：order属性"><span class="nav-number">3.5.</span> <span class="nav-text">显示顺序：order属性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章二：Flex布局盒模型和术语"><span class="nav-number">1.</span> <span class="nav-text">章二：Flex布局盒模型和术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章三：Flex容器：flex和inline-flexdisplay值"><span class="nav-number">2.</span> <span class="nav-text">章三：Flex容器：flex和inline-flexdisplay值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：排列和方向"><span class="nav-number">3.</span> <span class="nav-text">章五：排列和方向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex流向：flex-direction属性"><span class="nav-number">3.2.</span> <span class="nav-text">Flex流向：flex-direction属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex行包裹：flex-warp属性"><span class="nav-number">3.3.</span> <span class="nav-text">Flex行包裹：flex-warp属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex方向和包裹：flex-flow速记属性"><span class="nav-number">3.4.</span> <span class="nav-text">Flex方向和包裹：flex-flow速记属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示顺序：order属性"><span class="nav-number">3.5.</span> <span class="nav-text">显示顺序：order属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章七：伸缩性"><span class="nav-number">4.</span> <span class="nav-text">章七：伸缩性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex速记属性"><span class="nav-number">4.2.</span> <span class="nav-text">flex速记属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex属性的基础值"><span class="nav-number">4.3.</span> <span class="nav-text">flex属性的基础值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow属性"><span class="nav-number">4.4.</span> <span class="nav-text">flex-grow属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink属性"><span class="nav-number">4.5.</span> <span class="nav-text">flex-shrink属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-basis属性"><span class="nav-number">4.6.</span> <span class="nav-text">flex-basis属性</span></a></li></ol></li></ol></div>
             
 
           </div>
