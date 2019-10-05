@@ -114,7 +114,10 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg">
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/rel-vs-abs-flex.svg">
-<meta property="og:updated_time" content="2019-10-04T07:45:38.349Z">
+<meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-pack.svg">
+<meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-align.svg">
+<meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/align-content-example.svg">
+<meta property="og:updated_time" content="2019-10-05T07:51:07.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flex布局规范翻译">
 <meta name="twitter:description" content="本文简单翻译Flex布局规范中的部分章节。">
@@ -411,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-04 15:45:38" itemprop="dateModified" datetime="2019-10-04T15:45:38+08:00">2019-10-04</time>
+                <time title="修改时间：2019-10-05 15:51:07" itemprop="dateModified" datetime="2019-10-05T15:51:07+08:00">2019-10-05</time>
               
             
           </span>
@@ -481,10 +484,10 @@
 <li><p><span style="color:#b81414">交叉轴：cross axis、交叉维度</span></p>
 <p>垂直于主轴的轴称为交叉轴。它在交叉维度延伸。</p>
 </li>
-<li><p><span style="color:#421ae6">交叉起点：main-start、交叉终点：main-end</span></p>
+<li><p><span style="color:#421ae6">交叉起点：cross-start、交叉终点：cross-end</span></p>
 <p>Flex线被Flex项目填充，并且沿着交叉起点向着交叉终点被放置。</p>
 </li>
-<li><p><span style="color:#0f8a0f">交叉尺寸：axis size、交叉尺寸属性</span></p>
+<li><p><span style="color:#0f8a0f">交叉尺寸：cross size、交叉尺寸属性</span></p>
 <p>Flex容器或Flex项目的宽度或高度，以交叉维度为基准，是该盒子的交叉尺寸。因此，其交叉尺寸属性是其<code>width</code>或<code>height</code>属性，无论是否在交叉维度中。同样，其最小和最大交叉尺寸属性是其<code>min-width</code>/<code>max-width</code>或<code>min-height</code>/<code>max-height</code>属性，以交叉维度为基准，并确定其最小/最大交叉尺寸。</p>
 </li>
 </ul>
@@ -964,6 +967,262 @@
 </table>
 <p><code>flex-basis</code>属性设置伸缩基准。它接收与<code>width</code>和<code>height</code>属性相同的值，以及content关键字。</p>
 <p>对于auto与content以外的值，<code>flex-basis</code>的解析方式与水平书写模式中的<code>width</code>属性相同，不同之处在于，如果一个值对<code>width</code>属性来说解析为auto，它将对<code>flex-basis</code>属性解析为content。例如，根据Flex项目的包含块（即其Flex容器）解析得到的<code>flex-basis</code>的百分比值；并且如果包含块的大小不确定，则<code>flex-basis</code>的使用值为content。另外一个必然结果是，除非另有规定（例如通过<code>box-sizing</code>属性进行指定）否则<code>flex-basis</code>会确定大小为content box。</p>
+<h2 id="章八：对齐"><a href="#章八：对齐" class="headerlink" title="章八：对齐"></a>章八：对齐</h2><p>在Flex容器的内容完成其伸缩并确定所有Flex项目的尺寸之后，即可在Flex容器中对齐它们。</p>
+<p><code>margin</code>属性可以用于在类似于块级布局对齐项目那样以强大的方式来对齐Flex项目。Flex项目还遵循<a href="https://www.w3.org/TR/css-align-3/" target="_blank" rel="noopener">CSS Box Aliginment</a>中的对齐属性，该属性允许在<em>主轴</em>和<em>交叉轴</em>上轻松进行基于关键字的项目对齐。这些属性使对齐的许多普通类型变得微不足道，包括CSS 2.1中非常困难的某些事情，例如水平居中和垂直居中。</p>
+<p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>虽然对齐属性是在<span style="border-bottom:4px solid #ffc107">CSS Box Alignment</span>中定义的，但<span style="border-bottom:4px solid #ffc107">Flexible Box Layout</span>在此处重现了相关属性的定义，以免形成规范性的依赖关系，而这可能减缓规范的发展。这些属性仅适用于Flex布局，直到<span style="border-bottom:4px solid #ffc107">CSS Box Alignment Level 3</span>完成并定义其在其它布局模式下的效果。此外，Box Alignment模式下定义的任何新值都将应用于Flexible Box Layout；换句话说，Box Alignment模块一旦完成，将取代此处的定义。</p>
+<h3 id="内容-2"><a href="#内容-2" class="headerlink" title="内容"></a>内容</h3><p><a href="#aligning-with-auto-margins">8.1 使用自动margin进行对齐</a></p>
+<p><a href="axis-alignment">8.2 主轴对齐：justify-content属性</a></p>
+<p><a href="#cross-axis-alignment">8.3 交叉轴对齐：align-items属性和align-self属性</a></p>
+<p><a href="packing-flex-lines">8.4 包装伸缩行：align-content属性</a></p>
+<p><span id="aligning-with-auto-margins"></span> </p>
+<h3 id="使用自动margin进行对齐"><a href="#使用自动margin进行对齐" class="headerlink" title="使用自动margin进行对齐"></a>使用自动<code>margin</code>进行对齐</h3><p>本节是<strong>非规范性</strong>的。“边距如何影响布局”的标准定义在<a href="https://www.w3.org/TR/css-flexbox-1/#layout-algorithm" target="_blank" rel="noopener">Flex Layout算法</a>部分。</p>
+<p>Flex项目的auto取值<code>margin</code>属性效果与块流中的自动<code>margin</code>效果非常相似：</p>
+<ul>
+<li>计算伸缩基准和伸缩长度时，自动<code>margin</code>被视为0。</li>
+<li>在通过<code>justify-content</code>和<code>align-self</code>对齐之前，任何<em>正的自由空间</em>都会分配给改维度中的自动<code>margin</code>。</li>
+<li>溢出盒子会忽略其自动<code>margin</code>，并在最终方向上溢出。</li>
+</ul>
+<p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>如果将自由空间分配给自动<code>margin</code>，则对齐属性在该维度上将不起作用，因为在伸缩之后<code>margin</code>会偷走所有剩余的可用空间。</p>
+<p><span id="axis-alignment"></span></p>
+<h3 id="主轴对齐：justify-content属性"><a href="#主轴对齐：justify-content属性" class="headerlink" title="主轴对齐：justify-content属性"></a>主轴对齐：<code>justify-content</code>属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>justify-content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>flex-start｜flex-end｜center｜space-between｜space-around</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>flex-start</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex容器</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定的关键字</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>离散</td>
+</tr>
+</tbody>
+</table>
+<p><code>flex-content</code>属性将Flex项目沿着Flex容器的当前行的主轴对齐。在确定了任何伸缩长度和任何自动<code>margin</code>之后，便会进行此操作。通常，当一行中的所有Flex项目都无法伸缩或已达到最大大小时，该属性可以帮助分配剩余的<em>自由空间</em>。当Flex项目溢出行时，它还可以对Flex项目的对齐方式施加一些控制。</p>
+<ul>
+<li><p>flex-start</p>
+<p>Flex项目被包装到当前行的开头。将该行上的第一个Flex项目的<em>主起点</em>边缘与该行的<em>主起点</em>边缘紧密放置，并将后续的每个Flex项目与前一个Flex项目紧密放置。</p>
+</li>
+<li><p>flex-end</p>
+<p>Flex项目包装在行尾。将最后一个Flex项目的<em>主终点</em>边缘与该行的<em>主终点</em>边缘紧密放置，并将先前的每个Flex项目与后一个Flex项目紧密放置。</p>
+</li>
+<li><p>center</p>
+<p>Flex项目被包装在该行的中心。行上的Flex项目彼此紧密放置，并在当前行居中对齐，在当前行的<em>主起点</em>边缘和行上的第一个Flex项目之间的间距，与在当前行的<em>主终点</em>边缘与行上最后一个Flex项目之间的间距相同。（如果剩余的<em>自由空间</em>为负，则Flex项目将在当前行的两个方向上均匀的溢出。）</p>
+</li>
+<li><p>space-between</p>
+<p>Flex项目均匀的分布在当前行中。如果剩余的<em>自由空间</em>为负，或者该行上只有一个Flex项目，则则此值与flex-start相同。否则，将该行上的第一个Flex项目的<em>主起点</em>边缘与该行的<em>主起点</em>边缘对齐，将该行的最后一个Flex项目的<em>主终点</em>边缘与该行的<em>主终点</em>边缘对齐。当前行上的剩余Flex项目被均匀分布以使任意两个相邻Flex项目之间的间距相同。</p>
+</li>
+<li><p>space-around</p>
+<p>Flex项目均匀的分布在当前行中，两端均留有（Flex项目之间间距）一半大小的空间。如果剩余的<em>自由空间</em>为负或在当前行中只有一个Flex项目，则此值等于center。否则，将分配该行上的Flex项目，以使该行上的任何两个相邻Flex项目之间的间距相同，并且第一个/最后一个Flex项目与Flex容器边缘之间的间距为两个Flex项目之间间距的一半。</p>
+</li>
+</ul>
+<p><img src="https://www.w3.org/TR/css-flexbox-1/images/flex-pack.svg" alt="justify-content属性取值"></p>
+<p><span id="cross-axis-alignment"></span></p>
+<h3 id="交叉轴对齐：align-items属性和align-self属性"><a href="#交叉轴对齐：align-items属性和align-self属性" class="headerlink" title="交叉轴对齐：align-items属性和align-self属性"></a>交叉轴对齐：<code>align-items</code>属性和<code>align-self</code>属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>align-items</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>flex-start｜flex-end｜center｜baseline｜stretch</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>stretch</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex容器</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定的关键字</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>离散</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>align-self</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>auto｜flex-start｜flex-end｜center｜baseline｜stretch</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>auto</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>Flex项目</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定的关键字</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>离散</td>
+</tr>
+</tbody>
+</table>
+<p>Flex项目可以在Flex容器的当前行的交叉轴对齐，类似于<code>justify-content</code>属性，但是是在垂直方向上对齐。<code>align-items</code>设置所有Flex容器的Flex项目（包括匿名Flex项目）的默认对齐方式。而<code>align-self</code>属性允许针对单个Flex项目覆盖此默认对齐方式。（对于匿名Flex项目，<code>align-self</code>的值始终与其关联的的Flex容器的<code>align-items</code>的值匹配。）</p>
+<p>如果任一Flex项目的交叉轴<code>margin</code>，即<code>flex-direction</code>值为row情况下的<code>margin-top</code>/<code>margin-bottom</code>，为auto的话，<code>align-self</code>无效。</p>
+<p>值具有以下含义：</p>
+<ul>
+<li><p>auto</p>
+<p>将交叉轴对齐的控制交还给Flex容器的<code>align-items</code>值来控制。（这是<code>align-self</code>的初始值。）</p>
+</li>
+<li><p>flex-start</p>
+<p>Flex项目的<em>交叉起点</em>边缘与当前行的<em>交叉起点</em>边缘紧密放置。</p>
+</li>
+<li><p>flex-end</p>
+<p>Flex项目的<em>交叉终点</em>边缘与当前行的<em>交叉终点</em>边缘紧密放置。</p>
+</li>
+<li><p>center</p>
+<p>Flex项目的<span style="border-bottom:4px solid #0084ff">margin box</span>位于当前行的交叉轴中心。（如果伸缩行的<em>交叉尺寸</em>小于Flex项目的交叉尺寸，则该Flex项目将在两个方向上均等的溢出。）</p>
+</li>
+<li><p>baseline</p>
+<p>Flex项目参与基线对齐：该行上所有的Flex项目将会按照该行的文字基线进行对齐，并且其基线和其<em>交叉起点</em>边缘之间的间距最大的Flex项目，将与该项目的交叉起点边缘紧密放置。如果Flex项目在必要的轴上没有基线，那么将从Flex项目的<span style="border-bottom:4px solid #0084ff">border box</span>中合成一个基线。</p>
+</li>
+<li><p>stretch</p>
+<p>如果Flex项目的交叉尺寸属性计算为auto，并且交叉轴margin都不是auto的，则Flex项目将被拉伸。它的使用值是使Flex项目的<span style="border-bottom:4px solid #0084ff">margin box</span>的交叉尺寸尽可能的接近该行的交叉尺寸所需的长度，同时仍要遵守<code>min-height</code>/<code>min-width</code>/<code>max-height</code>/<code>max-width</code>限制。</p>
+<p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>如果Flex容器的<code>height</code>属性收到限制，则此值可能会导致Flex项目的内容溢出。</p>
+<p>Flex项目的交叉起点边缘与当前行的交叉起点紧密放置。</p>
+</li>
+</ul>
+<p><img src="https://www.w3.org/TR/css-flexbox-1/images/flex-align.svg" alt="align-items和align-self的取值"></p>
+<p><span id="packing-flex-lines"></span></p>
+<h3 id="包装伸缩行：align-content属性"><a href="#包装伸缩行：align-content属性" class="headerlink" title="包装伸缩行：align-content属性"></a>包装伸缩行：<code>align-content</code>属性</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>align-content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>flex-start｜flex-end｜center｜space-between｜space-around｜stretch</td>
+</tr>
+<tr>
+<td>初始值</td>
+<td>stretch</td>
+</tr>
+<tr>
+<td>适用于</td>
+<td>多行Flex容器</td>
+</tr>
+<tr>
+<td>继承性</td>
+<td>否</td>
+</tr>
+<tr>
+<td>百分比</td>
+<td>不适用</td>
+</tr>
+<tr>
+<td>计算值</td>
+<td>指定的关键字</td>
+</tr>
+<tr>
+<td>规范顺序</td>
+<td>每个语法</td>
+</tr>
+<tr>
+<td>动画类型</td>
+<td>离散</td>
+</tr>
+</tbody>
+</table>
+<p>当交叉轴上有多余的空间时，<code>align-content</code>属性将Flex容器的行在Flex容器中对齐，这类似与<code>justify-content</code>在主轴中对齐单个项目的方式。注意：<strong>此属性对单行Flex容器无效</strong>。</p>
+<p>值具有以下含义：</p>
+<ul>
+<li><p>flex-start</p>
+<p>行被打包到Flex容器的开始。将Flex容器中的第一行的交叉起点边缘放置在与Flex容器的交叉起点边缘平齐的位置，并将随后的每行都放置在与前一行接邻的位置。</p>
+</li>
+<li><p>flex-end</p>
+<p>行被打包到Flex容器的末尾。最后一行的交叉终点边缘与Flex容器的交叉终点边缘齐平放置，并且前一行与后一行接邻放置。</p>
+</li>
+<li><p>center</p>
+<p>行朝向Flex容器的中心打包。Flex容器中的行彼此接邻放置，并在Flex容器的中心对齐，Flex容器的交叉起点与Flex容器的第一行之间的间距，与Flex容器的交叉终点与Flex容器的最后一行之间的间距相等。（如果剩余的自由空间为负，则行在两个方向上均等的溢出。）</p>
+</li>
+<li><p>space-between</p>
+<p>行均匀地分布在Flex容器中。如果剩余的自由空间为负，或者在Flex容器中只有一行，则此值与flex-start相同。否则，将Flex容器中的第一行的交叉起点边缘与Flex容器的交叉起点边缘齐平放置，将Flex容器的最后一行的交叉终点边缘与Flex容器的交叉终点边缘齐平放置，Flex容器中的其它行将被排列以使任意两行之间的间距相等。</p>
+</li>
+<li><p>space-around</p>
+<p>行均匀地分布在Flex容器中，两端各占有（伸缩行之间间距）一半空间。如果剩余的自由空间为负，则此值等于center。否则，将Flex容器中的行分布以使任意两条行之间的间距相同。并且第一行/最后一行与Flex容器边缘之间的间距为伸缩行之间间距的一半。</p>
+</li>
+<li><p>stretch</p>
+<p>行拉伸以占据自由空间。如果剩余的自由空间为负，则此值与flex-start相同。否则，自由空间会在所有行之间平均分配，从而增加其交叉尺寸。</p>
+</li>
+</ul>
+<p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>只有在多行Flex容器才能在交叉轴上留出空间已对其伸缩行，因为在单行Flex容器中，唯一的行会自动拉伸以填充空间（指<code>align-items</code>的值默认为stretch）。</p>
+<p><img src="https://www.w3.org/TR/css-flexbox-1/images/align-content-example.svg" alt="align-content的取值"></p>
 
       
     </div>
@@ -1231,7 +1490,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章二：Flex布局盒模型和术语"><span class="nav-number">1.</span> <span class="nav-text">章二：Flex布局盒模型和术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章三：Flex容器：flex和inline-flexdisplay值"><span class="nav-number">2.</span> <span class="nav-text">章三：Flex容器：flex和inline-flexdisplay值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：排列和方向"><span class="nav-number">3.</span> <span class="nav-text">章五：排列和方向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex流向：flex-direction属性"><span class="nav-number">3.2.</span> <span class="nav-text">Flex流向：flex-direction属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex行包裹：flex-warp属性"><span class="nav-number">3.3.</span> <span class="nav-text">Flex行包裹：flex-warp属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex方向和包裹：flex-flow速记属性"><span class="nav-number">3.4.</span> <span class="nav-text">Flex方向和包裹：flex-flow速记属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示顺序：order属性"><span class="nav-number">3.5.</span> <span class="nav-text">显示顺序：order属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章七：伸缩性"><span class="nav-number">4.</span> <span class="nav-text">章七：伸缩性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex速记属性"><span class="nav-number">4.2.</span> <span class="nav-text">flex速记属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex属性的基础值"><span class="nav-number">4.3.</span> <span class="nav-text">flex属性的基础值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow属性"><span class="nav-number">4.4.</span> <span class="nav-text">flex-grow属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink属性"><span class="nav-number">4.5.</span> <span class="nav-text">flex-shrink属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-basis属性"><span class="nav-number">4.6.</span> <span class="nav-text">flex-basis属性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#章二：Flex布局盒模型和术语"><span class="nav-number">1.</span> <span class="nav-text">章二：Flex布局盒模型和术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章三：Flex容器：flex和inline-flexdisplay值"><span class="nav-number">2.</span> <span class="nav-text">章三：Flex容器：flex和inline-flexdisplay值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章五：排列和方向"><span class="nav-number">3.</span> <span class="nav-text">章五：排列和方向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容"><span class="nav-number">3.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex流向：flex-direction属性"><span class="nav-number">3.2.</span> <span class="nav-text">Flex流向：flex-direction属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex行包裹：flex-warp属性"><span class="nav-number">3.3.</span> <span class="nav-text">Flex行包裹：flex-warp属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flex方向和包裹：flex-flow速记属性"><span class="nav-number">3.4.</span> <span class="nav-text">Flex方向和包裹：flex-flow速记属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示顺序：order属性"><span class="nav-number">3.5.</span> <span class="nav-text">显示顺序：order属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章七：伸缩性"><span class="nav-number">4.</span> <span class="nav-text">章七：伸缩性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-1"><span class="nav-number">4.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex速记属性"><span class="nav-number">4.2.</span> <span class="nav-text">flex速记属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex属性的基础值"><span class="nav-number">4.3.</span> <span class="nav-text">flex属性的基础值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow属性"><span class="nav-number">4.4.</span> <span class="nav-text">flex-grow属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink属性"><span class="nav-number">4.5.</span> <span class="nav-text">flex-shrink属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-basis属性"><span class="nav-number">4.6.</span> <span class="nav-text">flex-basis属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#章八：对齐"><span class="nav-number">5.</span> <span class="nav-text">章八：对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容-2"><span class="nav-number">5.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用自动margin进行对齐"><span class="nav-number">5.2.</span> <span class="nav-text">使用自动margin进行对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主轴对齐：justify-content属性"><span class="nav-number">5.3.</span> <span class="nav-text">主轴对齐：justify-content属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交叉轴对齐：align-items属性和align-self属性"><span class="nav-number">5.4.</span> <span class="nav-text">交叉轴对齐：align-items属性和align-self属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包装伸缩行：align-content属性"><span class="nav-number">5.5.</span> <span class="nav-text">包装伸缩行：align-content属性</span></a></li></ol></li></ol></div>
             
 
           </div>
