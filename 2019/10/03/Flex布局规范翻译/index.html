@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-pack.svg">
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-align.svg">
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/align-content-example.svg">
-<meta property="og:updated_time" content="2019-10-05T07:51:07.949Z">
+<meta property="og:updated_time" content="2019-10-05T08:50:16.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flex布局规范翻译">
 <meta name="twitter:description" content="本文简单翻译Flex布局规范中的部分章节。">
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-05 15:51:07" itemprop="dateModified" datetime="2019-10-05T15:51:07+08:00">2019-10-05</time>
+                <time title="修改时间：2019-10-05 16:50:16" itemprop="dateModified" datetime="2019-10-05T16:50:16+08:00">2019-10-05</time>
               
             
           </span>
@@ -784,8 +784,11 @@
 <p><code>flex</code>属性指定伸缩长度的组成部分：伸缩系数（增长<code>grow</code>与收缩<code>shrink</code>）和伸缩基准<code>basis</code>。当盒子是Flex项目时，将使用<code>flex</code>而不是main size属性来确定盒子的主尺寸。如果盒子不是Flex项目，则<code>flex</code>属性无效。</p>
 <ul>
 <li><p>flex-grow</p>
-<p>这个使用数字取值的组成部分是<code>flex-grow</code>的完整写法，它指定了伸缩<strong>增长因子</strong>。该因子决定了正在分配<em>正的自由空间</em>时，Flex项目相对于Flex容器中的其余Flex项目将增长多少。省略时，它将被设置为1。</p>
+<p>这个使用数字取值的组成部分是<code>flex-grow</code>的完整写法，它指定了伸缩<strong>增长因子</strong>。该因子决定了正在分配<em>正的自由空间</em>时，Flex项目<strong>相对于Flex容器中的其余Flex项目</strong>将增长多少。省略时，它将被设置为1。</p>
 <p>0~1之间的<code>flex-grow</code>值有一些特殊的行为：当<em>行</em>上的<code>flex-grow</code>值的总和小于1时，它们将占用少于100%的可用空间。</p>
+<blockquote>
+<p>如果当前行只有一个Flex项目，则会默认填充整行。</p>
+</blockquote>
 </li>
 <li><p>flex-shrink</p>
 <p>这个使用数字取值的组成部分是<code>flex-shrink</code>的完整写法，它指定了伸缩收缩因子。该因子决定了正在分配<em>负的自由空间</em>时，Flex项目相对于Flex容器中的其余Flex项目将收缩多少。省略时，它将被设置为1。</p>
@@ -966,7 +969,7 @@
 </tbody>
 </table>
 <p><code>flex-basis</code>属性设置伸缩基准。它接收与<code>width</code>和<code>height</code>属性相同的值，以及content关键字。</p>
-<p>对于auto与content以外的值，<code>flex-basis</code>的解析方式与水平书写模式中的<code>width</code>属性相同，不同之处在于，如果一个值对<code>width</code>属性来说解析为auto，它将对<code>flex-basis</code>属性解析为content。例如，根据Flex项目的包含块（即其Flex容器）解析得到的<code>flex-basis</code>的百分比值；并且如果包含块的大小不确定，则<code>flex-basis</code>的使用值为content。另外一个必然结果是，除非另有规定（例如通过<code>box-sizing</code>属性进行指定）否则<code>flex-basis</code>会确定大小为content box。</p>
+<p>对于auto与content以外的值，<code>flex-basis</code>的解析方式与水平书写模式中的<code>width</code>属性相同，不同之处在于，如果一个值对<code>width</code>属性来说解析为auto，它将对<code>flex-basis</code>属性解析为content。例如，根据Flex项目的包含块（即其Flex容器）解析得到的<code>flex-basis</code>的百分比值；并且如果包含块的大小不确定，则<code>flex-basis</code>的使用值为content。另外一个必然结果是，除非另有规定（例如通过<code>box-sizing</code>属性进行指定）否则<code>flex-basis</code>会确定大小为<span style="border-bottom:4px solid #0084ff">content box</span>。</p>
 <h2 id="章八：对齐"><a href="#章八：对齐" class="headerlink" title="章八：对齐"></a>章八：对齐</h2><p>在Flex容器的内容完成其伸缩并确定所有Flex项目的尺寸之后，即可在Flex容器中对齐它们。</p>
 <p><code>margin</code>属性可以用于在类似于块级布局对齐项目那样以强大的方式来对齐Flex项目。Flex项目还遵循<a href="https://www.w3.org/TR/css-align-3/" target="_blank" rel="noopener">CSS Box Aliginment</a>中的对齐属性，该属性允许在<em>主轴</em>和<em>交叉轴</em>上轻松进行基于关键字的项目对齐。这些属性使对齐的许多普通类型变得微不足道，包括CSS 2.1中非常困难的某些事情，例如水平居中和垂直居中。</p>
 <p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>虽然对齐属性是在<span style="border-bottom:4px solid #ffc107">CSS Box Alignment</span>中定义的，但<span style="border-bottom:4px solid #ffc107">Flexible Box Layout</span>在此处重现了相关属性的定义，以免形成规范性的依赖关系，而这可能减缓规范的发展。这些属性仅适用于Flex布局，直到<span style="border-bottom:4px solid #ffc107">CSS Box Alignment Level 3</span>完成并定义其在其它布局模式下的效果。此外，Box Alignment模式下定义的任何新值都将应用于Flexible Box Layout；换句话说，Box Alignment模块一旦完成，将取代此处的定义。</p>
