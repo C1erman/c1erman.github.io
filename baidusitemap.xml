@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.club/2019/10/14/XHR%E4%B8%8EFetch/</loc>
+    <lastmod>2019-10-16</lastmod>
+  </url>  <url>
+    <loc>http://seefun.club/2019/10/03/Flex%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83%E7%BF%BB%E8%AF%91/</loc>
+    <lastmod>2019-10-16</lastmod>
+  </url>  <url>
     <loc>http://seefun.club/2019/09/19/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D/</loc>
     <lastmod>2019-10-15</lastmod>
-  </url>  <url>
-    <loc>http://seefun.club/2019/10/14/XHR%E4%B8%8EFetch/</loc>
-    <lastmod>2019-10-14</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/04/28/%E8%80%81%E7%94%9F%E5%B8%B8%E8%B0%88%E7%9A%84%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2019-10-14</lastmod>
@@ -24,9 +27,6 @@
   </url>  <url>
     <loc>http://seefun.club/2019/05/06/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E6%95%B0%E7%BB%84Array/</loc>
     <lastmod>2019-10-12</lastmod>
-  </url>  <url>
-    <loc>http://seefun.club/2019/10/03/Flex%E5%B8%83%E5%B1%80%E8%A7%84%E8%8C%83%E7%BF%BB%E8%AF%91/</loc>
-    <lastmod>2019-10-05</lastmod>
   </url>  <url>
     <loc>http://seefun.club/2019/08/26/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Function/</loc>
     <lastmod>2019-09-26</lastmod>
