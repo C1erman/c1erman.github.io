@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-pack.svg">
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/flex-align.svg">
 <meta property="og:image" content="https://www.w3.org/TR/css-flexbox-1/images/align-content-example.svg">
-<meta property="og:updated_time" content="2019-10-16T05:10:36.424Z">
+<meta property="og:updated_time" content="2019-10-16T06:06:54.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flex布局规范翻译">
 <meta name="twitter:description" content="本文简单翻译Flex布局规范中的部分章节。">
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-16 13:10:36" itemprop="dateModified" datetime="2019-10-16T13:10:36+08:00">2019-10-16</time>
+                <time title="修改时间：2019-10-16 14:06:54" itemprop="dateModified" datetime="2019-10-16T14:06:54+08:00">2019-10-16</time>
               
             
           </span>
@@ -731,7 +731,7 @@
 </table>
 <p><code>order</code>属性通过将Flex项目分配给顺序组来控制其在Flex容器中的显示顺序。它需要一个整数值，该值指定Flex项目所属的顺序组。</p>
 <p>Flex容器按顺序修改后的文档顺序排列其内容，从文档编号最低的顺序组开始，然后向上。具有相同顺序组的项目按它们在源文档中出现的顺序进行排列。这也影响绘制顺序，就像在源文档中重新排列了Flex项目一样。将Flex容器的绝对定位子元素视为具体属性<code>order : 0</code>以确定它们相对于Flex项目的绘制顺序。</p>
-<h2 id="章七：伸缩性"><a href="#章七：伸缩性" class="headerlink" title="章七：伸缩性"></a>章七：伸缩性</h2><p>Flex布局在定义方面是使Flex项目Flex的能力，可以更改其<code>width</code>/<code>height</code>以填充<em>主维度</em>中的可用空间。这是通过<code>flex</code>属性完成的。Flex容器将自由空间分配给其Flex项目（与其<code>flex-grow</code>属性成比例）以填充容器，或者收缩它们（与其<code>flex-shrink</code>属性成比例）以防止溢出。</p>
+<h2 id="章七：伸缩性"><a href="#章七：伸缩性" class="headerlink" title="章七：伸缩性"></a>章七：伸缩性</h2><p>Flex布局在定义方面是使Flex项目伸缩的能力，这是通过<code>flex</code>属性完成的，同时可以更改其<code>width</code>/<code>height</code>以填充<em>主维度</em>中的可用空间。Flex容器将自由空间分配给其Flex项目（与其<code>flex-grow</code>属性成比例）以填充容器，或者收缩它们（与其<code>flex-shrink</code>属性成比例）以防止溢出。</p>
 <p>如果Flex项目的<code>flex-grow</code>与<code>flex-shrink</code>的值均为零，则它是完全不变形的，否则为具有伸缩性的。</p>
 <h3 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h3><p><a href="#the-flex-shorthand">7.1 flex速记属性</a></p>
 <p><a href="#basic-value-of-flex">7.1.1 flex属性的基础值</a></p>
@@ -986,6 +986,7 @@
 <li>溢出盒子会忽略其自动<code>margin</code>，并在最终方向上溢出。</li>
 </ul>
 <p><span style="border-left:7px solid #52e052;padding-left:5px">注意：</span>如果将自由空间分配给自动<code>margin</code>，则对齐属性在该维度上将不起作用，因为在伸缩之后<code>margin</code>会偷走所有剩余的可用空间。</p>
+<p><span style="border-left:7px solid rgb(254,67,101);padding-left:5px">验证：</span>当只有一个Flex项目时，使用<code>margin: 0 auto</code>将会时该项目居中对齐；有多个Flex项目时，使用<code>margin : 0 auto</code>的效果同<code>justify-content: space-around</code>的效果相同。</p>
 <p><span id="axis-alignment"></span></p>
 <h3 id="主轴对齐：justify-content属性"><a href="#主轴对齐：justify-content属性" class="headerlink" title="主轴对齐：justify-content属性"></a>主轴对齐：<code>justify-content</code>属性</h3><table>
 <thead>
