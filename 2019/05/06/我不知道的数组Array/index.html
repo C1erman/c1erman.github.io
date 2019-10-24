@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人">
 <meta property="og:description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除，那些操作破坏数组也要搞清。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-12T06:50:03.286Z">
+<meta property="og:updated_time" content="2019-10-24T04:27:01.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的数组Array">
 <meta name="twitter:description" content="Array的遍历方法怎么那么多。 且不说部署了iterator遍历器的Array能够使用for...of语法来遍历，单说数组原型所具有的方法就有好几种，因此我们得找到一种更加有效的方法来记忆它们。 而数组中含有的空缺也要想办法清除，那些操作破坏数组也要搞清。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-12 14:50:03" itemprop="dateModified" datetime="2019-10-12T14:50:03+08:00">2019-10-12</time>
+                <time title="修改时间：2019-10-24 12:27:01" itemprop="dateModified" datetime="2019-10-24T12:27:01+08:00">2019-10-24</time>
               
             
           </span>
@@ -490,6 +490,14 @@
 </ul>
 <p>如果回调函数至少有一个数组元素返回<code>true</code>，则该函数返回<code>true</code>。一旦某个回调函数返回了<code>true</code>，则停止遍历。就像这样：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a.some(<span class="function">(<span class="params">v,i,a</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v,i,a);</span><br><span class="line">    <span class="keyword">if</span>(v===<span class="number">2</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//1 0 Array(3) [ 1, 2, 3 ]</span></span><br><span class="line"><span class="comment">//2 1 Array(3) [ 1, 2, 3 ]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Array.prototype.find(callback(value, index, array), thisValue?)</code></li>
+</ul>
+<p>返回数组中第一个满足所提供测试函数的元素的值，否则返回<code>undefined</code>。</p>
+<ul>
+<li><code>Array.prototype.findIndex(callback(value, index, array), thisValue?)</code></li>
+</ul>
+<p>返回数组中第一个满足所提供测试函数的元素的下标，否则返回<code>-1</code>。</p>
 <h2 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h2><p>转换方法产生一个输出数组，回调函数则控制了如何产生输出。</p>
 <ul>
 <li><code>Array.prototype.map(callback(value, index, array), thisValue?)</code></li>
@@ -569,11 +577,18 @@
 </ul>
 <p>从数组的<code>startIndex</code>开始<strong>反向</strong>查找<code>searchValue</code>，返回第一次出现<code>searchValue</code>的<code>index</code>，如果没有找到则返回<code>-1</code>。</p>
 <p><code>startIndex</code>默认为<code>Array.length</code>。</p>
+<ul>
+<li><code>find()</code>、<code>findIndex()</code>同样可视为值的查找函数</li>
+</ul>
 <h3 id="所有的遍历方法：非破坏性地"><a href="#所有的遍历方法：非破坏性地" class="headerlink" title="所有的遍历方法：非破坏性地"></a>所有的遍历方法：非破坏性地</h3><h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><h3 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h3><p>给定长度的数组中只有空缺：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</span><br><span class="line">a.toString();  <span class="comment">//',,'</span></span><br></pre></td></tr></table></figure>
 <p>因此推荐使用字面量来声明数组。</p>
 <h3 id="数组的空缺"><a href="#数组的空缺" class="headerlink" title="数组的空缺"></a>数组的空缺</h3><p>根本上，出于<strong>一切皆对象</strong>的思想，数组仍然是字符串键名到键值的映射，因此空缺即是没有键名的情况。</p>
 <p>有些操作会涉及到空缺，而另一些操作则不会：</p>
+<ul>
+<li><code>find()</code>、<code>findIndex()</code>遍历时不会跳过空缺：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[,,<span class="number">1</span>].find(<span class="function">(<span class="params">v,i</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;);  <span class="comment">//0 1 2</span></span><br><span class="line">[,,<span class="number">1</span>].findIndex(<span class="function">(<span class="params">v,i</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;);  <span class="comment">//0 1 2</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>forEach()</code>、<code>every()</code>遍历时会跳过空缺：</li>
 </ul>
