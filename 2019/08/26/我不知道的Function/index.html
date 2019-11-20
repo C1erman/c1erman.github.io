@@ -109,10 +109,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="我不知道的Function">
 <meta property="og:url" content="http://seefun.club/2019/08/26/我不知道的Function/index.html">
-<meta property="og:site_name" content="归人">
+<meta property="og:site_name" content="归人的知识笔记">
 <meta property="og:description" content="函数是JavaScript中的第一类公民。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-26T02:33:49.383Z">
+<meta property="og:updated_time" content="2019-11-18T05:45:09.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的Function">
 <meta name="twitter:description" content="函数是JavaScript中的第一类公民。 闭包或许是你深入了解函数的第一步，但除此之外，还有一些你需要了解的内容。">
@@ -132,7 +132,7 @@
   };
 </script>
 
-  <title>我不知道的Function | 归人</title>
+  <title>我不知道的Function | 归人的知识笔记</title>
   
 
 
@@ -191,7 +191,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">归人</span>
+        <span class="site-title">归人的知识笔记</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -352,12 +352,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="归人">
-      <meta itemprop="description" content="如果你感受到了，那么就说点漂亮话。">
+      <meta itemprop="description" content="你好，我是张灯鱼。">
       <meta itemprop="image" content="/images/profilePhoto.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="归人">
+      <meta itemprop="name" content="归人的知识笔记">
     </span>
 
     
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-26 10:33:49" itemprop="dateModified" datetime="2019-09-26T10:33:49+08:00">2019-09-26</time>
+                <time title="修改时间：2019-11-18 13:45:09" itemprop="dateModified" datetime="2019-11-18T13:45:09+08:00">2019-11-18</time>
               
             
           </span>
@@ -564,6 +564,15 @@
 <li><code>thisArg</code>：调用绑定函数时作为this参数传递给目标函数的值。如果使用new运算符构造绑定函数，则忽略该值。如果bind函数的参数列表为空，<strong>执行作用域</strong>的this将被视为新函数的thisArg。</li>
 <li><code>arg1, arg2 ...</code>：预先添加到绑定函数的参数列表中的参数。</li>
 </ul>
+<h2 id="防抖与节流"><a href="#防抖与节流" class="headerlink" title="防抖与节流"></a>防抖与节流</h2><p>在编写事件处理函数时，无论是出于性能的考虑还是出于用户逻辑方面，我们都应该降低对事件处理函数的触发。</p>
+<p>防抖与节流的目标都是为了稀释函数的执行频率，从而达到在某一段时间内只执行一次函数的效果。两者的差异在于其对应的业务场景。</p>
+<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><p>单纯的稀释函数的执行频率，适用业务场景：窗口缩放、DOM属性查询等。</p>
+<p>原理为利用闭包维护一个定时器句柄，定时计数器是由浏览器的定时触发器线程来维护的，并不影响JavaScript引擎线程。</p>
+<p>下面给出简易实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">+<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="built_in">Function</span>.prototype.throttle)&#123;</span><br><span class="line">      <span class="built_in">Function</span>.prototype.throttle = <span class="function"><span class="keyword">function</span>(<span class="params">func, seconds</span>)</span>&#123;</span><br><span class="line">          <span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line">          <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">              <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">              <span class="keyword">if</span>(!timer)&#123;</span><br><span class="line">                  timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                      func.apply(context, args);</span><br><span class="line">                  &#125;,seconds)</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>保留用户最新的事件信息并稀释函数的执行频率，适用业务场景：搜索框、列表滚动等。</p>
+<p>下面给出简易实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">+<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="built_in">Function</span>.prototype.throttle)&#123;</span><br><span class="line">      <span class="built_in">Function</span>.prototype.throttle = <span class="function"><span class="keyword">function</span>(<span class="params">func, seconds</span>)</span>&#123;</span><br><span class="line">          <span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line">          <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">              <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">              clearInterval(timer);</span><br><span class="line">              timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                  func.apply(context, args);</span><br><span class="line">              &#125;,seconds)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
 <h2 id="警惕"><a href="#警惕" class="headerlink" title="警惕"></a>警惕</h2><p>将函数作为参数进行传递太常见，以致于某些时候我们会犯错误：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(<span class="built_in">parseInt</span>);  <span class="comment">//[1, NaN, NaN]</span></span><br></pre></td></tr></table></figure>
 <p>如果我们详细观察函数签名，看似错误的结果其实相当符合常理。在上述代码中，我们使用到的两个函数的函数签名分别为：<code>Array.prototype.map((value, index, array), this?)</code>、<code>parseInt(string, radix?)</code>。</p>
@@ -684,7 +693,7 @@
               <img class="site-author-image" itemprop="image" src="/images/profilePhoto.png" alt="归人">
             
               <p class="site-author-name" itemprop="name">归人</p>
-              <div class="site-description motion-element" itemprop="description">如果你感受到了，那么就说点漂亮话。</div>
+              <div class="site-description motion-element" itemprop="description">你好，我是张灯鱼。</div>
           </div>
 
           
@@ -843,7 +852,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量的一种方式"><span class="nav-number">1.</span> <span class="nav-text">声明变量的一种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从实参到形参"><span class="nav-number">2.</span> <span class="nav-text">从实参到形参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.1.</span> <span class="nav-text">arguments对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式编程"><span class="nav-number">3.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明式编程与命令式编程"><span class="nav-number">3.1.</span> <span class="nav-text">声明式编程与命令式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何为函数式编程"><span class="nav-number">3.2.</span> <span class="nav-text">何为函数式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心：不可变性"><span class="nav-number">3.3.</span> <span class="nav-text">核心：不可变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纯函数"><span class="nav-number">3.4.</span> <span class="nav-text">纯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回调函数"><span class="nav-number">3.5.</span> <span class="nav-text">回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所有函数都有的"><span class="nav-number">4.</span> <span class="nav-text">所有函数都有的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">4.1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">4.2.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">4.3.</span> <span class="nav-text">bind</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警惕"><span class="nav-number">5.</span> <span class="nav-text">警惕</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明变量的一种方式"><span class="nav-number">1.</span> <span class="nav-text">声明变量的一种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从实参到形参"><span class="nav-number">2.</span> <span class="nav-text">从实参到形参</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments对象"><span class="nav-number">2.1.</span> <span class="nav-text">arguments对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式编程"><span class="nav-number">3.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明式编程与命令式编程"><span class="nav-number">3.1.</span> <span class="nav-text">声明式编程与命令式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何为函数式编程"><span class="nav-number">3.2.</span> <span class="nav-text">何为函数式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心：不可变性"><span class="nav-number">3.3.</span> <span class="nav-text">核心：不可变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纯函数"><span class="nav-number">3.4.</span> <span class="nav-text">纯函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回调函数"><span class="nav-number">3.5.</span> <span class="nav-text">回调函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所有函数都有的"><span class="nav-number">4.</span> <span class="nav-text">所有函数都有的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">4.1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">4.2.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">4.3.</span> <span class="nav-text">bind</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防抖与节流"><span class="nav-number">5.</span> <span class="nav-text">防抖与节流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#节流"><span class="nav-number">5.1.</span> <span class="nav-text">节流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防抖"><span class="nav-number">5.2.</span> <span class="nav-text">防抖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警惕"><span class="nav-number">6.</span> <span class="nav-text">警惕</span></a></li></ol></div>
             
 
           </div>
