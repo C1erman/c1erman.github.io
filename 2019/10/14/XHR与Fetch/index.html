@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人的知识笔记">
 <meta property="og:description" content="网络请求。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-24T07:05:27.813Z">
+<meta property="og:updated_time" content="2019-12-25T08:30:26.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XHR请求与Fetch请求">
 <meta name="twitter:description" content="网络请求。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-12-24 15:05:27" itemprop="dateModified" datetime="2019-12-24T15:05:27+08:00">2019-12-24</time>
+                <time title="修改时间：2019-12-25 16:30:26" itemprop="dateModified" datetime="2019-12-25T16:30:26+08:00">2019-12-25</time>
               
             
           </span>
@@ -603,7 +603,124 @@
 <p>以<em>迭代器</em>的形式返回Headers对象中所有的header值。</p>
 </li>
 </ul>
-<h3 id="Request对象"><a href="#Request对象" class="headerlink" title="Request对象"></a>Request对象</h3><h3 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h3><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2>
+<h3 id="Body混合"><a href="#Body混合" class="headerlink" title="Body混合"></a>Body混合</h3><p>Fetch的API提供了Body这个混合（Mixin）代表响应、请求的正文，其被Request与Response实现。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>均为只读属性。</p>
+<ul>
+<li><p><code>Body.body</code></p>
+<p>返回<code>ReadableStream</code>类型的主体内容。</p>
+</li>
+<li><p><code>Body.bodyUsed</code></p>
+<p>布尔值，指代<code>Body.body</code>是否被读取。</p>
+</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>下述方法均是内容读取操作，会将bodyUsed状态改为true。</p>
+<ul>
+<li><p><code>Body.arrayBuffer()</code></p>
+<p>Response将挂起一个流操作，返回一个Promise对象，其resovle时的参数数据类型为<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer" target="_blank" rel="noopener">ArrayBuffer</a>。</p>
+</li>
+<li><p><code>Body.blob()</code></p>
+<p>Response将挂起一个流操作，返回一个Promise对象，其resovle时的参数数据类型为<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob" target="_blank" rel="noopener">Blob</a>。</p>
+</li>
+<li><p><code>Body.formData()</code></p>
+<p>Response将挂起一个流操作，返回一个Promise对象，其resovle时的参数数据类型为<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FormData" target="_blank" rel="noopener">FormData</a>。</p>
+</li>
+<li><p><code>Body.json()</code></p>
+<p>Response将挂起一个流操作，返回一个Promise对象，其resovle时的参数为JSON解析值。</p>
+</li>
+<li><p><code>Body.text()</code></p>
+<p>Response将挂起一个流操作，返回一个Promise对象，其resovle时的参数为<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/USVString" target="_blank" rel="noopener"><code>USVString</code></a>文本。</p>
+</li>
+</ul>
+<h3 id="Request对象"><a href="#Request对象" class="headerlink" title="Request对象"></a>Request对象</h3><p><code>Request</code>对象代表一次资源请求。</p>
+<h4 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h4><p>使用<code>Request()</code>构造器来构造一个<code>Request</code>对象。语法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> request = <span class="keyword">new</span> Request(input, ?init);</span><br></pre></td></tr></table></figure>
+<p>参数解释如下：</p>
+<ul>
+<li><p>input</p>
+<p>定义想要fetch的资源，可以下述两者之一：</p>
+<ul>
+<li><p><code>USVString</code>类型的URL</p>
+</li>
+<li><p>一个Request对象</p>
+<blockquote>
+<p>无限递归？</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>init<span style="border-left:7px solid #696969;margin-left:5px;background-color:#eeeeee">可选</span></p>
+<p>该init对象的参数字段与fetch请求的init对象字段相同。</p>
+</li>
+</ul>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><p>均为只读属性，常用的属性列举如下，大多为init对象规定的参数：</p>
+<ul>
+<li><p><code>Request.method</code></p>
+<p>请求的方法。</p>
+</li>
+<li><p><code>Request.url</code></p>
+<p>请求的URL。</p>
+</li>
+<li><p><code>Request.headers</code></p>
+<p>请求的Headers对象。</p>
+</li>
+</ul>
+<p>除此之外，由于实现了Body混合，Body提供的属性均可使用。</p>
+<h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><p><code>Request.clone()</code></p>
+<p>创建当前请求对象的副本。</p>
+</li>
+</ul>
+<p>除此之外，由于实现了Body混合，Body提供的方法均可使用。</p>
+<h3 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h3><p><code>Response</code>对象代表一次资源请求的响应。</p>
+<h4 id="构造-1"><a href="#构造-1" class="headerlink" title="构造"></a>构造</h4><blockquote>
+<p>为什么要构造呢？</p>
+</blockquote>
+<p>使用<code>Response()</code>构造器来构造一个<code>Response</code>对象。语法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> response = <span class="keyword">new</span> Response(?body, ?init);</span><br></pre></td></tr></table></figure>
+<p>参数解释如下：</p>
+<ul>
+<li><p>body<span style="border-left:7px solid #696969;margin-left:5px;background-color:#eeeeee">可选</span></p>
+<p>响应体对象，类型可为如下之一：</p>
+<p>Blob、BufferSource、FormData、URLSearchParams、USVString。</p>
+</li>
+<li><p>init<span style="border-left:7px solid #696969;margin-left:5px;background-color:#eeeeee">可选</span></p>
+<p>option对象，可选参数为：</p>
+<ul>
+<li><p>status</p>
+<p>响应的状态码。</p>
+</li>
+<li><p>statusText</p>
+<p>和状态码关联的状态消息。</p>
+</li>
+<li><p>headers</p>
+<p>响应头，一个Headers对象或满足对象语法的ByteString类型的键值对。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><p>均为只读属性，常用的属性列举如下。</p>
+<ul>
+<li><p><code>Response.headers</code></p>
+<p>此<code>Response</code>对象所关联的<code>Headers</code>对象。</p>
+</li>
+<li><p><code>Response.ok</code></p>
+<p>布尔值，指代该响应是否成功。</p>
+</li>
+</ul>
+<p>除此之外，由于实现了Body混合，Body提供的属性均可使用。</p>
+<h4 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><p><code>Response.clone()</code></p>
+<p>创建一个Response对象的克隆。</p>
+</li>
+<li><p><code>Response.error()</code></p>
+<p>返回绑定网络错误的新Response对象。</p>
+</li>
+<li><p><code>Response.redirect()</code></p>
+<p>用另一个URL创建一个新的Response对象。</p>
+</li>
+</ul>
+<p>除此之外，由于实现了Body混合，Body提供的方法均可使用。</p>
+
       
     </div>
 
@@ -876,7 +993,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XHR对象"><span class="nav-number">1.</span> <span class="nav-text">XHR对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#请求发送流程"><span class="nav-number">1.1.</span> <span class="nav-text">请求发送流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用属性"><span class="nav-number">1.2.</span> <span class="nav-text">常用属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fetch"><span class="nav-number">2.</span> <span class="nav-text">Fetch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送fetch请求"><span class="nav-number">2.1.</span> <span class="nav-text">发送fetch请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Headers对象"><span class="nav-number">2.2.</span> <span class="nav-text">Headers对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request对象"><span class="nav-number">2.3.</span> <span class="nav-text">Request对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Response对象"><span class="nav-number">2.4.</span> <span class="nav-text">Response对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie"><span class="nav-number">3.</span> <span class="nav-text">cookie</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#XHR对象"><span class="nav-number">1.</span> <span class="nav-text">XHR对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#请求发送流程"><span class="nav-number">1.1.</span> <span class="nav-text">请求发送流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用属性"><span class="nav-number">1.2.</span> <span class="nav-text">常用属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fetch"><span class="nav-number">2.</span> <span class="nav-text">Fetch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送fetch请求"><span class="nav-number">2.1.</span> <span class="nav-text">发送fetch请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Headers对象"><span class="nav-number">2.2.</span> <span class="nav-text">Headers对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Body混合"><span class="nav-number">2.3.</span> <span class="nav-text">Body混合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">2.3.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Request对象"><span class="nav-number">2.4.</span> <span class="nav-text">Request对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造"><span class="nav-number">2.4.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-1"><span class="nav-number">2.4.3.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Response对象"><span class="nav-number">2.5.</span> <span class="nav-text">Response对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造-1"><span class="nav-number">2.5.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-2"><span class="nav-number">2.5.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法-2"><span class="nav-number">2.5.3.</span> <span class="nav-text">方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
