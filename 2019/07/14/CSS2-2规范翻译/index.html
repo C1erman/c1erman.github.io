@@ -113,7 +113,7 @@
 <meta property="og:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
-<meta property="og:updated_time" content="2019-10-13T03:07:10.062Z">
+<meta property="og:updated_time" content="2019-12-26T06:28:52.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS2.2规范">
 <meta name="twitter:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-13 11:07:10" itemprop="dateModified" datetime="2019-10-13T11:07:10+08:00">2019-10-13</time>
+                <time title="修改时间：2019-12-26 14:28:52" itemprop="dateModified" datetime="2019-12-26T14:28:52+08:00">2019-12-26</time>
               
             
           </span>
@@ -478,27 +478,27 @@
 <tbody>
 <tr>
 <td>FPWD</td>
-<td>First Public Working Draft：<span style="background:hsl(10, 55%, 55%)">第一份公共工作草案</span></td>
+<td>First Public Working Draft：<span style="background:hsl(10, 55%, 55%);color:white;">第一份公共工作草案</span></td>
 </tr>
 <tr>
 <td>WD</td>
-<td>Working Draft：<span style="background:hsl(20, 78%, 55%)">工作草案</span></td>
+<td>Working Draft：<span style="background:hsl(20, 78%, 55%);color:white;">工作草案</span></td>
 </tr>
 <tr>
 <td>CR</td>
-<td>Candidate Recommendation：<span style="background:hsl(62, 86%, 45%)">候选推荐</span></td>
+<td>Candidate Recommendation：<span style="background:hsl(62, 86%, 45%);color:white;">候选推荐</span></td>
 </tr>
 <tr>
 <td>PR</td>
-<td>Proposed Recommendation：<span style="background:hsl(89, 53%, 44%)">拟定推荐</span></td>
+<td>Proposed Recommendation：<span style="background:hsl(89, 53%, 44%);color:white;">拟定推荐</span></td>
 </tr>
 <tr>
 <td>REC</td>
-<td>Recommendation：<span style="background:hsl(129, 53%, 40%)">推荐</span></td>
+<td>Recommendation：<span style="background:hsl(129, 53%, 40%);color:white;">推荐</span></td>
 </tr>
 <tr>
 <td>SPSD</td>
-<td>Superseded Recommendation：<span style="background:hsl(129, 53%, 40%)">取代建议</span></td>
+<td>Superseded Recommendation：<span style="background:hsl(129, 53%, 40%);color:white;">取代建议</span></td>
 </tr>
 </tbody>
 </table>
@@ -605,7 +605,7 @@
 <ul>
 <li><code>a</code>：如果是来自<code>style</code>属性的内联规则，则为<code>1</code>，否则为<code>0</code></li>
 <li><code>b</code>：计算选择器中<code>ID</code>属性的数量</li>
-<li><code>c</code>：计算选择器中其它属性和伪类的数量</li>
+<li><code>c</code>：计算选择器中类、属性和伪类的数量</li>
 <li><code>d</code>：计算选择器中元素名称和伪元素的数量</li>
 </ul>
 <p>优先级的计算仅基于选择器的形式。</p>
@@ -620,6 +620,8 @@
 </blockquote>
 <p>下面是一些例子：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">li:first-line &#123;&#125;    优先级为：a=0, b=0, c=0, d=2    0-0-0-2</span><br><span class="line">li.class1.class2 &#123;&#125;    优先级为：a=0, b=0, c=2, d=1    0-0-2-1</span><br><span class="line">#id &#123;&#125;    优先级为：a=0, b=1, c=0, d=0    0-1-0-0</span><br><span class="line">style=""    优先级为：a=1, b=0, c=0, d=0    1-0-0-0</span><br></pre></td></tr></table></figure>
+<p>需要注意的是：一条规则将整体参与优先级的计算，换句话说，即是<strong>计算某一条规则的优先级而不是计算选择器的优先级</strong>。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ul li .first &#123;&#125;    优先级为：a=0, b=0, c=1, d=2    0-0-1-2</span><br><span class="line">#some &gt; #ele &#123;&#125;    优先级为：a=0, b=2, c=0, d=0    0-2-0-0</span><br></pre></td></tr></table></figure>
 <h2 id="章八：盒模型"><a href="#章八：盒模型" class="headerlink" title="章八：盒模型"></a>章八：盒模型</h2><h3 id="内容-2"><a href="#内容-2" class="headerlink" title="内容"></a>内容</h3><p><a href="#box-dimensions">8.1 盒子尺寸</a></p>
 <p><a href="#collapsing-borders">8.3.1 折叠边距</a></p>
 <p><span id="box-dimensions"></span></p>
