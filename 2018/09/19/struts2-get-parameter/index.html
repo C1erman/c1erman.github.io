@@ -112,16 +112,16 @@
 <meta property="og:site_name" content="归人的知识笔记">
 <meta property="og:description" content="Struts2 是目前较为普及和成熟的基于MVC设计模式的web应用程序框架，它不仅仅是Struts1 的升级版本，更是一个全新的Struts架构。最初，是以WebWork框架和Struts框架为基础，通过提供增强和改进的Struts框架，进而实现简化web技术人员开发工作的目标。不久之后，WebWork框架和Struts社区联合创造了现在流行的Struts2框架。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E5%B1%9E%E6%80%A7.PNG">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E5%9F%9F%E5%80%BC-.PNG">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E5%9F%9F%E5%80%BC.PNG">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E6%A8%A1%E5%9E%8B-.PNG">
-<meta property="og:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E6%A8%A1%E5%9E%8B.PNG">
-<meta property="og:updated_time" content="2018-10-11T13:32:38.156Z">
+<meta property="og:image" content="https://i.loli.net/2020/01/02/g2y1khUtBDbmoPF.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/02/Rqx8QMWyebzgH6Y.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/02/pK9MSRoOTiaQ7sA.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/02/jS6zqM5esdnVRZL.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/02/4vYpTOnXQCe825o.png">
+<meta property="og:updated_time" content="2020-01-02T06:58:46.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Struts2中接收参数的方法">
 <meta name="twitter:description" content="Struts2 是目前较为普及和成熟的基于MVC设计模式的web应用程序框架，它不仅仅是Struts1 的升级版本，更是一个全新的Struts架构。最初，是以WebWork框架和Struts框架为基础，通过提供增强和改进的Struts框架，进而实现简化web技术人员开发工作的目标。不久之后，WebWork框架和Struts社区联合创造了现在流行的Struts2框架。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E5%B1%9E%E6%80%A7.PNG">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/02/g2y1khUtBDbmoPF.png">
 
 
 
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-11 21:32:38" itemprop="dateModified" datetime="2018-10-11T21:32:38+08:00">2018-10-11</time>
+                <time title="修改时间：2020-01-02 14:58:46" itemprop="dateModified" datetime="2020-01-02T14:58:46+08:00">2020-01-02</time>
               
             
           </span>
@@ -480,11 +480,11 @@
 <p>1、获取表单页面<code>name</code>和<code>value</code>的值</p>
 <p>2、把上述<code>name</code>和<code>value</code>封装成一个<code>map</code></p>
 <p>3、根据<code>valueStack.setValue(name,value)</code>来把页面上的值设置到对象栈的属性中。</p>
-<h4 id="文件树及内容"><a href="#文件树及内容" class="headerlink" title="文件树及内容"></a>文件树及内容</h4><p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E5%B1%9E%E6%80%A7.PNG" alt="img"></p>
+<h4 id="文件树及内容"><a href="#文件树及内容" class="headerlink" title="文件树及内容"></a>文件树及内容</h4><p><img src="https://i.loli.net/2020/01/02/g2y1khUtBDbmoPF.png" alt="属性.PNG"></p>
 <h3 id="域值驱动"><a href="#域值驱动" class="headerlink" title="域值驱动"></a>域值驱动</h3><p>在我们使用属性驱动时，如果出现了这样的需求：需要处理很多不同的对象，不同的对象需要不同的Action处理方法。那么在这时，如果仍然使用属性驱动，Action文件本身将变得臃肿，充斥着各种各样的<code>getter()</code>与<code>setter()</code>。于是自然而然的出现了一个设想，将属于每个对象的参数统一封装成不同的对象（类），在类中定义各自的<code>getter()</code>与<code>setter()</code>。</p>
 <p>值得我们注意的是，在这种情况下，Struts2会自动帮我们<code>new</code>不同的对象出来，所以在Action文件中，我们只需声明不同的对象即可使用，无需特别<code>new</code>出来（不会报错）。</p>
-<h4 id="文件树及内容-1"><a href="#文件树及内容-1" class="headerlink" title="文件树及内容"></a>文件树及内容</h4><p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E5%9F%9F%E5%80%BC-.PNG" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E5%9F%9F%E5%80%BC.PNG" alt="img"></p>
+<h4 id="文件树及内容-1"><a href="#文件树及内容-1" class="headerlink" title="文件树及内容"></a>文件树及内容</h4><p><img src="https://i.loli.net/2020/01/02/Rqx8QMWyebzgH6Y.png" alt="域值 HTML.PNG"></p>
+<p><img src="https://i.loli.net/2020/01/02/pK9MSRoOTiaQ7sA.png" alt="域值.PNG"></p>
 <h3 id="模型驱动"><a href="#模型驱动" class="headerlink" title="模型驱动"></a>模型驱动</h3><p>使用域值驱动时，又出现了新的不便之处：表单中的参数<code>name</code>必须等于<code>className.parameter</code>，才能被正确的捕获到。</p>
 <p>如果我根本不想知道到底有哪些对象的存在，只想知道类似于<code>name=&quot;name&quot;</code>这种简单的形式呢？</p>
 <p>这时我们就可以采用在开发中并不常用的模型驱动：Action实现<code>ModelDriven&lt;T&gt;</code>接口，并重写<code>getModel()</code>方法，指定参数对应的对象。</p>
@@ -495,8 +495,8 @@
 <p>2、由action强制转化成<code>ModelDriver</code></p>
 <p>3、由<code>ModelDriver.getModel()</code>获取模型对象</p>
 <p> 4、把模型对象放入到栈顶</p>
-<h4 id="文件树及内容-2"><a href="#文件树及内容-2" class="headerlink" title="文件树及内容"></a>文件树及内容</h4><p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E6%A8%A1%E5%9E%8B-.PNG" alt="img"></p>
-<p><img src="https://raw.githubusercontent.com/C1erman/Graph-bed/master/imgs/2nd/two%E6%A8%A1%E5%9E%8B.PNG" alt="img"></p>
+<h4 id="文件树及内容-2"><a href="#文件树及内容-2" class="headerlink" title="文件树及内容"></a>文件树及内容</h4><p><img src="https://i.loli.net/2020/01/02/jS6zqM5esdnVRZL.png" alt="模型 HTML.PNG"></p>
+<p><img src="https://i.loli.net/2020/01/02/4vYpTOnXQCe825o.png" alt="模型.PNG"></p>
 
       
     </div>
@@ -787,7 +787,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
