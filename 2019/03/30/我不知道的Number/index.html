@@ -114,7 +114,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2020/01/02/yYu9HXrbLCFGW6Z.png">
 <meta property="og:image" content="https://i.loli.net/2020/01/02/rhkiATLct3Posgw.png">
-<meta property="og:updated_time" content="2020-01-02T07:19:11.482Z">
+<meta property="og:updated_time" content="2020-01-07T08:08:54.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的Number">
 <meta name="twitter:description" content="10.1 + 0.2 = 0.30000000000000004 Why。 19007199254740992 + 1 = 9007199254740992 Why。 1111111111111111110000 + 1111 = 111111111111111130000 Why!">
@@ -411,7 +411,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-01-02 15:19:11" itemprop="dateModified" datetime="2020-01-02T15:19:11+08:00">2020-01-02</time>
+                <time title="修改时间：2020-01-07 16:08:54" itemprop="dateModified" datetime="2020-01-07T16:08:54+08:00">2020-01-07</time>
               
             
           </span>
@@ -470,7 +470,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">111111111111111110000</span> + <span class="number">1111</span> = <span class="number">111111111111111130000</span></span><br></pre></td></tr></table></figure>
 <p>Why!</p>
 <a id="more"></a>
-<h2 id="数字字面量"><a href="#数字字面量" class="headerlink" title="数字字面量"></a>数字字面量</h2><p><code>JavaScript</code>的数字是双精度值，即64位数。基于浮点算术的IEEE标准：<a href="https://en.wikipedia.org/wiki/IEEE_754" target="_blank" rel="noopener">IEEE 754</a>。</p>
+<h2 id="数字字面量"><a href="#数字字面量" class="headerlink" title="数字字面量"></a>数字字面量</h2><p><code>JavaScript</code>的数字是双精度值，即64位二进制位。基于浮点算术的IEEE标准：<a href="https://en.wikipedia.org/wiki/IEEE_754" target="_blank" rel="noopener">IEEE 754</a>。</p>
 <p>一个数字字面量可以是<strong>整型</strong>、<strong>浮点型</strong>或者<strong>十六进制</strong>整型：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="number">35</span>   <span class="comment">//35</span></span><br><span class="line">&gt;<span class="number">3.1415</span>  <span class="comment">//3.1415</span></span><br><span class="line">&gt;<span class="number">0xFF</span>  <span class="comment">//255</span></span><br></pre></td></tr></table></figure>
 <p>大部分的<code>JavaScript</code>引擎会在内部做优化并区分浮点数字和整型。</p>
@@ -507,33 +507,32 @@
 <p>感到很奇怪？不怕，我将分别讲讲这三个表示。</p>
 <h3 id="符号-Sign"><a href="#符号-Sign" class="headerlink" title="符号 Sign"></a>符号 Sign</h3><p>如果标志位为0，为正数，否则为负数。</p>
 <h3 id="分数-Ftrction"><a href="#分数-Ftrction" class="headerlink" title="分数 Ftrction"></a>分数 Ftrction</h3><p><strong>尾数</strong>，是百分号<code>%</code>之后<code>1.</code>后面的数，记住，是二进制表示，<strong>并且1将占一位</strong>。</p>
-<p>而分数就是带上尾数的整体二进制表示喽，像这样：<code>%1.011</code>，其中<code>0</code>是第51位。</p>
+<p>而分数就是带上尾数的整体二进制表示，像这样：<code>%1.011</code>，其中<code>0</code>是第51位。</p>
 <h3 id="指数-Exponent"><a href="#指数-Exponent" class="headerlink" title="指数 Exponent"></a>指数 Exponent</h3><p>指数用于控制小数点的左右移动，因为是二进制数，所以是<strong>2的指数次方</strong>。指数为正则小数点右移，为负则左移。</p>
-<p>指数有11位，因此最大的取值范围位[-1023,1024]，但是需要注意的是：为了支持负指数，<code>JavaScript</code>使用偏<a href="https://en.wikipedia.org/wiki/Offset_binary" target="_blank" rel="noopener">移二进制</a>来编码：<strong>1023表示0，小于它的为负，大于它的为正</strong>。</p>
-<p>于是，原本11位的数字范围[0,2047]就能被划分为正、负两种，实际上指数需要通过<code>-1023</code>得到。</p>
+<p>指数有11位，因此最大的取值范围位<code>[-1023, 1024]</code>，但是需要注意的是：为了支持负指数，<code>JavaScript</code>使用偏<a href="https://en.wikipedia.org/wiki/Offset_binary" target="_blank" rel="noopener">移二进制</a>来编码：<strong>1023表示0，小于它的为负，大于它的为正</strong>。</p>
+<p>于是，原本11位的正数字范围：<code>[0, 2047]</code>就能被划分为正、负两种，实际上的指数需要通过减去1023后得到。</p>
 <p>就像下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E = 00000000000--&gt;0 - 1023 = -1023</span><br><span class="line">E = 01111111111--&gt;1023 - 1023 = 0</span><br><span class="line">E = 11111111111--&gt;2047 - 1023 = 1024</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">E = <span class="number">0b00000000000</span> --&gt; <span class="number">0</span> - <span class="number">1023</span> = <span class="number">-1023</span></span><br><span class="line">E = <span class="number">0b01111111111</span> --&gt; <span class="number">1023</span> - <span class="number">1023</span> = <span class="number">0</span></span><br><span class="line">E = <span class="number">0b11111111111</span> --&gt; <span class="number">2047</span> - <span class="number">1023</span> = <span class="number">1024</span></span><br></pre></td></tr></table></figure>
 <p>实际上，取反一个指数，只需要<strong>按位取反后减一</strong>即可。</p>
 <p>有两个特殊的指数：<code>0</code>和<code>2047</code>。</p>
 <ul>
-<li>指数为<code>2047</code>时，<code>JavaScript</code>将把这个数字表示为<code>NaN</code>或<code>Infinity</code>。</li>
+<li>指数为<code>2047</code>时，JavaScript 将把这个数字表示为<code>NaN</code>或<code>Infinity</code>。</li>
 <li>指数为<code>0</code>时，如果分数也为0，这个数字就为<code>+0/-0</code>；如果分数不为0，用于表示接近0的很小的数字。</li>
 </ul>
 <p>为了使这两种情况都可用，这里用到了<strong>非规格化</strong>的方法，即<strong>不把</strong>小数点放在第一个非零数字后面。</p>
 <p>非规格化的最小数字为：<code>(-1)^(1/0) × %0.Ftrction × 2^(1-1023)</code>，此时如果规格化，则指数为-1023，即0。</p>
 <p>规格化的最小数字为：<code>(-1)^(1/0) × %1.Ftrction × 2^(1-1023)</code>。</p>
 <p>可以看到，非规格化的数字更小。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>二进制，二进制，不要问为什么分数没有2以上的数字出现。</p>
-<table>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><table>
 <thead>
 <tr>
-<th><code>S=0 ｜ F=%101 ｜ E=2</code></th>
+<th><code>S=0 ｜ F=%101 ｜ E=10000000001</code></th>
 <th>Number = (-1)^0 × %1.101 × 2^2 = %110.1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>S=1 ｜ F=%101 ｜ E=-2</code></td>
+<td><code>S=1 ｜ F=%101 ｜ E=01111111101</code></td>
 <td>Number = (-1)^1 × %1.101 × 2^(-2) = %-0.01101</td>
 </tr>
 </tbody>
@@ -557,9 +556,9 @@
 <li>0.2 = 2/10 = 1/5</li>
 </ul>
 <p>etc.</p>
-<p>如此以来，就知道为什么会出现<strong>0.1+0.2!=0.3</strong>的情况了吧。</p>
+<p>如此以来，就知道为什么会出现<code>0.1 + 0.2 != 0.3</code>的情况了吧。</p>
 <p>我们可以提供一个函数，将边界错误的上界考虑进来，这个上界叫做<strong>机器精度</strong>，对于双精度，一个标准的精度值是2^-53。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">epsEqu</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> EPSILON = <span class="built_in">Math</span>.Pow(<span class="number">2</span>, <span class="number">-53</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(x - y) &lt; EPSILON;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">epsEqu</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> EPSILON = <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">-53</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(x - y) &lt; EPSILON;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="整数的表示"><a href="#整数的表示" class="headerlink" title="整数的表示"></a>整数的表示</h2><p>整形指的是没有十进制分数的数字。</p>
 <p><code>JavaScript</code>只有浮点数字，但是：</p>
 <ul>
@@ -569,7 +568,7 @@
 <p><span id="read_again"></span></p>
 <p>需要多少位来编码一个整数呢？尾数共有53位，1个在点的前面，52个跟在后面。</p>
 <p>请注意，分数位的最高位总是1，也就是说我们不能随便的使用所有的位。</p>
-<h3 id="最大"><a href="#最大" class="headerlink" title="最大"></a>最大</h3><p><code>JavaScript</code>只能<strong>处理</strong>最大至53位的整数值，即52位的分数加上一个来自指数的间接位：指数用于移动“分数”。</p>
+<h3 id="最大"><a href="#最大" class="headerlink" title="最大"></a>最大</h3><p><code>JavaScript</code>只能<strong>处理</strong>最大至53位的整数值，即52位的分数加上一个来自指数的<em>间接位</em>：指数用于移动分数。</p>
 <p>下表解释了怎么将<strong>整型</strong>表示成<strong>浮点数</strong>：</p>
 <table>
 <thead>
@@ -637,8 +636,11 @@
 </tr>
 </tbody>
 </table>
-<p>看到了么？如果不明白<del>或许是我也不太懂</del>，请再一次<a href="#read_again">看看这里</a>。</p>
-<p>就像这样：</p>
+<p>看到了么？</p>
+<p>这就是前缀编码采用的形式。</p>
+<blockquote>
+<p>如果不明白，请再一次<a href="#read_again">看看这里</a>。</p>
+</blockquote>
 <p><img src="https://i.loli.net/2020/01/02/rhkiATLct3Posgw.png" alt="解释"></p>
 <p>这意味着：对于54位数来讲，每两个数（1个二进制位）只能有一个能用这种方法表示。</p>
 <p>你表示了2<sup>53</sup>の<code>9007199254740992</code>，就没办法表示2<sup>53</sup>+1の<code>9007199254740993</code>。</p>
@@ -657,9 +659,11 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传入的x最好为正数，否则符号位也将参与计算</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toUnSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>位运算符<code>~</code></li>
+<li>位取反运算符<code>~</code></li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toSignInt32</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ~~x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="处理大整数"><a href="#处理大整数" class="headerlink" title="处理大整数"></a>处理大整数</h3><p>截止<span alt="2020/1/7">目前</span>，JavaScript 原生的 BigInt 仍然只是一个 PR，只得到了有限的浏览器支持，因此，提供一个大整数运算的解决方案是有必要的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BigInteger</span> </span>&#123;</span><br><span class="line">    contructor(num)&#123;</span><br><span class="line">        <span class="keyword">this</span>._num = (num).toString();</span><br><span class="line">        <span class="keyword">this</span>.isBigInt = <span class="built_in">Number</span>.isSafeInteger(num);</span><br><span class="line">    &#125;</span><br><span class="line">    sum(a, b)&#123;</span><br><span class="line">        <span class="keyword">let</span> res = <span class="string">''</span>, tmp = <span class="number">0</span>;</span><br><span class="line">        a = a.toString().split(<span class="string">''</span>);</span><br><span class="line">        b = b.toString().split(<span class="string">''</span>);</span><br><span class="line">        <span class="keyword">while</span>(a.length || b.length || tmp)&#123;</span><br><span class="line">            tmp += ~~ a.pop() + ~~ b.pop();</span><br><span class="line">            res = tmp % <span class="number">10</span> + res;</span><br><span class="line">            tmp = tmp &gt; <span class="number">9</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -786,7 +790,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">56</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -935,7 +939,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字字面量"><span class="nav-number">1.</span> <span class="nav-text">数字字面量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换成数字"><span class="nav-number">2.</span> <span class="nav-text">转换成数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字的内部表示"><span class="nav-number">3.</span> <span class="nav-text">数字的内部表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#符号-Sign"><span class="nav-number">3.1.</span> <span class="nav-text">符号 Sign</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分数-Ftrction"><span class="nav-number">3.2.</span> <span class="nav-text">分数 Ftrction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数-Exponent"><span class="nav-number">3.3.</span> <span class="nav-text">指数 Exponent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.4.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理舍入的错误"><span class="nav-number">4.</span> <span class="nav-text">处理舍入的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#十进制系统"><span class="nav-number">4.1.</span> <span class="nav-text">十进制系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制系统"><span class="nav-number">4.2.</span> <span class="nav-text">二进制系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数的表示"><span class="nav-number">5.</span> <span class="nav-text">整数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最大"><span class="nav-number">5.1.</span> <span class="nav-text">最大</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更大"><span class="nav-number">5.2.</span> <span class="nav-text">更大</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#他山之石"><span class="nav-number">6.</span> <span class="nav-text">他山之石</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原力"><span class="nav-number">7.</span> <span class="nav-text">原力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过运算符得到32位整数"><span class="nav-number">7.1.</span> <span class="nav-text">通过运算符得到32位整数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数字字面量"><span class="nav-number">1.</span> <span class="nav-text">数字字面量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换成数字"><span class="nav-number">2.</span> <span class="nav-text">转换成数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字的内部表示"><span class="nav-number">3.</span> <span class="nav-text">数字的内部表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#符号-Sign"><span class="nav-number">3.1.</span> <span class="nav-text">符号 Sign</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分数-Ftrction"><span class="nav-number">3.2.</span> <span class="nav-text">分数 Ftrction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数-Exponent"><span class="nav-number">3.3.</span> <span class="nav-text">指数 Exponent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.4.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理舍入的错误"><span class="nav-number">4.</span> <span class="nav-text">处理舍入的错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#十进制系统"><span class="nav-number">4.1.</span> <span class="nav-text">十进制系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制系统"><span class="nav-number">4.2.</span> <span class="nav-text">二进制系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数的表示"><span class="nav-number">5.</span> <span class="nav-text">整数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最大"><span class="nav-number">5.1.</span> <span class="nav-text">最大</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更大"><span class="nav-number">5.2.</span> <span class="nav-text">更大</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#他山之石"><span class="nav-number">6.</span> <span class="nav-text">他山之石</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原力"><span class="nav-number">7.</span> <span class="nav-text">原力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过运算符得到32位整数"><span class="nav-number">7.1.</span> <span class="nav-text">通过运算符得到32位整数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理大整数"><span class="nav-number">7.2.</span> <span class="nav-text">处理大整数</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.site/2019/03/30/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Number/</loc>
+    <lastmod>2020-01-07</lastmod>
+  </url>  <url>
+    <loc>http://seefun.site/2020/01/05/React/</loc>
+    <lastmod>2020-01-05</lastmod>
+  </url>  <url>
     <loc>http://seefun.site/2018/10/11/bugs-json-myEclipse/</loc>
     <lastmod>2020-01-02</lastmod>
   </url>  <url>
@@ -17,9 +23,6 @@
     <lastmod>2020-01-02</lastmod>
   </url>  <url>
     <loc>http://seefun.site/2019/04/12/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/</loc>
-    <lastmod>2020-01-02</lastmod>
-  </url>  <url>
-    <loc>http://seefun.site/2019/03/30/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Number/</loc>
     <lastmod>2020-01-02</lastmod>
   </url>  <url>
     <loc>http://seefun.site/2019/04/08/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84HTTP%E4%B8%8EURL/</loc>
