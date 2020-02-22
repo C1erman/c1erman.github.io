@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://seefun.site/2019/07/14/CSS2-2%E8%A7%84%E8%8C%83%E7%BF%BB%E8%AF%91/</loc>
+    
+    <lastmod>2020-02-22T06:45:00.656Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seefun.site/2019/03/30/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Number/</loc>
     
     <lastmod>2020-01-07T08:08:54.943Z</lastmod>
@@ -145,13 +152,6 @@
     <loc>http://seefun.site/2019/09/08/Webpack4%E6%90%AD%E9%85%8DBabel7%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2019-12-29T06:33:53.532Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seefun.site/2019/07/14/CSS2-2%E8%A7%84%E8%8C%83%E7%BF%BB%E8%AF%91/</loc>
-    
-    <lastmod>2019-12-26T06:28:52.531Z</lastmod>
     
   </url>
   
