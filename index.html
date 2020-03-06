@@ -393,12 +393,24 @@
                 
               
 
-              <time title="创建时间：2020-01-05 14:09:21 / 修改时间：16:15:42" itemprop="dateCreated datePublished" datetime="2020-01-05T14:09:21+08:00">2020-01-05</time>
+              <time title="创建时间：2020-01-05 14:09:21" itemprop="dateCreated datePublished" datetime="2020-01-05T14:09:21+08:00">2020-01-05</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-06 10:25:53" itemprop="dateModified" datetime="2020-03-06T10:25:53+08:00">2020-03-06</time>
               
             
           </span>
@@ -451,14 +463,16 @@
 
       
         
+          <p>React &amp; etc.</p>
+          <!--noindex-->
           
-            <h3 id="context"><a href="#context" class="headerlink" title="context"></a>context</h3><p>context 像是一个全局变量，被用于在不同层级的组件中传递变量。</p>
-<p>给你的建议是最好不用 context。</p>
-<p>使用生产者、消费者模式来利用 context。</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明 context</span></span><br><span class="line"><span class="keyword">const</span> UserContext = React.createContext(&#123;</span><br><span class="line">    name : <span class="string">'c1er'</span>,  <span class="comment">//默认值</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//生产</span></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Header</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> (&lt;UserContext.Provider value=&#123;&#123;</span><br><span class="line">                    name : 'c2er',  //使用值</span><br><span class="line">                &#125;&#125;&gt;</span><br><span class="line">            	&lt;Txt /&gt;</span><br><span class="line">            &lt;/UserContext.Provider&gt;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//消费</span><br><span class="line">class Txt extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return (&lt;UserContext.Consumer&gt;</span><br><span class="line">            	ctx =&gt; (&lt;div&gt;</span><br><span class="line">                	The name is &#123;ctx.name&#125;</span><br><span class="line">                &lt;/div&gt;);</span><br><span class="line">            &lt;/UserContext.Consumer&gt;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2020/01/05/React/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>

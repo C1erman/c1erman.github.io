@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://seefun.site/2020/01/05/React/</loc>
+    <lastmod>2020-03-06</lastmod>
+  </url>  <url>
+    <loc>http://seefun.site/2019/09/08/Webpack4%E6%90%AD%E9%85%8DBabel7%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2020-03-04</lastmod>
+  </url>  <url>
     <loc>http://seefun.site/2019/07/14/CSS2-2%E8%A7%84%E8%8C%83%E7%BF%BB%E8%AF%91/</loc>
     <lastmod>2020-02-22</lastmod>
   </url>  <url>
     <loc>http://seefun.site/2019/03/30/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84Number/</loc>
     <lastmod>2020-01-07</lastmod>
-  </url>  <url>
-    <loc>http://seefun.site/2020/01/05/React/</loc>
-    <lastmod>2020-01-05</lastmod>
   </url>  <url>
     <loc>http://seefun.site/2018/10/11/bugs-json-myEclipse/</loc>
     <lastmod>2020-01-02</lastmod>
@@ -63,9 +66,6 @@
   </url>  <url>
     <loc>http://seefun.site/2019/05/19/%E5%BC%82%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2020-01-02</lastmod>
-  </url>  <url>
-    <loc>http://seefun.site/2019/09/08/Webpack4%E6%90%AD%E9%85%8DBabel7%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2019-12-29</lastmod>
   </url>  <url>
     <loc>http://seefun.site/2019/12/23/about-blob/</loc>
     <lastmod>2019-12-25</lastmod>
