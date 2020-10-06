@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="归人的知识笔记">
 <meta property="og:description" content="函数的柯里化在ES6引入rest操作符之后变得简单起来。 啊哦，心心念念的尾递归优化转眼间就不被支持了，但是我们可以自己实现它！ 行くぞ。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-27T12:21:21.709Z">
+<meta property="og:updated_time" content="2020-07-06T07:57:50.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我不知道的函数柯里化与实现尾递归">
 <meta name="twitter:description" content="函数的柯里化在ES6引入rest操作符之后变得简单起来。 啊哦，心心念念的尾递归优化转眼间就不被支持了，但是我们可以自己实现它！ 行くぞ。">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-27 20:21:21" itemprop="dateModified" datetime="2019-04-27T20:21:21+08:00">2019-04-27</time>
+                <time title="修改时间：2020-07-06 15:57:50" itemprop="dateModified" datetime="2020-07-06T15:57:50+08:00">2020-07-06</time>
               
             
           </span>
@@ -481,7 +481,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">simulateStackSize</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123; <span class="keyword">return</span> <span class="number">1</span> + simulateStackSize(); &#125;</span><br><span class="line">    <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        <span class="comment">//stack overflow</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">simulateStackSize();  <span class="comment">//27552</span></span><br></pre></td></tr></table></figure>
 <h2 id="尾调用优化"><a href="#尾调用优化" class="headerlink" title="尾调用优化"></a>尾调用优化</h2><p>正如我们上面所说的那样：函数调用会在内存中形成一个调用记录，又称调用帧，这一概念很类似与我们之前讲述<a href="https://www.seefun.club/2019/04/12/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E9%97%AD%E5%8C%85/#more" target="_blank" rel="noopener">作用域与闭包里</a>提到过的函数执行上下文，<strong>所有的调用帧形成了调用栈</strong>。</p>
 <p><strong>尾调用</strong>是指：<strong>函数的最后一步是调用另一个函数</strong>。</p>
-<p>而函数的最后一步总是<code>return</code>，换句话说，即是<code>return</code>一个函数，就像这样：</p>
+<p>而函数的最后一步总是<code>return</code>，换句话说，即是<code>return</code>一个函数的调用，就像这样：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Is Tail Call</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params">m</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> b();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Is NOT the Tail Call</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    b();</span><br><span class="line">    <span class="comment">//return undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于尾调用是函数的最后一步操作，所以不需要保留外层函数的调用帧，即函数的上下文环境，直接删掉即可。如果大量函数使用了尾调用，节省的内存还是比较可观的。</p>
 <p>これは尾调用优化だ。</p>
@@ -658,7 +658,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-count">54</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -754,9 +754,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

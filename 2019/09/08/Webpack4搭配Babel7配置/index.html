@@ -504,7 +504,7 @@
 <h3 id="启动本地webpack服务"><a href="#启动本地webpack服务" class="headerlink" title="启动本地webpack服务"></a>启动本地webpack服务</h3><p>我们需要安装<code>webpack-dev-server</code>来启动一个本地服务器。</p>
 <p>为package.json添加一个scripts，内容为<code>&quot;dev&quot; : &quot;webpack-dev-server&quot;</code>，这样，我们就可以使用<code>npm run dev</code>来启动本地服务。</p>
 <p>配置webpack.config.js的devServer部分：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    devServer : &#123;</span><br><span class="line">        contentBase : <span class="string">''</span>,  <span class="comment">//内容文件夹，但dev时实际存在于内存</span></span><br><span class="line">        host : <span class="string">'localhost'</span>,</span><br><span class="line">        port : &lt;number&gt;,  //端口</span><br><span class="line">        open : &lt;boolean&gt;,  //是否打开浏览器</span><br><span class="line">        hot : &lt;boolean&gt;  //是否开启热更新</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    devServer : &#123;</span><br><span class="line">        contentBase : <span class="string">''</span>,  <span class="comment">//内容文件夹，但dev时实际存在于内存</span></span><br><span class="line">        host : <span class="string">'localhost'</span>,</span><br><span class="line">        port : <span class="xml"><span class="tag">&lt;<span class="name">number</span>&gt;</span>,  //端口</span></span><br><span class="line">        open : &lt;boolean&gt;,  //是否打开浏览器</span><br><span class="line">        hot : &lt;boolean&gt;  //是否开启热更新</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>对于热更新，实际上我们还需要配置一个plugin与一行代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    plugins : [</span><br><span class="line">        <span class="keyword">new</span> Webpack.HotModuleReplacementPlugin()  <span class="comment">//添加热更新plugin</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//some.js</span></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">module</span>.hot)&#123;</span><br><span class="line">    <span class="built_in">module</span>.hot.accept();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -700,7 +700,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-count">54</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -796,9 +796,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
