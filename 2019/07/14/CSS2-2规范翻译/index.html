@@ -113,7 +113,7 @@
 <meta property="og:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
-<meta property="og:updated_time" content="2020-04-03T05:29:57.716Z">
+<meta property="og:updated_time" content="2020-10-12T16:15:34.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS2.2规范">
 <meta name="twitter:description" content="CSS规范的重要性被大大低估了。 本文简单翻译CSS2.2规范中的部分章节，这些章节取决于本人尚未掌握或感兴趣的部分。 注意，请不要忽略CSS3。">
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-03 13:29:57" itemprop="dateModified" datetime="2020-04-03T13:29:57+08:00">2020-04-03</time>
+                <time title="修改时间：2020-10-13 00:15:34" itemprop="dateModified" datetime="2020-10-13T00:15:34+08:00">2020-10-13</time>
               
             
           </span>
@@ -634,7 +634,7 @@
 <blockquote>
 <p><strong>关于box：</strong>一般来说，将<code>content box</code>中的<code>box</code>翻译为<strong>框</strong>似乎更合常理，但由于<code>border</code>已经带有边框的意思，因此这里采用<strong>盒子</strong>来翻译<code>box</code>。</p>
 </blockquote>
-<p>内容盒子、填充盒子与边框盒子的背景样式由元素的<code>background</code>指定，边缘盒子的背景则<strong>总是透明</strong>的。</p>
+<p>内容盒子、填充盒子与边框盒子的背景样式由元素的<code>background</code>指定，边缘（margin）盒子的背景则<strong>总是透明</strong>的。</p>
 <p><span id="collapsing-borders"></span></p>
 <h3 id="折叠边距"><a href="#折叠边距" class="headerlink" title="折叠边距"></a>折叠边距</h3><blockquote>
 <p><strong>折叠与崩溃：</strong></p>
@@ -1017,7 +1017,8 @@
 <ul>
 <li>auto</li>
 </ul>
-<p>当前堆叠上下文中生成盒子的堆栈级别为<code>0</code>。如果盒子具有<code>position : fixed</code>属性，或者它是根，则它会建立新的堆叠上下文。</p>
+<p>当前堆叠上下文中生成盒子的堆栈级别为<code>0</code>。</p>
+<p>如果盒子具有<code>position : fixed</code>属性，或者它是根，则它会建立新的堆叠上下文。</p>
 <blockquote>
 <p><strong>注意：</strong>在本节中，表达 ”在…之前” 意味着当用户面向屏幕时更接近用户。</p>
 </blockquote>
@@ -1180,7 +1181,7 @@
 <p>所以，缩小至适合宽度为：$min( max(首选最小宽度, 可用宽度),首选宽度)$。</p>
 </li>
 </ol>
-<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本篇文章源自<a href="https://www.w3.org/TR/CSS22/" target="_blank" rel="noopener">W3C官网</a>，由<a href="kexiezhang@gmail.com">c1er</a>翻译与润色。</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本篇文章源自<a href="https://www.w3.org/TR/CSS22/" target="_blank" rel="noopener">W3C官网</a>，由<a href="kexiezhang@gmail.com">c1er</a>翻译与润色。  </p>
 
       
     </div>
@@ -1305,7 +1306,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
